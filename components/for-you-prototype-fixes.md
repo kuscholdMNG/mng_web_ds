@@ -1,6 +1,6 @@
 # For You prototype fixes: prompt for the prototype project
 
-> **Updated 2026-10-23.** Started with the homepage tabs and the kicker letter spacing. More sections get added here as each For You component is built in Figma (tooltip, CTA panel, modal and Load More parity checks, card hover). When the list is complete, paste everything below the line into the For You Tab MVP project in one go. Status and node IDs: `components/for-you-ds-components-status.md`.
+> **Updated 2026-10-26** (added section 10, the featured-story slideshow). **First written 2026-10-23.** Started with the homepage tabs and the kicker letter spacing. More sections get added here as each For You component is built in Figma (tooltip, CTA panel, modal and Load More parity checks, card hover). When the list is complete, paste everything below the line into the For You Tab MVP project in one go. Status and node IDs: `components/for-you-ds-components-status.md`.
 
 Every value below is an existing MNG Web Design System token (hex shown for Bold Coastal). Where production used a value with no token, it has been rounded to the nearest token (Karl, 2026-10-23), so don't reintroduce the old production values.
 
@@ -83,7 +83,7 @@ Use the production Load More (the same rule as production's `.load-more` / `.sho
 ## 6. Article rows on phones, and the gallery badge
 
 - Article rows (`.row`) at ≤639px: the image is 90×54 (5:3), pinned to the top-left of the row, with white space below it; it no longer stretches to the row's height. Change `.row{grid-template-columns:120px …}` to 90px and give `.row .img` `height:54px; min-height:0; align-self:start` in the ≤639px query. At 640px and up nothing changes (220px wide, filling the row height, minimum 132px).
-- Gallery articles get a badge on their image (cards, rows): a 28px black circle with the white `slideshow` icon (16px), 6px in from the image's bottom-right corner. Only show it when the article is a photo gallery; the sample data can mark one card and one row as galleries.
+- Gallery articles get a badge on their image (cards and rows only; the featured story gets the slideshow in section 10 instead): a 28px black circle with the white `slideshow` icon (16px), 6px in from the image's bottom-right corner. Only show it when the article is a photo gallery; the sample data can mark one card and one row as galleries.
 
 ## 7. Non-subscriber CTA panel (reuse the Reader Dashboard "subscribe" panel)
 
@@ -114,3 +114,27 @@ The modal (`.mc`) already matches the MNG Web Design System ModalsCenter: 444px 
 ## 9. Article timestamp (already done 2026-10-23)
 
 - `.tm` is `font: 400 13px/normal 'Noto Sans', sans-serif` (was 12px/16px), matching production's card meta. No change needed; listed so the prompt is complete.
+
+## 10. Featured story as a photo gallery: inline slideshow (replaces the image)
+
+When the featured story (`.fy-lead`) is a photo gallery, production doesn't show a gallery badge. It swaps the image for an inline slideshow (production `article.slideshow.feature-large > .article-slideshow`, seen on develop.denverpost.com). Figma: WordPress Elements ▸ Homepage ▸ Zone 1 Slideshow, and Zone 1 Lead Article Card, Gallery=Slideshow.
+
+- Sample data: mark the featured story as a gallery with 5 sample photos (reuse existing sample images), each with a caption. When it isn't a gallery, keep the current image.
+- Layout:
+  - **Above 1039px:** the slideshow takes the image's place on the right, 356px wide, and the text column stays as is; the space left between them goes in the gap.
+  - **640–1039px:** the slideshow fills the image column.
+  - **≤639px:** it goes after the byline, full width (headline, excerpt, byline, then the slideshow).
+- Image area: 16:9 (`aspect-ratio:16/9`), no background; the photo is `object-fit:contain`, centered (letterboxed).
+- Arrows:
+  - **Look:** `<button type="button" aria-label="Previous">` and `aria-label="Next"`, absolutely positioned at the left and right edges of the image area and vertically centered. Background #000000 (color/gray/black) at `opacity:.75`; no border; the icomoon arrow-left (U+E906) and arrow-right (U+E907) icons in #FFFFFF (color/gray/max).
+  - **Size:** 40×60px with a 30px icon above 1039px; 35×53px with a 26px icon at ≤1039px.
+  - **States:** hover changes nothing (cursor pointer). Focus-visible: `outline:2px solid #FFFFFF; outline-offset:3px`.
+  - **Behavior:** the gallery loops (Previous on the first photo goes to the last). Also support swipe/drag on the image. No dots, no autoplay.
+- Caption block, under the image:
+  - **Spacing:** padding 12px top (spacing/150); bottom 16px above 1039px (spacing/200), 12px at ≤1039px (spacing/150); 8px between lines above 1039px (spacing/100), 4px at ≤1039px (spacing/050).
+  - **Rule:** `border-bottom:3px solid #CCCAC7` (color/gray/500).
+  - **Slide count**, e.g. "1 of 5", updated on every change: `font:700 13px/normal 'Noto Sans',sans-serif` (11px at ≤1039px), color #000000 (color/gray/black). Give it `aria-live="polite"` so the change is announced.
+  - **Caption:** `font:400 13px/normal 'Noto Sans',sans-serif` (11px at ≤1039px), color #5E5D5C (color/gray/200).
+  - **No photo credit line** (it's optional and off by default in the design system).
+- 12px (spacing/150) below the slideshow, then the featured story's existing bottom spacing and rule.
+- Check at 340, 360, 768, 1024 and 1280 that the arrows stay inside the page and nothing overflows.
