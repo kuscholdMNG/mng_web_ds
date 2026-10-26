@@ -121,9 +121,9 @@ When the featured story (`.fy-lead`) is a photo gallery, production doesn't show
 
 - Sample data: mark the featured story as a gallery with 5 sample photos (reuse existing sample images), each with a caption. When it isn't a gallery, keep the current image.
 - Layout:
-  - **Above 1039px:** the slideshow takes the image's place on the right, 356px wide, and the text column stays as is; the space left between them goes in the gap.
-  - **640–1039px:** the slideshow fills the image column.
-  - **≤639px:** it goes after the byline, full width (headline, excerpt, byline, then the slideshow).
+  - The layout follows the featured story's width, not the screen: two columns when it's about 700px wide or more, one column when it's narrower. The For You feed has no side column, so that means two columns at 640px and up and one column below.
+  - **Two columns:** the slideshow takes the image's place on the right (356px wide when the feed is at full width, otherwise filling the image column), and the text column stays as is; the space left between them goes in the gap.
+  - **One column (≤639px):** headline, excerpt, byline, then the slideshow full width.
 - Image area: 16:9 (`aspect-ratio:16/9`), no background; the photo is `object-fit:contain`, centered (letterboxed).
 - Arrows:
   - **Look:** `<button type="button" aria-label="Previous">` and `aria-label="Next"`, absolutely positioned at the left and right edges of the image area and vertically centered. Background #000000 (color/gray/black) at `opacity:.75`; no border; the icomoon arrow-left (U+E906) and arrow-right (U+E907) icons in #FFFFFF (color/gray/max).

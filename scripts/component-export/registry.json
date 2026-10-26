@@ -335,7 +335,8 @@
         "**Style=For You:** Article Section Kicker 4px (`spacing/050`) above the headline; no subscriber badge or Related list; byline after the excerpt (Article Author and Article Timestamp side by side, 12px `spacing/150` apart, 12px above).",
         "**Headline and excerpt:** same tokens as Style=Standard (Noto Serif Bold 29/33, −0.87px at 640px and up; 25/29, −0.03em below; excerpt Noto Sans 15/19 `color/gray/100`, 4px below the headline group on Desktop and Tablet, as in production).",
         "**Layout:** Desktop and Tablet are two columns (text, then image; 20px and 32px apart); Mobile is one column (headline group, image, excerpt, byline; 8px gaps) with a 1px bottom rule 20px below the byline.",
-        "**Gallery** (Karl, 2026-10-26): `Gallery=Slideshow` replaces the image with the Zone 1 Slideshow, as production does for gallery leads (`article.slideshow.feature-large`). Zone 1 has no Gallery Icon Badge. Desktop: text column 295 and slideshow 356, spread to the 706 card edges (55px between, as in production). Tablet: the slideshow fills the 358 column. Mobile: the slideshow follows the byline (For You) or the excerpt (Standard)."
+        "**Gallery** (Karl, 2026-10-26): `Gallery=Slideshow` replaces the image with the Zone 1 Slideshow, as production does for gallery leads (`.feature-large .article-slideshow`). Zone 1 has no Gallery Icon Badge.",
+        "**Gallery=Slideshow layout follows the lead's width, not the screen:** two columns when the lead is about 700px wide or more (Desktop: text 295 and slideshow 356, the rest of the 706 card between them; Tablet: the slideshow fills the 358 column); one column when narrower: headline, excerpt, then the Related list (Standard) or byline (For You), then the slideshow full width. On the homepage the third page column narrows the lead, so it is one column from 800 to 1279px (594 wide at 1024) and below 640px, and two columns from 640 to 799px and from 1280px up (production, checked on develop.denverpost.com 2026-10-26)."
       ],
       "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| Mobile | below 640px | One column; 25/29 headline |\n| Tablet | 640px and up (768 template) | Two columns, 32px apart |\n| Desktop | 1024px and up | Two columns, 20px apart (text 295, image 391) |",
       "knownIssues": [
@@ -364,7 +365,7 @@
         "**Behavior:** the gallery loops (Previous on slide 1 goes to the last slide), so production's disabled style (20% opacity) never shows. The image strip can be dragged or swiped. No dots or autoplay.",
         "**Screen readers (required, not in production yet):** announce the slide count when the photo changes (`aria-live=\"polite\"` on the count). Design-vs-production entry 37."
       ],
-      "breakpoints": "| Device | Viewport | Layout | Controls |\n|---|---|---|---|\n| Mobile | below 640px | 340 wide | small (below 800px) |\n| Tablet | 640–1023px | fills the 358 column | small below 800px, large from 800px |\n| Desktop | 1024px and up | 356 wide | large (800px and up) |",
+      "breakpoints": "| Lead width / viewport | Layout (set by the card) | Controls (production 800px breakpoint) |\n|---|---|---|\n| Lead about 700px or wider (homepage: 640–799px, 1280px and up) | Two columns: slideshow 356 (Desktop) or filling the 358 column (Tablet) | small below 800px, large from 800px |\n| Lead narrower (homepage: below 640px, 800–1279px) | One column: slideshow full width after the text (and Related) | small below 800px, large from 800px |",
       "knownIssues": [
         "Production type, spacing and colors are off-token: design-vs-production entry 36.",
         "Production does not announce the slide count to screen readers (design-vs-production entry 37, required)."
