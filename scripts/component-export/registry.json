@@ -343,6 +343,46 @@
         "Column gaps 20px (spacing/250) and 32px (no token) are raw values."
       ],
       "production": "Production `.feature-primary .feature-large` (Zone 1 lead)."
+    },
+    {
+      "slug": "homepage-tab",
+      "name": "Homepage Tab",
+      "order": 1,
+      "node": "3629:44949",
+      "description": "One homepage tab (For You feature: Editor's Picks / For You). State = Default, Hover, Active, Focus; Label text property.",
+      "rules": [
+        "**Text:** Noto Sans SemiBold 12 (`font/size/12`, `font/style/semibold`), line height auto, letter spacing 0, uppercase.",
+        "**Colors:** Default `color/gray/200`; Hover `color/gray/min`; Active `color/gray/black` with a 2px `color/theme/primary` underline; Focus a 2px `color/gray/black` ring set 3px inside the tab.",
+        "**Padding:** 12px (`spacing/150`) top and bottom, 16px (`spacing/200`) left and right, then a 2px underline (transparent unless Active) that overlaps the bar's 1px rule.",
+        "**Accessibility:** a button with `role=tab`, `aria-selected` and `aria-controls`; keyboard focus shows the Focus state."
+      ],
+      "breakpoints": null,
+      "knownIssues": [],
+      "group": "navigation",
+      "layer": "wordpress",
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "documentationFrame": "3629:44928",
+      "production": "Production World Cup tabs (`ul.sr-nav-tabs > button.tab-btn`, staging.dailylocal.com/world-cup/); differences are design-vs-production entry 31."
+    },
+    {
+      "slug": "homepage-tabs",
+      "name": "Homepage Tabs",
+      "order": 2,
+      "node": "3629:44974",
+      "description": "The homepage tab bar built from Homepage Tab. Breakpoint = Desktop, Mobile.",
+      "rules": [
+        "**Bar:** full width, `color/gray/max`, with a 1px `color/gray/300` rule along the bottom; the active underline sits over it.",
+        "**Nav:** max width 1200px, centered, 24px (`spacing/300`) side padding at 640px and up; no side padding below 640px.",
+        "**Tabs:** left-aligned, 24px (`spacing/300`) apart; they scroll sideways (scrollbar hidden) if they don't fit.",
+        "**Accessibility:** `ul role=tablist`, each `li role=presentation`; panels have matching ids and `role=tabpanel`."
+      ],
+      "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| Mobile | below 640px | No nav side padding |\n| Desktop | 640px and up | Nav 1200px max, 24px side padding |",
+      "knownIssues": [],
+      "group": "navigation",
+      "layer": "wordpress",
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "documentationFrame": "3629:44928",
+      "production": "Production World Cup tabs (`ul.sr-nav-tabs > button.tab-btn`, staging.dailylocal.com/world-cup/); differences are design-vs-production entry 31."
     }
   ]
 }
