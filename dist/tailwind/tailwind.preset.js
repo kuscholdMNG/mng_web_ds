@@ -119,6 +119,11 @@ const preset = {
         "utility": "5px",
         "lg": "8px"
       },
+      "boxShadow": {
+        "mng-sm": "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+        "mng-md": "0px 4px 8px 0px rgba(0, 0, 0, 0.2)",
+        "mng-lg": "0px 8px 16px 0px rgba(0, 0, 0, 0.2)"
+      },
       "screens": {
         "fold": "340px",
         "mobile": "360px",

@@ -4,6 +4,9 @@
 // (see that file's header), then run make-tokens.py and build.py.
 // Colors are returned as 6-digit hex (alpha as "#rrggbb@0.6" when below 1); aliases as "{figma/variable/name}".
 // Dashboard Typography is skipped until Reader Dashboard tokens are added to core.
+// Effect styles named shadow/* (2026-10-26) are returned as effectStyles: one drop shadow per style, raw values plus
+// the variables bound to them (e.g. offsetY -> spacing/050). Save them as figma-variables.json's effectStyles.
+// shadow/masthead lives in WordPress Elements, not this file, so it isn't read here.
 const cols = await figma.variables.getLocalVariableCollectionsAsync();
 const hex = c => '#' + [c.r, c.g, c.b].map(x => Math.round(x * 255).toString(16).padStart(2, '0')).join('') +
   (c.a !== undefined && c.a < 1 ? '@' + Math.round(c.a * 1000) / 1000 : '');
@@ -27,4 +30,18 @@ for (const c of cols) {
   }
   out[c.name] = arr;
 }
-return { file: figma.fileKey, collections: out };
+const effectStyles = {};
+for (const st of await figma.getLocalEffectStylesAsync()) {
+  if (!st.name.startsWith('shadow/')) continue;
+  const fx = st.effects.filter(e => e.visible !== false);
+  if (fx.length !== 1 || !['DROP_SHADOW', 'INNER_SHADOW'].includes(fx[0].type)) throw new Error(st.name + ': expected one shadow effect');
+  const e = fx[0];
+  const bound = {};
+  for (const [k, a] of Object.entries(e.boundVariables || {})) {
+    const v = await figma.variables.getVariableByIdAsync(a.id);
+    bound[k] = v ? v.name : a.id;
+  }
+  effectStyles[st.name] = { type: e.type, offsetX: e.offset.x, offsetY: e.offset.y, blur: e.radius, spread: e.spread || 0,
+    color: hex(e.color), bound, description: st.description || '' };
+}
+return { file: figma.fileKey, collections: out, effectStyles };

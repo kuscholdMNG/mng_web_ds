@@ -1,5 +1,7 @@
 # MNG Web Design System — Export Standard
 
+> **Updated 2026-10-26:** §3.5 Shadows (the `shadow/*` effect styles are exported as DTCG `shadow` tokens in `tokens/core/shadow.tokens.json`; `extract.js` now also reads effect styles); §5 and §8 updated to match.
+>
 > **Adopted 2026-10-14** (drafted 2026-10-13; updated 2026-10-14: legacy exports are deleted when replaced, no archive; Fold 340 added to the MNG Device breakpoints; PNG previews stay in GitHub, no Git LFS; where pixel values are kept; Reader Dashboard is part of core; two breakpoint sets; Vite/package note). Every token and component export follows this file; the first build is in `tokens/core/`, `tokens/themes/`, `tokens/wordpress/` and `dist/` (pull request #2). The README's filing rules and the status doc's standing rules point here; if this file and another doc disagree, this file wins for anything about export formats.
 
 ## 1. What this covers
@@ -125,6 +127,39 @@ Pixels are the design unit everywhere (Figma's units are CSS pixels; we don't us
 | Letter spacing | em (−0.03) | `letterSpacingFigma` (−3%) in `$extensions`; `dist/`: em and px at the token's font size |
 | Frame widths (340, 360, 768…) | not tokens | the component spec (`<slug>.md`) |
 
+### 3.5 Shadows
+
+Shadows are Figma **effect styles** (not variables) on the main file's Shadows page: `shadow/sm`, `shadow/md` and `shadow/lg`. `scripts/build-tokens/extract.js` reads every local effect style named `shadow/*` along with the variables bound to it, and `make-tokens.py` writes them to `tokens/core/shadow.tokens.json` as DTCG composite tokens:
+
+```json
+"lg": {
+  "$type": "shadow",
+  "$value": {
+    "color": { "colorSpace": "srgb", "components": [0, 0, 0], "alpha": 0.2, "hex": "#000000" },
+    "offsetX": { "value": 0, "unit": "px" },
+    "offsetY": "{spacing.100}",
+    "blur": "{spacing.200}",
+    "spread": { "value": 0, "unit": "px" },
+    "inset": false
+  },
+  "$description": "Anything floating: modals, bottom panels, dropdowns, menus, tooltips.",
+  "$extensions": { "com.mng": { "figma": { "file": "MNG Web Design System", "effectStyle": "shadow/lg" },
+                                "rgba": "rgba(0, 0, 0, 0.2)", "hex8": "#00000033" } }
+}
+```
+
+| Token | Value | Use |
+|---|---|---|
+| `shadow.sm` | 0 `{spacing.050}` `{spacing.050}` 0 · black 25% | Sticky bars |
+| `shadow.md` | 0 `{spacing.050}` `{spacing.100}` 0 · black 20% | Cards |
+| `shadow.lg` | 0 `{spacing.100}` `{spacing.200}` 0 · black 20% | Anything floating: modals, bottom panels, dropdowns, menus, tooltips |
+
+- **References, not numbers.** Offsets and blur are bound to spacing variables in Figma, so the tokens reference the spacing tokens. The build stops if a bound variable's value doesn't match the style, or if a non-zero value isn't bound to a spacing variable (no off-token values).
+- **Black only.** The color is a literal black with the style's opacity (DTCG can't add alpha to a color reference). The build stops on any other color.
+- **One drop shadow per style.** Inner shadows and stacked shadows aren't supported yet; the build stops if it finds one.
+- **Not exported yet:** `shadow/masthead` (0 3px 3px 0 · 25%, Masthead and ObitMastHead when scrolled). It's a WordPress Elements effect style (design-vs-production entry 32); when it's exported it goes in `tokens/wordpress/`, read from that file.
+- **In `dist/`:** a complete `box-shadow` value. CSS keeps the spacing references (`--mng-shadow-lg: 0px var(--mng-spacing-100) var(--mng-spacing-200) 0px rgba(0, 0, 0, 0.2)`); Sass, JS and JSON have resolved px. Tailwind: `shadow-mng-sm` / `-md` / `-lg` (prefixed, so Tailwind's own `shadow-sm` etc. keep working). `theme.json`: `settings.shadow.presets` (`sm`, `md`, `lg`) with WordPress's default presets turned off.
+
 ## 4. Metadata every token carries
 
 `$extensions.com.mng` holds, where known:
@@ -160,7 +195,7 @@ Tokens and components are split into layers. **A layer may only reference layers
 
 | Layer | Folder | What's in it |
 |---|---|---|
-| Core (the main MNG Web Design System) | `tokens/core/` | Color primitives (gray, feedback, neutral, surface, tributes), type primitives (`font.family`, `font.size`, `font.weight`), spacing, radius, official breakpoints. Shared by every platform. **Reader Dashboard is part of core**: when it's ready, its tokens (Dashboard Typography, its breakpoints and so on) are added here under a `dashboard` group, not as a separate layer. |
+| Core (the main MNG Web Design System) | `tokens/core/` | Color primitives (gray, feedback, neutral, surface, tributes), type primitives (`font.family`, `font.size`, `font.weight`), spacing, radius, shadows (§3.5), official breakpoints. Shared by every platform. **Reader Dashboard is part of core**: when it's ready, its tokens (Dashboard Typography, its breakpoints and so on) are added here under a `dashboard` group, not as a separate layer. |
 | Themes | `tokens/themes/` | One file per theme (Bold Coastal, Measured Vibrant, Modern Earthy), sub-theme (Denver Post, NEPA-PMP, 21C Michigan…) and the site overrides, plus `mng.resolver.json` that says how they stack: theme → sub-theme → site. |
 | Sites | `tokens/sites/` | One file per publication (every site in the cluster audit), each color value resolved for that site (site override → sub-theme → theme), with the site's cluster, theme, sub-theme and production fixes in `$extensions.com.mng`. `index.json` lists them theme → cluster → sub-theme → site. Generated; the theme files and resolver stay the source. |
 | WordPress | `tokens/wordpress/` | The WordPress Elements sub-system: editorial type styles (`Editorial/...`), theme type tokens (`font.theme.*`, eyebrow), layout and container widths, ad slot sizes, homepage block tokens, WordPress-specific breakpoints. |
@@ -224,13 +259,14 @@ Built from the DTCG files by `scripts/build-tokens/`. **Never edited by hand.** 
 | `dist/scss/` | WordPress themes using Sass | The same values as Sass variables and maps. |
 | `dist/js/` | React and other JS | ES module + TypeScript types (`tokens.js`, `tokens.d.ts`). |
 | `dist/tailwind/` | Tailwind | v4 `@theme` CSS file and a v3 preset (`tailwind.preset.js`). |
-| `dist/wordpress/` | WordPress block themes | `theme.json` fragments: color palette, font sizes, font families, spacing sizes and custom values, one per theme. |
+| `dist/wordpress/` | WordPress block themes | `theme.json` fragments: color palette, font sizes, font families, spacing sizes, shadow presets and custom values, one per theme. |
 | `dist/json/` | Anything else | Flat `name → value` JSON (hex, rgba, px). |
 
 - `dist/` is also a package: a `package.json` at the repo top level with `exports`, so Vite, webpack or any Node build can install it straight from GitHub (`npm install github:kuscholdMNG/mng_web_ds`) and import `mng_web_design_system/css/core.css`, `.../js/tokens.js` or `.../tailwind/theme.css`. The Tailwind v4 file works with Tailwind's Vite plugin as is.
 - CSS variable names: `--mng-` + the token path with hyphens (`--mng-color-theme-primary`, `--mng-font-size-16-5`, `--mng-spacing-200`).
 - Colors are written as hex when alpha is 1, and as `rgba()` when it's below 1.
 - Sizes are written in `px`, with `rem` versions where the format supports them.
+- Shadows are complete `box-shadow` values (§3.5).
 
 ## 9. Legacy exports
 

@@ -99,6 +99,11 @@ export declare const core: {
     utility: string;
     lg: string;
   };
+  shadow: {
+    sm: string;
+    md: string;
+    lg: string;
+  };
   breakpoint: {
     fold: string;
     mobile: string;

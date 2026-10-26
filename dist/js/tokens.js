@@ -100,6 +100,11 @@ export const core = {
     "utility": "5px",
     "lg": "8px"
   },
+  "shadow": {
+    "sm": "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+    "md": "0px 4px 8px 0px rgba(0, 0, 0, 0.2)",
+    "lg": "0px 8px 16px 0px rgba(0, 0, 0, 0.2)"
+  },
   "breakpoint": {
     "fold": "340px",
     "mobile": "360px",
@@ -1991,6 +1996,9 @@ export const cssVars = {
   "radius.sm": "var(--mng-radius-sm)",
   "radius.utility": "var(--mng-radius-utility)",
   "radius.lg": "var(--mng-radius-lg)",
+  "shadow.sm": "var(--mng-shadow-sm)",
+  "shadow.md": "var(--mng-shadow-md)",
+  "shadow.lg": "var(--mng-shadow-lg)",
   "breakpoint.fold": "var(--mng-breakpoint-fold)",
   "breakpoint.mobile": "var(--mng-breakpoint-mobile)",
   "breakpoint.tablet": "var(--mng-breakpoint-tablet)",

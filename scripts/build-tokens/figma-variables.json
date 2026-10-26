@@ -1,5 +1,5 @@
 {
- "$description": "Snapshot of the MNG Web Design System Figma variables (file jFHYqhZbJjvWQmDI4myCsd), read 2026-10-14 (Colors updated 2026-10-19: East Bay Times mode became Daily Herald, The Mercury News mode renamed The Mercury News + East Bay Times; checked against Figma by hash) with scripts/build-tokens/extract.js through the Desktop Bridge plugin. Input for make-tokens.py. Dashboard Typography is not included yet (Reader Dashboard tokens are added to core when ready).",
+ "$description": "Snapshot of the MNG Web Design System Figma variables (file jFHYqhZbJjvWQmDI4myCsd), read 2026-10-14 (Colors updated 2026-10-19: East Bay Times mode became Daily Herald, The Mercury News mode renamed The Mercury News + East Bay Times; checked against Figma by hash) with scripts/build-tokens/extract.js through the Desktop Bridge plugin. Input for make-tokens.py. Dashboard Typography is not included yet (Reader Dashboard tokens are added to core when ready). Effect styles shadow/sm, md and lg read 2026-10-26 (effectStyles).",
  "file": "jFHYqhZbJjvWQmDI4myCsd",
  "read": "2026-10-19",
  "collections": {
@@ -2744,5 +2744,46 @@
     ]
    }
   ]
+ },
+ "effectStyles": {
+  "shadow/sm": {
+   "type": "DROP_SHADOW",
+   "offsetX": 0,
+   "offsetY": 4,
+   "blur": 4,
+   "spread": 0,
+   "color": "#000000@0.25",
+   "bound": {
+    "radius": "spacing/050",
+    "offsetY": "spacing/050"
+   },
+   "description": "Sticky bars (not mastheads; see WordPress Elements shadow/masthead). 0 4px 4px 0, black 25%. Offset y spacing/050, blur spacing/050. Added 2026-10-23 (Karl, option A)."
+  },
+  "shadow/md": {
+   "type": "DROP_SHADOW",
+   "offsetX": 0,
+   "offsetY": 4,
+   "blur": 8,
+   "spread": 0,
+   "color": "#000000@0.2",
+   "bound": {
+    "radius": "spacing/100",
+    "offsetY": "spacing/050"
+   },
+   "description": "Cards that sit on the page (e.g. obituary cards). 0 4px 8px 0, black 20%. Offset y spacing/050, blur spacing/100. Added 2026-10-23 (Karl, option A)."
+  },
+  "shadow/lg": {
+   "type": "DROP_SHADOW",
+   "offsetX": 0,
+   "offsetY": 8,
+   "blur": 16,
+   "spread": 0,
+   "color": "#000000@0.2",
+   "bound": {
+    "radius": "spacing/200",
+    "offsetY": "spacing/100"
+   },
+   "description": "Anything floating over the page: modals (including panels fixed to the bottom of the screen), dropdowns, menus, tooltips. 0 8px 16px 0, black 20%. Offset y spacing/100, blur spacing/200. Added 2026-10-23 (Karl, option A)."
+  }
  }
 }

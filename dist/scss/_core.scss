@@ -62,6 +62,9 @@ $mng-spacing-300: 24px;
 $mng-radius-sm: 4px;
 $mng-radius-utility: 5px;
 $mng-radius-lg: 8px;
+$mng-shadow-sm: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+$mng-shadow-md: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+$mng-shadow-lg: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 $mng-breakpoint-fold: 340px;
 $mng-breakpoint-mobile: 360px;
 $mng-breakpoint-tablet: 768px;
@@ -132,6 +135,9 @@ $mng-core: (
   "radius-sm": $mng-radius-sm,
   "radius-utility": $mng-radius-utility,
   "radius-lg": $mng-radius-lg,
+  "shadow-sm": $mng-shadow-sm,
+  "shadow-md": $mng-shadow-md,
+  "shadow-lg": $mng-shadow-lg,
   "breakpoint-fold": $mng-breakpoint-fold,
   "breakpoint-mobile": $mng-breakpoint-mobile,
   "breakpoint-tablet": $mng-breakpoint-tablet,

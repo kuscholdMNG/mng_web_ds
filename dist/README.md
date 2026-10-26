@@ -11,8 +11,10 @@ Rebuild: `python3 scripts/build-tokens/make-tokens.py && python3 scripts/build-t
 | `scss/` | The same values as Sass variables and maps (`_core.scss`, `themes/_<key>.scss`, `_wordpress.scss`, `sites/_<domain>.scss`). |
 | `js/` | `tokens.js` (ES module: `core`, `wordpress`, `themes`, `sites`, `cssVars`) and `tokens.d.ts`. |
 | `tailwind/` | `theme.css` for Tailwind v4 (`@theme`); `tailwind.preset.js` (ESM) / `.cjs` for Tailwind v3. |
-| `wordpress/` | `<key>.theme.json`: theme.json v3 fragments (palette, font families and sizes, spacing, custom values). |
+| `wordpress/` | `<key>.theme.json`: theme.json v3 fragments (palette, font families and sizes, spacing, shadow presets, custom values). |
 | `json/` | Flat `name -> value` (hex, rgba, px, rem): `core.json`, `wordpress.json`, `themes/<key>.json` (everything resolved for that theme), `sites/<domain>.json` (one per publication: its resolved colors), `sites.json` (all publications: theme, CSS files and resolved colors). |
 
 CSS variables are `--mng-` + the token path (`--mng-color-theme-primary`, `--mng-font-size-16-5`, `--mng-spacing-200`).
 Sizes are px, with a `-rem` twin (16px base). Colors are hex, with an `-rgb` twin (`0 117 128`) for `rgb(var(...) / 50%)`.
+Shadows are complete `box-shadow` values (`--mng-shadow-lg`); in CSS their offsets and blur stay `var(--mng-spacing-*)`.
+Tailwind: `shadow-mng-sm` / `-md` / `-lg` (prefixed so Tailwind's own `shadow-sm` etc. still work).

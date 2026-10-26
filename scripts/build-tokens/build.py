@@ -13,7 +13,7 @@ Outputs  dist/ (overwritten; never edit by hand)
 
 Checks (the build stops on any of them): unresolved or circular references, a layer referencing a layer
 below it (core -> themes/wordpress, themes -> wordpress), a color whose components / rgba / hex8 don't
-match its hex, a missing $type.
+match its hex, a shadow missing a part or whose rgba doesn't match its color, a missing $type.
 
 Run from the repo top:  python3 scripts/build-tokens/build.py      Stdlib only.
 """
@@ -70,7 +70,8 @@ def tokens_of(files):
     return merged
 
 CORE_FILES = [os.path.join(ROOT, 'tokens/core', f) for f in
-              ('color.tokens.json', 'typography.tokens.json', 'spacing.tokens.json', 'breakpoint.tokens.json')]
+              ('color.tokens.json', 'typography.tokens.json', 'spacing.tokens.json', 'shadow.tokens.json',
+               'breakpoint.tokens.json')]
 WP_FILES = [os.path.join(ROOT, 'tokens/wordpress', f) for f in ('typography-editorial.tokens.json', 'breakpoint.tokens.json')]
 resolver = load(os.path.join(ROOT, 'tokens/themes/mng.resolver.json'))
 RES_DIR = os.path.join(ROOT, 'tokens/themes')
@@ -104,6 +105,17 @@ def check_color(name, t):
     if a < 1 and t['ext'].get('hex8') != h + '%02x' % round(a * 255):
         errors.append('%s: hex8 does not match hex + alpha' % name)
 
+SHADOW_PARTS = ('color', 'offsetX', 'offsetY', 'blur', 'spread')
+
+def check_shadow(name, t):
+    v = t['value']
+    missing = [k for k in SHADOW_PARTS if k not in v]
+    if missing:
+        errors.append('%s: shadow is missing %s' % (name, ', '.join(missing))); return
+    c = v['color']
+    if isinstance(c, dict):
+        check_color(name + '.color', {'value': c, 'ext': {'rgba': t['ext'].get('rgba'), 'hex8': t['ext'].get('hex8')}})
+
 def refs_in(v):
     if isinstance(v, str):
         m = REF.match(v)
@@ -118,6 +130,8 @@ def check_set(toks, label):
     for name, t in toks.items():
         if t['type'] == 'color':
             check_color(name, t)
+        if t['type'] == 'shadow':
+            check_shadow(name, t)
         for r in refs_in(t['value']):
             if r not in toks:
                 errors.append('%s [%s]: reference {%s} does not resolve' % (name, label, r))
@@ -161,7 +175,14 @@ def fmt_family(v):
         v = [v]
     return ', '.join(f if f in ('serif', 'sans-serif', 'monospace') else '"%s"' % f for f in v)
 
+def fmt_shadow(v):
+    """A resolved DTCG shadow -> CSS box-shadow: offset-x offset-y blur spread color."""
+    parts = [fmt_dim(v[k]) for k in ('offsetX', 'offsetY', 'blur', 'spread')] + [fmt_color(v['color'])]
+    return ('inset ' if v.get('inset') else '') + ' '.join(parts)
+
 def fmt_literal(t_type, v):
+    if t_type == 'shadow':
+        return fmt_shadow(v)
     if t_type == 'color':
         return fmt_color(v)
     if t_type == 'dimension':
@@ -200,6 +221,12 @@ def css_decls(toks, names, with_rem=True):
                 lines.append('  %s-line-height-px: %spx;' % (css_name(n), num(t['ext']['lineHeightPx'])))
             lines.append('  %s-font: var(%s-font-weight) var(%s-font-size)/var(%s-line-height) var(%s-font-family);'
                          % ((css_name(n),) * 5))
+            continue
+        if t['type'] == 'shadow':  # keep spacing references as var() so the shadow follows the spacing tokens
+            v = t['value']
+            parts = [css_value(toks, 'dimension', v[k]) for k in ('offsetX', 'offsetY', 'blur', 'spread')]
+            parts.append(css_value(toks, 'color', v['color']))
+            lines.append('  %s: %s%s;' % (css_name(n), 'inset ' if v.get('inset') else '', ' '.join(parts)))
             continue
         lines.append('  %s: %s;' % (css_name(n), css_value(toks, t['type'], t['value'])))
         if with_rem and t['type'] == 'dimension' and isinstance(t['value'], dict) and rem(t['value']) and not n.startswith('breakpoint'):
@@ -488,6 +515,8 @@ for n in core_names:
         tw.append('  --spacing-%s-%s: %s;' % (PREFIX, tw_key(n, 'spacing.'), rem(resolve(core, t['value']))))
     elif n.startswith('radius.'):
         tw.append('  --radius-%s: %s;' % (tw_key(n, 'radius.'), val))
+    elif n.startswith('shadow.'):  # prefixed so Tailwind's own shadow-sm/md/lg keep working: shadow-mng-lg
+        tw.append('  --shadow-%s-%s: %s;' % (PREFIX, tw_key(n, 'shadow.'), val))
     elif n.startswith('breakpoint.'):
         tw.append('  --breakpoint-%s: %s;' % (tw_key(n, 'breakpoint.'), rem(resolve(core, t['value']))))
 for n in wp_names:
@@ -511,7 +540,7 @@ write('tailwind/theme.css', '\n'.join(tw))
 
 # ---------- Tailwind v3 ----------
 def v3_theme():
-    colors, fam, size, weight, spacing, radius, screens = {}, {}, {}, {}, {}, {}, {}
+    colors, fam, size, weight, spacing, radius, screens, shadow = {}, {}, {}, {}, {}, {}, {}, {}
     for n in core_names:
         t = core[n]
         rv = resolve(core, t['value'])
@@ -529,6 +558,8 @@ def v3_theme():
             spacing['%s-%s' % (PREFIX, p[1])] = val
         elif p[0] == 'radius':
             radius[p[1]] = val
+        elif p[0] == 'shadow':
+            shadow['%s-%s' % (PREFIX, p[1])] = val
         elif p[0] == 'breakpoint':
             screens[p[1]] = val
     for n in wp_names:
@@ -538,7 +569,8 @@ def v3_theme():
     for n in sorted({n for k in theme_keys for n in theme_own(k) if n.startswith('font.theme.') and n.endswith('family')}):
         fam['theme-' + tw_key(n, 'font.theme.').replace('-family', '')] = ['var(%s)' % css_name(n)]
     return {'theme': {'extend': {'colors': colors, 'fontFamily': fam, 'fontSize': size, 'fontWeight': weight,
-                                 'spacing': spacing, 'borderRadius': radius, 'screens': screens}}}
+                                 'spacing': spacing, 'borderRadius': radius, 'boxShadow': shadow,
+                                 'screens': screens}}}
 preset = js_obj(v3_theme())
 note = '// MNG Web Design System preset for Tailwind v3: presets: [mngPreset]. %s\n' \
        '// Theme colors read the runtime CSS variables: also load css/core.css and one css/themes/<key>.css.\n' % HEADER
@@ -572,6 +604,8 @@ def theme_json(k):
             custom['breakpoint']['-'.join(p[1:])] = resolved_literal(toks, 'dimension', toks[n]['value'])
         elif p[:2] == ['font', 'weight']:
             custom['font-weight'][p[2]] = resolved_literal(toks, 'fontWeight', toks[n]['value'])
+    shadows = [{'slug': n.split('.')[-1], 'name': {'sm': 'Small', 'md': 'Medium', 'lg': 'Large'}.get(n.split('.')[-1], n.split('.')[-1]),
+                'shadow': resolved_literal(toks, 'shadow', toks[n]['value'])} for n in core_names if n.startswith('shadow.')]
     for n in theme_own(k):
         if n.startswith('font.theme.') and not n.endswith('family'):
             custom.setdefault('font-theme', {})[n.split('.')[-1]] = resolved_literal(toks, toks[n]['type'], toks[n]['value'])
@@ -580,6 +614,7 @@ def theme_json(k):
             'settings': {'color': {'palette': palette},
                          'typography': {'fontFamilies': fams, 'fontSizes': sizes},
                          'spacing': {'spacingSizes': spacing},
+                         'shadow': {'defaultPresets': False, 'presets': shadows},
                          'custom': custom}}
 for k in theme_keys:
     write('wordpress/%s.theme.json' % k, dump(theme_json(k)))
@@ -597,11 +632,13 @@ Rebuild: `python3 scripts/build-tokens/make-tokens.py && python3 scripts/build-t
 | `scss/` | The same values as Sass variables and maps (`_core.scss`, `themes/_<key>.scss`, `_wordpress.scss`, `sites/_<domain>.scss`). |
 | `js/` | `tokens.js` (ES module: `core`, `wordpress`, `themes`, `sites`, `cssVars`) and `tokens.d.ts`. |
 | `tailwind/` | `theme.css` for Tailwind v4 (`@theme`); `tailwind.preset.js` (ESM) / `.cjs` for Tailwind v3. |
-| `wordpress/` | `<key>.theme.json`: theme.json v3 fragments (palette, font families and sizes, spacing, custom values). |
+| `wordpress/` | `<key>.theme.json`: theme.json v3 fragments (palette, font families and sizes, spacing, shadow presets, custom values). |
 | `json/` | Flat `name -> value` (hex, rgba, px, rem): `core.json`, `wordpress.json`, `themes/<key>.json` (everything resolved for that theme), `sites/<domain>.json` (one per publication: its resolved colors), `sites.json` (all publications: theme, CSS files and resolved colors). |
 
 CSS variables are `--mng-` + the token path (`--mng-color-theme-primary`, `--mng-font-size-16-5`, `--mng-spacing-200`).
 Sizes are px, with a `-rem` twin (16px base). Colors are hex, with an `-rgb` twin (`0 117 128`) for `rgb(var(...) / 50%%)`.
+Shadows are complete `box-shadow` values (`--mng-shadow-lg`); in CSS their offsets and blur stay `var(--mng-spacing-*)`.
+Tailwind: `shadow-mng-sm` / `-md` / `-lg` (prefixed so Tailwind's own `shadow-sm` etc. still work).
 """ % HEADER)
 
 print('dist/ built: %d core tokens, %d wordpress tokens, %d themes, %d per-site color files, %d publications'

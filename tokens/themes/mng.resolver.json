@@ -15,6 +15,9 @@
           "$ref": "../core/spacing.tokens.json"
         },
         {
+          "$ref": "../core/shadow.tokens.json"
+        },
+        {
           "$ref": "../core/breakpoint.tokens.json"
         }
       ]
