@@ -1957,6 +1957,27 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 
 **Fix:** center the notch (for example `transform: translate(-50%, -50%) rotate(-45deg)` with `top: 0`), fill it with the gray/600 value (#F1EFEB) and use the gray/500 value (#CCCAC7) for the rule and the notch edges.
 
+## 36. Zone 1 slideshow (gallery lead) — type, spacing and colors off the design tokens
+
+**Found:** 2026-10-26, on develop.denverpost.com (Zone 1 lead that is a photo gallery: `article.slideshow.feature-large > .article-slideshow`, the mng-gallery slider), checked at about 1465, 768 and 360px. **Team:** CMS.
+
+Design: WordPress Elements ▸ Homepage ▸ **Zone 1 Slideshow** (`3640:50278`), used by Zone 1 Lead Article Card, Gallery=Slideshow.
+
+| Property | Production | Design |
+|---|---|---|
+| Slide count and caption size | 13px on desktop; 11.375px below (0.8125em of a 14px base) | `font/size/13` on Desktop; `font/size/11` below 1024px |
+| Line height | 130% (16.9px / 14.79px) | auto |
+| Slide count color | `#0A0908` | `color/gray/black` |
+| Caption color | `#5D5B5A` | `color/gray/200` (#5E5D5C) |
+| Credit color | `#9D9A98` (2.7:1, fails WCAG AA) | `color/gray/200` (closest gray that passes) |
+| Caption block padding | desktop 13.93 top, 9.29 bottom; below: 12.19 / 8.13 | 12 top (`spacing/150`); bottom 16 desktop (`spacing/200`, with the caption's 6.5 margin) / 12 below (`spacing/150`) |
+| Space between credit, count and caption | 5.5 / 6.5px desktop; 5.7px below | 8px desktop (`spacing/100`); 4px below (`spacing/050`) |
+| Rule under the caption | `3px solid #D7D6D2` | 3px `color/gray/500` (#CCCAC7) |
+| Space below the slideshow | 13.8px desktop; 12.1px below | 12px (`spacing/150`) |
+| Arrows | `#0A0908` at 75% opacity; icon 30px (26.25px below desktop) | `color/gray/black` at 75%; icon 30px / 26px |
+
+**Fix:** use the design's token values for the slideshow type, colors and spacing.
+
 ## Notes
 
 **Reading live colors:** read themed CSS variables such as `--primary` on `document.querySelector('#page')`, not on `document.documentElement`. The WordPress Customizer's per-site override is scoped to `#page`, so reading at `:root` only shows the theme default.
