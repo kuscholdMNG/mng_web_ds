@@ -127,14 +127,14 @@ When the featured story (`.fy-lead`) is a photo gallery, production doesn't show
 - Image area: 16:9 (`aspect-ratio:16/9`), no background; the photo is `object-fit:contain`, centered (letterboxed).
 - Arrows:
   - **Look:** `<button type="button" aria-label="Previous">` and `aria-label="Next"`, absolutely positioned at the left and right edges of the image area and vertically centered. Background #000000 (color/gray/black) at `opacity:.75`; no border; the icomoon arrow-left (U+E906) and arrow-right (U+E907) icons in #FFFFFF (color/gray/max).
-  - **Size:** 40×60px with a 30px icon above 1039px; 35×53px with a 26px icon at ≤1039px.
+  - **Size:** 40×60px with a 30px icon at 800px and up; 35×53px with a 26px icon below 800px (`@container page (max-width:799px)`). The controls use production's 800px breakpoint, not the layout breakpoints.
   - **States:** hover changes nothing (cursor pointer). Focus-visible: `outline:2px solid #FFFFFF; outline-offset:3px`.
   - **Behavior:** the gallery loops (Previous on the first photo goes to the last). Also support swipe/drag on the image. No dots, no autoplay.
 - Caption block, under the image:
-  - **Spacing:** padding 12px top (spacing/150); bottom 16px above 1039px (spacing/200), 12px at ≤1039px (spacing/150); 8px between lines above 1039px (spacing/100), 4px at ≤1039px (spacing/050).
+  - **Spacing:** padding 12px top (spacing/150); bottom 16px at 800px and up (spacing/200), 12px below 800px (spacing/150); 8px between lines at 800px and up (spacing/100), 4px below 800px (spacing/050).
   - **Rule:** `border-bottom:3px solid #CCCAC7` (color/gray/500).
-  - **Slide count**, e.g. "1 of 5", updated on every change: `font:700 13px/normal 'Noto Sans',sans-serif` (11px at ≤1039px), color #000000 (color/gray/black). Give it `aria-live="polite"` so the change is announced.
-  - **Caption:** `font:400 13px/normal 'Noto Sans',sans-serif` (11px at ≤1039px), color #5E5D5C (color/gray/200).
+  - **Slide count**, e.g. "1 of 5", updated on every change: `font:700 13px/normal 'Noto Sans',sans-serif` (11px below 800px), color #000000 (color/gray/black). Give it `aria-live="polite"` so the new count is announced (required; production doesn't do this yet, design-vs-production entry 37).
+  - **Caption:** `font:400 13px/normal 'Noto Sans',sans-serif` (11px below 800px), color #5E5D5C (color/gray/200).
   - **No photo credit line** (it's optional and off by default in the design system).
 - 12px (spacing/150) below the slideshow, then the featured story's existing bottom spacing and rule.
 - Check at 340, 360, 768, 1024 and 1280 that the arrows stay inside the page and nothing overflows.

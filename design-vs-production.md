@@ -1959,13 +1959,13 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 
 ## 36. Zone 1 slideshow (gallery lead) — type, spacing and colors off the design tokens
 
-**Found:** 2026-10-26, on develop.denverpost.com (Zone 1 lead that is a photo gallery: `article.slideshow.feature-large > .article-slideshow`, the mng-gallery slider), checked at about 1465, 768 and 360px. **Team:** CMS.
+**Found:** 2026-10-26, on develop.denverpost.com (Zone 1 lead that is a photo gallery: `article.slideshow.feature-large > .article-slideshow`, the mng-gallery slider), checked at about 1465, 768 and 360px. **Team:** CMS. The controls (arrows, count and caption size) switch at production's 800px (`max-width: 49.9375em`); the design uses the same breakpoint.
 
 Design: WordPress Elements ▸ Homepage ▸ **Zone 1 Slideshow** (`3640:50278`), used by Zone 1 Lead Article Card, Gallery=Slideshow.
 
 | Property | Production | Design |
 |---|---|---|
-| Slide count and caption size | 13px on desktop; 11.375px below (0.8125em of a 14px base) | `font/size/13` on Desktop; `font/size/11` below 1024px |
+| Slide count and caption size | 13px at 800px and up; 11.375px below (0.8125em of the 14px base `.article-slideshow` gets at `max-width: 49.9375em`) | `font/size/13` at 800px and up; `font/size/11` below (same 800px breakpoint as production) |
 | Line height | 130% (16.9px / 14.79px) | auto |
 | Slide count color | `#0A0908` | `color/gray/black` |
 | Caption color | `#5D5B5A` | `color/gray/200` (#5E5D5C) |
@@ -1977,6 +1977,14 @@ Design: WordPress Elements ▸ Homepage ▸ **Zone 1 Slideshow** (`3640:50278`),
 | Arrows | `#0A0908` at 75% opacity; icon 30px (26.25px below desktop) | `color/gray/black` at 75%; icon 30px / 26px |
 
 **Fix:** use the design's token values for the slideshow type, colors and spacing.
+
+## 37. Zone 1 slideshow — slide count isn't announced to screen readers (required)
+
+**Found:** 2026-10-26, on develop.denverpost.com (Zone 1 gallery lead, `.article-slideshow`). **Team:** CMS. **Required update (Karl, 2026-10-26).**
+
+When the previous / next buttons change the photo, the "1 of 29" count (`.slide-count`) updates visually, but nothing tells a screen reader user which photo they're on: the count and caption container have no `aria-live`.
+
+**Fix:** add `aria-live="polite"` to `.slide-count` (or to `.mng-gallery-information-container`, so the caption is read too), so the new count is announced after each change. Design: WordPress Elements ▸ Homepage ▸ Zone 1 Slideshow (`3640:50278`) and the For You prototype prompt, section 10.
 
 ## Notes
 
