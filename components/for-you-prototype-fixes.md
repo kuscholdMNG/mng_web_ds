@@ -80,7 +80,12 @@ Use the production Load More (the same rule as production's `.load-more` / `.sho
 
 - Remove the old `.lm` padding (16px 0 8px) so the 40px above and below comes from the button. It's the same at every width; don't add breakpoints.
 
-## 6. Non-subscriber CTA panel (reuse the Reader Dashboard "subscribe" panel)
+## 6. Article rows on phones, and the gallery badge
+
+- Article rows (`.row`) at ≤639px: the image is 90×54 (5:3), pinned to the top-left of the row, with white space below it; it no longer stretches to the row's height. Change `.row{grid-template-columns:120px …}` to 90px and give `.row .img` `height:54px; min-height:0; align-self:start` in the ≤639px query. At 640px and up nothing changes (220px wide, filling the row height, minimum 132px).
+- Gallery articles get a badge on their image (cards, rows): a 28px black circle with the white `slideshow` icon (16px), 6px in from the image's bottom-right corner. Only show it when the article is a photo gallery; the sample data can mark one card and one row as galleries.
+
+## 7. Non-subscriber CTA panel (reuse the Reader Dashboard "subscribe" panel)
 
 Replace the `.cta` block with the MNG Web Design System InLineMessage panel used by Reader Dashboard for locked features (Figma: In-Line Content Containers ▸ InLineMessage, Priority=Medium, Location=DashSubsNonSub, PanelType=Alert).
 
@@ -99,13 +104,13 @@ Styles:
 - Button: centered under the description, at its natural width.
 - Keep the panel's spacing from the content above and below as it is now.
 
-## 7. Welcome to For You modal (one small fix)
+## 8. Welcome to For You modal (one small fix)
 
 The modal (`.mc`) already matches the MNG Web Design System ModalsCenter: 444px card (24px narrower than the viewport on phones), 8px radius, 1px gray/300 border, shadow 0 8px 16px rgba(0,0,0,.2) (shadow/lg), 40/40/24 padding (24 at ≤639px), 16px gaps, 20px Bold title and 16px subtitle, the bordered body box (gray/500, 4px radius, 24px padding, 16px at ≤639px), the centered primary button, the round close button (32px, gray/600 with a gray/400 edge; white with a gray/500 edge on hover), and the 50% black backdrop.
 
 - Change the card border color from #83827F to #838280 (the exact color/gray/300 value).
 - Keep the `info` icon in the header (ModalsCenter's sample uses `notification`; the icon is content and can change).
 
-## 8. Article timestamp (already done 2026-10-23)
+## 9. Article timestamp (already done 2026-10-23)
 
 - `.tm` is `font: 400 13px/normal 'Noto Sans', sans-serif` (was 12px/16px), matching production's card meta. No change needed; listed so the prompt is complete.
