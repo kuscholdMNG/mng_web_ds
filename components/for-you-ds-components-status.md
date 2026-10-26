@@ -234,6 +234,11 @@ Still to do, in order (Karl, 2026-10-23: finish the For You components first, th
 4. **Export** with the shared exporter (`scripts/component-export/`, `registry.json`), per `EXPORT-STANDARD.md`. First WordPress Elements export, so `components/wordpress/` gets created.
 5. **Prototype fixes prompt:** `components/for-you-prototype-fixes.md` gets a section for each component; Karl runs it in the For You Tab MVP project once it's complete.
 
+## Come back to (Karl)
+
+- **Narrow For You rows** (Horizontal Thumbnail Card, Style=For You, Device=Mobile, `3628:44666`): 90×54 image pinned top-left (2026-10-26). Revisit after the rest of the cleanup: Karl wants to see this version in the prototype (prototype prompt section 6) before deciding. Alternatives: Standard's exact 90×51, or 120×72.
+- **Card hover state** (1Col and Horizontal Thumbnail, Style=For You): parked 2026-10-23.
+
 ## Cleanup before export
 
 Everything touched for the For You tab, by library. Check each item, then add the component to `scripts/component-export/registry.json`.
