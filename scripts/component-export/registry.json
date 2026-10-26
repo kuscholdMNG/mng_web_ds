@@ -320,6 +320,29 @@
         "Style=For You: hover state not built yet (parked)."
       ],
       "production": null
+    },
+    {
+      "slug": "zone-1-lead-article-card",
+      "name": "Zone 1 Lead Article Card",
+      "group": "cards",
+      "layer": "wordpress",
+      "order": 3,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3336:46157",
+      "documentationFrame": "3484:67601",
+      "description": "The homepage Zone 1 lead story. Style=Standard (production lead with Related list) and Style=For You (the For You tab featured story).",
+      "rules": [
+        "**Style=For You:** Article Section Kicker 4px (`spacing/050`) above the headline; no subscriber badge or Related list; byline after the excerpt (Article Author and Article Timestamp side by side, 12px `spacing/150` apart, 12px above).",
+        "**Headline and excerpt:** same tokens as Style=Standard (Noto Serif Bold 29/33, −0.87px at 640px and up; 25/29, −0.03em below; excerpt Noto Sans 15/19 `color/gray/100`, 4px below the headline group on Desktop and Tablet, as in production).",
+        "**Layout:** Desktop and Tablet are two columns (text, then image; 20px and 32px apart); Mobile is one column (headline group, image, excerpt, byline; 8px gaps) with a 1px bottom rule 20px below the byline.",
+        "**Gallery Icon Badge** (`Show Gallery Icon`, both styles, off by default, Karl 2026-10-26): 28px, 6px in from the image's bottom-right corner. Production supports a gallery badge on featured stories (`.feature-large .icon-slideshow`)."
+      ],
+      "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| Mobile | below 640px | One column; 25/29 headline |\n| Tablet | 640px and up (768 template) | Two columns, 32px apart |\n| Desktop | 1024px and up | Two columns, 20px apart (text 295, image 391) |",
+      "knownIssues": [
+        "Tablet: the image (391px) is wider than its 358px column (both styles).",
+        "Column gaps 20px (spacing/250) and 32px (no token) are raw values."
+      ],
+      "production": "Production `.feature-primary .feature-large` (Zone 1 lead)."
     }
   ]
 }
