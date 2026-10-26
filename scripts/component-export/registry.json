@@ -358,11 +358,12 @@
         "**Image area:** 16:9 (Desktop 356×200, Tablet 358×201, Mobile 340×191); the photo is letterboxed and centered with no background.",
         "**Arrows:** previous and next, 40×60 on Desktop and 35×53 below 1024px, `color/gray/black` at 75% opacity, arrow-left / arrow-right icons in `color/gray/max` (30px; 26px below 1024px), vertically centered at the image area's edges.",
         "**Text:** credit (optional) Noto Sans Bold 11 `color/gray/200`; slide count Noto Sans Bold `color/gray/black`; caption Noto Sans Regular `color/gray/200`. Count and caption `font/size/13` on Desktop, `font/size/11` below 1024px; line height auto.",
-        "**Caption block:** 12px top (`spacing/150`); 8px between lines and 16px bottom on Desktop (`spacing/100`, `spacing/200`); 4px and 12px below 1024px (`spacing/050`, `spacing/150`); 3px `color/gray/500` rule along the bottom. 12px (`spacing/150`) below the slideshow."
+        "**Caption block:** 12px top (`spacing/150`); 8px between lines and 16px bottom on Desktop (`spacing/100`, `spacing/200`); 4px and 12px below 1024px (`spacing/050`, `spacing/150`); 3px `color/gray/500` rule along the bottom. 12px (`spacing/150`) below the slideshow.",
+        "**Arrow states** (Slideshow Arrow set `3641:50772`: Direction × Size × State): hover has no visual change (production sets the same colors; pointer cursor). Keyboard focus (`:focus-visible`): 2px `color/gray/max` outline 3px outside the button, at the button's 75% opacity. Buttons have `aria-label` \"Previous\" / \"Next\".",
+        "**Behavior:** the gallery loops (Previous on slide 1 goes to the last slide), so production's disabled style (20% opacity) never shows. The image strip can be dragged or swiped. No dots or autoplay."
       ],
       "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| Mobile | below 640px | 340 wide; 11px text, 35×53 arrows |\n| Tablet | 640–1023px | Fills the 358 column; 11px text, 35×53 arrows |\n| Desktop | 1024px and up | 356 wide; 13px text, 40×60 arrows |",
       "knownIssues": [
-        "Arrow hover and focus states and swipe behavior not captured yet.",
         "Production type, spacing and colors are off-token: design-vs-production entry 36."
       ],
       "production": "Production `article.slideshow.feature-large > .article-slideshow` (mng-gallery slider), seen on develop.denverpost.com."
