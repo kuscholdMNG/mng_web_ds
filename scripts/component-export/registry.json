@@ -363,12 +363,12 @@
         "**Caption block:** 12px top (`spacing/150`); 8px between lines and 16px bottom at 800px and up (`spacing/100`, `spacing/200`); 4px and 12px below 800px (`spacing/050`, `spacing/150`); 3px `color/gray/500` rule along the bottom. 12px (`spacing/150`) below the slideshow.",
         "**Arrow states** (Slideshow Arrow set `3641:50772`: Direction × Size × State): hover has no visual change (production sets the same colors; pointer cursor). Keyboard focus (`:focus-visible`): 2px `color/gray/max` outline 3px outside the button, at the button's 75% opacity. Buttons have `aria-label` \"Previous\" / \"Next\".",
         "**Behavior:** the gallery loops (Previous on slide 1 goes to the last slide), so production's disabled style (20% opacity) never shows. The image strip can be dragged or swiped. No dots or autoplay.",
-        "**Screen readers (required, not in production yet):** announce the slide count when the photo changes (`aria-live=\"polite\"` on the count). Design-vs-production entry 37."
+        "**Screen readers (required, not in production yet):** announce the slide count when the photo changes (`aria-live=\"polite\"` on the count). Design-vs-production entry 17.2."
       ],
       "breakpoints": "| Lead width / viewport | Layout (set by the card) | Controls (production 800px breakpoint) |\n|---|---|---|\n| Lead about 700px or wider (homepage: 640–799px, 1280px and up) | Two columns: slideshow 356 (Desktop) or filling the 358 column (Tablet) | small below 800px, large from 800px |\n| Lead narrower (homepage: below 640px, 800–1279px) | One column: slideshow full width after the text (and Related) | small below 800px, large from 800px |",
       "knownIssues": [
-        "Production type, spacing and colors are off-token: design-vs-production entry 36.",
-        "Production does not announce the slide count to screen readers (design-vs-production entry 37, required)."
+        "Production type, spacing and colors are off-token: design-vs-production entry 17.1.",
+        "Production does not announce the slide count to screen readers (design-vs-production entry 17.2, required)."
       ],
       "production": "Production `article.slideshow.feature-large > .article-slideshow` (mng-gallery slider), seen on develop.denverpost.com."
     },
@@ -390,7 +390,7 @@
       "layer": "wordpress",
       "file": "b1iZxkFwtAYq9rElmnCAzd",
       "documentationFrame": "3629:44928",
-      "production": "Production World Cup tabs (`ul.sr-nav-tabs > button.tab-btn`, staging.dailylocal.com/world-cup/); differences are design-vs-production entry 31."
+      "production": "Production World Cup tabs (`ul.sr-nav-tabs > button.tab-btn`, staging.dailylocal.com/world-cup/); differences are design-vs-production entry 12."
     },
     {
       "slug": "homepage-tabs",
@@ -410,7 +410,7 @@
       "layer": "wordpress",
       "file": "b1iZxkFwtAYq9rElmnCAzd",
       "documentationFrame": "3629:44928",
-      "production": "Production World Cup tabs (`ul.sr-nav-tabs > button.tab-btn`, staging.dailylocal.com/world-cup/); differences are design-vs-production entry 31."
+      "production": "Production World Cup tabs (`ul.sr-nav-tabs > button.tab-btn`, staging.dailylocal.com/world-cup/); differences are design-vs-production entry 12."
     },
     {
       "slug": "section-title-eyebrow",
@@ -434,7 +434,7 @@
       "breakpoints": null,
       "knownIssues": [
         "Letter spacing (3.5%) and the Underline title's 22px line height have no tokens (none exist yet).",
-        "Production: title color wrong and underline missing on Bold Coastal and Measured Vibrant (design-vs-production entry 12.2); title-to-underline and title-to-arrow spacing off-token (entry 38)."
+        "Production: title color wrong and underline missing on Bold Coastal and Measured Vibrant (design-vs-production entry 14); title-to-underline and title-to-arrow spacing off-token (entry 14)."
       ],
       "production": "Production `.section-highlight h2.entry-title` and `.headline-list-title` (homepage blocks, all 6 review sites)."
     },
@@ -449,7 +449,7 @@
       "documentationFrame": "3484:67739",
       "description": "Show More / Load More button below a block or feed: a rule with a notch and a centered uppercase label. Standalone, freely resizable; Label text property (\"Show More Photos\" in Photos Block, \"Load More\" on section fronts and in the For You feed).",
       "rules": [
-        "**Production values on purpose (Karl, 2026-10-23):** no component tokens. The colors below are raw hex. A tokens version (`3634:49427`) is kept only as the future target (design-vs-production entry 35, on hold); don't use it yet.",
+        "**Production values on purpose (Karl, 2026-10-23):** no component tokens. The colors below are raw hex. A tokens version (`3634:49427`) is kept only as the future target (design-vs-production entry 18, on hold); don't use it yet.",
         "**Rule:** 1px along the top, full width. Rule and notch edges are a different gray per theme: `#D7D6D2` Bold Coastal (the Figma component), `#C8C4C0` Measured Vibrant, `#DDD8D5` Modern Earthy.",
         "**Notch:** 35px `#FBFBFB` square with 1px left and bottom edges, rotated −45° and centered on the rule, about 5px right of center (as in production).",
         "**Label:** Noto Sans Bold 16 / 16, uppercase, `color/theme/primary`, centered.",
@@ -459,7 +459,7 @@
       ],
       "breakpoints": null,
       "knownIssues": [
-        "Off-token by decision: the notch sits about 5px right of center and the colors aren't tokens (design-vs-production entry 35, on hold)."
+        "Off-token by decision: the notch sits about 5px right of center and the colors aren't tokens (design-vs-production entry 18, on hold)."
       ],
       "production": "Production `.load-more` / `.show-more-videos`, every width (checked on all 6 review sites, 2026-10-27)."
     }

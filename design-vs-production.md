@@ -8,42 +8,49 @@
 
 - **Icons**
   - [1. Icon font — mismatches with the Figma icon page, dead and duplicate glyphs, and known missing icons](#1-icon-font--mismatches-with-the-figma-icon-page-dead-and-duplicate-glyphs-and-known-missing-icons)
-- **Fonts and typography**
+- **Fonts**
   - [2. Font fallbacks — Helvetica instead of the design stacks (all sites)](#2-font-fallbacks--helvetica-instead-of-the-design-stacks-all-sites)
-  - [4. Reader Dashboard — Typography (2026-09-10)](#4-reader-dashboard--typography-2026-09-10)
-  - [5. Upcoming Events (CitySpark widget) — font family](#5-upcoming-events-cityspark-widget--font-family)
-  - [6. Article breadcrumbs — label font family and text color](#6-article-breadcrumbs--label-font-family-and-text-color)
 - **Colors**
-  - [7. Color Tokens — Universal Grays and Alert colors (all three themes)](#7-color-tokens--universal-grays-and-alert-colors-all-three-themes)
-  - [8. Color Tokens — Endless Tributes (obituaries) palette](#8-color-tokens--endless-tributes-obituaries-palette)
-  - [9. Color Tokens — theme and sub-theme color fixes (every publication)](#9-color-tokens--theme-and-sub-theme-color-fixes-every-publication)
-  - [10. Component colors — Breaking News bar and Sponsored badge](#10-component-colors--breaking-news-bar-and-sponsored-badge)
-- **Components, layout, ads and breakpoints**
-  - [11. Buttons — Obituaries page CTA (Chicago Tribune, Denver Post)](#11-buttons--obituaries-page-cta-chicago-tribune-denver-post)
-  - [12. Article Card / Teaser](#12-article-card--teaser)
-  - [13. Reader Dashboard — Modal](#13-reader-dashboard--modal)
-  - [14. Reader Dashboard — Disclosure](#14-reader-dashboard--disclosure)
-  - [16. Containers, Images & Ad Units](#16-containers-images--ad-units)
-  - [17. Navigation](#17-navigation)
-  - [18. Ad Units — Homepage "Ad Blocks" slot after Blueconic/Most Popular is undersized (300×250 instead of 300×600)](#18-ad-units--homepage-ad-blocks-slot-after-blueconicmost-popular-is-undersized-300250-instead-of-300600)
-  - [19. Masthead — Top-leaderboard ad slot renders at inconsistent sizes across page types](#19-masthead--top-leaderboard-ad-slot-renders-at-inconsistent-sizes-across-page-types)
-  - [20. Masthead — Top nav bar overflows its container at the 1040–1279px (Tier 4) breakpoint](#20-masthead--top-nav-bar-overflows-its-container-at-the-10401279px-tier-4-breakpoint)
-  - [21. Masthead — Article scrolled-state headline overflows behind the bookmark/share icons](#21-masthead--article-scrolled-state-headline-overflows-behind-the-bookmarkshare-icons)
-  - [22. Masthead — Reader Dashboard shows the top nav-links row and "TRENDING:" bar, which the design explicitly excludes](#22-masthead--reader-dashboard-shows-the-top-nav-links-row-and-trending-bar-which-the-design-explicitly-excludes)
-  - [23. Video carousel ("Videos from @OCRegister") — fixed-height iframe leaves ~200px of unused blank space at narrow (340–360px) widths](#23-video-carousel-videos-from-ocregister--fixed-height-iframe-leaves-200px-of-unused-blank-space-at-narrow-340360px-widths)
-  - [24. Spacing — 10px and 14px values off the 4/8 grid](#24-spacing--10px-and-14px-values-off-the-48-grid)
-  - [25. Radius — buttons are 4px; 5px on a button is drift](#25-radius--buttons-are-4px-5px-on-a-button-is-drift)
-  - [26. Mobile adhesion — empty sticky bar shows at 1024px and up](#26-mobile-adhesion--empty-sticky-bar-shows-at-1024px-and-up)
-  - [27. Blueconic Block (Most Popular) — list spacing and item headline](#27-blueconic-block-most-popular--list-spacing-and-item-headline)
-  - [28. Reader Dashboard — breakpoints close to, but not on, the Figma screen widths (questions for DigiScrum)](#28-reader-dashboard--breakpoints-close-to-but-not-on-the-figma-screen-widths-questions-for-digiscrum)
-  - [29. Obituaries — breakpoints that don't match the WordPress grid (for the CMS team)](#29-obituaries--breakpoints-that-dont-match-the-wordpress-grid-for-the-cms-team)
-  - [30. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)](#30-breakpoints-off-the-official-sets--wordpress-themes-trust-indicators-digisubs-all-6-sites)
-  - [31. Homepage tabs (World Cup tabs) — font, colors, spacing and breakpoint off the design system](#31-homepage-tabs-world-cup-tabs--font-colors-spacing-and-breakpoint-off-the-design-system)
-  - [32. Obituaries masthead — shadow and bottom border don't match the main masthead](#32-obituaries-masthead--shadow-and-bottom-border-dont-match-the-main-masthead)
-  - [33. Masthead — nav bottom border color isn't a design token](#33-masthead--nav-bottom-border-color-isnt-a-design-token)
-  - [34. Account menu — dropdown shadow isn't the design token](#34-account-menu--dropdown-shadow-isnt-the-design-token)
-  - [35. Load More / Show More Photos — notch off center and colors off the design tokens](#35-load-more--show-more-photos--notch-off-center-and-colors-off-the-design-tokens)
-- [Notes (reading live colors, removed entries)](#notes)
+  - [3. Color Tokens — Universal Grays and Alert colors (all three themes)](#3-color-tokens--universal-grays-and-alert-colors-all-three-themes)
+  - [4. Color Tokens — Endless Tributes (obituaries) palette](#4-color-tokens--endless-tributes-obituaries-palette)
+  - [5. Color Tokens — theme and sub-theme color fixes (every publication)](#5-color-tokens--theme-and-sub-theme-color-fixes-every-publication)
+- **Spacing, radius and breakpoints**
+  - [6. Spacing — 10px and 14px values off the 4/8 grid](#6-spacing--10px-and-14px-values-off-the-48-grid)
+  - [7. Radius — buttons are 4px; 5px on a button is drift](#7-radius--buttons-are-4px-5px-on-a-button-is-drift)
+  - [8. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)](#8-breakpoints-off-the-official-sets--wordpress-themes-trust-indicators-digisubs-all-6-sites)
+- **Masthead and navigation**
+  - [9. Masthead — nav overflow, article scrolled-state headline and nav bottom border](#9-masthead--nav-overflow-article-scrolled-state-headline-and-nav-bottom-border)
+  - [10. Navigation menus — avatar, hidden duplicate links and device-class timing](#10-navigation-menus--avatar-hidden-duplicate-links-and-device-class-timing)
+  - [11. Account menu — dropdown shadow isn't the design token](#11-account-menu--dropdown-shadow-isnt-the-design-token)
+  - [12. Homepage tabs (World Cup tabs) — font, colors, spacing and breakpoint off the design system](#12-homepage-tabs-world-cup-tabs--font-colors-spacing-and-breakpoint-off-the-design-system)
+  - [13. Breaking News bar — Denver Post uses primary-lighter instead of secondary](#13-breaking-news-bar--denver-post-uses-primary-lighter-instead-of-secondary)
+- **Homepage blocks**
+  - [14. Section title (eyebrow) — color, underline and spacing don't match the design](#14-section-title-eyebrow--color-underline-and-spacing-dont-match-the-design)
+  - [15. Section Highlight block — Denver Post shows 4 headline items instead of 3](#15-section-highlight-block--denver-post-shows-4-headline-items-instead-of-3)
+  - [16. Article card / teaser — layout rules, excerpt color and image fit](#16-article-card--teaser--layout-rules-excerpt-color-and-image-fit)
+  - [17. Zone 1 slideshow (gallery lead) — type, spacing and colors off the design tokens; slide count not announced](#17-zone-1-slideshow-gallery-lead--type-spacing-and-colors-off-the-design-tokens-slide-count-not-announced)
+  - [18. Load More / Show More Photos — notch off center and colors off the design tokens](#18-load-more--show-more-photos--notch-off-center-and-colors-off-the-design-tokens)
+  - [19. Blueconic Block (Most Popular) — list spacing and item headline](#19-blueconic-block-most-popular--list-spacing-and-item-headline)
+  - [20. Video carousel ("Videos from @OCRegister") — fixed-height iframe leaves ~200px of unused blank space at narrow (340–360px) widths](#20-video-carousel-videos-from-ocregister--fixed-height-iframe-leaves-200px-of-unused-blank-space-at-narrow-340360px-widths)
+  - [21. Upcoming Events (CitySpark widget) — font family](#21-upcoming-events-cityspark-widget--font-family)
+  - [22. Sponsored content badge — needs to be fixed in production](#22-sponsored-content-badge--needs-to-be-fixed-in-production)
+- **Article page**
+  - [23. Article breadcrumbs — label font family and text color](#23-article-breadcrumbs--label-font-family-and-text-color)
+- **Obituaries**
+  - [24. Obituaries masthead — shadow and bottom border don't match the main masthead](#24-obituaries-masthead--shadow-and-bottom-border-dont-match-the-main-masthead)
+  - [25. Obituaries navigation — hamburger and "All Sections" both visible at desktop width](#25-obituaries-navigation--hamburger-and-all-sections-both-visible-at-desktop-width)
+  - [26. Obituaries page CTA button — should be Button Primary, Default (Chicago Tribune, Denver Post)](#26-obituaries-page-cta-button--should-be-button-primary-default-chicago-tribune-denver-post)
+  - [27. Obituaries — breakpoints that don't match the WordPress grid (for the CMS team)](#27-obituaries--breakpoints-that-dont-match-the-wordpress-grid-for-the-cms-team)
+- **Ads and page layout**
+  - [28. Ad slots — sizes, lazy registration, disclosure label and mobile adhesion](#28-ad-slots--sizes-lazy-registration-disclosure-label-and-mobile-adhesion)
+  - [29. Main content container width — Chicago Tribune vs. Denver Post](#29-main-content-container-width--chicago-tribune-vs-denver-post)
+- **Reader Dashboard**
+  - [30. Reader Dashboard — Typography (2026-09-10)](#30-reader-dashboard--typography-2026-09-10)
+  - [31. Reader Dashboard — Modal](#31-reader-dashboard--modal)
+  - [32. Reader Dashboard — Disclosure](#32-reader-dashboard--disclosure)
+  - [33. Reader Dashboard masthead — shows the top nav-links row and "TRENDING:" bar, which the design excludes](#33-reader-dashboard-masthead--shows-the-top-nav-links-row-and-trending-bar-which-the-design-excludes)
+  - [34. Reader Dashboard — breakpoints (questions for DigiScrum)](#34-reader-dashboard--breakpoints-questions-for-digiscrum)
+- [Notes (reading live colors, renumbering, removed entries)](#notes)
 
 ---
 
@@ -110,80 +117,7 @@ The same two stacks apply on every theme; each theme only chooses which one its 
 
 ---
 
-## 4. Reader Dashboard — Typography (2026-09-10)
-
-**Policy:** For anything specific to the Reader Dashboard, Figma is the source of truth — even where production currently differs. MNG Web Design System's `Dashboard/*` typography tokens (in the "Dashboard Typography" collection) are kept at their Figma-specified values; any place production has been found rendering something different is recorded here instead, for engineering to either fix in production or flag back to design if the production value should actually be adopted.
-
-### 4.1 Page title size — `Dashboard/Titles/PageDesktop`
-
-**Figma:** Noto Serif, **26px**, Bold (700) — matches Reader Dashboard v2.0's own Figma token (`Titles/Page (desktop, tabletH)`) exactly.
-
-**Production:** canoncitydailyrecord.com/dashboard/ (desktop width) renders this title at **36px**, via a Tailwind `lg:text-4xl` breakpoint utility class overriding the base size.
-
-**Action needed:** Reconcile production to the Figma-specified 26px, OR — if 36px is an intentional, approved change — get that confirmed with design so Figma can be updated to match and this item retired. Until then, MNG Web Design System's token stays at 26px per the policy above.
-
-**Status:** Open.
-
-### 4.2 Section Title weight — `Dashboard/Titles/SectionTitle`
-
-**Figma:** Noto Sans, 18px, Bold (700).
-
-**Production:** One live-measured instance showed weight 600 (Semi-Bold) instead of 700.
-
-**Caveat (lower confidence than 2.1):** The measured instance may have been an admin/debug panel ("MNG Debugger" / "Entitlements JWT") rather than genuine reader-facing UI.
-
-**Action needed:** Confirm on a real reader-facing Section Title instance whether it's 700 (matches Figma) or genuinely 600.
-
-**Status:** Open.
-
-### 4.3 `font/size/10` — unconfirmed in production
-
-**Figma:** Defined at 10px in Reader Dashboard v2.0's Type Primitives, carried into MNG Web Design System.
-
-**Production:** No confirmed live sighting during this audit (only canoncitydailyrecord.com/dashboard/ was checked).
-
-**Action needed:** Low priority — confirm where (if anywhere) this size is actually used live.
-
-**Status:** Open.
-
----
-
-## 5. Upcoming Events (CitySpark widget) — font family
-
-**Found:** 2026-10-07, ocregister.com (homepage `.csLayHolder` → `.cswidholder` iframe, CitySpark template).
-
-**Figma spec (source of truth):** WordPress Elements `Upcoming Events Widget` matches production's layout, sizes, spacing and colors exactly (Karl, 2026-10-07), but sets all text in **Noto Sans**, like the rest of the design system.
-
-**Production:** every text element in the widget is **Roboto Condensed**: the title "Upcoming Events" 400 20/22, the "See All Events" and "Add your event" buttons 400 12/15, the card dates 400 11, event names 700 13/14, venues 400 12/14, date-strip days 400 15/20 uppercase and dates 400 20/19.
-
-**Fix:** change the CitySpark widget template's font to Noto Sans (same sizes and weights) on every site, with whoever manages the CitySpark account.
-
----
-
-## 6. Article breadcrumbs — label font family and text color
-
-**Found:** 2026-10-08, ocregister.com article page (`.breadcrumbs` › `.breadcrumb-type-wrapper > a`, e.g. "NEWS › ENVIRONMENT • News").
-
-**Figma spec (source of truth):** WordPress Elements › Article Page › `Breadcrumbs` (`1110:19469`) matches production's sizes, spacing and colors (rebuilt 2026-10-08, Karl): crumbs Noto Sans 700 16/22 uppercase, the `arrow-right2` icon at 14px in `color/gray/500` with 5px on each side, and the label " • News" in Noto Sans 400 15.2/15.2 (`font/size/15-2`). All breadcrumb text (crumbs, bullet and label) is **`color/gray/min` (#141414)** (Karl, 2026-10-08).
-
-**Production:**
-- *Label font:* the label and its CSS-added " • " bullet have no font family set, so they render in **Helvetica** (inherited from the page default). The crumbs are Noto Sans.
-- *Text color differs across sites:* breadcrumb text (crumbs, bullet and label) is **#000000** on OC Register, Chicago Tribune and Orlando Sentinel, but **Denver Post's crumbs use its theme red #8E1024**. So some sites let breadcrumbs take a theme / site-override color and others don't.
-- *Separator arrow color differs across sites:* **#D7D6D2** on OC Register and Denver Post, **#C8C4C0** on Orlando Sentinel. Design uses `color/gray/500` (#CCCAC7), the closest gray token.
-- mcall.com and canoncitydailyrecord.com weren't checked (Chrome isn't allowed on those domains).
-
-**⚠ Decision needed: design AND dev teams together.** Should breadcrumb text be one neutral color on every site, or follow each site's theme / Customizer colors (as Denver Post's red does today)? Design's proposal (Karl, 2026-10-08): one neutral, `color/gray/min` (#141414), on every site whatever its theme or site override, so breadcrumbs don't take theme colors; the arrow is `color/gray/500` everywhere. Dev needs to confirm where Denver Post's red comes from (theme stylesheet or Customizer override) and what changing it affects. Record the agreed answer here.
-
-**Fix:**
-1. Set the label to Noto Sans (same 0.95em size, 400 weight) on every site. *Not blocked.*
-2. *Pending the decision above:* set all breadcrumb text to the agreed color on every site (proposed `color/gray/min` #141414: from #000000 on most sites, and from #8E1024 on Denver Post).
-3. *Pending the decision above:* set the separator arrow to one color on every site (proposed `color/gray/500` #CCCAC7, from #D7D6D2 / #C8C4C0).
-
-**Status:** Open. Fix 1 is ready; fixes 2 and 3 wait on the design + dev decision.
-
----
-
-## 7. Color Tokens — Universal Grays and Alert colors (all three themes)
+## 3. Color Tokens — Universal Grays and Alert colors (all three themes)
 
 **Figma spec (source of truth):** the Universal Grays (`color/gray/*`) and Alert colors (`color/feedback/*`) in the main file's Colors collection, shown in the **Grays & Alerts** block of the Bold Coastal, Modern Earthy and Measured Vibrant theme style guides on the Color Pallets page (production beside them, red-dashed where it differs). Requested again in ticket CI-14848.
 
@@ -208,7 +142,7 @@ The same two stacks apply on every theme; each theme only chooses which one its 
 
 ---
 
-## 8. Color Tokens — Endless Tributes (obituaries) palette
+## 4. Color Tokens — Endless Tributes (obituaries) palette
 
 **Figma spec (source of truth):** the 9 `color/tributes/*` variables in the main file's Colors collection (same value in every mode, because obituary pages look the same on every site), shown in the Endless Tributes style guide on the Color Pallets page. Requested in ticket CI-14848.
 
@@ -249,13 +183,13 @@ The same two stacks apply on every theme; each theme only chooses which one its 
 
 ---
 
-## 9. Color Tokens — theme and sub-theme color fixes (every publication)
+## 5. Color Tokens — theme and sub-theme color fixes (every publication)
 
 **Source:** the production columns of the Color Pallets style guides, audited 2026-08-03 (PMP 2026-09-24, Hartford Courant 2026-09-25, NEPA and the disputed Tribune sites 2026-10-01, The Mercury News, East Bay Times, Chicago Tribune and Cañon City 2026-10-19).
 
 **Figma spec (source of truth):** each theme's or sub-theme's design spec column on the Color Pallets page, and the matching Colors collection mode. Every row in the tables below is a red-dashed callout in that theme's "in Production" column. Fix production; don't change the tokens.
 
-**How to read this:** every publication in the cluster audit (97) has its own section, ordered **theme → cluster → sub-theme → site** (Karl, 2026-10-19), with its full list of fixes. Each theme opens with its theme-file fixes, which are fixed once in the theme stylesheet; a site's own table repeats them so each site reads on its own. To check fixes off, use `tokens/colors/mng-colors-fixes.csv` (one row per fix, empty `done` column; the gray / alert fixes from entry 7 and the obituaries fixes from entry 8 come first, then these per-site fixes in the same order). Breaking News bar and Sponsored badge colors: entry 10. The same data is in `tokens/colors/mng-colors-sites.csv` (`engineering_fixes`), one file per site in `tokens/sites/`, and `$extensions.com.mng.mismatches` in `tokens/colors/mng-colors.tokens.json`. Sections and the index are generated by `scripts/colors-docs/build-color-docs.py`.
+**How to read this:** every publication in the cluster audit (97) has its own section, ordered **theme → cluster → sub-theme → site** (Karl, 2026-10-19), with its full list of fixes. Each theme opens with its theme-file fixes, which are fixed once in the theme stylesheet; a site's own table repeats them so each site reads on its own. To check fixes off, use `tokens/colors/mng-colors-fixes.csv` (one row per fix, empty `done` column; the gray / alert fixes from entry 3 and the obituaries fixes from entry 4 come first, then these per-site fixes in the same order). Breaking News bar and Sponsored badge colors: entries 13 and 22. The same data is in `tokens/colors/mng-colors-sites.csv` (`engineering_fixes`), one file per site in `tokens/sites/`, and `$extensions.com.mng.mismatches` in `tokens/colors/mng-colors.tokens.json`. Sections and the index are generated by `scripts/colors-docs/build-color-docs.py`.
 
 **Where to read colors live:** themed variables on `document.querySelector('#page')`, not `:root` (the Customizer override is scoped to `#page`; see the method note at the end of this doc).
 
@@ -1300,362 +1234,7 @@ Ordered theme > cluster > sub-theme > site, as above.
 
 ---
 
-## 10. Component colors — Breaking News bar and Sponsored badge
-
-### 10.1 Breaking News bar — Denver Post uses primary-lighter instead of secondary
-
-**Found:** 2026-10-02, live check of the six review sites (theme CSS read on `#page`; no breaking bar was active, so the color was read from the site's own `.breaking-bar` rule).
-
-**Figma spec (source of truth):** the Breaking News Banner (WordPress Elements, `506:5632`) background is `color/theme/secondary` and its text is `color/theme/near-black` (bound 2026-10-02).
-
-**Production:**
-
-| Site | `.breaking-bar` background | Text | Token |
-|---|---|---|---|
-| ocregister.com | #FFEA00 | #0A0908 | secondary |
-| chicagotribune.com | #EEFF41 | #1F1E1C | secondary |
-| orlandosentinel.com | #EEFF41 | #1F1E1C | secondary |
-| canoncitydailyrecord.com | #EEFF41 | #141414 | secondary |
-| mcall.com | #EEFF41 | #141414 | secondary |
-| **denverpost.com** | **#AF1628** | #0A0908 | **primary-lighter** (Denver Post override) |
-
-**Open question (Karl):** keep Denver Post's red bar as a documented Denver Post exception, or have Engineering align it to `secondary` (`#003459`, navy, on Denver Post). Until decided, Figma stays on `secondary`.
-
-**Status:** Open, waiting on that decision.
-
-### 10.2 Sponsored content badge — needs to be fixed in production
-
-**Found:** 2026-10-02, live check of the six review sites (homepage, Latest Headlines and article lists).
-
-**Figma spec (source of truth):** the "Sponsored content" badge (WordPress Elements, Article Status Badge `Type=Sponsored`, `3344:63995`, and its instances in Latest Headlines, Top Zone and TopZone Article Card) stays **#7D161E with white text** (Karl, 2026-10-02). It is intentionally not bound to a theme token for now: none of the theme roles works on every site (white text fails contrast on the yellow `secondary` themes, and `tertiary` passes on only 9 of 22 themes).
-
-**Production:** the live badge is the Nativo native-ad label (inline style set by the vendor template), not a theme class, and it doesn't match the design anywhere checked.
-
-| Site | Live label background | Design | Match |
-|---|---|---|---|
-| denverpost.com | #003459 (navy, white text) | #7D161E | ❌ |
-| ocregister.com | #0097A7 | #7D161E | ❌ |
-| chicagotribune.com, orlandosentinel.com, canoncitydailyrecord.com, mcall.com | no Nativo sponsored unit on the homepage checked | #7D161E | not checked |
-
-**Fix:** update the Nativo sponsored-label template on every site to the design badge (#7D161E background, white `gray/max` text, Noto Sans), with Ad Ops. Re-check the other four sites when a sponsored unit is running.
-
-**Note:** the theme's own `.sponsored-content .sponsored-flag` (a different element) uses `primary-light` with white text, and `secondary` with dark text on images.
-
-**Status:** Open.
-
----
-
-## 11. Buttons — Obituaries page CTA (Chicago Tribune, Denver Post)
-
-**Found:** 2026-09-01, during the buttons audit.
-
-**Figma spec:** Button Primary (main file, ***Buttons page), Default size — padding 16px vertical + 20px horizontal, 14px text.
-
-**Production:** The live `.subscribe-button` CTA (249×44, confirmed identical on Chicago Tribune and Denver Post, also appears on regular article pages — a general paywall CTA, not obituary-specific) renders with padding 14px/10px instead of 16px/20px, and font-size 15px instead of 14px. Radius and per-masthead fill color already match Figma.
-
-**Decision (Karl, 2026-09-01):** This is not a new button size/variant — it should simply carry Button Primary's existing Default styling. Production needs to be brought in line with Figma's padding and font-size values above; no new Figma token or variant should be created for it.
-
-**Status:** Open.
-
----
-
-## 12. Article Card / Teaser
-
-### 12.1 Denver Post — Section Highlight shows 4 headline items instead of 3
-
-**Found:** Article Card / Teaser audit.
-
-**Figma / platform norm:** Every pilot site (Chicago Tribune, OC Register, Orlando Sentinel, Greeley Tribune, mcall.com) shows exactly 3 headline items in the Section Highlight module.
-
-**Production:** Denver Post shows 4 — and this isn't theme-scoped, since OC Register shares Denver Post's Bold Coastal theme but still shows 3.
-
-**Action needed:** Confirm whether this is a deliberate per-site editorial choice or a real inconsistency worth fixing.
-
-**Status:** Open — not yet root-caused.
-
-### 12.2 Section title color and underline don't match Figma on any of the 6 review sites
-
-**Found:** Article Card / Teaser audit.
-
-**Figma spec:** Section Highlight / "Latest Headlines" title: text color `color/gray/100`, with a 2px underline in the site's own `--primary`. Size, weight and family come from the per-theme eyebrow tokens: Bold Coastal 20px / 400 / Noto Sans, Measured Vibrant 17px / 700 / Noto Sans, Modern Earthy 21px / 400 / Noto Serif (`tokens/typography/typography-decision-log.md`, decision 6). Production already matches these sizes.
-
-**Production:** the text color is wrong on all 6 sites. The underline is missing on Chicago Tribune, Orlando Sentinel, OC Register and Denver Post; only the two Modern Earthy sites have it.
-
-**Fix:** set the title color to `color/gray/100` and add the 2px `--primary` underline on every theme.
-
-**Status:** Open. Ready for Engineering.
-
-### 12.3 Responsive layout rules vary by container context (not fully mapped)
-
-**Found:** Article Card / Teaser audit, §5 Open Item 8.
-
-**Detail:** `feature-medium` and `headline-only` responsive (`flex-direction`) rules change depending on the parent container class (e.g. `.landing-four-up-hybrid`, `.landing-three-one`, `.slow .feature-top` each carry their own breakpoint overrides for the same classes). This overlaps with the upcoming Containers component and hasn't been fully mapped — flagging so it isn't mistaken for one universal rule.
-
-**Status:** Open / informational — needs a dedicated mapping pass.
-
-### 12.4 Excerpt/dek color needs re-verification (minor)
-
-**Detail:** The dek/excerpt color (~`#484642`, sampled from Chicago Tribune) was derived via an rgb→hex rounding pass that wasn't double-checked the way other colors in the doc were.
-
-**Status:** Open — low priority, worth a re-check before treating as final.
-
----
-
-## 13. Reader Dashboard — Modal
-
-**Figma source:** "ModalsCenter" library component, Reader Dashboard v2.0. **Live source:** East Bay Times preprod, account-verification flow.
-
-### 13.1 Card border mismatch
-
-Figma's ModalsCenter has a 1px `color/gray/300` border on the card; the live card was recorded relying on shadow only, with no border distinguished. Both may be true (a subtle border could be present but visually indistinguishable from the shadow) — not resolved either way.
-
-**Status:** Open.
-
-### 13.2 Backdrop opacity mismatch
-
-Live backdrop is 45% black; the Figma-modeled value is 50% black — close, and not even built into the component as a literal property either way.
-
-**Status:** Open — low priority.
-
-### 13.3 Fixed 444px width, narrow-viewport behavior untested
-
-The modal card is a fixed 444px, not fluid/responsive. Behavior at narrow viewports has not been tested.
-
-**Status:** Open.
-
-### 13.4 Password "Update" flow is unstyled design debt
-
-Clicking "Update" for password doesn't open a modal — it navigates to a separate, essentially unstyled page (`/reset-password/`: Arial font, square corners, plain black button border, default gray input border) that matches none of the design system.
-
-**Action needed:** This is design debt to flag, not a pattern worth capturing faithfully — needs a real design pass, not a Figma-matching exercise.
-
-**Status:** Open.
-
-### 13.5 Destructive-action modals unexplored
-
-Only the account-verification modal was captured live. Other triggers (e.g. canceling a subscription) were deliberately not explored to avoid triggering irreversible account actions, so their modal spec is unconfirmed.
-
-**Status:** Open — needs a human to click through and report back rather than automated exploration.
-
----
-
-## 14. Reader Dashboard — Disclosure
-
-### 14.1 Two competing disclosure/accordion patterns need reconciliation
-
-Production's live Reader Dashboard (e.g. chicagotribune.com/user-tools/dashboard) uses a chevron/icon-based accordion pattern, different from the simpler text-link toggle documented from preprod (the pattern actually built in Figma). The chevron pattern is currently out of scope because that surface is being replaced — but if it survives the replacement, the two patterns will need to be reconciled into one.
-
-**Status:** Open — contingent on what survives the Reader Dashboard replacement.
-
-### 14.2 Coverage and behavior gaps
-
-Only one instance of the disclosure pattern (Login Methods on Profile) was found and tested; other tabs (Subscription, Benefits, etc.) weren't checked for additional instances. Whether expand/collapse is animated or instant was never confirmed.
-
-**Status:** Open.
-
----
-
-## 16. Containers, Images & Ad Units
-
-### 16.1 `object-fit: fill` on card images — distortion risk
-
-Both hero and feature-medium images use `object-fit: fill` with no `aspect-ratio` set, meaning images are stretched to exactly fill their container rather than cropped-to-fill (`cover`). Distortion is currently minimal because sampled images happen to be close to the container's aspect ratio, but an editor uploading an off-ratio image would visibly stretch/squash it.
-
-**Action needed:** Confirm with engineering whether `fill` is intentional or should be `cover`, since this is a live distortion risk on any off-ratio upload.
-
-**Status:** Open.
-
-### 16.2 Main content container width — Chicago Tribune vs. Denver Post
-
-Chicago Tribune's `main` container measures 1260px at a 1280px viewport; Denver Post measures 1245px at the same viewport — a real 15px difference, not explained by Denver Post running a different theme (it doesn't — confirmed both load real shared theme stylesheets with their own Customizer overrides, same pattern as every other site).
-
-**Status:** Open — not root-caused; could be a scrollbar-width artifact of that specific page load rather than a genuine CSS difference.
-
-### 16.3 Orlando Sentinel — ad slots register lazily on mobile homepage
-
-On Orlando Sentinel's mobile homepage, only the `mobile_adhesion` slot registered with Google Publisher Tag at initial load; the other 10 ad containers exist in the DOM but didn't register in `getSlots()` even after scrolling most of the page and waiting. This looks like Freestar (Orlando Sentinel's header-bidding wrapper, different from the other 5 pilot sites) registering slots lazily/progressively rather than upfront.
-
-**Action needed:** Confirm with engineering whether this is expected Freestar behavior or worth a longer dwell-time re-check.
-
-**Status:** Open.
-
-### 16.4 No visible ad-disclosure label
-
-No "Advertisement"/"Sponsored" text label or `aria-label` was found near any ad container on any of the 6 pilot sites — only Google's own AdChoices icon (rendered inside the ad iframe itself, not site-authored markup).
-
-**Action needed:** Confirm with engineering/legal whether the absence of an explicit disclosure label at the container level is intentional, since AdChoices alone is a weaker disclosure than what many other publishers use.
-
-**Status:** Open — legal/compliance relevance.
-
----
-
-## 17. Navigation
-
-### 17.1 Obituaries page — hamburger + "All Sections" both visible at desktop width
-
-**Figma / platform rule:** On the homepage, the hamburger icon is only visible at ≤1039px.
-
-**Production:** On the Obituaries page, at a comfortably-desktop viewport, both the hamburger icon and the "All Sections" button are visible simultaneously — confirmed on all 6 pilot sites (Chicago Tribune, Denver Post, OC Register, Orlando Sentinel, Greeley Tribune, mcall.com), including at a 1728px viewport.
-
-**Action needed:** Still not explained — genuinely flagged to engineering to confirm whether this is intentional for the Obituaries template or a bug.
-
-**Status:** Open.
-
-### 17.2 Cross-site avatar inconsistency for the same logged-in account
-
-Cross-site SSO is confirmed working (same session carries from one site to another with no re-login). But for the identical account, Denver Post rendered an actual photo avatar while Orlando Sentinel rendered a generated initials badge ("PA").
-
-**Action needed:** Confirm whether this is a per-site fallback difference (e.g. photo failed to load/sync on one site) or a real bug.
-
-**Status:** Open — not root-caused.
-
-### 17.3 Reader Dashboard's own breakpoint convention differs from the marketing site's
-
-The Reader Dashboard treats 1024×768 and 1280×960 as "menu always visible," a 1024px breakpoint — different from the audited 1039px rule on the main marketing-site nav. Since the Dashboard is a distinct web app from the shared marketing-site theme, this may be a legitimately different, real breakpoint rather than a conflict.
-
-**Status:** Informational / low priority — flagged for awareness, not treated as an error.
-
-### 17.4 Hidden duplicate nav `<li>` artifacts
-
-On some categories (confirmed on Sports), the individual sub-section links (e.g. Chicago Bears, Bulls, Blackhawks, Cubs, White Sox) exist twice: once in the real working sub-menu, and again as `class="hidden"` top-level `<li>` siblings directly in the nav — apparent unused WordPress nav-menu artifacts.
-
-**Status:** Open — worth a cleanup pass, low risk/low priority.
-
-### 17.5 Device-class first-paint timing (Denver Post, mcall.com)
-
-A device-signal CSS class is added client-side (confirmed not server-side) slightly later on Denver Post and mcall.com than the other 4 sites — likely real device detection working correctly, just applied a beat slower on those two.
-
-**Action needed:** Worth asking engineering whether any component's CSS actually depends on this class being present at first paint. If nothing does, this needs no action.
-
-**Status:** Open — low priority, likely closable with a single confirmation.
-
----
-
-## 18. Ad Units — Homepage "Ad Blocks" slot after Blueconic/Most Popular is undersized (300×250 instead of 300×600)
-
-**Found:** 2026-09-14, during the five-width (340/360/768/1024/1280) homepage production-parity audit.
-
-**Figma action taken:** Per Karl's instruction, this ad instance was updated in Figma to the production-accurate `Cube 1 RRail ATF 300x600` block at every width where it appears (Mobile 340/360, and the new 768/Tablet build), replacing the previous `Cube Article 300x250` placeholder — specifically so the Figma mockups now make this gap visible rather than quietly matching the undersized code.
-
-**Figma spec (now, post-fix):** `Cube 1 RRail ATF 300x600` — matches the size production is actually observed serving.
-
-**Production:** Live GPT ad-slot scanning (`iframe[id^="google_ads_iframe"]` DOM query, cross-referenced against scroll position) on ocregister.com found this slot — `cube2_rrail_mid` — rendering at 300×600 at both mobile (340/360) and tablet (768) widths, at every width checked.
-
-**Action needed:** Confirm whether the live implementation for this ad slot is intentionally 300×250 somewhere in code (unlikely, given production itself serves 300×600 into it) or whether this was simply never corrected after being built against an earlier/incorrect spec. Since Figma now shows the corrected 300×600 size, any remaining 300×250 assumption in the live templates should be treated as the bug to fix, not Figma.
-
-**Status:** Open.
-
----
-
-## 19. Masthead — Top-leaderboard ad slot renders at inconsistent sizes across page types
-
-**Found:** 2026-09-15, during the Masthead breakpoint audit (`breakpoint-audit.md`), 375px (mobile) pass, comparing OC Register live production against the `Masthead` component set (WordPress Elements → Menus and Parts).
-
-**Figma spec (as of this finding, before the Figma fix below):** The `Masthead` component's `Default`-state ad placement was inconsistent across `Page` variants — Home showed an ad box labeled "Top Leaderboard 320x100," while Section Front and Article showed no ad at all beneath the masthead.
-
-**Production:** The same ad position (`div-gpt-ad-top_leaderboard`, directly below the masthead) renders at different sizes depending on page type, confirmed live at 375px width:
-
-| Page | Live ad size |
-|---|---|
-| Home | 320×50 |
-| Section Front (`/news/`) | 320×100 |
-| Article | 320×50 |
-
-**Decision (Karl, 2026-09-15):** This needs to be fixed in production so the top-leaderboard ad slot displays consistently. Figma has been updated (see below) to show the ad on all three page types at their live-measured sizes, so the intended placement is now visible as a reference for engineering.
-
-**Figma action taken:** Added/corrected the ad placeholder on all three `Default`-state Page variants of the `Masthead` component (SM-Mobile tier): Home corrected to `Top Leaderboard 320x50` (was mislabeled 320x100), Section Front now shows `Top Leaderboard 320x100`, Article now shows `Top Leaderboard 320x50` — each matching what production actually serves at that page type.
-
-**Action needed:** Engineering to reconcile the production-side inconsistency — confirm whether the top-leaderboard slot is intended to serve a uniform ad size across Home/Section Front/Article, and align production accordingly.
-
-**Status:** Open.
-
----
-
-## 20. Masthead — Top nav bar overflows its container at the 1040–1279px (Tier 4) breakpoint
-
-**Found:** 2026-09-15, during the Masthead breakpoint audit (`breakpoint-audit.md`), XL-Desktop tier, comparing Chicago Tribune live production (one of the standing 6-site review list) against the `Masthead` component set (WordPress Elements → Menus and Parts).
-
-**Production:** At 1040px width — the real breakpoint where the header switches to the full desktop nav — Chicago Tribune's top nav row (`.nav-primary`, 11 items: Business, Entertainment, Education, Immigration, Opinion, Politics, Sports, Suburbs, Chicago Magazine, Obituaries, BestReviews) does not fit within its container. The row's actual rendered width (1100.8px) is wider than its wrapper (973.75px). Because the page sets `overflow-x: hidden` on `<body>`, the row doesn't scroll into view — it's centered on the container and the overflow is simply clipped, cutting the first and last items off mid-word on both the left and right edges. No responsive fallback (smaller font, reduced spacing, wrapping, or item overflow menu) kicks in at this width.
-
-Cross-checked against the standing 6-site list: Chicago Tribune and Orlando Sentinel both carry 11 top-nav items (the most of the 6 sites checked — OC Register 8, Denver Post 9, The Morning Call 10, Greeley Tribune 7), so this is the realistic worst case for how many items the nav needs to support, not an edge case.
-
-**Figma spec (before this fix):** The `Masthead` component's top nav row was sized to fit neatly within its 1040px-wide container at whatever item count each page variant happened to have (7–10 items), with no representation of what happens once a site's real item count exceeds what the row can hold.
-
-**Decision (Karl, 2026-09-15):** Build the Figma component to match production's actual (broken) treatment rather than hide the problem — the nav bar should visibly overflow and clip the same way Chicago Tribune's does, so the gap is obvious to anyone reviewing the component, and flag it here for engineering to fix in production.
-
-**Figma action taken:** Brought all three `Default`-state Page variants (Home, Section Front, Article) of the XL-Desktop `Masthead` component up to 11 top-nav items each (added placeholder items to match Chicago Tribune's count), left the nav row at its natural/uncompressed content width (no longer force-fit to the container), and set the row's parent container to clip content at the component's 1040px bounds. The result: the nav row is centered and overflows past both edges, with the first and last items cut off mid-word — matching Chicago Tribune's live behavior.
-
-**Action needed:** Engineering to add real responsive handling for the top nav at the 1040–1279px tier when the site's item count is high enough to overflow — options include a smaller font/tighter spacing at this tier, wrapping to a second line, or an overflow ("More") menu for items past what fits. Whatever the fix, it needs to apply platform-wide, not just to Chicago Tribune, since Orlando Sentinel hits the same 11-item count and any other site could grow into it.
-
-**Addendum (2026-09-22):** The clipping isn't fully resolved even at the widest Desktop tier — while fixing an unrelated Masthead side-margin bug at 1024/1100 (WordPress Elements → Homepage, the homepage template audit §3.58, since retired), the same fixed-width `Top Nav` row (1322px) was found still clipped by ~21px per side at the full 1280px Desktop width, versus ~118.5px per side at 1100px. So this isn't strictly a "1040–1279px tier" problem that clears up at Desktop — it's a continuum that only becomes fully invisible somewhere above 1322px of available nav width. Doesn't change the action needed above, just widens the affected range engineering should account for.
-
-**Status:** Open.
-
----
-
-## 21. Masthead — Article scrolled-state headline overflows behind the bookmark/share icons
-
-**Found:** 2026-09-15, during the Ad-Free Masthead audit (`breakpoint-audit.md`), 1100px pass, Article page, scrolled state, logged into an ad-free account.
-
-**Production:** In the scrolled masthead on an article page, the breadcrumb + headline (`.article-title`, e.g. "National Politics | Judge blocks Kennedy Center board from putting…") renders at its full natural width based on the actual headline's length. The bookmark/save icon (`.saveArticleButton`) sits at a fixed horizontal position in the same row that does not account for how long the rendered headline actually is. For a headline long enough — this one included — the tail end of the headline text renders directly underneath the bookmark icon instead of stopping short of it, so the last few characters are visually obscured rather than cleanly truncated with an ellipsis.
-
-Confirmed via DOM inspection at 1100px: the headline's own bounding box spans x 462–847px; the bookmark icon sits at x 778–809px — a 69px overlap.
-
-**Also confirmed at 1040px** (2026-09-15, same Ad-Free audit pass, same article): the overlap is worse at this narrower width — headline box spans x 430–815px, bookmark icon sits at x 720–751px, a 95px overlap. Visually, the bookmark icon now sits directly on top of a word in the headline rather than just clipping the tail end.
-
-**Also checked at 1728px** (2026-09-15, same audit pass, same article, Karl's full screen width): no overlap at all — the headline's container (`.entry-title`) correctly sizes down and its text box's right edge (x 1185px) sits 241px clear of the share widget's left edge (x 1426px).
-
-**Root cause identified — this is a narrow-viewport layout bug, not a headline-length coincidence:**
-
-| Width | Overlap |
-|---|---|
-| 1040px | 95px (worst) |
-| 1100px | 69px |
-| 1728px | none — 241px clearance |
-
-The headline's flex/width allocation fails to shrink correctly relative to the fixed-width share-icon widget below some threshold between 1100px and 1728px — narrower windows make it worse, not better, which is the opposite of what a simple text-truncation gap would produce. This isn't tied to ad-free/logged-in state specifically — it would happen for any sufficiently long headline at a narrow-enough width regardless of login state — but was caught during the ad-free audit pass.
-
-**Figma spec:** Not reproduced. Figma's Article `Scrolled` variant uses a fixed placeholder headline ("Roughly forty characters of the article t...") short enough that it doesn't hit this edge case, so the component itself doesn't currently demonstrate the bug. Unlike the Tier 4 top-nav overflow (entry #20, a systemic issue reproducible with any content at that width), this one only shows up in the narrower part of the desktop range, so it wasn't rebuilt into the static mock — it's flagged here for engineering instead.
-
-**Action needed:** Give the headline element a max-width (or text-overflow: ellipsis truncation) tied to the actual available space before the bookmark/share-icon cluster at all desktop widths, not just the wider end of the range — the current layout only holds up above ~1700px.
-
-**Status:** Open.
-
----
-
-## 22. Masthead — Reader Dashboard shows the top nav-links row and "TRENDING:" bar, which the design explicitly excludes
-
-**Found:** 2026-09-15, during the Reader Dashboard masthead audit (`breakpoint-audit.md`), on canoncitydailyrecord.com/dashboard/, logged in as a subscriber, at 1100px and 1040px (both above the masthead's 1039px desktop-nav threshold).
-
-**Production:** At desktop widths, the Reader Dashboard's masthead renders the full top nav-links row (News / Local News / Sports / Things to Do / Opinion / Obituaries / Marketplace / On the Record / BestReviews) and a "TRENDING:" bar (e.g. "Fremont County Nonprofit Guide 2026," "Royal Gorge Living") above the breadcrumb and page content — the same two rows Home's masthead shows at this tier.
-
-**Figma spec:** The `Masthead` component's `Device=XL-Desktop, Page=Dashboard` variant (`456:2715`, and the equivalent `Scrolled` variant `456:2840`) does **not** include a nav-links row or trending bar — it's just the top utility row (hamburger/All Sections, avatar, search) plus the weather/date/logo row, at 144px total versus Home's 497px 4-row structure.
-
-**Decision (Karl, 2026-09-15):** Figma is correct — the Reader Dashboard should **not** display the trending bar or top navigation. What production shows at canoncitydailyrecord.com/dashboard/ is the bug, not a Figma gap. No Figma changes made.
-
-**Action needed:** Engineering to suppress the nav-links row and "TRENDING:" bar on the Reader Dashboard page template at desktop widths, so it matches the intentionally-minimal masthead Figma already models.
-
-**Note:** confirmed only on canoncitydailyrecord.com (the one site used for this phase, per Karl's direction) — not cross-checked against the other 5 repertoire sites.
-
-**Status:** Open.
-
----
-
-## 23. Video carousel ("Videos from @OCRegister") — fixed-height iframe leaves ~200px of unused blank space at narrow (340–360px) widths
-
-**Found:** 2026-09-16, during a systematic 340px/360px breakpoint sweep across all homepage components (per Karl — checking widths narrower than any explicit CSS breakpoint, since 640px is the first real tier boundary). Verified twice: once via a narrowed real desktop Chrome window, and again via true mobile device emulation (Pixel 9 UA, touch-enabled, no desktop scrollbar) at both 340px and 360px, on ocregister.com.
-
-**Production:** The `.dfm-page-middle-flex-container` block (a single Flourish-hosted `<iframe src="https://flo.uri.sh/visualisation/21363813/embed" title="Video from @OCRegister">`) renders at a fixed height of 490px at both 340px and 360px viewport widths. At these widths the visible content inside the iframe — header ("Videos from @OCRegister"), subtitle, the row of video tiles, and the horizontal scroll-indicator bar — only fills roughly the top 260–265px of that height, leaving about 200px of blank white space below the scroll indicator before the next section (Photos) begins. Confirmed identically at both 340px and 360px, and identically whether tested via a narrowed desktop window or true mobile emulation, so this isn't a testing-methodology artifact — it's a real rendering behavior at these widths.
-
-**Figma spec:** The `Videos from OCRegister Carousel` component (built 2026-09-16, see the homepage template audit section 3.35, since retired) sizes its outer frame to HUG its actual content height at every placed width — header + subtitle + tile row + scroll indicator, with no trailing blank space. It does not reproduce this gap, since the gap appears to be a property of the live Flourish embed's own fixed iframe height, not something the surrounding page template's CSS controls (no dedicated `@media` rules were found for `.dfm-page-middle-flex-container` itself in this or the earlier 3.2x-era investigation).
-
-**Action needed:** Since the iframe height is most likely set via the Flourish visualisation's own embed configuration rather than page-template CSS, this is probably a Flourish-settings fix rather than a template fix — either make the embed size its iframe responsively to actual content height at narrow widths, or set a shorter fixed height specifically for the sub-640px range. Flagging for whoever owns the Flourish embed configuration to confirm whether that's adjustable there.
-
-**Status:** Open.
-
----
-
-## 24. Spacing — 10px and 14px values off the 4/8 grid
+## 6. Spacing — 10px and 14px values off the 4/8 grid
 
 **Found:** 2026-10-01, while creating the spacing tokens. Measured live on chicagotribune.com (homepage, 1728px viewport, every visible element's padding, margin and gap).
 
@@ -1667,7 +1246,7 @@ The headline's flex/width allocation fails to shrink correctly relative to the f
 
 | Where | Live value | Fix |
 |---|---|---|
-| `.subscribe-button` (header, footer and article paywall CTA) | padding 14px / 10px | Use Button Primary Default: 16px / 20px (`spacing/200` / `spacing/250`). Same fix as entry 11. |
+| `.subscribe-button` (header, footer and article paywall CTA) | padding 14px / 10px | Use Button Primary Default: 16px / 20px (`spacing/200` / `spacing/250`). Same fix as entry 26. |
 | Main content wrapper (left/right page gutter) | padding 0 10px | Use `spacing/100` (8px) or `spacing/150` (12px); confirm with design which one. |
 | `ul.footer-menus`, `div.colophon` | padding 0 10px | Same as the page gutter. |
 
@@ -1676,13 +1255,13 @@ The headline's flex/width allocation fails to shrink correctly relative to the f
 **Engineering patch (ready to apply):**
 
 ```css
-/* 24a. Subscribe CTA = Button Primary Default (also closes entry 11) */
+/* 6a. Subscribe CTA = Button Primary Default (also closes entry 26) */
 .subscribe-button {
   padding: 16px 20px;   /* was 14px 10px; spacing/200 vertical, spacing/250 horizontal */
   font-size: 14px;      /* was 15px */
 }
 
-/* 24b. Page gutter. GUTTER = 8px (spacing/100) or 12px (spacing/150), pending Karl */
+/* 6b. Page gutter. GUTTER = 8px (spacing/100) or 12px (spacing/150), pending Karl */
 .main-content-wrapper,   /* placeholder: the wrapper with padding: 0 10px today */
 ul.footer-menus,
 div.colophon {
@@ -1693,11 +1272,11 @@ div.colophon {
 
 Check after the change: the subscribe CTA keeps its 44px min height and its fill color per masthead, and the header, body and footer edges still line up with each other.
 
-**Status:** Open. 24a is ready for Engineering. 24b needs one design decision first (8px or 12px).
+**Status:** Open. 6a is ready for Engineering. 6b needs one design decision first (8px or 12px).
 
 ---
 
-## 25. Radius — buttons are 4px; 5px on a button is drift
+## 7. Radius — buttons are 4px; 5px on a button is drift
 
 **Found:** 2026-10-01. Live check of chicagotribune.com and ocregister.com (homepage and article) and denverpost.com (homepage): every button uses 4px (Subscribe Now, newsletter Sign Up buttons). Figma's Button Primary, Secondary, Tertiary and Linkstyle were already 4px.
 
@@ -1715,7 +1294,7 @@ Check after the change: the subscribe CTA keeps its 44px min height and its fill
 **Engineering patch (ready to apply):**
 
 ```css
-/* 25a. Masthead search submit = button radius */
+/* 7a. Masthead search submit = button radius */
 .search-button {
   border-radius: 4px;   /* was 5px; radius/sm */
 }
@@ -1726,102 +1305,13 @@ Check after the change: the subscribe CTA keeps its 44px min height and its fill
 
 ---
 
-## 26. Mobile adhesion — empty sticky bar shows at 1024px and up
-
-**Found:** 2026-10-02, ocregister.com at a 1024px window (homepage and article page).
-
-**Figma spec (source of truth):** `mobile_adhesion` exists only below 1024px — Ad Blocks `Mobile Adhesion 320x50` / `300x50` on mobile and `Mobile Adhesion 728x90` at tablet (768). The 1024, 1100 and 1280 templates have no adhesion unit (the 1024 floating anchor was removed 2026-10-02).
-
-**Production:** at 1024px the `#mobile-adhesion` container is still fixed to the bottom of the viewport (1024×90, with its Close button), but the GPT slot has no valid size at that width (`getSizes(1024)` returns an empty list), so no ad can ever load. Readers see an empty bar.
-
-**Fix:** hide the `#mobile-adhesion` container (and its Close button) at the same breakpoint where the slot's size mapping goes empty (≥1024px), or remove the container from the DOM at desktop widths. Check the other five review sites.
-
----
-
-## 27. Blueconic Block (Most Popular) — list spacing and item headline
-
-**Found:** 2026-10-07, ocregister.com at 360, 768, 1024, 1100 and 1280px (homepage "Most Popular", `.dfm-most-popular-flex-container` inside `landing-three-one` → `.three-one-left`).
-
-**Figma spec (source of truth):** WordPress Elements `Blueconic Block (Most Popular)` (`3352:20526`) with `Most Popular List Item` (`3352:24171`) kept at **44px** tall per item. The space between items is added in the block (column auto-layout gap), not in the item.
-
-### 27.1 Item spacing and column gaps
-
-Production stacks the items with no gap. Each row is 60px tall for a one-line headline and 77px for two lines. Design keeps the item at 44px and adds the difference as the gap between items, so a one-line row lands on production's 60px.
-
-| Width | Columns (production) | Design column gap | Design item gap |
-|---|---|---|---|
-| 360 (Mobile) | 1 × 340 | — | 16 (`spacing/200`) |
-| 768 (Tablet) | 2 × 365 | 19 | 16 (`spacing/200`) |
-| 1024 | 2 × 288 (every headline wraps to 2 lines) | 19 | 11 (fits the 77px two-line row) |
-| 1100 | 2 × 360 | 21 | 16 (`spacing/200`) |
-| 1280 | 2 × 459 | 22 | 16 (`spacing/200`) |
-
-### 27.2 Spacing values with no token — remove in a future pass
-
-The gaps of **11, 19, 21 and 22** px come from production's fluid layout and are kept in Figma as plain numbers on purpose. There are no tokens for them, and none should be created. When engineering moves these blocks onto the spacing scale (4 / 8 / 12 / 16 / 20 / 24), replace them: 11 → 12 (`spacing/150`), 19 / 21 → 20 (`spacing/250`), 22 → 24 (`spacing/300`) or 20, and update the Figma gaps to match. 16 and 20 are already bound to `spacing/200` / `spacing/250`.
-
-### 27.3 Item headline type
-
-| | Production (all widths) | Design (`Most Popular List Item`) |
-|---|---|---|
-| Headline | Noto Serif **600**, 16px / **17.07px** | Noto Serif **Bold (700)**, 16px / **auto (~22px)** |
-
-One-line items are unaffected (the 44px height holds), but every extra line adds about 5px more in design than in production. Two-line rows are 66px plus the gap in design versus 77px in production, and three-line rows grow further apart. **Decision (Karl, 2026-10-07): keep the Figma item as is** — 44px tall, Noto Serif Bold 16 / auto. This is a known difference, not a Figma bug; production should move to the design's type if it's ever aligned.
-
----
-
-## 28. Reader Dashboard — breakpoints close to, but not on, the Figma screen widths (questions for DigiScrum)
-
-**Found:** 2026-10-14, in the Reader Dashboard source (`plugins/mng-digital-subscriber-widgets/reader-dashboard-src/`, Karl's local copy of the website repo dated 2026-05-08) and its built CSS. **Team:** DigiScrum. *Live check still to do: confirm the current production build matches this copy.*
-
-**Design (source of truth):** Reader Dashboard v2.0 is designed at 5 screen widths: Fold 340, Mobile 360, Tablet (vertical) 768, Tablet (horizontal) 1024, Desktop 1280. These are the MNG Device breakpoints (min-widths 360 / 768 / 1024 / 1280; Fold is everything below 360).
-
-**Production:** 768 (`md`, `min-[768px]`), 1024 (`lg`, `window.innerWidth >= 1024`) and 1280 (`xl`) match. Four values don't, and they are too close to the design widths to be accidents, so **this entry asks why before asking for a fix** (Karl, 2026-10-14). The repo copy has no git history or code comments explaining them; the likely reasons below are inferred.
-
-| Production value | Where it's used | Likely reason | Question for DigiScrum |
-|---|---|---|---|
-| `min-[361px]` | text field size and height, inline form box padding, menu width (344px), page margins, display-name form (`text-field.tsx`, `inline-form-box.tsx`, `reader-dashboard.tsx`, `update-display-name.tsx`) | "Wider than 360": 360 is the most common Android phone width and Figma's largest phone frame. The compact phone styles apply at 360 and below; the roomier ones start at 361. Figma has no design between 361 and 767, so the team picked where the roomier layout starts. | Is 361 meant as "wider than the 360 Mobile frame"? Should the roomier styles start at 360 (Figma's Mobile) or stay at 361? |
-| `min-[413px]` | "No articles saved" empty state alignment (`no-articles-saved.tsx`) | "Wider than 412": 412 is a common large-Android width. Likely a fix for a wrap seen on a specific phone. | Was this a fix for a specific device? Could it use 360 or 768 instead? |
-| `sm` 640 (40rem) | logout status width (`logout-status.tsx`, `sm:w-fit`) and Tailwind's `.container` | Tailwind's default `sm` screen, left in place (the team didn't set its own screens). | Was 640 chosen, or is it Tailwind's default? Could it be 768? |
-| `2xl` 1536 (96rem) | Tailwind's `.container` max width only; no `container` class found in the dashboard source | Tailwind's default `2xl` screen, generated automatically. | Can it be removed? |
-
-**Next step:** ask DigiScrum the questions above. Depending on the answers, each value becomes part of the Device set (if a new screen width is really needed, Figma gets a matching frame first), a documented component breakpoint, or a fix. Our generated Tailwind screens (`dist/tailwind/`) can replace Tailwind's defaults so `sm` / `2xl` disappear.
-
-**Status:** Open — waiting on DigiScrum's answers.
-
----
-
-## 29. Obituaries — breakpoints that don't match the WordPress grid (for the CMS team)
-
-**Found:** 2026-10-14, in the Obituaries styles (`assets/client/scss/layouts/scng/components/features/_obits.scss` in the WordPress themes, Karl's local repo copy dated 2026-05-08) and the 2026-09-15 live audit of the Obituaries pages (`components/breakpoint-audit.md`). **Team:** CMS. *Live check still to do.*
-
-**Design (Karl, 2026-10-14):** Obituaries is built on the WordPress theme grid (it uses the theme's `ai-breakpoint()` mixin), so it belongs to the WordPress layer and follows the **WordPress grid breakpoints**: `xs` 320, `s` 640, `m` 800, `l` 1040, `xl` 1280 (min-widths; written as max-widths 639 / 799 / 1039 / 1279). Values that don't match the grid are drift for the CMS team to correct in the future.
-
-**Production:**
-
-| Production breakpoint | Where it's used | Matches the WordPress grid? | Snap to |
-|---|---|---|---|
-| `ai-breakpoint` `s` / `m` / `l` (640 / 800 / 1040) | spacing and layout | Yes | none |
-| ≥1040px (`65em`) / ≤1039px (`64.9375em`) | horizontal layout / 2-column upper bound | Yes (`l`) | none |
-| 800px (`50em`) | filter panel padding when open | Yes (`m`) | none |
-| ≤624px (`39em`, and a raw `624px` rule) / ≥625px (`39.0625em`) | 1-column layout and search form stacking / 2-column start | No | 640 (`s`) |
-| ≥1300px (`81.25em`) / ≤1299px (`81.1875em`) | listing and "stop scaling" | No | 1280 (`xl`) |
-| 1000px (`62.5rem`) | top and bottom leaderboard ad placement | No | 1040 (`l`) |
-| 625–734 / 735–1299px | photo gallery widget (likely shared, not obituary-only) | No | 640 / 800 / 1280 |
-
-**Fix (future, CMS team):** move each non-matching rule to the grid breakpoint in the right-hand column. The gallery widget and the 1000px ad rule may be shared with other pages; confirm before changing them. The Masthead's Obituaries search widget (624) is part of this fix.
-
-**Status:** Open (future).
-
----
-
-## 30. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)
+## 8. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)
 
 **Found:** 2026-10-14, live CSS scan of the homepage, an article and the obituaries page on all 6 review sites (`tokens/breakpoint-inventory.json`, built by `scripts/breakpoint-inventory/`). Every value below was found on all 6 sites (the three theme stylesheets share their media queries). **Teams:** CMS, DigiScrum. **Updated 2026-10-14** with Karl's decisions.
 
 **Design:** two official sets (EXPORT-STANDARD.md section 6). WordPress code follows the **WordPress grid** (min-widths 320 / 640 / 800 / 1040 / 1280; max-widths 639 / 799 / 1039 / 1279). Everything else, including the digisubs plugin and app (Karl, 2026-10-14), follows the **MNG Device breakpoints** (min-widths 340 / 360 / 768 / 1024 / 1280; max-widths 339 / 359 / 767 / 1023 / 1279). Of the 56 values kept in the inventory, 13 are official, 34 are drift (below) and 9 are component breakpoints. Left out: third-party code (paywall, cookie consent, ad vendors), the WordPress admin bar, and the digisubs modal, spoof banner, push prompt, share box and employee debugger (not documented, Karl), and the special investigative header template (see below).
 
-**Production (drift) and fix:** move each rule to the official breakpoint in the right-hand column. The Sports Radar template and the promotion widget follow the WordPress grid (Karl, 2026-10-14). "Off by one" rules (`max-width: 340 / 360 / 800 / 1024 / 1040 / 1280`) overlap the official boundary by 1px and should be one less. The Obituaries values (624 / 625, 1299 / 1300) and the photo gallery (734 / 735) are also in entry 29.
+**Production (drift) and fix:** move each rule to the official breakpoint in the right-hand column. The Sports Radar template and the promotion widget follow the WordPress grid (Karl, 2026-10-14). "Off by one" rules (`max-width: 340 / 360 / 800 / 1024 / 1040 / 1280`) overlap the official boundary by 1px and should be one less. The Obituaries values (624 / 625, 1299 / 1300) and the photo gallery (734 / 735) are also in entry 27.
 
 **WordPress themes** (team: CMS; snap to the WordPress grid):
 
@@ -1830,18 +1320,18 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 | `(max-width: 405px)` | Sports Radar page template (#content.sports-radar-content; local template styling embedded Sportradar data widgets). | `(max-width: 639px)` (WordPress grid s) |
 | `(max-width: 500px)` | Sports Radar page template. | `(max-width: 639px)` (WordPress grid s) |
 | `(max-width: 535px)` | Sports Radar page template. | `(max-width: 639px)` (WordPress grid s) |
-| `(max-width: 624px)` | Obituaries 1-column layout (entry 29). | `(max-width: 639px)` (WordPress grid s) |
-| `(min-width: 625px)` | Obituaries 2-column start (entry 29). | `(min-width: 640px)` (WordPress grid s) |
+| `(max-width: 624px)` | Obituaries 1-column layout (entry 27). | `(max-width: 639px)` (WordPress grid s) |
+| `(min-width: 625px)` | Obituaries 2-column start (entry 27). | `(min-width: 640px)` (WordPress grid s) |
 | `(max-width: 700px)` | Promotion widget (.promotion-widget, homepage promo tiles, e.g. Chicago Tribune Fun and Games / Tribune Store). | `(max-width: 639px)` (WordPress grid s) |
-| `(max-width: 734px)` | Photo gallery widget (.gallery-container; also entry 29). Fix (Karl). | `(max-width: 799px)` (WordPress grid m) |
-| `(min-width: 735px)` | Photo gallery widget (also entry 29). Fix (Karl). | `(min-width: 800px)` (WordPress grid m) |
+| `(max-width: 734px)` | Photo gallery widget (.gallery-container; also entry 27). Fix (Karl). | `(max-width: 799px)` (WordPress grid m) |
+| `(min-width: 735px)` | Photo gallery widget (also entry 27). Fix (Karl). | `(min-width: 800px)` (WordPress grid m) |
 | `(max-width: 800px)` | Off by one: (max-width: 800px) overlaps m; should be 799 (#featured-flex-landing-three). | `(max-width: 799px)` (WordPress grid m) |
 | `(max-width: 900px)` | Promotion widget title. | `(max-width: 799px)` (WordPress grid m) |
 | `(max-width: 930px)` | Footer cookie notice button (Karl: fix to 1039). | `(max-width: 1039px)` (WordPress grid l) |
 | `(max-width: 960px)` | Sports Radar page template. | `(max-width: 1039px)` (WordPress grid l) |
 | `(max-width: 1280px)` | Off by one: (max-width: 1280px) overlaps xl; should be 1279 (.custom-dfm-section.dark-layout). | `(max-width: 1279px)` (WordPress grid xl) |
-| `(max-width: 1299px)` | Obituaries listing (entry 29). | `(max-width: 1279px)` (WordPress grid xl) |
-| `(min-width: 1300px)` | Obituaries "stop scaling" (entry 29). | `(min-width: 1280px)` (WordPress grid xl) |
+| `(max-width: 1299px)` | Obituaries listing (entry 27). | `(max-width: 1279px)` (WordPress grid xl) |
+| `(min-width: 1300px)` | Obituaries "stop scaling" (entry 27). | `(min-width: 1280px)` (WordPress grid xl) |
 
 **dfm-trust-indicators plugin** (team: CMS; snap to the WordPress grid):
 
@@ -1885,7 +1375,105 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 
 ---
 
-## 31. Homepage tabs (World Cup tabs) — font, colors, spacing and breakpoint off the design system
+## 9. Masthead — nav overflow, article scrolled-state headline and nav bottom border
+
+### 9.1 Top nav bar overflows its container at the 1040–1279px (Tier 4) breakpoint
+
+**Found:** 2026-09-15, during the Masthead breakpoint audit (`breakpoint-audit.md`), XL-Desktop tier, comparing Chicago Tribune live production (one of the standing 6-site review list) against the `Masthead` component set (WordPress Elements → Menus and Parts).
+
+**Production:** At 1040px width — the real breakpoint where the header switches to the full desktop nav — Chicago Tribune's top nav row (`.nav-primary`, 11 items: Business, Entertainment, Education, Immigration, Opinion, Politics, Sports, Suburbs, Chicago Magazine, Obituaries, BestReviews) does not fit within its container. The row's actual rendered width (1100.8px) is wider than its wrapper (973.75px). Because the page sets `overflow-x: hidden` on `<body>`, the row doesn't scroll into view — it's centered on the container and the overflow is simply clipped, cutting the first and last items off mid-word on both the left and right edges. No responsive fallback (smaller font, reduced spacing, wrapping, or item overflow menu) kicks in at this width.
+
+Cross-checked against the standing 6-site list: Chicago Tribune and Orlando Sentinel both carry 11 top-nav items (the most of the 6 sites checked — OC Register 8, Denver Post 9, The Morning Call 10, Greeley Tribune 7), so this is the realistic worst case for how many items the nav needs to support, not an edge case.
+
+**Figma spec (before this fix):** The `Masthead` component's top nav row was sized to fit neatly within its 1040px-wide container at whatever item count each page variant happened to have (7–10 items), with no representation of what happens once a site's real item count exceeds what the row can hold.
+
+**Decision (Karl, 2026-09-15):** Build the Figma component to match production's actual (broken) treatment rather than hide the problem — the nav bar should visibly overflow and clip the same way Chicago Tribune's does, so the gap is obvious to anyone reviewing the component, and flag it here for engineering to fix in production.
+
+**Figma action taken:** Brought all three `Default`-state Page variants (Home, Section Front, Article) of the XL-Desktop `Masthead` component up to 11 top-nav items each (added placeholder items to match Chicago Tribune's count), left the nav row at its natural/uncompressed content width (no longer force-fit to the container), and set the row's parent container to clip content at the component's 1040px bounds. The result: the nav row is centered and overflows past both edges, with the first and last items cut off mid-word — matching Chicago Tribune's live behavior.
+
+**Action needed:** Engineering to add real responsive handling for the top nav at the 1040–1279px tier when the site's item count is high enough to overflow — options include a smaller font/tighter spacing at this tier, wrapping to a second line, or an overflow ("More") menu for items past what fits. Whatever the fix, it needs to apply platform-wide, not just to Chicago Tribune, since Orlando Sentinel hits the same 11-item count and any other site could grow into it.
+
+**Addendum (2026-09-22):** The clipping isn't fully resolved even at the widest Desktop tier — while fixing an unrelated Masthead side-margin bug at 1024/1100 (WordPress Elements → Homepage, the homepage template audit §3.58, since retired), the same fixed-width `Top Nav` row (1322px) was found still clipped by ~21px per side at the full 1280px Desktop width, versus ~118.5px per side at 1100px. So this isn't strictly a "1040–1279px tier" problem that clears up at Desktop — it's a continuum that only becomes fully invisible somewhere above 1322px of available nav width. Doesn't change the action needed above, just widens the affected range engineering should account for.
+
+**Status:** Open.
+
+### 9.2 Article scrolled-state headline overflows behind the bookmark/share icons
+
+**Found:** 2026-09-15, during the Ad-Free Masthead audit (`breakpoint-audit.md`), 1100px pass, Article page, scrolled state, logged into an ad-free account.
+
+**Production:** In the scrolled masthead on an article page, the breadcrumb + headline (`.article-title`, e.g. "National Politics | Judge blocks Kennedy Center board from putting…") renders at its full natural width based on the actual headline's length. The bookmark/save icon (`.saveArticleButton`) sits at a fixed horizontal position in the same row that does not account for how long the rendered headline actually is. For a headline long enough — this one included — the tail end of the headline text renders directly underneath the bookmark icon instead of stopping short of it, so the last few characters are visually obscured rather than cleanly truncated with an ellipsis.
+
+Confirmed via DOM inspection at 1100px: the headline's own bounding box spans x 462–847px; the bookmark icon sits at x 778–809px — a 69px overlap.
+
+**Also confirmed at 1040px** (2026-09-15, same Ad-Free audit pass, same article): the overlap is worse at this narrower width — headline box spans x 430–815px, bookmark icon sits at x 720–751px, a 95px overlap. Visually, the bookmark icon now sits directly on top of a word in the headline rather than just clipping the tail end.
+
+**Also checked at 1728px** (2026-09-15, same audit pass, same article, Karl's full screen width): no overlap at all — the headline's container (`.entry-title`) correctly sizes down and its text box's right edge (x 1185px) sits 241px clear of the share widget's left edge (x 1426px).
+
+**Root cause identified — this is a narrow-viewport layout bug, not a headline-length coincidence:**
+
+| Width | Overlap |
+|---|---|
+| 1040px | 95px (worst) |
+| 1100px | 69px |
+| 1728px | none — 241px clearance |
+
+The headline's flex/width allocation fails to shrink correctly relative to the fixed-width share-icon widget below some threshold between 1100px and 1728px — narrower windows make it worse, not better, which is the opposite of what a simple text-truncation gap would produce. This isn't tied to ad-free/logged-in state specifically — it would happen for any sufficiently long headline at a narrow-enough width regardless of login state — but was caught during the ad-free audit pass.
+
+**Figma spec:** Not reproduced. Figma's Article `Scrolled` variant uses a fixed placeholder headline ("Roughly forty characters of the article t...") short enough that it doesn't hit this edge case, so the component itself doesn't currently demonstrate the bug. Unlike the Tier 4 top-nav overflow (entry #9.1, a systemic issue reproducible with any content at that width), this one only shows up in the narrower part of the desktop range, so it wasn't rebuilt into the static mock — it's flagged here for engineering instead.
+
+**Action needed:** Give the headline element a max-width (or text-overflow: ellipsis truncation) tied to the actual available space before the bookmark/share-icon cluster at all desktop widths, not just the wider end of the range — the current layout only holds up above ~1700px.
+
+**Status:** Open.
+
+### 9.3 Nav bottom border color isn't a design token
+
+**Found:** 2026-10-23, on ocregister, chicagotribune, canoncitydailyrecord, denverpost and orlandosentinel (all three theme stylesheets). **Team:** CMS.
+
+**Production:** `.nav-wrapper-primary { border-bottom: 1px solid #9D9A98 }`. It's the 1px rule under the masthead, there both at the top of the page (under the section nav row) and when scrolled (under the 64px bar, which is 65px tall with the rule).
+
+**Design:** `color/gray/400` (#A7A6A3), the closest MNG gray (Karl, 2026-10-23). In WordPress Elements, every masthead rule now uses gray/400 (2026-10-23): Masthead (`456:2572`) top-of-page variants (36 rules changed from `color/gray/300`), every Scrolled and AdFree-Scrolled variant (27 rules added at the bottom; the 3 Dashboard variants already had one), and ObitMastHead (`1139:22369`, 26 rules added at the bottom, matching the main masthead per entry 24).
+
+**Fix:** change the border color to the gray/400 value (#A7A6A3). The obituaries masthead's own #CCCCCC border goes away with entry 24.
+
+---
+
+## 10. Navigation menus — avatar, hidden duplicate links and device-class timing
+
+### 10.1 Cross-site avatar inconsistency for the same logged-in account
+
+Cross-site SSO is confirmed working (same session carries from one site to another with no re-login). But for the identical account, Denver Post rendered an actual photo avatar while Orlando Sentinel rendered a generated initials badge ("PA").
+
+**Action needed:** Confirm whether this is a per-site fallback difference (e.g. photo failed to load/sync on one site) or a real bug.
+
+**Status:** Open — not root-caused.
+
+### 10.2 Hidden duplicate nav `<li>` artifacts
+
+On some categories (confirmed on Sports), the individual sub-section links (e.g. Chicago Bears, Bulls, Blackhawks, Cubs, White Sox) exist twice: once in the real working sub-menu, and again as `class="hidden"` top-level `<li>` siblings directly in the nav — apparent unused WordPress nav-menu artifacts.
+
+**Status:** Open — worth a cleanup pass, low risk/low priority.
+
+### 10.3 Device-class first-paint timing (Denver Post, mcall.com)
+
+A device-signal CSS class is added client-side (confirmed not server-side) slightly later on Denver Post and mcall.com than the other 4 sites — likely real device detection working correctly, just applied a beat slower on those two.
+
+**Action needed:** Worth asking engineering whether any component's CSS actually depends on this class being present at first paint. If nothing does, this needs no action.
+
+**Status:** Open — low priority, likely closable with a single confirmation.
+
+---
+
+## 11. Account menu — dropdown shadow isn't the design token
+
+**Found:** 2026-10-23, in `mng-digisubs.styles.css` (loaded on every review site): `.dropdown-menu { box-shadow: 0 8px 16px -4px rgba(0,0,0,.2) }`. **Team:** digisubs.
+
+**Design:** the account menu uses the effect style **shadow/lg**, `0 8px 16px 0 rgba(0,0,0,.2)`, like every floating element (Karl, 2026-10-23). Applied in WordPress Elements ▸ Menus and Parts ▸ AccountMenu (`910:16425`) and its documentation frames (56 layers; Figma used 8px 6px 16px 0 · 25% before).
+
+**Fix:** change the spread from −4px to 0: `box-shadow: 0 8px 16px 0 rgba(0,0,0,.2)`. The digisubs `.dropdown-content`, `.digisubs-modal-skin` and the e-edition menu already use exactly this value; `.paywall-container` (`0 9px 16px 0 rgba(0,0,0,.25)`) should move to it too.
+
+---
+
+## 12. Homepage tabs (World Cup tabs) — font, colors, spacing and breakpoint off the design system
 
 **Found:** 2026-10-23, on staging.dailylocal.com/world-cup/ (`ul.sr-nav-tabs` > `button.tab-btn`), while building the For You tab bar. **Team:** CMS.
 
@@ -1905,59 +1493,97 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 | Tab side padding | 18px | `spacing/200` (16) |
 | Gap between tabs | 32px | `spacing/300` (24) |
 | Nav side padding | 24px | `spacing/300` (24) |
-| No side padding below | `(max-width: 500px)` | `(max-width: 639px)` (WordPress grid; see entry 30) |
+| No side padding below | `(max-width: 500px)` | `(max-width: 639px)` (WordPress grid; see entry 8) |
 
 **Fix:** update the `sr-nav-tabs` styles to the design column.
 
-## 32. Obituaries masthead — shadow and bottom border don't match the main masthead
+---
 
-**Found:** 2026-10-23, in the theme stylesheets (boldcoastal.css, measuredvibrant.css, modernearthy.css; checked on ocregister, chicagotribune and canoncitydailyrecord) while setting up the shadow tokens. **Team:** CMS.
+## 13. Breaking News bar — Denver Post uses primary-lighter instead of secondary
 
-**Design:** the obituaries masthead matches the main masthead (Karl, 2026-10-23). WordPress Elements ▸ Menus and Parts: **ObitMastHead** (`1139:22369`) and **Masthead** (`456:2572`) both use the effect style **shadow/masthead** (0 3px 3px 0, black 25%) only when scrolled, and no shadow at the top of the page.
+**Found:** 2026-10-02, live check of the six review sites (theme CSS read on `#page`; no breaking bar was active, so the color was read from the site's own `.breaking-bar` rule).
 
-| Property | Main masthead (production) | Obituaries masthead (production) | Design (both) |
+**Figma spec (source of truth):** the Breaking News Banner (WordPress Elements, `506:5632`) background is `color/theme/secondary` and its text is `color/theme/near-black` (bound 2026-10-02).
+
+**Production:**
+
+| Site | `.breaking-bar` background | Text | Token |
 |---|---|---|---|
-| Shadow at the top of the page | none | `0 5px 10px rgba(0,0,0,.4)` (`.obits-content-header .nav-wrapper-primary`), always on | none |
-| Shadow when scrolled | `0 3px 3px rgba(0,0,0,.25)` (`.site-header.headroom--not-top`) | `0 5px 10px rgba(0,0,0,.4)` | shadow/masthead (0 3px 3px · 25%) |
-| Nav bottom border | `1px solid #9D9A98` (`.nav-wrapper-primary`) | `1px solid #CCCCCC` | same as the main masthead |
+| ocregister.com | #FFEA00 | #0A0908 | secondary |
+| chicagotribune.com | #EEFF41 | #1F1E1C | secondary |
+| orlandosentinel.com | #EEFF41 | #1F1E1C | secondary |
+| canoncitydailyrecord.com | #EEFF41 | #141414 | secondary |
+| mcall.com | #EEFF41 | #141414 | secondary |
+| **denverpost.com** | **#AF1628** | #0A0908 | **primary-lighter** (Denver Post override) |
 
-**Fix:** remove the `.obits-content-header .nav-wrapper-primary` box-shadow and border-bottom overrides, so the obituaries masthead uses the main masthead's styles.
+**Open question (Karl):** keep Denver Post's red bar as a documented Denver Post exception, or have Engineering align it to `secondary` (`#003459`, navy, on Denver Post). Until decided, Figma stays on `secondary`.
 
-## 33. Masthead — nav bottom border color isn't a design token
+**Status:** Open, waiting on that decision.
 
-**Found:** 2026-10-23, on ocregister, chicagotribune, canoncitydailyrecord, denverpost and orlandosentinel (all three theme stylesheets). **Team:** CMS.
+---
 
-**Production:** `.nav-wrapper-primary { border-bottom: 1px solid #9D9A98 }`. It's the 1px rule under the masthead, there both at the top of the page (under the section nav row) and when scrolled (under the 64px bar, which is 65px tall with the rule).
+## 14. Section title (eyebrow) — color, underline and spacing don't match the design
 
-**Design:** `color/gray/400` (#A7A6A3), the closest MNG gray (Karl, 2026-10-23). In WordPress Elements, every masthead rule now uses gray/400 (2026-10-23): Masthead (`456:2572`) top-of-page variants (36 rules changed from `color/gray/300`), every Scrolled and AdFree-Scrolled variant (27 rules added at the bottom; the 3 Dashboard variants already had one), and ObitMastHead (`1139:22369`, 26 rules added at the bottom, matching the main masthead per entry 32).
+**Found:** the Article Card / Teaser audit (color and underline); spacing measured 2026-10-27 on the homepage section titles (`.section-highlight h2.entry-title` and `.headline-list-title`) of all 6 review sites, while documenting the component. **Team:** CMS.
 
-**Fix:** change the border color to the gray/400 value (#A7A6A3). The obituaries masthead's own #CCCCCC border goes away with entry 32.
-
-## 34. Account menu — dropdown shadow isn't the design token
-
-**Found:** 2026-10-23, in `mng-digisubs.styles.css` (loaded on every review site): `.dropdown-menu { box-shadow: 0 8px 16px -4px rgba(0,0,0,.2) }`. **Team:** digisubs.
-
-**Design:** the account menu uses the effect style **shadow/lg**, `0 8px 16px 0 rgba(0,0,0,.2)`, like every floating element (Karl, 2026-10-23). Applied in WordPress Elements ▸ Menus and Parts ▸ AccountMenu (`910:16425`) and its documentation frames (56 layers; Figma used 8px 6px 16px 0 · 25% before).
-
-**Fix:** change the spread from −4px to 0: `box-shadow: 0 8px 16px 0 rgba(0,0,0,.2)`. The digisubs `.dropdown-content`, `.digisubs-modal-skin` and the e-edition menu already use exactly this value; `.paywall-container` (`0 9px 16px 0 rgba(0,0,0,.25)`) should move to it too.
-
-## 35. Load More / Show More Photos — notch off center and colors off the design tokens
-
-**Found:** 2026-10-23, on the OC Register homepage (Photos block) and a section front, in the shared theme rule `.show-more-videos, .load-more` (and `::before`). Rechecked on all 6 review sites 2026-10-27: everything is the same on every theme except the gray of the rule and notch edges. **Team:** CMS.
-
-**Status: on hold (Karl, 2026-10-23).** For now the design uses production's exact values: WordPress Elements ▸ Homepage ▸ Photos ▸ **Show More Affordance** (`3634:49423`), used in Photos Block and the For You feed. The token version below, **Show More Affordance (tokens, future reference)** (`3634:49427`), is the future target; this fix applies when it's adopted.
+**Design:** WordPress Elements ▸ Homepage ▸ **Section Title / Eyebrow** (`3333:42278`), Style = Underline / Bold (the "Latest Headlines" title in Section Highlight). Size, weight and family come from the per-theme eyebrow tokens: Bold Coastal 20px / 400 / Noto Sans, Measured Vibrant 17px / 700 / Noto Sans, Modern Earthy 21px / 400 / Noto Serif (`tokens/typography/typography-decision-log.md`, decision 6); production already matches these sizes. The 8px gaps were 6px in the first draft, a tie between `spacing/050` and `spacing/100` (Karl, 2026-10-27: 8).
 
 | Property | Production | Design |
 |---|---|---|
-| Notch position | about 5px right of center: `::before { left: 50%; transform: rotate(-45deg) translateY(-50%) }` overrides the `translate(-50%, 0)` that would center it | always centered on the rule (a bug) |
-| Notch fill | `#FBFBFB` | `color/gray/600` (#F1EFEB) |
-| Notch edges and rule | `1px solid`: `#D7D6D2` Bold Coastal (ocregister, denverpost), `#C8C4C0` Measured Vibrant (chicagotribune, orlandosentinel), `#DDD8D5` Modern Earthy (mcall, canoncitydailyrecord) | `color/gray/500` (#CCCAC7) on every theme |
-| Label | Noto Sans Bold 16/16, uppercase, `var(--primary)` | same (`font/size/16`, `font/style/bold`, `color/theme/primary`) |
-| Space above and below the label | 40px (`padding: 2.5em 0`) | 40px. No spacing token is this large yet (largest is `spacing/300`, 24px); kept at production's value. |
+| Title color | wrong on all 6 sites | `color/gray/100` |
+| Underline | only on Modern Earthy (mcall, canoncitydailyrecord): `2px solid` primary. Missing on Bold Coastal (ocregister, denverpost) and Measured Vibrant (chicagotribune, orlandosentinel) | 2px `color/theme/primary` on every theme, as wide as the title |
+| Title to underline | `padding-bottom: 0.3125em` = 6.56px (Modern Earthy, 21px); 0.5em = 8.5px with no underline (Measured Vibrant, 17px); 0 with no underline (Bold Coastal, 20px) | `spacing/100` (8px) on every theme |
+| Title to arrow | no gap; the `icon-arrow-right` glyph has `padding-left: 0.3em` (4.14px Measured Vibrant, 4.88px Bold Coastal, 5.12px Modern Earthy) | `spacing/100` (8px), then the 16px arrow icon |
 
-**Fix:** center the notch (for example `transform: translate(-50%, -50%) rotate(-45deg)` with `top: 0`), fill it with the gray/600 value (#F1EFEB) and use the gray/500 value (#CCCAC7) for the rule and the notch edges.
+**Fix:** on every theme: set the title color to `color/gray/100`; add the 2px `--primary` underline; set the title's bottom padding to 8px; set the space between the title and its arrow to 8px.
 
-## 36. Zone 1 slideshow (gallery lead) — type, spacing and colors off the design tokens
+**Status:** Open. Ready for Engineering.
+
+---
+
+## 15. Section Highlight block — Denver Post shows 4 headline items instead of 3
+
+**Found:** Article Card / Teaser audit.
+
+**Figma / platform norm:** Every pilot site (Chicago Tribune, OC Register, Orlando Sentinel, Greeley Tribune, mcall.com) shows exactly 3 headline items in the Section Highlight module.
+
+**Production:** Denver Post shows 4 — and this isn't theme-scoped, since OC Register shares Denver Post's Bold Coastal theme but still shows 3.
+
+**Action needed:** Confirm whether this is a deliberate per-site editorial choice or a real inconsistency worth fixing.
+
+**Status:** Open — not yet root-caused.
+
+---
+
+## 16. Article card / teaser — layout rules, excerpt color and image fit
+
+### 16.1 Responsive layout rules vary by container context (not fully mapped)
+
+**Found:** Article Card / Teaser audit, §5 Open Item 8.
+
+**Detail:** `feature-medium` and `headline-only` responsive (`flex-direction`) rules change depending on the parent container class (e.g. `.landing-four-up-hybrid`, `.landing-three-one`, `.slow .feature-top` each carry their own breakpoint overrides for the same classes). This overlaps with the upcoming Containers component and hasn't been fully mapped — flagging so it isn't mistaken for one universal rule.
+
+**Status:** Open / informational — needs a dedicated mapping pass.
+
+### 16.2 Excerpt/dek color needs re-verification (minor)
+
+**Detail:** The dek/excerpt color (~`#484642`, sampled from Chicago Tribune) was derived via an rgb→hex rounding pass that wasn't double-checked the way other colors in the doc were.
+
+**Status:** Open — low priority, worth a re-check before treating as final.
+
+### 16.3 `object-fit: fill` on card images — distortion risk
+
+Both hero and feature-medium images use `object-fit: fill` with no `aspect-ratio` set, meaning images are stretched to exactly fill their container rather than cropped-to-fill (`cover`). Distortion is currently minimal because sampled images happen to be close to the container's aspect ratio, but an editor uploading an off-ratio image would visibly stretch/squash it.
+
+**Action needed:** Confirm with engineering whether `fill` is intentional or should be `cover`, since this is a live distortion risk on any off-ratio upload.
+
+**Status:** Open.
+
+---
+
+## 17. Zone 1 slideshow (gallery lead) — type, spacing and colors off the design tokens; slide count not announced
+
+### 17.1 Type, spacing and colors off the design tokens
 
 **Found:** 2026-10-26, on develop.denverpost.com (Zone 1 lead that is a photo gallery: `article.slideshow.feature-large > .article-slideshow`, the mng-gallery slider), checked at about 1465, 768 and 360px. **Team:** CMS. The controls (arrows, count and caption size) switch at production's 800px (`max-width: 49.9375em`); the design uses the same breakpoint.
 
@@ -1978,7 +1604,7 @@ Design: WordPress Elements ▸ Homepage ▸ **Zone 1 Slideshow** (`3640:50278`),
 
 **Fix:** use the design's token values for the slideshow type, colors and spacing.
 
-## 37. Zone 1 slideshow — slide count isn't announced to screen readers (required)
+### 17.2 Slide count isn't announced to screen readers (required)
 
 **Found:** 2026-10-26, on develop.denverpost.com (Zone 1 gallery lead, `.article-slideshow`). **Team:** CMS. **Required update (Karl, 2026-10-26).**
 
@@ -1986,21 +1612,462 @@ When the previous / next buttons change the photo, the "1 of 29" count (`.slide-
 
 **Fix:** add `aria-live="polite"` to `.slide-count` (or to `.mng-gallery-information-container`, so the caption is read too), so the new count is announced after each change. Design: WordPress Elements ▸ Homepage ▸ Zone 1 Slideshow (`3640:50278`) and the For You prototype prompt, section 10.
 
-## 38. Section title (eyebrow) — space below the title and before the arrow aren't tokens
+---
 
-**Found:** 2026-10-27, on the homepage section titles (`.section-highlight h2.entry-title` and `.headline-list-title`) of all 6 review sites, while documenting the Section Title / Eyebrow component. **Team:** CMS. Color and the missing underline are entry 12.2.
+## 18. Load More / Show More Photos — notch off center and colors off the design tokens
 
-**Design:** WordPress Elements ▸ Homepage ▸ **Section Title / Eyebrow** (`3333:42278`), Style = Underline / Bold. The title row, underline and optional subhead are `spacing/100` (8px) apart, and so are the title and its arrow (Karl, 2026-10-27: 6px was a tie between 4 and 8).
+**Found:** 2026-10-23, on the OC Register homepage (Photos block) and a section front, in the shared theme rule `.show-more-videos, .load-more` (and `::before`). Rechecked on all 6 review sites 2026-10-27: everything is the same on every theme except the gray of the rule and notch edges. **Team:** CMS.
+
+**Status: on hold (Karl, 2026-10-23).** For now the design uses production's exact values: WordPress Elements ▸ Homepage ▸ Photos ▸ **Show More Affordance** (`3634:49423`), used in Photos Block and the For You feed. The token version below, **Show More Affordance (tokens, future reference)** (`3634:49427`), is the future target; this fix applies when it's adopted.
 
 | Property | Production | Design |
 |---|---|---|
-| Title to underline | `padding-bottom: 0.3125em` = 6.56px (Modern Earthy, 21px: mcall, canoncitydailyrecord); 0.5em = 8.5px with no underline (Measured Vibrant, 17px: chicagotribune, orlandosentinel); 0 with no underline (Bold Coastal, 20px: ocregister, denverpost) | `spacing/100` (8px) on every theme, then the 2px `color/theme/primary` underline |
-| Title to arrow | no gap; the `icon-arrow-right` glyph has `padding-left: 0.3em` (4.14px Measured Vibrant, 4.88px Bold Coastal, 5.12px Modern Earthy) | `spacing/100` (8px) gap, then the 16px arrow icon |
+| Notch position | about 5px right of center: `::before { left: 50%; transform: rotate(-45deg) translateY(-50%) }` overrides the `translate(-50%, 0)` that would center it | always centered on the rule (a bug) |
+| Notch fill | `#FBFBFB` | `color/gray/600` (#F1EFEB) |
+| Notch edges and rule | `1px solid`: `#D7D6D2` Bold Coastal (ocregister, denverpost), `#C8C4C0` Measured Vibrant (chicagotribune, orlandosentinel), `#DDD8D5` Modern Earthy (mcall, canoncitydailyrecord) | `color/gray/500` (#CCCAC7) on every theme |
+| Label | Noto Sans Bold 16/16, uppercase, `var(--primary)` | same (`font/size/16`, `font/style/bold`, `color/theme/primary`) |
+| Space above and below the label | 40px (`padding: 2.5em 0`) | 40px. No spacing token is this large yet (largest is `spacing/300`, 24px); kept at production's value. |
 
-**Fix:** set the title's bottom padding to 8px and the arrow's left spacing to 8px on every theme.
+**Fix:** center the notch (for example `transform: translate(-50%, -50%) rotate(-45deg)` with `top: 0`), fill it with the gray/600 value (#F1EFEB) and use the gray/500 value (#CCCAC7) for the rule and the notch edges.
+
+---
+
+## 19. Blueconic Block (Most Popular) — list spacing and item headline
+
+**Found:** 2026-10-07, ocregister.com at 360, 768, 1024, 1100 and 1280px (homepage "Most Popular", `.dfm-most-popular-flex-container` inside `landing-three-one` → `.three-one-left`).
+
+**Figma spec (source of truth):** WordPress Elements `Blueconic Block (Most Popular)` (`3352:20526`) with `Most Popular List Item` (`3352:24171`) kept at **44px** tall per item. The space between items is added in the block (column auto-layout gap), not in the item.
+
+### 19.1 Item spacing and column gaps
+
+Production stacks the items with no gap. Each row is 60px tall for a one-line headline and 77px for two lines. Design keeps the item at 44px and adds the difference as the gap between items, so a one-line row lands on production's 60px.
+
+| Width | Columns (production) | Design column gap | Design item gap |
+|---|---|---|---|
+| 360 (Mobile) | 1 × 340 | — | 16 (`spacing/200`) |
+| 768 (Tablet) | 2 × 365 | 19 | 16 (`spacing/200`) |
+| 1024 | 2 × 288 (every headline wraps to 2 lines) | 19 | 11 (fits the 77px two-line row) |
+| 1100 | 2 × 360 | 21 | 16 (`spacing/200`) |
+| 1280 | 2 × 459 | 22 | 16 (`spacing/200`) |
+
+### 19.2 Spacing values with no token — remove in a future pass
+
+The gaps of **11, 19, 21 and 22** px come from production's fluid layout and are kept in Figma as plain numbers on purpose. There are no tokens for them, and none should be created. When engineering moves these blocks onto the spacing scale (4 / 8 / 12 / 16 / 20 / 24), replace them: 11 → 12 (`spacing/150`), 19 / 21 → 20 (`spacing/250`), 22 → 24 (`spacing/300`) or 20, and update the Figma gaps to match. 16 and 20 are already bound to `spacing/200` / `spacing/250`.
+
+### 19.3 Item headline type
+
+| | Production (all widths) | Design (`Most Popular List Item`) |
+|---|---|---|
+| Headline | Noto Serif **600**, 16px / **17.07px** | Noto Serif **Bold (700)**, 16px / **auto (~22px)** |
+
+One-line items are unaffected (the 44px height holds), but every extra line adds about 5px more in design than in production. Two-line rows are 66px plus the gap in design versus 77px in production, and three-line rows grow further apart. **Decision (Karl, 2026-10-07): keep the Figma item as is** — 44px tall, Noto Serif Bold 16 / auto. This is a known difference, not a Figma bug; production should move to the design's type if it's ever aligned.
+
+---
+
+## 20. Video carousel ("Videos from @OCRegister") — fixed-height iframe leaves ~200px of unused blank space at narrow (340–360px) widths
+
+**Found:** 2026-09-16, during a systematic 340px/360px breakpoint sweep across all homepage components (per Karl — checking widths narrower than any explicit CSS breakpoint, since 640px is the first real tier boundary). Verified twice: once via a narrowed real desktop Chrome window, and again via true mobile device emulation (Pixel 9 UA, touch-enabled, no desktop scrollbar) at both 340px and 360px, on ocregister.com.
+
+**Production:** The `.dfm-page-middle-flex-container` block (a single Flourish-hosted `<iframe src="https://flo.uri.sh/visualisation/21363813/embed" title="Video from @OCRegister">`) renders at a fixed height of 490px at both 340px and 360px viewport widths. At these widths the visible content inside the iframe — header ("Videos from @OCRegister"), subtitle, the row of video tiles, and the horizontal scroll-indicator bar — only fills roughly the top 260–265px of that height, leaving about 200px of blank white space below the scroll indicator before the next section (Photos) begins. Confirmed identically at both 340px and 360px, and identically whether tested via a narrowed desktop window or true mobile emulation, so this isn't a testing-methodology artifact — it's a real rendering behavior at these widths.
+
+**Figma spec:** The `Videos from OCRegister Carousel` component (built 2026-09-16, see the homepage template audit section 3.35, since retired) sizes its outer frame to HUG its actual content height at every placed width — header + subtitle + tile row + scroll indicator, with no trailing blank space. It does not reproduce this gap, since the gap appears to be a property of the live Flourish embed's own fixed iframe height, not something the surrounding page template's CSS controls (no dedicated `@media` rules were found for `.dfm-page-middle-flex-container` itself in this or the earlier 3.2x-era investigation).
+
+**Action needed:** Since the iframe height is most likely set via the Flourish visualisation's own embed configuration rather than page-template CSS, this is probably a Flourish-settings fix rather than a template fix — either make the embed size its iframe responsively to actual content height at narrow widths, or set a shorter fixed height specifically for the sub-640px range. Flagging for whoever owns the Flourish embed configuration to confirm whether that's adjustable there.
+
+**Status:** Open.
+
+---
+
+## 21. Upcoming Events (CitySpark widget) — font family
+
+**Found:** 2026-10-07, ocregister.com (homepage `.csLayHolder` → `.cswidholder` iframe, CitySpark template).
+
+**Figma spec (source of truth):** WordPress Elements `Upcoming Events Widget` matches production's layout, sizes, spacing and colors exactly (Karl, 2026-10-07), but sets all text in **Noto Sans**, like the rest of the design system.
+
+**Production:** every text element in the widget is **Roboto Condensed**: the title "Upcoming Events" 400 20/22, the "See All Events" and "Add your event" buttons 400 12/15, the card dates 400 11, event names 700 13/14, venues 400 12/14, date-strip days 400 15/20 uppercase and dates 400 20/19.
+
+**Fix:** change the CitySpark widget template's font to Noto Sans (same sizes and weights) on every site, with whoever manages the CitySpark account.
+
+---
+
+## 22. Sponsored content badge — needs to be fixed in production
+
+**Found:** 2026-10-02, live check of the six review sites (homepage, Latest Headlines and article lists).
+
+**Figma spec (source of truth):** the "Sponsored content" badge (WordPress Elements, Article Status Badge `Type=Sponsored`, `3344:63995`, and its instances in Latest Headlines, Top Zone and TopZone Article Card) stays **#7D161E with white text** (Karl, 2026-10-02). It is intentionally not bound to a theme token for now: none of the theme roles works on every site (white text fails contrast on the yellow `secondary` themes, and `tertiary` passes on only 9 of 22 themes).
+
+**Production:** the live badge is the Nativo native-ad label (inline style set by the vendor template), not a theme class, and it doesn't match the design anywhere checked.
+
+| Site | Live label background | Design | Match |
+|---|---|---|---|
+| denverpost.com | #003459 (navy, white text) | #7D161E | ❌ |
+| ocregister.com | #0097A7 | #7D161E | ❌ |
+| chicagotribune.com, orlandosentinel.com, canoncitydailyrecord.com, mcall.com | no Nativo sponsored unit on the homepage checked | #7D161E | not checked |
+
+**Fix:** update the Nativo sponsored-label template on every site to the design badge (#7D161E background, white `gray/max` text, Noto Sans), with Ad Ops. Re-check the other four sites when a sponsored unit is running.
+
+**Note:** the theme's own `.sponsored-content .sponsored-flag` (a different element) uses `primary-light` with white text, and `secondary` with dark text on images.
+
+**Status:** Open.
+
+---
+
+## 23. Article breadcrumbs — label font family and text color
+
+**Found:** 2026-10-08, ocregister.com article page (`.breadcrumbs` › `.breadcrumb-type-wrapper > a`, e.g. "NEWS › ENVIRONMENT • News").
+
+**Figma spec (source of truth):** WordPress Elements › Article Page › `Breadcrumbs` (`1110:19469`) matches production's sizes, spacing and colors (rebuilt 2026-10-08, Karl): crumbs Noto Sans 700 16/22 uppercase, the `arrow-right2` icon at 14px in `color/gray/500` with 5px on each side, and the label " • News" in Noto Sans 400 15.2/15.2 (`font/size/15-2`). All breadcrumb text (crumbs, bullet and label) is **`color/gray/min` (#141414)** (Karl, 2026-10-08).
+
+**Production:**
+- *Label font:* the label and its CSS-added " • " bullet have no font family set, so they render in **Helvetica** (inherited from the page default). The crumbs are Noto Sans.
+- *Text color differs across sites:* breadcrumb text (crumbs, bullet and label) is **#000000** on OC Register, Chicago Tribune and Orlando Sentinel, but **Denver Post's crumbs use its theme red #8E1024**. So some sites let breadcrumbs take a theme / site-override color and others don't.
+- *Separator arrow color differs across sites:* **#D7D6D2** on OC Register and Denver Post, **#C8C4C0** on Orlando Sentinel. Design uses `color/gray/500` (#CCCAC7), the closest gray token.
+- mcall.com and canoncitydailyrecord.com weren't checked (Chrome isn't allowed on those domains).
+
+**⚠ Decision needed: design AND dev teams together.** Should breadcrumb text be one neutral color on every site, or follow each site's theme / Customizer colors (as Denver Post's red does today)? Design's proposal (Karl, 2026-10-08): one neutral, `color/gray/min` (#141414), on every site whatever its theme or site override, so breadcrumbs don't take theme colors; the arrow is `color/gray/500` everywhere. Dev needs to confirm where Denver Post's red comes from (theme stylesheet or Customizer override) and what changing it affects. Record the agreed answer here.
+
+**Fix:**
+1. Set the label to Noto Sans (same 0.95em size, 400 weight) on every site. *Not blocked.*
+2. *Pending the decision above:* set all breadcrumb text to the agreed color on every site (proposed `color/gray/min` #141414: from #000000 on most sites, and from #8E1024 on Denver Post).
+3. *Pending the decision above:* set the separator arrow to one color on every site (proposed `color/gray/500` #CCCAC7, from #D7D6D2 / #C8C4C0).
+
+**Status:** Open. Fix 1 is ready; fixes 2 and 3 wait on the design + dev decision.
+
+---
+
+## 24. Obituaries masthead — shadow and bottom border don't match the main masthead
+
+**Found:** 2026-10-23, in the theme stylesheets (boldcoastal.css, measuredvibrant.css, modernearthy.css; checked on ocregister, chicagotribune and canoncitydailyrecord) while setting up the shadow tokens. **Team:** CMS.
+
+**Design:** the obituaries masthead matches the main masthead (Karl, 2026-10-23). WordPress Elements ▸ Menus and Parts: **ObitMastHead** (`1139:22369`) and **Masthead** (`456:2572`) both use the effect style **shadow/masthead** (0 3px 3px 0, black 25%) only when scrolled, and no shadow at the top of the page.
+
+| Property | Main masthead (production) | Obituaries masthead (production) | Design (both) |
+|---|---|---|---|
+| Shadow at the top of the page | none | `0 5px 10px rgba(0,0,0,.4)` (`.obits-content-header .nav-wrapper-primary`), always on | none |
+| Shadow when scrolled | `0 3px 3px rgba(0,0,0,.25)` (`.site-header.headroom--not-top`) | `0 5px 10px rgba(0,0,0,.4)` | shadow/masthead (0 3px 3px · 25%) |
+| Nav bottom border | `1px solid #9D9A98` (`.nav-wrapper-primary`) | `1px solid #CCCCCC` | same as the main masthead |
+
+**Fix:** remove the `.obits-content-header .nav-wrapper-primary` box-shadow and border-bottom overrides, so the obituaries masthead uses the main masthead's styles.
+
+---
+
+## 25. Obituaries navigation — hamburger and "All Sections" both visible at desktop width
+
+**Figma / platform rule:** On the homepage, the hamburger icon is only visible at ≤1039px.
+
+**Production:** On the Obituaries page, at a comfortably-desktop viewport, both the hamburger icon and the "All Sections" button are visible simultaneously — confirmed on all 6 pilot sites (Chicago Tribune, Denver Post, OC Register, Orlando Sentinel, Greeley Tribune, mcall.com), including at a 1728px viewport.
+
+**Action needed:** Still not explained — genuinely flagged to engineering to confirm whether this is intentional for the Obituaries template or a bug.
+
+**Status:** Open.
+
+---
+
+## 26. Obituaries page CTA button — should be Button Primary, Default (Chicago Tribune, Denver Post)
+
+**Found:** 2026-09-01, during the buttons audit.
+
+**Figma spec:** Button Primary (main file, ***Buttons page), Default size — padding 16px vertical + 20px horizontal, 14px text.
+
+**Production:** The live `.subscribe-button` CTA (249×44, confirmed identical on Chicago Tribune and Denver Post, also appears on regular article pages — a general paywall CTA, not obituary-specific) renders with padding 14px/10px instead of 16px/20px, and font-size 15px instead of 14px. Radius and per-masthead fill color already match Figma.
+
+**Decision (Karl, 2026-09-01):** This is not a new button size/variant — it should simply carry Button Primary's existing Default styling. Production needs to be brought in line with Figma's padding and font-size values above; no new Figma token or variant should be created for it.
+
+**Status:** Open.
+
+---
+
+## 27. Obituaries — breakpoints that don't match the WordPress grid (for the CMS team)
+
+**Found:** 2026-10-14, in the Obituaries styles (`assets/client/scss/layouts/scng/components/features/_obits.scss` in the WordPress themes, Karl's local repo copy dated 2026-05-08) and the 2026-09-15 live audit of the Obituaries pages (`components/breakpoint-audit.md`). **Team:** CMS. *Live check still to do.*
+
+**Design (Karl, 2026-10-14):** Obituaries is built on the WordPress theme grid (it uses the theme's `ai-breakpoint()` mixin), so it belongs to the WordPress layer and follows the **WordPress grid breakpoints**: `xs` 320, `s` 640, `m` 800, `l` 1040, `xl` 1280 (min-widths; written as max-widths 639 / 799 / 1039 / 1279). Values that don't match the grid are drift for the CMS team to correct in the future.
+
+**Production:**
+
+| Production breakpoint | Where it's used | Matches the WordPress grid? | Snap to |
+|---|---|---|---|
+| `ai-breakpoint` `s` / `m` / `l` (640 / 800 / 1040) | spacing and layout | Yes | none |
+| ≥1040px (`65em`) / ≤1039px (`64.9375em`) | horizontal layout / 2-column upper bound | Yes (`l`) | none |
+| 800px (`50em`) | filter panel padding when open | Yes (`m`) | none |
+| ≤624px (`39em`, and a raw `624px` rule) / ≥625px (`39.0625em`) | 1-column layout and search form stacking / 2-column start | No | 640 (`s`) |
+| ≥1300px (`81.25em`) / ≤1299px (`81.1875em`) | listing and "stop scaling" | No | 1280 (`xl`) |
+| 1000px (`62.5rem`) | top and bottom leaderboard ad placement | No | 1040 (`l`) |
+| 625–734 / 735–1299px | photo gallery widget (likely shared, not obituary-only) | No | 640 / 800 / 1280 |
+
+**Fix (future, CMS team):** move each non-matching rule to the grid breakpoint in the right-hand column. The gallery widget and the 1000px ad rule may be shared with other pages; confirm before changing them. The Masthead's Obituaries search widget (624) is part of this fix.
+
+**Status:** Open (future).
+
+---
+
+## 28. Ad slots — sizes, lazy registration, disclosure label and mobile adhesion
+
+### 28.1 Homepage "Ad Blocks" slot after Blueconic/Most Popular is undersized (300×250 instead of 300×600)
+
+**Found:** 2026-09-14, during the five-width (340/360/768/1024/1280) homepage production-parity audit.
+
+**Figma action taken:** Per Karl's instruction, this ad instance was updated in Figma to the production-accurate `Cube 1 RRail ATF 300x600` block at every width where it appears (Mobile 340/360, and the new 768/Tablet build), replacing the previous `Cube Article 300x250` placeholder — specifically so the Figma mockups now make this gap visible rather than quietly matching the undersized code.
+
+**Figma spec (now, post-fix):** `Cube 1 RRail ATF 300x600` — matches the size production is actually observed serving.
+
+**Production:** Live GPT ad-slot scanning (`iframe[id^="google_ads_iframe"]` DOM query, cross-referenced against scroll position) on ocregister.com found this slot — `cube2_rrail_mid` — rendering at 300×600 at both mobile (340/360) and tablet (768) widths, at every width checked.
+
+**Action needed:** Confirm whether the live implementation for this ad slot is intentionally 300×250 somewhere in code (unlikely, given production itself serves 300×600 into it) or whether this was simply never corrected after being built against an earlier/incorrect spec. Since Figma now shows the corrected 300×600 size, any remaining 300×250 assumption in the live templates should be treated as the bug to fix, not Figma.
+
+**Status:** Open.
+
+### 28.2 Top-leaderboard ad slot renders at inconsistent sizes across page types
+
+**Found:** 2026-09-15, during the Masthead breakpoint audit (`breakpoint-audit.md`), 375px (mobile) pass, comparing OC Register live production against the `Masthead` component set (WordPress Elements → Menus and Parts).
+
+**Figma spec (as of this finding, before the Figma fix below):** The `Masthead` component's `Default`-state ad placement was inconsistent across `Page` variants — Home showed an ad box labeled "Top Leaderboard 320x100," while Section Front and Article showed no ad at all beneath the masthead.
+
+**Production:** The same ad position (`div-gpt-ad-top_leaderboard`, directly below the masthead) renders at different sizes depending on page type, confirmed live at 375px width:
+
+| Page | Live ad size |
+|---|---|
+| Home | 320×50 |
+| Section Front (`/news/`) | 320×100 |
+| Article | 320×50 |
+
+**Decision (Karl, 2026-09-15):** This needs to be fixed in production so the top-leaderboard ad slot displays consistently. Figma has been updated (see below) to show the ad on all three page types at their live-measured sizes, so the intended placement is now visible as a reference for engineering.
+
+**Figma action taken:** Added/corrected the ad placeholder on all three `Default`-state Page variants of the `Masthead` component (SM-Mobile tier): Home corrected to `Top Leaderboard 320x50` (was mislabeled 320x100), Section Front now shows `Top Leaderboard 320x100`, Article now shows `Top Leaderboard 320x50` — each matching what production actually serves at that page type.
+
+**Action needed:** Engineering to reconcile the production-side inconsistency — confirm whether the top-leaderboard slot is intended to serve a uniform ad size across Home/Section Front/Article, and align production accordingly.
+
+**Status:** Open.
+
+### 28.3 Orlando Sentinel — ad slots register lazily on mobile homepage
+
+On Orlando Sentinel's mobile homepage, only the `mobile_adhesion` slot registered with Google Publisher Tag at initial load; the other 10 ad containers exist in the DOM but didn't register in `getSlots()` even after scrolling most of the page and waiting. This looks like Freestar (Orlando Sentinel's header-bidding wrapper, different from the other 5 pilot sites) registering slots lazily/progressively rather than upfront.
+
+**Action needed:** Confirm with engineering whether this is expected Freestar behavior or worth a longer dwell-time re-check.
+
+**Status:** Open.
+
+### 28.4 No visible ad-disclosure label
+
+No "Advertisement"/"Sponsored" text label or `aria-label` was found near any ad container on any of the 6 pilot sites — only Google's own AdChoices icon (rendered inside the ad iframe itself, not site-authored markup).
+
+**Action needed:** Confirm with engineering/legal whether the absence of an explicit disclosure label at the container level is intentional, since AdChoices alone is a weaker disclosure than what many other publishers use.
+
+**Status:** Open — legal/compliance relevance.
+
+### 28.5 Mobile adhesion — empty sticky bar shows at 1024px and up
+
+**Found:** 2026-10-02, ocregister.com at a 1024px window (homepage and article page).
+
+**Figma spec (source of truth):** `mobile_adhesion` exists only below 1024px — Ad Blocks `Mobile Adhesion 320x50` / `300x50` on mobile and `Mobile Adhesion 728x90` at tablet (768). The 1024, 1100 and 1280 templates have no adhesion unit (the 1024 floating anchor was removed 2026-10-02).
+
+**Production:** at 1024px the `#mobile-adhesion` container is still fixed to the bottom of the viewport (1024×90, with its Close button), but the GPT slot has no valid size at that width (`getSizes(1024)` returns an empty list), so no ad can ever load. Readers see an empty bar.
+
+**Fix:** hide the `#mobile-adhesion` container (and its Close button) at the same breakpoint where the slot's size mapping goes empty (≥1024px), or remove the container from the DOM at desktop widths. Check the other five review sites.
+
+---
+
+## 29. Main content container width — Chicago Tribune vs. Denver Post
+
+Chicago Tribune's `main` container measures 1260px at a 1280px viewport; Denver Post measures 1245px at the same viewport — a real 15px difference, not explained by Denver Post running a different theme (it doesn't — confirmed both load real shared theme stylesheets with their own Customizer overrides, same pattern as every other site).
+
+**Status:** Open — not root-caused; could be a scrollbar-width artifact of that specific page load rather than a genuine CSS difference.
+
+---
+
+## 30. Reader Dashboard — Typography (2026-09-10)
+
+**Policy:** For anything specific to the Reader Dashboard, Figma is the source of truth — even where production currently differs. MNG Web Design System's `Dashboard/*` typography tokens (in the "Dashboard Typography" collection) are kept at their Figma-specified values; any place production has been found rendering something different is recorded here instead, for engineering to either fix in production or flag back to design if the production value should actually be adopted.
+
+### 30.1 Page title size — `Dashboard/Titles/PageDesktop`
+
+**Figma:** Noto Serif, **26px**, Bold (700) — matches Reader Dashboard v2.0's own Figma token (`Titles/Page (desktop, tabletH)`) exactly.
+
+**Production:** canoncitydailyrecord.com/dashboard/ (desktop width) renders this title at **36px**, via a Tailwind `lg:text-4xl` breakpoint utility class overriding the base size.
+
+**Action needed:** Reconcile production to the Figma-specified 26px, OR — if 36px is an intentional, approved change — get that confirmed with design so Figma can be updated to match and this item retired. Until then, MNG Web Design System's token stays at 26px per the policy above.
+
+**Status:** Open.
+
+### 30.2 Section Title weight — `Dashboard/Titles/SectionTitle`
+
+**Figma:** Noto Sans, 18px, Bold (700).
+
+**Production:** One live-measured instance showed weight 600 (Semi-Bold) instead of 700.
+
+**Caveat (lower confidence than 30.1):** The measured instance may have been an admin/debug panel ("MNG Debugger" / "Entitlements JWT") rather than genuine reader-facing UI.
+
+**Action needed:** Confirm on a real reader-facing Section Title instance whether it's 700 (matches Figma) or genuinely 600.
+
+**Status:** Open.
+
+### 30.3 `font/size/10` — unconfirmed in production
+
+**Figma:** Defined at 10px in Reader Dashboard v2.0's Type Primitives, carried into MNG Web Design System.
+
+**Production:** No confirmed live sighting during this audit (only canoncitydailyrecord.com/dashboard/ was checked).
+
+**Action needed:** Low priority — confirm where (if anywhere) this size is actually used live.
+
+**Status:** Open.
+
+---
+
+## 31. Reader Dashboard — Modal
+
+**Figma source:** "ModalsCenter" library component, Reader Dashboard v2.0. **Live source:** East Bay Times preprod, account-verification flow.
+
+### 31.1 Card border mismatch
+
+Figma's ModalsCenter has a 1px `color/gray/300` border on the card; the live card was recorded relying on shadow only, with no border distinguished. Both may be true (a subtle border could be present but visually indistinguishable from the shadow) — not resolved either way.
+
+**Status:** Open.
+
+### 31.2 Backdrop opacity mismatch
+
+Live backdrop is 45% black; the Figma-modeled value is 50% black — close, and not even built into the component as a literal property either way.
+
+**Status:** Open — low priority.
+
+### 31.3 Fixed 444px width, narrow-viewport behavior untested
+
+The modal card is a fixed 444px, not fluid/responsive. Behavior at narrow viewports has not been tested.
+
+**Status:** Open.
+
+### 31.4 Password "Update" flow is unstyled design debt
+
+Clicking "Update" for password doesn't open a modal — it navigates to a separate, essentially unstyled page (`/reset-password/`: Arial font, square corners, plain black button border, default gray input border) that matches none of the design system.
+
+**Action needed:** This is design debt to flag, not a pattern worth capturing faithfully — needs a real design pass, not a Figma-matching exercise.
+
+**Status:** Open.
+
+### 31.5 Destructive-action modals unexplored
+
+Only the account-verification modal was captured live. Other triggers (e.g. canceling a subscription) were deliberately not explored to avoid triggering irreversible account actions, so their modal spec is unconfirmed.
+
+**Status:** Open — needs a human to click through and report back rather than automated exploration.
+
+---
+
+## 32. Reader Dashboard — Disclosure
+
+### 32.1 Two competing disclosure/accordion patterns need reconciliation
+
+Production's live Reader Dashboard (e.g. chicagotribune.com/user-tools/dashboard) uses a chevron/icon-based accordion pattern, different from the simpler text-link toggle documented from preprod (the pattern actually built in Figma). The chevron pattern is currently out of scope because that surface is being replaced — but if it survives the replacement, the two patterns will need to be reconciled into one.
+
+**Status:** Open — contingent on what survives the Reader Dashboard replacement.
+
+### 32.2 Coverage and behavior gaps
+
+Only one instance of the disclosure pattern (Login Methods on Profile) was found and tested; other tabs (Subscription, Benefits, etc.) weren't checked for additional instances. Whether expand/collapse is animated or instant was never confirmed.
+
+**Status:** Open.
+
+---
+
+## 33. Reader Dashboard masthead — shows the top nav-links row and "TRENDING:" bar, which the design excludes
+
+**Found:** 2026-09-15, during the Reader Dashboard masthead audit (`breakpoint-audit.md`), on canoncitydailyrecord.com/dashboard/, logged in as a subscriber, at 1100px and 1040px (both above the masthead's 1039px desktop-nav threshold).
+
+**Production:** At desktop widths, the Reader Dashboard's masthead renders the full top nav-links row (News / Local News / Sports / Things to Do / Opinion / Obituaries / Marketplace / On the Record / BestReviews) and a "TRENDING:" bar (e.g. "Fremont County Nonprofit Guide 2026," "Royal Gorge Living") above the breadcrumb and page content — the same two rows Home's masthead shows at this tier.
+
+**Figma spec:** The `Masthead` component's `Device=XL-Desktop, Page=Dashboard` variant (`456:2715`, and the equivalent `Scrolled` variant `456:2840`) does **not** include a nav-links row or trending bar — it's just the top utility row (hamburger/All Sections, avatar, search) plus the weather/date/logo row, at 144px total versus Home's 497px 4-row structure.
+
+**Decision (Karl, 2026-09-15):** Figma is correct — the Reader Dashboard should **not** display the trending bar or top navigation. What production shows at canoncitydailyrecord.com/dashboard/ is the bug, not a Figma gap. No Figma changes made.
+
+**Action needed:** Engineering to suppress the nav-links row and "TRENDING:" bar on the Reader Dashboard page template at desktop widths, so it matches the intentionally-minimal masthead Figma already models.
+
+**Note:** confirmed only on canoncitydailyrecord.com (the one site used for this phase, per Karl's direction) — not cross-checked against the other 5 repertoire sites.
+
+**Status:** Open.
+
+---
+
+## 34. Reader Dashboard — breakpoints (questions for DigiScrum)
+
+### 34.1 Breakpoints close to, but not on, the Figma screen widths (questions for DigiScrum)
+
+**Found:** 2026-10-14, in the Reader Dashboard source (`plugins/mng-digital-subscriber-widgets/reader-dashboard-src/`, Karl's local copy of the website repo dated 2026-05-08) and its built CSS. **Team:** DigiScrum. *Live check still to do: confirm the current production build matches this copy.*
+
+**Design (source of truth):** Reader Dashboard v2.0 is designed at 5 screen widths: Fold 340, Mobile 360, Tablet (vertical) 768, Tablet (horizontal) 1024, Desktop 1280. These are the MNG Device breakpoints (min-widths 360 / 768 / 1024 / 1280; Fold is everything below 360).
+
+**Production:** 768 (`md`, `min-[768px]`), 1024 (`lg`, `window.innerWidth >= 1024`) and 1280 (`xl`) match. Four values don't, and they are too close to the design widths to be accidents, so **this entry asks why before asking for a fix** (Karl, 2026-10-14). The repo copy has no git history or code comments explaining them; the likely reasons below are inferred.
+
+| Production value | Where it's used | Likely reason | Question for DigiScrum |
+|---|---|---|---|
+| `min-[361px]` | text field size and height, inline form box padding, menu width (344px), page margins, display-name form (`text-field.tsx`, `inline-form-box.tsx`, `reader-dashboard.tsx`, `update-display-name.tsx`) | "Wider than 360": 360 is the most common Android phone width and Figma's largest phone frame. The compact phone styles apply at 360 and below; the roomier ones start at 361. Figma has no design between 361 and 767, so the team picked where the roomier layout starts. | Is 361 meant as "wider than the 360 Mobile frame"? Should the roomier styles start at 360 (Figma's Mobile) or stay at 361? |
+| `min-[413px]` | "No articles saved" empty state alignment (`no-articles-saved.tsx`) | "Wider than 412": 412 is a common large-Android width. Likely a fix for a wrap seen on a specific phone. | Was this a fix for a specific device? Could it use 360 or 768 instead? |
+| `sm` 640 (40rem) | logout status width (`logout-status.tsx`, `sm:w-fit`) and Tailwind's `.container` | Tailwind's default `sm` screen, left in place (the team didn't set its own screens). | Was 640 chosen, or is it Tailwind's default? Could it be 768? |
+| `2xl` 1536 (96rem) | Tailwind's `.container` max width only; no `container` class found in the dashboard source | Tailwind's default `2xl` screen, generated automatically. | Can it be removed? |
+
+**Next step:** ask DigiScrum the questions above. Depending on the answers, each value becomes part of the Device set (if a new screen width is really needed, Figma gets a matching frame first), a documented component breakpoint, or a fix. Our generated Tailwind screens (`dist/tailwind/`) can replace Tailwind's defaults so `sm` / `2xl` disappear.
+
+**Status:** Open — waiting on DigiScrum's answers.
+
+### 34.2 Reader Dashboard's own breakpoint convention differs from the marketing site's
+
+The Reader Dashboard treats 1024×768 and 1280×960 as "menu always visible," a 1024px breakpoint — different from the audited 1039px rule on the main marketing-site nav. Since the Dashboard is a distinct web app from the shared marketing-site theme, this may be a legitimately different, real breakpoint rather than a conflict.
+
+**Status:** Informational / low priority — flagged for awareness, not treated as an error.
+
+---
 
 ## Notes
 
 **Reading live colors:** read themed CSS variables such as `--primary` on `document.querySelector('#page')`, not on `document.documentElement`. The WordPress Customizer's per-site override is scoped to `#page`, so reading at `:root` only shows the theme default.
 
-**Removed entries:** 3 (headline tiers, resolved in design 2026-09-24) and 15 (Reader Dashboard hand-built copies, retired 2026-09-25) were resolved and removed on 2026-10-20; see git history. Their numbers aren't reused, so links to the other entries still work.
+**Renumbered 2026-10-27 (Karl):** entries are now grouped by component, one entry per component, in this order: icons, fonts, colors, spacing / radius / breakpoints, masthead and navigation, homepage blocks, article page, obituaries, ads and page layout, Reader Dashboard. Every reference in the repo, the Google Sheet and the Figma descriptions was updated. Older references (git history, Jira comments such as CI-14848, dated "Updated" notes) use the old numbers; this table maps them. Old 10, 12, 16 and 17 were groups that were split up (10 → 13 and 22; 12 → 14–16; 16 → 16.3, 28.3, 28.4 and 29; 17 → 10, 25 and 34.2). Sub-entries not listed keep their number under the new parent (old 13.2 → 31.2).
+
+| Old | New |
+|---|---|
+| 1 | 1 |
+| 2 | 2 |
+| 4 | 30 |
+| 5 | 21 |
+| 6 | 23 |
+| 7 | 3 |
+| 8 | 4 |
+| 9 | 5 |
+| 10.1 | 13 |
+| 10.2 | 22 |
+| 11 | 26 |
+| 12.1 | 15 |
+| 12.2 | 14 |
+| 12.3 | 16.1 |
+| 12.4 | 16.2 |
+| 13 | 31 |
+| 14 | 32 |
+| 16.1 | 16.3 |
+| 16.2 | 29 |
+| 16.3 | 28.3 |
+| 16.4 | 28.4 |
+| 17.1 | 25 |
+| 17.2 | 10.1 |
+| 17.3 | 34.2 |
+| 17.4 | 10.2 |
+| 17.5 | 10.3 |
+| 18 | 28.1 |
+| 19 | 28.2 |
+| 20 | 9.1 |
+| 21 | 9.2 |
+| 22 | 33 |
+| 23 | 20 |
+| 24 | 6 |
+| 25 | 7 |
+| 26 | 28.5 |
+| 27 | 19 |
+| 28 | 34.1 |
+| 29 | 27 |
+| 30 | 8 |
+| 31 | 12 |
+| 32 | 24 |
+| 33 | 9.3 |
+| 34 | 11 |
+| 35 | 18 |
+| 36 | 17.1 |
+| 37 | 17.2 |
+| 38 | 14 |
+
+**Removed entries:** two entries were resolved and removed on 2026-10-20 under the old numbering: old 3 (headline tiers, resolved in design 2026-09-24) and old 15 (Reader Dashboard hand-built copies, retired 2026-09-25); see git history.

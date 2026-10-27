@@ -157,7 +157,7 @@ Shadows are Figma **effect styles** (not variables) on the main file's Shadows p
 - **References, not numbers.** Offsets and blur are bound to spacing variables in Figma, so the tokens reference the spacing tokens. The build stops if a bound variable's value doesn't match the style, or if a non-zero value isn't bound to a spacing variable (no off-token values).
 - **Black only.** The color is a literal black with the style's opacity (DTCG can't add alpha to a color reference). The build stops on any other color.
 - **One drop shadow per style.** Inner shadows and stacked shadows aren't supported yet; the build stops if it finds one.
-- **Not exported yet:** `shadow/masthead` (0 3px 3px 0 · 25%, Masthead and ObitMastHead when scrolled). It's a WordPress Elements effect style (design-vs-production entry 32); when it's exported it goes in `tokens/wordpress/`, read from that file.
+- **Not exported yet:** `shadow/masthead` (0 3px 3px 0 · 25%, Masthead and ObitMastHead when scrolled). It's a WordPress Elements effect style (design-vs-production entry 24); when it's exported it goes in `tokens/wordpress/`, read from that file.
 - **In `dist/`:** a complete `box-shadow` value. CSS keeps the spacing references (`--mng-shadow-lg: 0px var(--mng-spacing-100) var(--mng-spacing-200) 0px rgba(0, 0, 0, 0.2)`); Sass, JS and JSON have resolved px. Tailwind: `shadow-mng-sm` / `-md` / `-lg` (prefixed, so Tailwind's own `shadow-sm` etc. keep working). `theme.json`: `settings.shadow.presets` (`sm`, `md`, `lg`) with WordPress's default presets turned off.
 
 ## 4. Metadata every token carries
@@ -230,7 +230,7 @@ Breakpoints come in three tiers:
 
    The Device set matches the Figma screen widths one to one (Fold 340, Mobile 360, Tablet 768, Tablet horizontal 1024, Desktop 1280). Its token names deliberately differ from the WordPress grid names and from the Masthead's `Device` labels (`MD-TabletV (640–799px)` and so on), because those carry WordPress ranges. Each Device token records its Figma frame width in `$extensions.com.mng.figma.frameWidth`.
 2. **Component breakpoints:** an intended one-off used by a single component goes in that component's `<slug>.tokens.json`, not in the system set.
-3. **Production drift:** any other production breakpoint is logged in `design-vs-production.md` with the official breakpoint it should snap to. Reader Dashboard must match the Device set (open questions: entry 28). Obituaries is part of the WordPress layer and must match the WordPress grid (drift: entry 29).
+3. **Production drift:** any other production breakpoint is logged in `design-vs-production.md` with the official breakpoint it should snap to. Reader Dashboard must match the Device set (open questions: entry 34.1). Obituaries is part of the WordPress layer and must match the WordPress grid (drift: entry 27).
 
 The full list of production breakpoints and how each is classified lives in `tokens/breakpoint-inventory.json` (built from the website repo and a CSS scan of the 6 review sites).
 

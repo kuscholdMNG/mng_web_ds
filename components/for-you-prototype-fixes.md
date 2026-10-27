@@ -133,7 +133,7 @@ When the featured story (`.fy-lead`) is a photo gallery, production doesn't show
 - Caption block, under the image:
   - **Spacing:** padding 12px top (spacing/150); bottom 16px at 800px and up (spacing/200), 12px below 800px (spacing/150); 8px between lines at 800px and up (spacing/100), 4px below 800px (spacing/050).
   - **Rule:** `border-bottom:3px solid #CCCAC7` (color/gray/500).
-  - **Slide count**, e.g. "1 of 5", updated on every change: `font:700 13px/normal 'Noto Sans',sans-serif` (11px below 800px), color #000000 (color/gray/black). Give it `aria-live="polite"` so the new count is announced (required; production doesn't do this yet, design-vs-production entry 37).
+  - **Slide count**, e.g. "1 of 5", updated on every change: `font:700 13px/normal 'Noto Sans',sans-serif` (11px below 800px), color #000000 (color/gray/black). Give it `aria-live="polite"` so the new count is announced (required; production doesn't do this yet, design-vs-production entry 17.2).
   - **Caption:** `font:400 13px/normal 'Noto Sans',sans-serif` (11px below 800px), color #5E5D5C (color/gray/200).
   - **No photo credit line** (it's optional and off by default in the design system).
 - 12px (spacing/150) below the slideshow, then the featured story's existing bottom spacing and rule.
