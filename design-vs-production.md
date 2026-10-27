@@ -36,6 +36,7 @@
   - [22. Sponsored content badge — needs to be fixed in production](#22-sponsored-content-badge--needs-to-be-fixed-in-production)
 - **Article page**
   - [23. Article breadcrumbs — label font family and text color](#23-article-breadcrumbs--label-font-family-and-text-color)
+  - [35. Article "type of work" popup — should be the Toggletip](#35-article-type-of-work-popup--should-be-the-toggletip)
 - **Obituaries**
   - [24. Obituaries masthead — shadow and bottom border don't match the main masthead](#24-obituaries-masthead--shadow-and-bottom-border-dont-match-the-main-masthead)
   - [25. Obituaries navigation — hamburger and "All Sections" both visible at desktop width](#25-obituaries-navigation--hamburger-and-all-sections-both-visible-at-desktop-width)
@@ -2011,6 +2012,29 @@ Only one instance of the disclosure pattern (Login Methods on Profile) was found
 The Reader Dashboard treats 1024×768 and 1280×960 as "menu always visible," a 1024px breakpoint — different from the audited 1039px rule on the main marketing-site nav. Since the Dashboard is a distinct web app from the shared marketing-site theme, this may be a legitimately different, real breakpoint rather than a conflict.
 
 **Status:** Informational / low priority — flagged for awareness, not treated as an error.
+
+---
+
+## 35. Article "type of work" popup — should be the Toggletip
+
+**Found:** 2026-10-27, on article pages (`.breadcrumb-type-wrapper`: the "News" label `#tiOpenPopupBtn` opens `#tiPopupContent`). Same on ocregister and denverpost (Bold Coastal). Not on the Chicago Tribune and Morning Call articles checked (no type-of-work label there); Orlando Sentinel and Cañon City not checked. **Team:** CMS.
+
+**Design:** MNG Web Design System ▸ Tooltips ▸ **Tooltip**, Type=Toggletip (`7372:25744`), Placement=Bottom, built from this popup's pattern.
+
+| Property | Production | Design |
+|---|---|---|
+| Box | white, `1px solid #787878`, `border-radius: 1px`, no shadow | `color/gray/max`, 1px `color/gray/300` (#838280), `radius/sm` (4px), `shadow/lg` |
+| Width | 275px | 275px (matches) |
+| Padding | `15px 10px` | 12px (`spacing/150`) around the text, then the 40×40 close button |
+| Text | Helvetica 14.4px (0.9em), #000000 | Noto Sans Regular 13 (`font/size/13`), `color/gray/100` |
+| Caret | 10px border triangle (#787878) with an 8px white one inside | 12×6, 1px `color/gray/300` edge |
+| Close | `a.icon-close` link, 18px | Button In-Line Close (40×40) |
+| Trigger | `aria-controls="popupContent"`, but the popup's id is `tiPopupContent`, so screen readers can't find it | `aria-controls` must match the popup's id; `aria-expanded` as now |
+| Placement | below the label | centered on the trigger, 8px (`spacing/100`) between the trigger and the caret tip |
+
+**Fix:** restyle `#tiPopupContent` to the Toggletip values above, make the close control a button, and fix `aria-controls` to `tiPopupContent` (an accessibility bug: required).
+
+**Status:** Open.
 
 ---
 

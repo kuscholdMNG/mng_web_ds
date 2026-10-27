@@ -462,6 +462,31 @@
         "Off-token by decision: the notch sits about 5px right of center and the colors aren't tokens (design-vs-production entry 18, on hold)."
       ],
       "production": "Production `.load-more` / `.show-more-videos`, every width (checked on all 6 review sites, 2026-10-27)."
+    },
+    {
+      "slug": "tooltip",
+      "name": "Tooltip",
+      "group": "overlays",
+      "layer": "core",
+      "order": 1,
+      "file": "jFHYqhZbJjvWQmDI4myCsd",
+      "node": "7372:25744",
+      "documentationFrame": "7372:25704",
+      "description": "Two types in one set. Type=Tooltip: a short hover/focus label for icon-only buttons (Label property). Type=Toggletip: an explanation opened by clicking or tapping an info button (Text property; Show Close). Placement = Top, Bottom.",
+      "rules": [
+        "**Tooltip:** `color/gray/100` box, `radius/sm`; label Noto Sans Regular 12 (`font/size/12`), `color/gray/max` (11.6:1), line height auto; 4px (`spacing/050`) top and bottom, 8px (`spacing/100`) left and right; hugs its text up to 240px, then wraps. Never holds links or anything interactive; not shown on touch.",
+        "**Toggletip:** 275px wide, `color/gray/max`, 1px `color/gray/300` border, `radius/sm`; text Noto Sans Regular 13 (`font/size/13`), `color/gray/100`; 12px (`spacing/150`) around the text; Button In-Line Close (40×40) at the top right when Show Close is on (default).",
+        "**Caret:** 12×6, centered on the box, pointing at the trigger (Top: caret down; Bottom: caret up). The toggletip caret has a 1px `color/gray/300` edge. It overlaps the box by 1px so no seam shows. It scales with the component.",
+        "**Shadow:** `shadow/lg` on both types.",
+        "**Placement:** centered on the trigger, 8px (`spacing/100`) between the trigger and the caret tip; flip to the other Placement when there isn't room.",
+        "**Behavior:** Tooltip shows on hover or focus and hides on mouse-out, blur or Esc. Toggletip: the trigger is a button with `aria-expanded` and `aria-controls` (matching the popup's id); it opens on click or tap; Esc, the close button or a click outside closes it, and focus returns to the trigger.",
+        "**First use:** the For You feed header info button (Section Title / Eyebrow, Show Info) opens Type=Toggletip, Placement=Bottom."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Production's article \"type of work\" popup is the same pattern with off-token values and a broken `aria-controls` (design-vs-production entry 35)."
+      ],
+      "production": "No tooltip on the homepage. Article \"type of work\" popup `#tiPopupContent` (ocregister, denverpost) is the toggletip pattern."
     }
   ]
 }
