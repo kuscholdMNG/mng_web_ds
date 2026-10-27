@@ -437,6 +437,31 @@
         "Production: title color wrong and underline missing on Bold Coastal and Measured Vibrant (design-vs-production entry 12.2); title-to-underline and title-to-arrow spacing off-token (entry 38)."
       ],
       "production": "Production `.section-highlight h2.entry-title` and `.headline-list-title` (homepage blocks, all 6 review sites)."
+    },
+    {
+      "slug": "show-more-affordance",
+      "name": "Show More Affordance",
+      "group": "homepage",
+      "layer": "wordpress",
+      "order": 2,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3634:49423",
+      "documentationFrame": "3484:67739",
+      "description": "Show More / Load More button below a block or feed: a rule with a notch and a centered uppercase label. Standalone, freely resizable; Label text property (\"Show More Photos\" in Photos Block, \"Load More\" on section fronts and in the For You feed).",
+      "rules": [
+        "**Production values on purpose (Karl, 2026-10-23):** no component tokens. The colors below are raw hex. A tokens version (`3634:49427`) is kept only as the future target (design-vs-production entry 35, on hold); don't use it yet.",
+        "**Rule:** 1px `#D7D6D2` along the top, full width.",
+        "**Notch:** 35px `#FBFBFB` square with 1px `#D7D6D2` left and bottom edges, rotated −45° and centered on the rule, about 5px right of center (as in production).",
+        "**Label:** Noto Sans Bold 16 / 16, uppercase, `color/theme/primary`, centered.",
+        "**Padding:** 40px above the label (below the rule) and 40px below it; 97px tall.",
+        "**States (production's, not variants):** hover, label `#0A0908`; keyboard focus, 2px black outline with a 5px offset.",
+        "**Width:** fills its column at every width."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Off-token by decision: the notch sits about 5px right of center and the colors aren't tokens (design-vs-production entry 35, on hold)."
+      ],
+      "production": "Production `.load-more` / `.show-more-videos`, all three themes, every width."
     }
   ]
 }
