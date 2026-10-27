@@ -1,6 +1,6 @@
 # Modal
 
-> **Updated 2026-09-25** (last change recorded in this doc). Current project status is in `MNG-Web-Design-System-Status.md`.
+> **Updated 2026-10-27** for the For You components pass (step 5): ModalsCenter and ModalsOffset use `shadow/lg` (it replaces the Tailwind `shadow-xl` noted below); every spacing and radius in both sets is a token, including the new `spacing/400` (32) and `spacing/500` (40) (pull request #8); both sets now have white documentation containers on the Modal Panels page (§6, §7); ModalsOffset added (§7). Earlier: 2026-09-25. Current project status is in `MNG-Web-Design-System-Status.md`.
 
 **Status:** ✅ **Specced from Figma 2026-09-01.** The Figma source is the **ModalsCenter** component set in the main MNG Web Design System file (`jFHYqhZbJjvWQmDI4myCsd`, Modal Panels page, node `3040:2262`), which Reader Dashboard v2.0 uses as a library component across its Profile Panel, Upgrade Subscription, Cancel Subscription, Update Payment Information, and Notification Preferences pages. Per Karl's direction 2026-09-01 ("Reader Dashboard designs are here..."), this Figma source superseded the live-site scrape below as the accurate source of truth — and the two agree almost exactly (see §6), which is a good cross-check. The spec models the Profile Panel's account-verification instance specifically (the same "email you a verification code" flow captured live below), `Device=TabletH` variant, instance id `6628:26265` in Reader Dashboard v2.0. A pilot rebuild of this modal was retired on 2026-09-25; use ModalsCenter.
 **Live-site source (original audit, 2026-08-xx):** `preprod.eastbaytimes.com/dashboard` (Reader Dashboard), triggered from Profile → Display Name "Update"
@@ -24,7 +24,7 @@ Triggered by clicking "Update" next to Display Name: **"Please Verify Your Accou
 - Fixed width: **444px** (Tailwind `w-[444px]` — not responsive/fluid; worth checking behavior on narrow viewports separately, not yet tested)
 - Background: white
 - Border radius: **8px**
-- Box shadow: `0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)` — this is Tailwind's default `shadow-xl`
+- Box shadow: `0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)` — this is Tailwind's default `shadow-xl`. **Design (2026-10-23):** `shadow/lg`, `0 8px 16px 0 rgba(0,0,0,0.2)`
 - Padding: `40px 40px 24px` (more breathing room on top/sides than bottom, presumably to sit closer to the action buttons)
 - Close (✕) icon, top-right corner
 
@@ -48,12 +48,11 @@ Triggered by clicking "Update" next to Display Name: **"Please Verify Your Accou
 
 The primary button/link color (`#006DA3`) maps cleanly to East Bay Times' own Brand `primary` token (since 2026-10-19 the shared The Mercury News + East Bay Times mode, `color/theme/primary`) — confirmed correct as of the 2026-08-27 resolution above. No open question remains here; this was a measurement-methodology issue on our side, not a production or documentation problem.
 
-New tokens still needed:
-- Modal backdrop: `rgba(0,0,0,0.45)`
-- Modal card radius: `8px`
-- Modal card shadow (Tailwind `shadow-xl` equivalent)
-- Modal card fixed width: `444px`
-- Inset body-box border color (`#CCCAC7`) and radius (`4px`)
+Tokens (updated 2026-10-27):
+- Card radius: `radius/lg` (8px). Body box: 1px `color/gray/500`, `radius/sm` (4px).
+- Card shadow: `shadow/lg` (`0 8px 16px 0` black 20%), replacing Tailwind `shadow-xl`.
+- Card padding: `spacing/500` (40) top, left, right and `spacing/300` (24) bottom on Desktop and tablets; `spacing/300` all round on Mobile and Fold.
+- Still no token: the page overlay (black 50% in Figma, 45% live). The 444px card width is a frame width, not a token (`EXPORT-STANDARD.md` §3.4).
 
 ## 4. Other findings from this pass
 
@@ -78,16 +77,31 @@ Sourced directly from the ModalsCenter component's real geometry (not the generi
 | Card width | 444px (fixed) | 444px | ✅ exact |
 | Card radius | 8px | 8px (`radius/lg`) | ✅ exact |
 | Card padding | 40/40/24 (implied left=40) | 40 top / 40 right / 24 bottom / 40 left | ✅ exact |
-| Card border | none noted live (shadow instead) | 1px `color/gray/300` (#83827F) | Figma adds a border; live relies on shadow only — both may be true (shadow-xl could be layered on top of a subtle border we didn't visually distinguish live) |
+| Card border | none noted live (shadow instead) | 1px `color/gray/300` (#838280) | Figma adds a border; live relies on shadow only — both may be true (shadow-xl could be layered on top of a subtle border we didn't visually distinguish live) |
 | Heading | 20px/700, "text-gray-min" | Noto Sans Bold 20px, `color/gray/min` | ✅ exact |
 | Body box border | `#CCCAC7`, radius 4px, padding 24 | `color/gray/500` (#CCCACA — effectively the same value, rounding only), radius 4px (`radius/sm`), padding 24 | ✅ exact |
-| Primary button color | site's own `--primary` (e.g. #006DA3 on East Bay Times) | `color/brand/primary` — mode-bound per site | ✅ same mechanism, confirms it's brand-primary-bound rather than a hardcoded color |
+| Primary button color | site's own `--primary` (e.g. #006DA3 on East Bay Times) | `color/theme/primary` — mode-bound per site | ✅ same mechanism, confirms it's brand-primary-bound rather than a hardcoded color |
 | Backdrop opacity | 45% black | modeled at 50% black (not built into the component — see below) | close, not built as a literal component property either way |
 
 **Not modeled as a component property:** the full-viewport backdrop dimming is a page-level behavior (how/where the modal is invoked), not part of the Modal component itself — same treatment either source would call for.
 
-**Tokens used:** `radius/lg` = 8 and `radius/sm` = 4 (radius tokens aren't Figma variables yet — see the Status doc's open items), and `color/feedback/error` = #CC2B27 for the nested InLineMessage error variant's icon/title (exact match against the Figma source).
+**Tokens used:** `radius/lg` = 8 and `radius/sm` = 4 (Figma variables in the Spacing & Radius collection), and `color/feedback/error` = #CC2B27 for the nested InLineMessage error variant's icon/title (exact match against the Figma source).
 
 **Parts:** the primary CTA is a Button Primary (Default size) labeled "Send Verification Code"; the two text-link CTAs are Button Linkstyle (see `disclosure.md` §6); the inline error box is the InLineMessage error variant (see `empty-state-status-badge.md`).
 
-**Not specced here:** the "Form Field" sub-component nested in the Body Container slot for flows that collect a code, and the rest of the ModalsCenter family (6 Device variants × many content combinations) — this doc covers the account-verification use case only.
+**Not specced here:** the "Form Field" sub-component nested in the Body Container slot for flows that collect a code.
+
+**The whole set (2026-10-27):** Device = Desktop, TabletH, TabletV (444px card centered), Mobile, MobileScroll, FOLD (screen width minus 24px each side: 312 at 360, 292 at 340). Spacing: 16px (`spacing/200`) between header, Body Container, InLineMessage and CTAs; 8px (`spacing/100`) between CTAs and between the header icon and title; header icon 4px (`spacing/050`) from the top. Body Container padding 24px (`spacing/300`), 16px (`spacing/200`) on Mobile and Fold. Button Modal Close centered on the card's top-right corner; at least 24px between the card and the screen edge. Closes with the close button, an inline link, or a click outside. Documentation: "ModalsCenter Container" on the Modal Panels page (white format, Specifications with Desktop and Mobile samples). Production differences: design-vs-production entry 31.
+
+**To come back to (Karl, 2026-10-27):** MobileScroll's scroll bar is a rough placeholder. The intent: when the content pushes the card past the bottom of the screen, a scroll bar shows. Another feature handles long modals differently; revisit then.
+
+## 7. ModalsOffset (2026-10-27)
+
+Main file, Modal Panels page, `6497:6263`, container "ModalsOffset Container". The "Sign in to [site] with Apple / Google" panel for logged-out readers. No instances yet.
+
+- **Variants:** Device × Location: XLDesktop + Float (546px wide), SMMobile + FixedFooter (328px: 16px from each edge of a 360 screen), XSFold + FixedFooter (308px at 340). Options: OneTapCTA (Sign in with Apple button), GOTcustom (Google account chooser), AllOptions (both).
+- **Panel:** `color/gray/max`, 1px `color/gray/500`, `radius/utility` (5px), `shadow/lg`; Button In-Line Close (40×40) top right.
+- **Spacing:** Float 24px padding (`spacing/300`), FixedFooter 16px (`spacing/200`); 16px between the title and the buttons; 8px inside the groups; on FixedFooter the title keeps 32px (`spacing/400`) on its right to clear the close button.
+- **Title:** Noto Sans Bold 20 (`font/size/20`), `color/gray/min`, with the Apple or Google mark. The Apple button is the Button Pay component (Apple's style).
+- **Google account chooser** (GOTcustom, AllOptions): Google's own UI, drawn for reference; not tokenized and probably not in use (Karl, 2026-10-27).
+- **To come back to:** where this panel is used, and where Float sits on the screen.
