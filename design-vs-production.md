@@ -1943,7 +1943,7 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 
 ## 35. Load More / Show More Photos — notch off center and colors off the design tokens
 
-**Found:** 2026-10-23, on the OC Register homepage (Photos block) and a section front, in the shared theme rule `.show-more-videos, .load-more` (and `::before`), same on all three themes. **Team:** CMS.
+**Found:** 2026-10-23, on the OC Register homepage (Photos block) and a section front, in the shared theme rule `.show-more-videos, .load-more` (and `::before`). Rechecked on all 6 review sites 2026-10-27: everything is the same on every theme except the gray of the rule and notch edges. **Team:** CMS.
 
 **Status: on hold (Karl, 2026-10-23).** For now the design uses production's exact values: WordPress Elements ▸ Homepage ▸ Photos ▸ **Show More Affordance** (`3634:49423`), used in Photos Block and the For You feed. The token version below, **Show More Affordance (tokens, future reference)** (`3634:49427`), is the future target; this fix applies when it's adopted.
 
@@ -1951,7 +1951,7 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 |---|---|---|
 | Notch position | about 5px right of center: `::before { left: 50%; transform: rotate(-45deg) translateY(-50%) }` overrides the `translate(-50%, 0)` that would center it | always centered on the rule (a bug) |
 | Notch fill | `#FBFBFB` | `color/gray/600` (#F1EFEB) |
-| Notch edges and rule | `1px solid #D7D6D2` | `color/gray/500` (#CCCAC7) |
+| Notch edges and rule | `1px solid`: `#D7D6D2` Bold Coastal (ocregister, denverpost), `#C8C4C0` Measured Vibrant (chicagotribune, orlandosentinel), `#DDD8D5` Modern Earthy (mcall, canoncitydailyrecord) | `color/gray/500` (#CCCAC7) on every theme |
 | Label | Noto Sans Bold 16/16, uppercase, `var(--primary)` | same (`font/size/16`, `font/style/bold`, `color/theme/primary`) |
 | Space above and below the label | 40px (`padding: 2.5em 0`) | 40px. No spacing token is this large yet (largest is `spacing/300`, 24px); kept at production's value. |
 
