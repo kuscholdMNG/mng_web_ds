@@ -70,6 +70,7 @@ The mercurynews.com and eastbaytimes.com sites were removed from the list on 202
 | :---- | :---- |
 | `spacing/050` / `100` / `150` | 4 / 8 / 12 |
 | `spacing/200` / `250` / `300` | 16 / 20 / 24 |
+| `spacing/400` / `500` | 32 / 40 (added 2026-10-27, Karl: ModalsOffset FixedFooter and ModalsCenter card padding; pull request) |
 | `radius/sm` / `radius/utility` / `radius/lg` | 4 / 5 / 8 |
 
 &nbsp;

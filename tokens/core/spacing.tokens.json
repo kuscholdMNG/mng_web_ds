@@ -97,6 +97,38 @@
           }
         }
       }
+    },
+    "400": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$description": "32px. Added 2026-10-27 (Karl) for ModalsOffset FixedFooter (text clears the close button).",
+      "$extensions": {
+        "com.mng": {
+          "figma": {
+            "file": "MNG Web Design System",
+            "collection": "Spacing & Radius",
+            "variable": "spacing/400"
+          }
+        }
+      }
+    },
+    "500": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      },
+      "$description": "40px. Added 2026-10-27 (Karl) for ModalsCenter card padding (matches the live Reader Dashboard modal).",
+      "$extensions": {
+        "com.mng": {
+          "figma": {
+            "file": "MNG Web Design System",
+            "collection": "Spacing & Radius",
+            "variable": "spacing/500"
+          }
+        }
+      }
     }
   },
   "radius": {
