@@ -501,17 +501,19 @@
       "rules": [
         "**Card:** `color/gray/max`, 1px `color/gray/300` border, `radius/lg` (8px), `shadow/lg`. Desktop and tablets: 444px wide, centered. Mobile and Fold: the screen width minus 24px each side (312 at 360, 292 at 340).",
         "**Card padding:** Desktop and tablets 40px (`spacing/500`) top, left and right, 24px (`spacing/300`) bottom. Mobile and Fold 24px (`spacing/300`) all round.",
-        "**Spacing:** 16px (`spacing/200`) between the header, Body Container, InLineMessage and CTA stack; 8px (`spacing/100`) between CTAs and between the header icon and title; header icon 4px (`spacing/050`) from the top.",
+        "**Spacing:** 16px (`spacing/200`) between the header, Body Container, InLineMessage and CTA stack; 8px (`spacing/100`) between CTAs and between the header icon and title; header icon 6px from the top (raw; token pending).",
         "**Body Container:** 1px `color/gray/500` border, `radius/sm`; padding 24px (`spacing/300`), 16px (`spacing/200`) on Mobile and Fold.",
         "**Text:** title Noto Sans Bold 20, subtitle and body Noto Sans Regular 16, all `color/gray/min`. CTAs: Button Linkstyle (`color/theme/primary`) and Button Primary, stacked and centered.",
         "**Close:** Button Modal Close (32×32, `pop-up-modal-close`) centered on the card's top-right corner; at least 24px (`spacing/300`) between the card and the screen edge.",
-        "**Overlay:** black at 50% over the page (no token yet). Mastheads stay visible in most cases.",
-        "**Closing:** the close button, an inline text link, or a click anywhere outside the card."
+        "**Overlay:** black at 50% over the page below the masthead (no token yet). The masthead stays visible above it in most cases.",
+        "**Closing:** the close button, an inline text link, or a click anywhere outside the card.",
+        "**Where scroll is needed** (MobileScroll): no top or bottom margin; the close button stays 8px below the masthead (8px from the top of the viewport without one); the card scrolls inside and the page behind it doesn't."
       ],
       "breakpoints": "| Device | Screen | Card |\n|---|---|---|\n| Desktop, TabletH, TabletV | 1280, 1024, 768 | 444px, centered; padding 40/40/24/40 |\n| Mobile, Fold | 360, 340 | screen width minus 24px each side; padding 24 |",
       "knownIssues": [
-        "MobileScroll's scroll bar is a placeholder; long modals need a better solution (Karl, 2026-10-27, to come back to).",
-        "Production (Reader Dashboard) differences: design-vs-production entry 31."
+        "MobileScroll's scroll bar is a placeholder; revisit with the Embedded login project (Karl, 2026-10-27; status open item 15).",
+        "Production (Reader Dashboard) differences: design-vs-production entry 31.",
+        "Header icon top padding is 6px raw (between spacing/050 and spacing/100); waiting on Karl."
       ],
       "production": "Reader Dashboard modal (`react-modal`, `.ReactModal__Content`)."
     },
@@ -534,7 +536,7 @@
       ],
       "breakpoints": "| Device | Location | Width |\n|---|---|---|\n| XLDesktop | Float | 546px |\n| SMMobile (360) | FixedFooter | 328px |\n| XSFold (340) | FixedFooter | 308px |",
       "knownIssues": [
-        "No instances yet; where it's used and where Float sits on the screen are to be confirmed (Karl, 2026-10-27)."
+        "No instances yet; confirm where it's used and where Float sits on the screen with the Embedded login project (status open item 15)."
       ],
       "production": null
     }
