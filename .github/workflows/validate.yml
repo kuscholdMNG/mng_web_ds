@@ -1,0 +1,23 @@
+# Checks every push to main and every pull request (EXPORT-STANDARD.md section 10; Seth's issue 7, step 1).
+# 1. Rebuilds tokens/ and dist/ from the Figma snapshot and fails if the commit doesn't match the build
+#    (a hand-edited generated file, or a token change committed without rebuilding).
+# 2. Runs scripts/validate/validate.py (DTCG shape, references and layers, color math, tracked junk, snapshot).
+name: validate
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild tokens and dist from the Figma snapshot
+        run: python3 scripts/build-tokens/make-tokens.py && python3 scripts/build-tokens/build.py
+      - name: tokens/ and dist/ match the build
+        run: git diff --exit-code --stat -- tokens dist || { echo '::error::tokens/ or dist/ differ from the build. Run npm run build and commit the result; never edit generated files by hand.'; exit 1; }
+      - name: Validate
+        run: python3 scripts/validate/validate.py

@@ -1,7 +1,27 @@
 {
- "$description": "Snapshot of the MNG Web Design System Figma variables (file jFHYqhZbJjvWQmDI4myCsd), read 2026-10-14 (Colors updated 2026-10-19: East Bay Times mode became Daily Herald, The Mercury News mode renamed The Mercury News + East Bay Times; checked against Figma by hash) with scripts/build-tokens/extract.js through the Desktop Bridge plugin. Input for make-tokens.py. Dashboard Typography is not included yet (Reader Dashboard tokens are added to core when ready). Effect styles shadow/sm, md and lg read 2026-10-26 (effectStyles).",
+ "$description": "Snapshot of the MNG Web Design System Figma variables and shadow/* effect styles (file jFHYqhZbJjvWQmDI4myCsd), from one full read with scripts/build-tokens/extract.js through the Desktop Bridge plugin, saved by scripts/build-tokens/save-snapshot.py; never edit by hand. \"read\" is the date of that read; \"counts\" and \"hashes\" are what the read reported, and the saved data matches them. Input for make-tokens.py. Dashboard Typography is not included yet (Reader Dashboard tokens are added to core when ready).",
  "file": "jFHYqhZbJjvWQmDI4myCsd",
- "read": "2026-10-19",
+ "read": "2026-10-27",
+ "counts": {
+  "collections": {
+   "Colors": 33,
+   "Type Primitives": 31,
+   "Typeography Tokens": 110,
+   "Typography Theme": 7,
+   "Spacing & Radius": 9
+  },
+  "effectStyles": 3
+ },
+ "hashes": {
+  "collections": {
+   "Colors": "1aa24d05fad3d4",
+   "Type Primitives": "03e9b7706ae082",
+   "Typeography Tokens": "0b5b4326362dd5",
+   "Typography Theme": "003945fc31d96f",
+   "Spacing & Radius": "0697f301df98f3"
+  },
+  "effectStyles": "0f6040d9ec89ac"
+ },
  "collections": {
   "Colors": [
    {

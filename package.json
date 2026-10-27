@@ -24,6 +24,7 @@
   },
   "sideEffects": ["*.css", "*.scss"],
   "scripts": {
-    "build": "python3 scripts/build-tokens/make-tokens.py && python3 scripts/build-tokens/build.py"
+    "build": "python3 scripts/build-tokens/make-tokens.py && python3 scripts/build-tokens/build.py",
+    "validate": "python3 scripts/validate/validate.py"
   }
 }

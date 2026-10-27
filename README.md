@@ -1,7 +1,7 @@
 # MNG Web Design System — Project Folder
 
 > Folder map and filing rules. **Every session working on this project reads this first and follows it.**
-> Set up 2026-09-30, when duplicate copies made by different sessions were removed. **Updated 2026-10-01:** the project moved from Google Drive to GitHub (now `kuscholdMNG/mng_web_ds`). See "Working in GitHub" below. **Updated 2026-10-02:** added `scripts/`; the homepage template audit was deleted from `_archive/`. **Updated 2026-10-08:** added `tokens/icons/`, `logos/` and `scripts/logos-export/`. **Updated 2026-10-09:** added `figma-exports/mng-ads-export/` and `scripts/ads-export/`. **Updated 2026-10-13:** added `EXPORT-STANDARD.md`; `figma-exports/` is now legacy (frozen). **Updated 2026-10-14:** added `components/core/` and `scripts/component-export/` (shared component exporter; buttons exported, the legacy buttons export and `_archive/` deleted); added `tokens/core/`, `tokens/themes/`, `tokens/wordpress/`, `dist/`, `package.json` and `scripts/build-tokens/` (open item 11, step 2; merged 2026-10-14, pull request #2); renamed from "MNG Design System" to **MNG Web Design System** (see "Names" below); local copy moved to `~/Github/`. **Updated 2026-10-20:** GitHub repo renamed to `mng_web_ds` (Karl); the local folder was renamed to match (`~/Github/mng_web_ds`). **Updated 2026-10-23:** added `CLAUDE.md` (how Claude works in this project: session start, rules, Figma files; replaces the long Claude project instructions and the status doc's standing rules). **Updated 2026-10-22:** added `scripts/icon-font/` (rebuilds the icon CSS and preview from `tokens/icons/icons.json`).
+> Set up 2026-09-30, when duplicate copies made by different sessions were removed. **Updated 2026-10-01:** the project moved from Google Drive to GitHub (now `kuscholdMNG/mng_web_ds`). See "Working in GitHub" below. **Updated 2026-10-02:** added `scripts/`; the homepage template audit was deleted from `_archive/`. **Updated 2026-10-08:** added `tokens/icons/`, `logos/` and `scripts/logos-export/`. **Updated 2026-10-09:** added `figma-exports/mng-ads-export/` and `scripts/ads-export/`. **Updated 2026-10-13:** added `EXPORT-STANDARD.md`; `figma-exports/` is now legacy (frozen). **Updated 2026-10-14:** added `components/core/` and `scripts/component-export/` (shared component exporter; buttons exported, the legacy buttons export and `_archive/` deleted); added `tokens/core/`, `tokens/themes/`, `tokens/wordpress/`, `dist/`, `package.json` and `scripts/build-tokens/` (open item 11, step 2; merged 2026-10-14, pull request #2); renamed from "MNG Design System" to **MNG Web Design System** (see "Names" below); local copy moved to `~/Github/`. **Updated 2026-10-20:** GitHub repo renamed to `mng_web_ds` (Karl); the local folder was renamed to match (`~/Github/mng_web_ds`). **Updated 2026-10-23:** added `CLAUDE.md` (how Claude works in this project: session start, rules, Figma files; replaces the long Claude project instructions and the status doc's standing rules). **Updated 2026-10-27:** added `.github/workflows/validate.yml`, `scripts/validate/` and `scripts/build-tokens/save-snapshot.py` (Seth's issue #7: checks on every push; the Figma snapshot is saved only by the script); the GitHub token needs the Workflows permission. **Updated 2026-10-22:** added `scripts/icon-font/` (rebuilds the icon CSS and preview from `tokens/icons/icons.json`).
 
 ## Names
 
@@ -24,6 +24,7 @@ mng_web_ds/
 ├── README.md                               ← this file
 ├── CLAUDE.md                               ← instructions for Claude: session start, standing rules, Figma files
 ├── .gitignore                              ← keeps .DS_Store, zips and credentials out of the repo
+├── .github/workflows/validate.yml          ← GitHub check on every push and pull request: rebuild matches, validate.py
 ├── MNG-Web-Design-System-Status.md         ← project status (the entry point)
 ├── EXPORT-STANDARD.md                      ← format rules for every token and component export (DTCG)
 ├── design-vs-production.md     ← production gaps for Engineering
@@ -64,8 +65,9 @@ mng_web_ds/
 ├── dist/                                   ← GENERATED from tokens/ by scripts/build-tokens/build.py: CSS, Sass,
 │                                             JS/TS, Tailwind v4 + v3, WordPress theme.json, flat JSON. Never edit
 └── scripts/                                ← generators that rebuild exports, one folder per export
-    ├── build-tokens/                       ← extract.js (Figma plugin code) → figma-variables.json →
-    │                                         make-tokens.py (tokens/) → build.py (dist/, with checks)
+    ├── build-tokens/                       ← extract.js (Figma plugin code) → save-snapshot.py → figma-variables.json
+    │                                         → make-tokens.py (tokens/) → build.py (dist/, with checks)
+    ├── validate/                           ← validate.py (npm run validate; EXPORT-STANDARD §10) + pre-commit hook
     ├── ads-export/                         ← extract.js (Figma plugin code) + build-ads-export.py
     ├── colors-docs/                        ← build-color-docs.py (per-site CSV, mng-colors.css and entry 5 of
     │                                         design-vs-production, from mng-colors.tokens.json) + notes.json
@@ -87,7 +89,7 @@ mng_web_ds/
 | A new design-vs-production gap | Add an entry to `design-vs-production.md` |
 | Component export (spec, component tokens, skeleton, previews) | Add the component to `scripts/component-export/registry.json`, run `extract.js` in Figma, then `export.py`. Writes `components/<layer>/<slug>/`. |
 | Component audit or checklist | `components/<component-name>.md` |
-| Token values (color, type, spacing, radius, shadows, breakpoints) | Change Figma (shadows are the `shadow/*` effect styles), rerun `scripts/build-tokens/extract.js`, then `npm run build` (or the two Python scripts). Writes `tokens/core/`, `tokens/themes/`, `tokens/wordpress/` and `dist/`. On a `review/...` branch with a pull request. |
+| Token values (color, type, spacing, radius, shadows, breakpoints) | Change Figma (shadows are the `shadow/*` effect styles), rerun `scripts/build-tokens/extract.js` and save it with `scripts/build-tokens/save-snapshot.py` (never by hand; CLAUDE.md, Exports), then `npm run build` and `npm run validate`. Writes `tokens/core/`, `tokens/themes/`, `tokens/wordpress/` and `dist/`. On a `review/...` branch with a pull request. |
 | Color decisions, sites CSV | Decisions: `tokens/colors/color-tokens-decision-log.md`. Color values and production mismatches: `tokens/colors/mng-colors.tokens.json`, then run `scripts/colors-docs/build-color-docs.py` (rewrites the sites CSV, `mng-colors.css` and the per-site part of entry 5; notes per theme in `scripts/colors-docs/notes.json`) and `npm run build`. |
 | Typography tokens or decisions | `tokens/typography/` |
 | Icon font, glyph map, icon previews | `tokens/icons/` (edit `icons.json`, then run `scripts/icon-font/build.py` to rebuild `icomoon.css` and `preview.html`) |
@@ -114,5 +116,6 @@ mng_web_ds/
 - **Local copy:** `~/Github/mng_web_ds` on Karl's Mac (moved 2026-10-14, renamed 2026-10-20; `~/Github` also holds `for_you_tab_mvp` and the `mng_apps_*_ds` repos). Work only there. The old Google Drive folder is retired; don't save anything to it.
 - **Commit every change** with a short message that says what changed and why (for example "Add card-teaser hover states"). Git history replaces the dates in file names, so rule 5 still applies: put the date inside the file.
 - **Value changes that need Karl's review** (token values, decisions in the decision logs) go on a branch, such as `review/primary-blue-fix`, with a pull request. Everything else can go straight to `main`.
-- **Push after committing.** Pushing uses a GitHub token saved in `.git/claude-credentials`, which is never committed. If a push fails with a sign-in error, the token has expired: Karl makes a new one and runs `git push` once in Terminal.
+- **Push after committing.** Pushing uses a GitHub token saved in `.git/claude-credentials`, which is never committed (git uses it for github.com only). If a push fails with a sign-in error, the token has expired: Karl makes a new fine-grained token (only `mng_web_ds`; Contents, Workflows and Pull requests: read and write; Issues: read) and saves it in Terminal with `cd ~/Github/mng_web_ds && read -s "T?Paste token, then Return: " && printf 'https://kuscholdMNG:%s@github.com\n' "$T" > .git/claude-credentials && chmod 600 .git/claude-credentials && unset T && echo " saved"` (Karl, 2026-10-27).
+- **Checks.** `npm run validate` before committing (the pre-commit hook runs it once installed: `cp scripts/validate/pre-commit .git/hooks/pre-commit`). GitHub runs the same check on every push; keep it green.
 - **Never commit** credentials, `.DS_Store` files, `__pycache__` / `.pyc` files or zips. `.gitignore` blocks them.

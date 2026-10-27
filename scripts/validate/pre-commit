@@ -1,0 +1,15 @@
+#!/bin/sh
+# Local pre-commit check (Seth's issue 7, step 1.4). Install once per clone:
+#   cp scripts/validate/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+# When the commit touches tokens/, dist/ or scripts/build-tokens/, rebuilds and stops if the rebuild changes
+# anything that isn't staged. Then runs scripts/validate/validate.py. Skip once with: git commit --no-verify
+command -v python3 >/dev/null 2>&1 || { echo "pre-commit: python3 not found, checks skipped"; exit 0; }
+cd "$(git rev-parse --show-toplevel)" || exit 1
+if git diff --cached --name-only | grep -qE '^(tokens/|dist/|scripts/build-tokens/)'; then
+  python3 scripts/build-tokens/make-tokens.py >/dev/null && python3 scripts/build-tokens/build.py >/dev/null || exit 1
+  if ! git diff --quiet -- tokens dist; then
+    echo "pre-commit: the rebuild changed tokens/ or dist/ (see git diff). Add the rebuilt files and commit again."
+    exit 1
+  fi
+fi
+python3 scripts/validate/validate.py

@@ -1,6 +1,6 @@
 # MNG Web Design System — instructions for Claude
 
-> **Updated 2026-10-23:** moved here from the Claude project instructions and merged with section 7 ("Standing rules") of `MNG-Web-Design-System-Status.md`, so the rules live in one place, in the repo. This file is the source of truth for how to work in this project. Change a rule here; the project instructions only point to this file.
+> **Updated 2026-10-27** for Seth's issue #7 (Exports: Figma snapshot, checks, colors stay as of 2026-10-19, CRUX). **2026-10-23:** moved here from the Claude project instructions and merged with section 7 ("Standing rules") of `MNG-Web-Design-System-Status.md`, so the rules live in one place, in the repo. This file is the source of truth for how to work in this project. Change a rule here; the project instructions only point to this file.
 
 We are building a full design system based on in-production websites in our footprint.
 
@@ -37,6 +37,10 @@ We are building a full design system based on in-production websites in our foot
 
 - Every token and component export follows `EXPORT-STANDARD.md`: DTCG 2025.10 `.tokens.json` only; hex is the color source of truth (RGBA and color objects are generated); Figma → code only; never add to the legacy `figma-exports/`; never hand-edit `dist/`. Preview PNGs are committed to GitHub; no Git LFS.
 - Breakpoints: two official sets for now. MNG Device breakpoints (core; Figma screen widths 340/360/768/1024/1280; Reader Dashboard) and WordPress grid breakpoints (320/640/800/1040/1280; WordPress themes incl. Obituaries; legacy). The goal is the Device set only.
+- **Figma snapshot** (2026-10-27, Seth's issue #7). The token build reads `scripts/build-tokens/figma-variables.json`, and only `scripts/build-tokens/save-snapshot.py` writes it. Never edit it by hand or merge part of a read into it. To refresh: run `scripts/build-tokens/extract.js` in the main file with `figma_execute` (it starts with `SEND = 'summary'`), save the result to a temporary file, and run `python3 scripts/build-tokens/save-snapshot.py --summary <file>`. If it names collections that changed, rerun `extract.js` with `SEND = ['<collection>', ...]` and pass those results after the summary. Then `npm run build` and `npm run validate`.
+- **Checks** (2026-10-27). Run `npm run validate` before every commit; the pre-commit hook (`scripts/validate/pre-commit`, copied to `.git/hooks/pre-commit`) runs it and the rebuild check for you. GitHub runs the same check on every push and pull request (`.github/workflows/validate.yml`). A red check gets fixed before anything else. Raw values in component token files are reported, not failures.
+- **Colors stay as of 2026-10-19** (Karl, 2026-10-27): keep last week's color tokens. `save-snapshot.py` stops if Figma's Colors collection has changed; show Karl the change. A color change Karl approves goes on a `review/...` branch.
+- **CRUX** (Karl, 2026-10-27). The CRUX design system team (tribpubdev) imports this repo's tokens every day (`EXPORT-STANDARD.md` §12). Our names stay ours: never rename or restructure tokens, token paths, Figma variables, component names or variant properties to suit CRUX. Referencing CRUX where it helps (notes, mapping docs) is fine. Renaming, moving or deleting a file CRUX reads, or changing a token's `$type`, is named in the commit or pull request title.
 
 ## Design vs. production
 

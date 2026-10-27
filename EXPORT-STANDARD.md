@@ -1,6 +1,6 @@
 # MNG Web Design System — Export Standard
 
-> **Updated 2026-10-26:** §3.5 Shadows (the `shadow/*` effect styles are exported as DTCG `shadow` tokens in `tokens/core/shadow.tokens.json`; `extract.js` now also reads effect styles); §5 and §8 updated to match.
+> **Updated 2026-10-27** for Seth's issue #7: §7 token paths written down as they are (unchanged; Karl), §10 checks built (`scripts/validate/`, GitHub workflow, pre-commit hook; Figma snapshot saved only by `save-snapshot.py`), new §12 Consumers (CRUX). **2026-10-26:** §3.5 Shadows (the `shadow/*` effect styles are exported as DTCG `shadow` tokens in `tokens/core/shadow.tokens.json`; `extract.js` now also reads effect styles); §5 and §8 updated to match.
 >
 > **Adopted 2026-10-14** (drafted 2026-10-13; updated 2026-10-14: legacy exports are deleted when replaced, no archive; Fold 340 added to the MNG Device breakpoints; PNG previews stay in GitHub, no Git LFS; where pixel values are kept; Reader Dashboard is part of core; two breakpoint sets; Vite/package note). Every token and component export follows this file; the first build is in `tokens/core/`, `tokens/themes/`, `tokens/wordpress/` and `dist/` (pull request #2). The README's filing rules and the status doc's standing rules point here; if this file and another doc disagree, this file wins for anything about export formats.
 
@@ -247,6 +247,15 @@ Each component or assembly gets one folder: `components/<layer>/<slug>/`
 
 Each component folder's `.tokens.json` records the Figma component set it maps to (`$extensions.com.mng.figma.node`) and the production selector it matches (`$extensions.com.mng.production.selector`).
 
+**Token paths** (written down 2026-10-27 as `export.py` already writes them; they stay as they are, Karl): `<component>.<variant group>.<layer path>.<property>`.
+
+- `<component>`: the component's slug (`button-primary`).
+- `<variant group>`: `base` for values shared by every variant; otherwise one segment per variant property that changes the value, `<property>-<value>` slugged (`state-hover`; two properties give two segments in the set's property order, e.g. `size-small.state-hover`). The exporter picks the fewest properties that explain the value.
+- `<layer path>`: the Figma layer names from the variant's root, slugged (`button.content.icon-left`). A layer named like a variant value repeats it (`icon-left.icon-left.height`); that's expected.
+- `<property>`: the CSS property the value maps to (`background`, `border-width`, `padding-top`, `font-size`).
+
+Example: `button-primary.state-hover.button.background` → `{color.theme.primary-light}`. Consumers map by this rule rather than token by token.
+
 **Not allowed going forward:** Figma layer trees, raw Figma fills and strokes, Figma variable collection paths as keys (`Colors/color/gray/min`), or custom `schema` formats (`mng/tokens@1`, `mng-design-system/tokens@1`). Figma node IDs appear only inside `$extensions.com.mng.figma`.
 
 ## 8. Ready-to-use files (`dist/`)
@@ -274,14 +283,36 @@ Built from the DTCG files by `scripts/build-tokens/`. **Never edited by hand.** 
 
 ## 10. Checks before committing
 
-`scripts/validate/` (to be built) runs before every commit and in GitHub on every push. It fails when:
+Built 2026-10-27 (Seth's issue #7). `scripts/validate/validate.py` (`npm run validate`, standard library only) runs before every commit (the pre-commit hook `scripts/validate/pre-commit`, copied into `.git/hooks/`) and in GitHub on every push to `main` and every pull request (`.github/workflows/validate.yml`). The GitHub job first rebuilds `tokens/` and `dist/` from the Figma snapshot (`make-tokens.py`, `build.py`) and fails if the commit doesn't match the rebuild, then runs the validator. It fails when:
 
-- a `.tokens.json` file isn't valid DTCG 2025.10, or a reference doesn't resolve;
-- a color's `components`, `rgba` or `hex8` don't match its hex;
-- a layer references a layer below it (e.g. core → WordPress);
-- `dist/` is out of date with the token files;
-- a non-DTCG token JSON, `.DS_Store`, `__pycache__`, zip or copy-suffixed file (`file (1).md`) is added.
+- a `.tokens.json` file doesn't parse, or a token has no `$value` or no `$type` (on the token or a parent group);
+- a reference doesn't resolve within the file's layer and the layers above it (§5; themes follow `mng.resolver.json`; component files are checked against every base theme), or reaches into a layer below (e.g. core → WordPress);
+- a color's `components`, `alpha`, `rgba` or `hex8` don't match its hex;
+- a dimension isn't `{value, unit}` in px or rem (em only for `letterSpacing`, §3.3) or a reference;
+- `tokens/` or `dist/` don't match the build (GitHub job and pre-commit hook);
+- a `.DS_Store`, `__pycache__`, `.pyc`, zip or copy-suffixed file (`file (1).md`) is tracked;
+- the Figma snapshot (`scripts/build-tokens/figma-variables.json`) isn't one full read of the main file: wrong file key, no read date, a collection or the `shadow/*` styles missing, or data that doesn't match the counts and fingerprints of the read (edited by hand or merged from older reads).
+
+Raw (non-reference) values in component token files are reported, not failures (Karl, 2026-10-27). The legacy `tokens/colors/mng-colors.tokens.json` is skipped until it's retired (§12, status doc open item 14).
+
+**The Figma snapshot** is written only by `scripts/build-tokens/save-snapshot.py`. `extract.js` always reads the whole main file and returns a summary (each collection's variable count and fingerprint); `save-snapshot.py` takes that summary plus the data for any collection that changed, and refuses to save unless every collection matches the summary. It also stops if the Colors collection changed (colors stay as of 2026-10-19 unless Karl approves a change).
 
 ## 11. Changing values
 
 Token value changes, new official breakpoints and changes to this standard go on a `review/...` branch with a pull request for Karl. Adding metadata, rebuilding `dist/` from unchanged values, or new legacy notes can go straight to `main`.
+
+## 12. Consumers
+
+**CRUX** (the CRUX design system, tribpubdev) imports from this repo every day: it resolves `main` to a commit, maps the DTCG files into CRUX tokens and opens a review pull request in its own repo when values change (Seth's issue #7, 2026-10-27). Our names don't change to suit CRUX (Karl, 2026-10-27); CRUX maps to them. Files CRUX reads:
+
+| File | What CRUX takes |
+|---|---|
+| `tokens/core/{color,typography,spacing,breakpoint}.tokens.json` | Gray and feedback colors, font sizes, weights and families, spacing, radius, breakpoints |
+| `tokens/themes/<theme>.tokens.json` | `color.theme.*` for Bold Coastal, Modern Earthy and Measured Vibrant |
+| `tokens/sites/<domain>.tokens.json` | Resolved site colors and `$extensions["com.mng"].theme` |
+| `tokens/wordpress/typography-editorial.tokens.json` | Editorial type styles |
+| `tokens/wordpress/type-theme/<theme>.tokens.json` | `font.theme.*` per theme |
+| `components/core/<slug>/<slug>.tokens.json` | Button tokens (paths: §7) |
+
+- Renaming, moving or deleting one of these files, or changing a token's `$type` (for example a font weight going from a number to a reference to a string token, or a line height gaining a unit), stops the CRUX import until CRUX updates its maps. Say so in the commit or pull request title.
+- CRUX doesn't read `dist/`, `figma-exports/`, `tokens/colors/` or `mng.resolver.json`.
