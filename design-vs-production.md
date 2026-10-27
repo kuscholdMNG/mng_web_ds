@@ -1986,6 +1986,19 @@ When the previous / next buttons change the photo, the "1 of 29" count (`.slide-
 
 **Fix:** add `aria-live="polite"` to `.slide-count` (or to `.mng-gallery-information-container`, so the caption is read too), so the new count is announced after each change. Design: WordPress Elements ▸ Homepage ▸ Zone 1 Slideshow (`3640:50278`) and the For You prototype prompt, section 10.
 
+## 38. Section title (eyebrow) — space below the title and before the arrow aren't tokens
+
+**Found:** 2026-10-27, on the homepage section titles (`.section-highlight h2.entry-title` and `.headline-list-title`) of all 6 review sites, while documenting the Section Title / Eyebrow component. **Team:** CMS. Color and the missing underline are entry 12.2.
+
+**Design:** WordPress Elements ▸ Homepage ▸ **Section Title / Eyebrow** (`3333:42278`), Style = Underline / Bold. The title row, underline and optional subhead are `spacing/100` (8px) apart, and so are the title and its arrow (Karl, 2026-10-27: 6px was a tie between 4 and 8).
+
+| Property | Production | Design |
+|---|---|---|
+| Title to underline | `padding-bottom: 0.3125em` = 6.56px (Modern Earthy, 21px: mcall, canoncitydailyrecord); 0.5em = 8.5px with no underline (Measured Vibrant, 17px: chicagotribune, orlandosentinel); 0 with no underline (Bold Coastal, 20px: ocregister, denverpost) | `spacing/100` (8px) on every theme, then the 2px `color/theme/primary` underline |
+| Title to arrow | no gap; the `icon-arrow-right` glyph has `padding-left: 0.3em` (4.14px Measured Vibrant, 4.88px Bold Coastal, 5.12px Modern Earthy) | `spacing/100` (8px) gap, then the 16px arrow icon |
+
+**Fix:** set the title's bottom padding to 8px and the arrow's left spacing to 8px on every theme.
+
 ## Notes
 
 **Reading live colors:** read themed CSS variables such as `--primary` on `document.querySelector('#page')`, not on `document.documentElement`. The WordPress Customizer's per-site override is scoped to `#page`, so reading at `:root` only shows the theme default.

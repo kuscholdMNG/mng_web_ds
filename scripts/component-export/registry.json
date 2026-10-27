@@ -411,6 +411,32 @@
       "file": "b1iZxkFwtAYq9rElmnCAzd",
       "documentationFrame": "3629:44928",
       "production": "Production World Cup tabs (`ul.sr-nav-tabs > button.tab-btn`, staging.dailylocal.com/world-cup/); differences are design-vs-production entry 31."
+    },
+    {
+      "slug": "section-title-eyebrow",
+      "name": "Section Title / Eyebrow",
+      "group": "homepage",
+      "layer": "wordpress",
+      "order": 1,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3333:42278",
+      "documentationFrame": "3484:67627",
+      "description": "Section header for homepage blocks and the For You feed. Style = Underline, Bold; Chevron (on by default), Show Subhead (off by default), Subhead text and Show Info properties.",
+      "rules": [
+        "**Title:** the theme's eyebrow tokens (`font/theme/eyebrow-family`, `-size`, `-weight`: Bold Coastal Noto Sans 20 / 400, Measured Vibrant Noto Sans 17 / 700, Modern Earthy Noto Serif 21 / 400), uppercase, 3.5% letter spacing. Underline: `color/gray/100`, line height 22px. Bold: `color/theme/primary`, line height auto.",
+        "**Underline (Style=Underline):** 2px `color/theme/primary`, as wide as the title (the component hugs its text). Bold has no underline.",
+        "**Chevron:** 16px arrow-right icon, `color/theme/primary`; on by default.",
+        "**Spacing:** 8px (`spacing/100`) between the title row, the underline and the subhead row, and between the title and the arrow (Karl, 2026-10-27). 4px (`spacing/050`) between the subhead and the info icon. No outer padding or margins: the block that uses the title sets the space around it.",
+        "**Subhead (optional, For You feed header):** Noto Sans Regular 13 (`font/size/13`), `color/gray/200`, line height auto.",
+        "**Info (Show Info):** 12px info icon, `color/gray/200`, shown with the subhead. It is a button that opens the MNG Web Design System Tooltip, Type=Toggletip, Placement=Bottom.",
+        "**Markup:** an `h2`; the arrow is inside the section link."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Letter spacing (3.5%) and the Underline title's 22px line height have no tokens (none exist yet).",
+        "Production: title color wrong and underline missing on Bold Coastal and Measured Vibrant (design-vs-production entry 12.2); title-to-underline and title-to-arrow spacing off-token (entry 38)."
+      ],
+      "production": "Production `.section-highlight h2.entry-title` and `.headline-list-title` (homepage blocks, all 6 review sites)."
     }
   ]
 }
