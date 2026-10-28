@@ -9,7 +9,7 @@ component_key: 790ce7e08b7c4a4da2f4c22f29a5525fdcbea997
 variants: 4
 tokens: pop-up-modal-close.tokens.json
 skeleton: pop-up-modal-close.html
-exported: 2026-10-14
+exported: 2026-10-28
 ---
 
 # Pop-Up Modal Close
@@ -32,7 +32,7 @@ exported: 2026-10-14
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `Default` | 32×32 | [5335:16193](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5335-16193) | 23 | ![](previews/pop-up-modal-close--default.png) |
+| `Default` | 32×32 | [5335:16193](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5335-16193) | 28 | ![](previews/pop-up-modal-close--default.png) |
 | `Hover` | 32×32 | [5335:16194](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5335-16194) | 1 | ![](previews/pop-up-modal-close--hover.png) |
 | `Pressed` | 32×32 | [7078:7686](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=7078-7686) | 1 | ![](previews/pop-up-modal-close--pressed.png) |
 | `InFocus` | 32×32 | [5335:16195](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5335-16195) | 1 | ![](previews/pop-up-modal-close--infocus.png) |
@@ -93,10 +93,10 @@ No Breakpoint property: one size at every width.
 
 ## Where it is used
 
-Scope: instances in the Figma file **MNG Web Design System** only (other files that use the library are not counted). Total: **26**.
+Scope: instances in the Figma file **MNG Web Design System** only (other files that use the library are not counted). Total: **31**.
 
 Inside components: Modals ×7, ModalsCenter ×6.
-Placed on pages: Modal Panels | 2025.12.29 ×7.
+Placed on pages: Modal Panels | 2025.12.29 ×12.
 
 **Built from:** Icons ×4
 Icon variants: `close` ×4.
@@ -116,4 +116,4 @@ No production selector recorded yet. Production gaps go in `design-vs-production
 - `pop-up-modal-close.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-14 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*

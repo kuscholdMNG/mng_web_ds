@@ -9,7 +9,7 @@ component_key: f0d7dc9ffa766ef6e54c1d46416a37d1405acaa6
 variants: 4
 tokens: in-line-close.tokens.json
 skeleton: in-line-close.html
-exported: 2026-10-14
+exported: 2026-10-28
 ---
 
 # In-Line Close
@@ -32,7 +32,7 @@ exported: 2026-10-14
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `Default` | 40×40 | [5335:16197](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5335-16197) | 96 | ![](previews/in-line-close--default.png) |
+| `Default` | 40×40 | [5335:16197](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5335-16197) | 108 | ![](previews/in-line-close--default.png) |
 | `Hover` | 40×40 | [5335:16198](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5335-16198) | 2 | ![](previews/in-line-close--hover.png) |
 | `Pressed` | 40×40 | [7078:7697](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=7078-7697) | 1 | ![](previews/in-line-close--pressed.png) |
 | `InFocus` | 40×40 | [5335:16199](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5335-16199) | 1 | ![](previews/in-line-close--infocus.png) |
@@ -97,10 +97,10 @@ No Breakpoint property: one size at every width.
 
 ## Where it is used
 
-Scope: instances in the Figma file **MNG Web Design System** only (other files that use the library are not counted). Total: **100**.
+Scope: instances in the Figma file **MNG Web Design System** only (other files that use the library are not counted). Total: **112**.
 
-Inside components: InLineMessage ×59, ModalsOffset ×9.
-Placed on pages: In-Line Content Containers | 2026.01.02 ×5, Alerts and Icons ×3, Buttons | 2026.09.30 ×1.
+Inside components: InLineMessage ×59, ModalsOffset ×9, Tooltip ×8.
+Placed on pages: In-Line Content Containers | 2026.01.02 ×5, Alerts and Icons ×3, Modal Panels | 2025.12.29 ×2, Tooltips | 2026.10.23 ×2, Buttons | 2026.09.30 ×1.
 17 instances are nested inside other instances.
 
 **Built from:** Icons ×4
@@ -121,4 +121,4 @@ No production selector recorded yet. Production gaps go in `design-vs-production
 - `in-line-close.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-14 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*

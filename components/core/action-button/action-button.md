@@ -9,7 +9,7 @@ component_key: f2d61dd8cfa1619da4987e7b90ac60f2fbb6c102
 variants: 4
 tokens: action-button.tokens.json
 skeleton: action-button.html
-exported: 2026-10-14
+exported: 2026-10-28
 ---
 
 # Action Button
@@ -125,4 +125,4 @@ No production selector recorded yet. Production gaps go in `design-vs-production
 - `action-button.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-14 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*

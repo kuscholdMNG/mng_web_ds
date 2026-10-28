@@ -15,7 +15,7 @@
       "variants": 4,
       "instances": 4,
       "knownIssues": 4,
-      "exported": "2026-10-14"
+      "exported": "2026-10-28"
     },
     {
       "slug": "button-linkstyle",
@@ -29,9 +29,9 @@
         "set": "Button Linkstyle"
       },
       "variants": 24,
-      "instances": 74,
+      "instances": 85,
       "knownIssues": 1,
-      "exported": "2026-10-15"
+      "exported": "2026-10-28"
     },
     {
       "slug": "button-primary",
@@ -45,9 +45,9 @@
         "set": "Button Primary"
       },
       "variants": 24,
-      "instances": 111,
+      "instances": 116,
       "knownIssues": 0,
-      "exported": "2026-10-14"
+      "exported": "2026-10-28"
     },
     {
       "slug": "button-secondary",
@@ -63,7 +63,7 @@
       "variants": 24,
       "instances": 4,
       "knownIssues": 0,
-      "exported": "2026-10-14"
+      "exported": "2026-10-28"
     },
     {
       "slug": "button-tertiary",
@@ -79,7 +79,7 @@
       "variants": 24,
       "instances": 18,
       "knownIssues": 0,
-      "exported": "2026-10-14"
+      "exported": "2026-10-28"
     },
     {
       "slug": "in-line-close",
@@ -93,9 +93,9 @@
         "set": "Button In-Line Close"
       },
       "variants": 4,
-      "instances": 100,
+      "instances": 112,
       "knownIssues": 2,
-      "exported": "2026-10-14"
+      "exported": "2026-10-28"
     },
     {
       "slug": "non-button-hyperlink",
@@ -111,7 +111,7 @@
       "variants": 4,
       "instances": 8,
       "knownIssues": 1,
-      "exported": "2026-10-14"
+      "exported": "2026-10-28"
     },
     {
       "slug": "pop-up-modal-close",
@@ -125,9 +125,249 @@
         "set": "Button Modal Close"
       },
       "variants": 4,
-      "instances": 26,
+      "instances": 31,
       "knownIssues": 2,
-      "exported": "2026-10-14"
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "inline-message-dashsubsnonsub",
+      "name": "InLineMessage: DashSubsNonSub (non-subscriber CTA panel)",
+      "group": "in-line-content",
+      "layer": "core",
+      "path": "components/core/inline-message-dashsubsnonsub/",
+      "figma": {
+        "fileKey": "jFHYqhZbJjvWQmDI4myCsd",
+        "node": "3421:643",
+        "set": "Device=Desktop, Priority=Medium, Location=DashSubsNonSub, PanelType=Alert"
+      },
+      "variants": 1,
+      "instances": 3,
+      "knownIssues": 2,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "modals-center",
+      "name": "ModalsCenter",
+      "group": "overlays",
+      "layer": "core",
+      "path": "components/core/modals-center/",
+      "figma": {
+        "fileKey": "jFHYqhZbJjvWQmDI4myCsd",
+        "node": "3040:2262",
+        "set": "ModalsCenter"
+      },
+      "variants": 6,
+      "instances": 11,
+      "knownIssues": 3,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "modals-offset",
+      "name": "ModalsOffset",
+      "group": "overlays",
+      "layer": "core",
+      "path": "components/core/modals-offset/",
+      "figma": {
+        "fileKey": "jFHYqhZbJjvWQmDI4myCsd",
+        "node": "6497:6263",
+        "set": "ModalsOffset"
+      },
+      "variants": 9,
+      "instances": 0,
+      "knownIssues": 2,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "tooltip",
+      "name": "Tooltip",
+      "group": "overlays",
+      "layer": "core",
+      "path": "components/core/tooltip/",
+      "figma": {
+        "fileKey": "jFHYqhZbJjvWQmDI4myCsd",
+        "node": "7372:25744",
+        "set": "Tooltip"
+      },
+      "variants": 4,
+      "instances": 1,
+      "knownIssues": 2,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "article-author",
+      "name": "Article Author",
+      "group": "article-parts",
+      "layer": "wordpress",
+      "path": "components/wordpress/article-author/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3609:39115",
+        "set": "Article Author"
+      },
+      "variants": 1,
+      "instances": 16,
+      "knownIssues": 1,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "article-section-kicker",
+      "name": "Article Section Kicker",
+      "group": "article-parts",
+      "layer": "wordpress",
+      "path": "components/wordpress/article-section-kicker/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3609:39112",
+        "set": "Article Section Kicker"
+      },
+      "variants": 1,
+      "instances": 16,
+      "knownIssues": 1,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "article-timestamp",
+      "name": "Article Timestamp",
+      "group": "article-parts",
+      "layer": "wordpress",
+      "path": "components/wordpress/article-timestamp/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3621:38794",
+        "set": "Article Timestamp"
+      },
+      "variants": 1,
+      "instances": 18,
+      "knownIssues": 0,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "1col-article-card",
+      "name": "1Col Article Card",
+      "group": "cards",
+      "layer": "wordpress",
+      "path": "components/wordpress/1col-article-card/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3536:39065",
+        "set": "1Col Article Card"
+      },
+      "variants": 3,
+      "instances": 242,
+      "knownIssues": 2,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "horizontal-thumbnail-card",
+      "name": "Horizontal Thumbnail Card",
+      "group": "cards",
+      "layer": "wordpress",
+      "path": "components/wordpress/horizontal-thumbnail-card/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3362:2992",
+        "set": "Horizontal Thumbnail Card"
+      },
+      "variants": 6,
+      "instances": 77,
+      "knownIssues": 2,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "zone-1-lead-article-card",
+      "name": "Zone 1 Lead Article Card",
+      "group": "cards",
+      "layer": "wordpress",
+      "path": "components/wordpress/zone-1-lead-article-card/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3336:46157",
+        "set": "Zone 1 Lead Article Card"
+      },
+      "variants": 12,
+      "instances": 11,
+      "knownIssues": 3,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "zone-1-slideshow",
+      "name": "Zone 1 Slideshow",
+      "group": "cards",
+      "layer": "wordpress",
+      "path": "components/wordpress/zone-1-slideshow/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3640:50278",
+        "set": "Zone 1 Slideshow"
+      },
+      "variants": 3,
+      "instances": 6,
+      "knownIssues": 3,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "section-title-eyebrow",
+      "name": "Section Title / Eyebrow",
+      "group": "homepage",
+      "layer": "wordpress",
+      "path": "components/wordpress/section-title-eyebrow/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3333:42278",
+        "set": "Section Title / Eyebrow"
+      },
+      "variants": 2,
+      "instances": 105,
+      "knownIssues": 2,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "show-more-affordance",
+      "name": "Show More Affordance",
+      "group": "homepage",
+      "layer": "wordpress",
+      "path": "components/wordpress/show-more-affordance/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3634:49423",
+        "set": "Show More Affordance"
+      },
+      "variants": 1,
+      "instances": 13,
+      "knownIssues": 2,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "homepage-tab",
+      "name": "Homepage Tab",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/homepage-tab/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3629:44949",
+        "set": "Homepage Tab"
+      },
+      "variants": 4,
+      "instances": 6,
+      "knownIssues": 0,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "homepage-tabs",
+      "name": "Homepage Tabs",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/homepage-tabs/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3629:44974",
+        "set": "Homepage Tabs"
+      },
+      "variants": 2,
+      "instances": 0,
+      "knownIssues": 0,
+      "exported": "2026-10-28"
     }
   ]
 }

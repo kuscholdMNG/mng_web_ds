@@ -187,6 +187,8 @@ def token_for(ptype, value, figvar, issues, where, layer):
             v, rgba = color_value(*value)
             tok['$value'] = v
             ext['rgba'] = rgba
+            if v['alpha'] < 1:  # 8-digit hex for translucent colors (2026-10-28)
+                ext['hex8'] = v['hex'] + '%02x' % round(v['alpha'] * 255)
         elif ptype == 'dimension':
             tok['$value'] = {'value': round(float(value), 3) if not float(value).is_integer() else int(value), 'unit': 'px'}
         elif ptype == 'fontFamily':
@@ -237,6 +239,8 @@ def selector_name(S, k):
 
 # ---------- HTML skeleton ----------
 def css_paint(p):
+    if 'hex' not in p:  # image or gradient fill: the skeleton shows a neutral placeholder (2026-10-28)
+        return '#cccac7'
     ref = figma_ref(p.get('variable'))
     col = p['hex'] if p.get('opacity', 1) == 1 else 'rgba(%s, %s)' % (', '.join(str(int(p['hex'][i:i + 2], 16)) for i in (1, 3, 5)), fmt(p['opacity']))
     return 'var(%s, %s)' % (css_var(ref), col) if ref else col
@@ -432,7 +436,9 @@ def main():
         s = r['set']
         cs = comp['slug']
         layer = comp['layer']
-        keys = sorted(s['properties'], key=lambda k: (order_props.index(k) if k in order_props else 99, k))
+        keys = sorted((k for k in s['properties'] if s['properties'][k].get('type', 'VARIANT') == 'VARIANT'),
+                      key=lambda k: (order_props.index(k) if k in order_props else 99, k))
+        others = [k for k in s['properties'] if k not in keys]  # boolean, text and instance-swap properties (2026-10-28)
         def vsort(v):
             vp = v['variantProperties']
             return tuple((order_vals[k].index(vp[k]) if k in order_vals and vp[k] in order_vals[k] else s['properties'][k]['options'].index(vp[k])) for k in keys)
@@ -546,6 +552,11 @@ def main():
                 md.append('| %s | %s | %s |' % (k, p['default'], ', '.join(sorted(p['options'], key=lambda x: order_vals.get(k, p['options']).index(x) if x in order_vals.get(k, p['options']) else 99))))
         else:
             md.append('No variant properties (single component).')
+        if others:
+            md += ['', '| Other property | Type | Default |', '|---|---|---|']
+            for k in others:
+                p = s['properties'][k]
+                md.append('| %s | %s | %s |' % (k.split('#')[0], p.get('type', '').lower(), p.get('default')))
         md += ['', '## Variants', '', '| Variant | Size | Node | Instances | Preview |', '|---|---|---|---|---|']
         for v in variants:
             md.append('| `%s` | %s×%s | [%s](%s) | %d | %s |' % (v['_label'], fmt(v['w']), fmt(v['h']), v['id'], url(fk, v['id']), v['usage']['total'],
@@ -579,7 +590,9 @@ def main():
             md.append('Icon variants: ' + ', '.join('`%s` ×%d' % kv for kv in icons.most_common()) + '.')
         prod = comp.get('production')
         md += ['', '## Production', '']
-        if prod:
+        if isinstance(prod, str):  # registry text: one sentence about the production element (2026-10-28)
+            md.append(prod)
+        elif prod:
             md += ['- %s: `%s`' % (k, v) for k, v in prod.items()]
         else:
             md.append('No production selector recorded yet. Production gaps go in `design-vs-production.md`.')

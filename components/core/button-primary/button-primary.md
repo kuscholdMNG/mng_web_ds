@@ -9,7 +9,7 @@ component_key: 6bd2bc0fe1532df6beb4cd56593b624012dbe8c4
 variants: 24
 tokens: button-primary.tokens.json
 skeleton: button-primary.html
-exported: 2026-10-14
+exported: 2026-10-28
 ---
 
 # Button Primary
@@ -34,7 +34,7 @@ exported: 2026-10-14
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `Desktop / None / Default` | 323.75×40 | [5328:15927](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5328-15927) | 98 | ![](previews/button-primary--desktop-none-default.png) |
+| `Desktop / None / Default` | 323.75×40 | [5328:15927](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5328-15927) | 103 | ![](previews/button-primary--desktop-none-default.png) |
 | `Desktop / None / Hover` | 323.75×40 | [5401:5129](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5401-5129) | 1 | ![](previews/button-primary--desktop-none-hover.png) |
 | `Desktop / None / Pressed` | 323.75×40 | [6942:1550](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=6942-1550) | 1 | ![](previews/button-primary--desktop-none-pressed.png) |
 | `Desktop / None / InFocus` | 323.75×40 | [6942:6604](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=6942-6604) | 1 | ![](previews/button-primary--desktop-none-infocus.png) |
@@ -140,10 +140,10 @@ From `button-primary.tokens.json`. References point at system tokens (`tokens/co
 
 ## Where it is used
 
-Scope: instances in the Figma file **MNG Web Design System** only (other files that use the library are not counted). Total: **111**.
+Scope: instances in the Figma file **MNG Web Design System** only (other files that use the library are not counted). Total: **116**.
 
-Inside components: InLineMessage ×61, Modals ×7, ModalsCenter ×6, ReaderDash Tempates ×5, Page Body Templates ×1.
-Placed on pages: In-Line Content Containers | 2026.01.02 ×11, Modal Panels | 2025.12.29 ×7, Alerts and Icons ×6, Buttons | 2026.09.30 ×3.
+Inside components: InLineMessage ×61, Modals ×7, ModalsCenter ×6.
+Placed on pages: In-Line Content Containers | 2026.01.02 ×17, Modal Panels | 2025.12.29 ×12, Alerts and Icons ×6, Buttons | 2026.09.30 ×3.
 
 **Built from:** Icons ×16
 Icon variants: `new-tab` ×16.
@@ -162,4 +162,4 @@ None open.
 - `button-primary.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-14 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*

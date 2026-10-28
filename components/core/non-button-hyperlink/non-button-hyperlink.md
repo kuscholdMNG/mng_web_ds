@@ -9,7 +9,7 @@ component_key: 121a469eea7d108efe028d82b734c60ffbbf6aab
 variants: 4
 tokens: non-button-hyperlink.tokens.json
 skeleton: non-button-hyperlink.html
-exported: 2026-10-14
+exported: 2026-10-28
 ---
 
 # Non-Button Hyperlink
@@ -117,4 +117,4 @@ No production selector recorded yet. Production gaps go in `design-vs-production
 - `non-button-hyperlink.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-14 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*

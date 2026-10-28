@@ -9,7 +9,7 @@ component_key: f2989bf6601dd76f26f1ecd1ee39d25551450390
 variants: 24
 tokens: button-linkstyle.tokens.json
 skeleton: button-linkstyle.html
-exported: 2026-10-15
+exported: 2026-10-28
 ---
 
 # Button Linkstyle
@@ -34,10 +34,10 @@ exported: 2026-10-15
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `None / 1 Row / Default` | 138×38 | [5428:3880](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5428-3880) | 68 | ![](previews/button-linkstyle--none-1-row-default.png) |
+| `None / 1 Row / Default` | 138×38 | [5428:3880](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5428-3880) | 78 | ![](previews/button-linkstyle--none-1-row-default.png) |
 | `None / 1 Row / Hover` | 138×38 | [5428:3882](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5428-3882) | 1 | ![](previews/button-linkstyle--none-1-row-hover.png) |
 | `None / 1 Row / Pressed` | 138×38 | [7078:7616](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=7078-7616) | 1 | ![](previews/button-linkstyle--none-1-row-pressed.png) |
-| `None / 1 Row / InFocus` | 138×38 | [5428:3884](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5428-3884) | 1 | ![](previews/button-linkstyle--none-1-row-infocus.png) |
+| `None / 1 Row / InFocus` | 138×38 | [5428:3884](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5428-3884) | 2 | ![](previews/button-linkstyle--none-1-row-infocus.png) |
 | `None / Stacked / Default` | 91×60 | [5428:3881](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5428-3881) | 0 | ![](previews/button-linkstyle--none-stacked-default.png) |
 | `None / Stacked / Hover` | 91×60 | [5428:3883](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=5428-3883) | 0 | ![](previews/button-linkstyle--none-stacked-hover.png) |
 | `None / Stacked / Pressed` | 91×60 | [7078:7620](https://www.figma.com/design/jFHYqhZbJjvWQmDI4myCsd/?node-id=7078-7620) | 0 | ![](previews/button-linkstyle--none-stacked-pressed.png) |
@@ -125,10 +125,10 @@ No Breakpoint property: one size at every width.
 
 ## Where it is used
 
-Scope: instances in the Figma file **MNG Web Design System** only (other files that use the library are not counted). Total: **74**.
+Scope: instances in the Figma file **MNG Web Design System** only (other files that use the library are not counted). Total: **85**.
 
 Inside components: InLineMessage ×15, Modals ×14, ModalsCenter ×12, Form Field ×6.
-Placed on pages: Modal Panels | 2025.12.29 ×14, In-Line Content Containers | 2026.01.02 ×3, Buttons | 2026.09.30 ×2.
+Placed on pages: Modal Panels | 2025.12.29 ×24, In-Line Content Containers | 2026.01.02 ×3, Buttons | 2026.09.30 ×2.
 
 **Built from:** Icons ×16
 Icon variants: `new-tab` ×16.
@@ -147,4 +147,4 @@ No production selector recorded yet. Production gaps go in `design-vs-production
 - `button-linkstyle.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-15 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
