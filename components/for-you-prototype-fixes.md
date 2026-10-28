@@ -1,6 +1,6 @@
 # For You prototype fixes: prompt for the prototype project
 
-> **Updated 2026-10-28** after the For You components cleanup and export: section 4 (subhead gap 6 → 8px, Section Title now uses spacing/100), section 5 (the rule gray is per theme; the prototype is Bold Coastal), section 8 (header icon on the title's baseline) and a pointer to the exported specs. The list is complete: paste everything below the line into the For You Tab MVP project in one go. Card hover is parked (Karl). **2026-10-26:** added section 10, the featured-story slideshow. **First written 2026-10-23.** Status and node IDs: `components/for-you-ds-components-status.md`.
+> **Updated 2026-10-28 (later):** section 6, the gallery badge, now uses production's format and sizes (Karl). The card and row hover already match the Blocks components. **Earlier, 2026-10-28,** after the For You components cleanup and export: section 4 (subhead gap 6 → 8px, Section Title now uses spacing/100), section 5 (the rule gray is per theme; the prototype is Bold Coastal), section 8 (header icon on the title's baseline) and a pointer to the exported specs. The list is complete: paste everything below the line into the For You Tab MVP project in one go. Card hover is parked (Karl). **2026-10-26:** added section 10, the featured-story slideshow. **First written 2026-10-23.** Status and node IDs: `components/for-you-ds-components-status.md`.
 
 Every value below is an existing MNG Web Design System token (hex shown for Bold Coastal). Where production used a value with no token, it has been rounded to the nearest token (Karl, 2026-10-23), so don't reintroduce the old production values.
 
@@ -86,7 +86,7 @@ Use the production Load More (the same rule as production's `.load-more` / `.sho
 ## 6. Article rows on phones, and the gallery badge
 
 - Article rows (`.row`) at ≤639px: the image is 90×54 (5:3), pinned to the top-left of the row, with white space below it; it no longer stretches to the row's height. Change `.row{grid-template-columns:120px …}` to 90px and give `.row .img` `height:54px; min-height:0; align-self:start` in the ≤639px query. At 640px and up nothing changes (220px wide, filling the row height, minimum 132px).
-- Gallery articles get a badge on their image (cards and rows only; the featured story gets the slideshow in section 10 instead): a 28px black circle with the white `slideshow` icon (16px), 6px in from the image's bottom-right corner. Only show it when the article is a photo gallery; the sample data can mark one card and one row as galleries.
+- Gallery articles get a badge on their image (cards and rows only; the featured story gets the slideshow in section 10 instead): production's badge format (Gallery Icon Badge): a `#141414` circle (color/gray/min) with a 1px `#FFFFFF` border (color/gray/max), `opacity:.85`, `border-radius:50%`, and the white `slideshow` icon centered. On cards and on rows at 640px and up it's 33×33 with a 16px icon, 5px in from the image's right and bottom edges; on rows below 640px (the 90×54 image) it's 20×20 with an 8.4px icon, 3.75px from the right and 5px from the bottom. It doesn't change when the card is hovered. Only show it when the article is a photo gallery; the sample data can mark one card and one row as galleries.
 
 ## 7. Non-subscriber CTA panel (reuse the Reader Dashboard "subscribe" panel)
 

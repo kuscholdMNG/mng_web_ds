@@ -150,14 +150,14 @@
             "height": {
               "$type": "dimension",
               "$value": {
-                "value": 28,
+                "value": 20,
                 "unit": "px"
               }
             },
             "width": {
               "$type": "dimension",
               "$value": {
-                "value": 28,
+                "value": 20,
                 "unit": "px"
               }
             }
@@ -388,22 +388,6 @@
               }
             }
           }
-        },
-        "gallery-icon-badge": {
-          "height": {
-            "$type": "dimension",
-            "$value": {
-              "value": 28,
-              "unit": "px"
-            }
-          },
-          "width": {
-            "$type": "dimension",
-            "$value": {
-              "value": 28,
-              "unit": "px"
-            }
-          }
         }
       },
       "root": {
@@ -569,6 +553,22 @@
               "unit": "px"
             }
           }
+        },
+        "gallery-icon-badge": {
+          "height": {
+            "$type": "dimension",
+            "$value": {
+              "value": 33,
+              "unit": "px"
+            }
+          },
+          "width": {
+            "$type": "dimension",
+            "$value": {
+              "value": 33,
+              "unit": "px"
+            }
+          }
         }
       },
       "root": {
@@ -726,6 +726,22 @@
               "unit": "px"
             }
           }
+        },
+        "gallery-icon-badge": {
+          "height": {
+            "$type": "dimension",
+            "$value": {
+              "value": 20,
+              "unit": "px"
+            }
+          },
+          "width": {
+            "$type": "dimension",
+            "$value": {
+              "value": 20,
+              "unit": "px"
+            }
+          }
         }
       },
       "root": {
@@ -880,6 +896,22 @@
             "$type": "dimension",
             "$value": {
               "value": 220,
+              "unit": "px"
+            }
+          }
+        },
+        "gallery-icon-badge": {
+          "height": {
+            "$type": "dimension",
+            "$value": {
+              "value": 33,
+              "unit": "px"
+            }
+          },
+          "width": {
+            "$type": "dimension",
+            "$value": {
+              "value": 33,
               "unit": "px"
             }
           }

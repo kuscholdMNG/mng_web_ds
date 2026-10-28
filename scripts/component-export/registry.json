@@ -9,7 +9,8 @@
       "Default",
       "Hover",
       "Pressed",
-      "InFocus"
+      "InFocus",
+      "Focus"
     ],
     "Breakpoint": [
       "Desktop",
@@ -23,6 +24,10 @@
     "Style": [
       "1 Row",
       "Stacked"
+    ],
+    "Size": [
+      "Small",
+      "Large"
     ]
   },
   "propertyOrder": [
@@ -293,7 +298,7 @@
       ],
       "breakpoints": null,
       "knownIssues": [
-        "Style=For You: hover state (primary border and ring, primary headline) not built yet (parked)."
+        "Style=For You is superseded by Blocks Card (2026-10-28), which has the Hover and Focus states."
       ],
       "production": null
     },
@@ -306,18 +311,18 @@
       "file": "b1iZxkFwtAYq9rElmnCAzd",
       "node": "3362:2992",
       "documentationFrame": "3484:67724",
-      "description": "Horizontal article row. Style=Standard: compact thumbnail list item (Photos Block secondary list). Style=For You: the bordered For You tab article row.",
+      "description": "Horizontal article row. Style=Standard: compact thumbnail list item (Photos Block secondary list). Style=For You: the bordered For You tab article row, now its own component, Blocks Article Row (2026-10-28); the Style=For You variants stay here for now.",
       "rules": [
         "**Style=For You container:** `color/gray/max` fill, 1px `color/gray/500` border, `radius/lg` (8px) corners, clips its content. No shadow.",
         "**Style=For You image:** Article Image Placeholder pinned top-left. 640px and up: 220px wide, filling the row height (minimum 132px, 5:3). Below 640px: 90×54 (Style=Standard's 90px width at the same 5:3 ratio), with white space below it (Karl, 2026-10-26).",
         "**Style=For You body:** Article Section Kicker; headline in `Editorial/Titles/CardTertiaryCompact` (Noto Serif Bold 16/18.88, `color/gray/min`), not clamped; footer with a 1px `color/gray/500` top border, Article Author and Article Timestamp side by side.",
         "**Style=For You spacing:** body padding 16px (`spacing/200`), 12px (`spacing/150`) below 640px; 8px (`spacing/100`) kicker to headline; 12px (`spacing/150`) headline group to footer; 8px (`spacing/100`) above the footer content; 12px (`spacing/150`) between author and timestamp.",
         "**Style=For You width:** fills the feed column; rows stack 16px apart.",
-        "**Gallery Icon Badge** (`Show Gallery Icon`, both styles): 28px black circle with a 16px white gallery icon, 6px in from the image's bottom-right corner."
+        "**Gallery Icon Badge** (`Show Gallery Icon`, both styles): Size=Small (20px, 3.75px right and 5px bottom) on the 90 and 110px images, Size=Large (33px, 5px in) on the 220px image. See Gallery Icon Badge."
       ],
       "breakpoints": "| Device | Viewport | Style=For You |\n|---|---|---|\n| Mobile | below 640px (340/360 templates) | 90×54 image pinned top-left, 12px body padding; built at 340 |\n| Tablet | 640px and up (768 template) | 220px image, 16px body padding; built at 720 |\n| Desktop | 640px and up (1280 template) | Same as Tablet; built at 848 (896px feed column minus 24px padding each side) |",
       "knownIssues": [
-        "Style=For You: hover state not built yet (parked)."
+        "Style=For You is superseded by Blocks Article Row (which has the Hover and Focus states); the variants here have none."
       ],
       "production": null
     },
@@ -341,7 +346,8 @@
       "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| Mobile | below 640px | One column; 25/29 headline |\n| Tablet | 640px and up (768 template) | Two columns, 32px apart |\n| Desktop | 1024px and up | Two columns, 20px apart (text 295, image 391) |",
       "knownIssues": [
         "Tablet: the image (391px) is wider than its 358px column (both styles).",
-        "Column gaps 20px (spacing/250) and 32px (no token) are raw values."
+        "Column gaps 20px (spacing/250) and 32px (no token) are raw values.",
+        "Style=For You is superseded by Blocks Lead Article Card (2026-10-28), which has the Hover state."
       ],
       "production": "Production `.feature-primary .feature-large` (Zone 1 lead)."
     },
@@ -564,6 +570,104 @@
         "A simplified, reusable InLineMessage (copy, icon and CTA as properties) is planned after the For You export (Karl, 2026-10-27)."
       ],
       "production": null
+    },
+    {
+      "slug": "gallery-icon-badge",
+      "name": "Gallery Icon Badge",
+      "group": "cards",
+      "layer": "wordpress",
+      "order": 5,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3665:32148",
+      "documentationFrame": "3484:67733",
+      "description": "The gallery (photo slideshow) badge on an article image's bottom-right corner. Size = Small / Large × State = Default / Hover, in production's format (Karl, 2026-10-28).",
+      "rules": [
+        "**Circle:** `color/gray/min` fill, 1px `color/gray/max` border inside, fully round, 85% opacity on the whole badge; white icomoon `slideshow` icon, centered.",
+        "**Size=Large:** 33×33, 16px icon, 5px in from the image's right and bottom edges. Use on card and lead images (production `.feature-medium`, `.feature-large`): Blocks Card, Blocks Article Row at 640px and up.",
+        "**Size=Small:** 20×20, 8.4px icon, 3.75px from the right and 5px from the bottom. Use on thumbnails up to about 120px wide (production `.feature-small`): Horizontal Thumbnail Card, Photos Block, TOP ZONE Block, Blocks Article Row below 640px.",
+        "**State=Hover:** circle and border `color/theme/primary`. Production also turns the badge primary while the whole card is hovered (`.archive-view:hover .icon-slideshow`); the For You prototype's card hover doesn't, so the Blocks components keep the default badge on hover.",
+        "**Contrast:** the icon is a graphic (3:1): white on `color/gray/min` 18.4:1; on Bold Coastal primary 5.45:1."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Sizes (33, 20), icon sizes (16, 8.4), insets (5, 3.75) and the 85% opacity are production's values, not tokens (Karl: production format; revisit once it's in the For You prototype).",
+        "Production compiles the circle as #0a0908 on Bold Coastal sites; the design uses `color/gray/min` #141414 (design-vs-production entry 3)."
+      ],
+      "production": "Production `.icon-slideshow` (`.feature-small`, `.feature-medium`, `.feature-large`), measured on denverpost.com and ocregister.com 2026-10-28; same CSS on all 6 review sites."
+    },
+    {
+      "slug": "blocks-card",
+      "name": "Blocks Card",
+      "group": "blocks",
+      "layer": "wordpress",
+      "order": 1,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3663:31072",
+      "documentationFrame": "3663:31066",
+      "description": "The article card for Blocks (first used in the For You tab grid). State = Default / Hover / Focus; Show Gallery Icon. Built 2026-10-28 from 1Col Article Card, Style=For You, as its own component, separate from the Zone article cards (Karl).",
+      "rules": [
+        "**Container:** `color/gray/max` fill, 1px `color/gray/500` border, `radius/lg` (8px), clips its content. No shadow.",
+        "**Content:** 16:9 Article Image Placeholder; Article Section Kicker; headline `Editorial/Titles/CardTertiaryCompact` (Noto Serif Bold 16/18.88, `color/gray/min`), max 5 lines; footer with a 1px `color/gray/500` top border, Article Author with Article Timestamp under it.",
+        "**Spacing:** 16px (`spacing/200`) body padding; 8px (`spacing/100`) kicker to headline; 12px (`spacing/150`) headline group to footer; 8px (`spacing/100`) above the author.",
+        "**Width:** fills its column; 16px gaps; 3-up from 800px, 2-up at 640–799px, 1-up below 640px. Built at 296px.",
+        "**Hover** (the whole card is one link; For You prototype `.card:hover`): border and a 1px outside ring in `color/theme/primary` (CSS `border-color` plus `box-shadow: 0 0 0 1px`), headline `color/theme/primary`. Contrast: theme primary on white passes AA on every site (lowest 4.75:1).",
+        "**Focus** (keyboard; prototype `.card:focus-visible`): `outline: 2px solid` `color/gray/black`, `outline-offset: 1px`.",
+        "**Gallery Icon Badge** (`Show Gallery Icon`): Size=Large, 5px in from the image's bottom-right corner."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "In code the card body is space-between so footers line up in a row of cards; Figma uses the fixed 12px gap.",
+        "The exporter doesn't write Figma effects yet, so the Hover ring (`box-shadow: 0 0 0 1px`) and the Focus outline are in the rules above, not in the tokens or the HTML skeleton."
+      ],
+      "production": "New: the For You tab (prototype `.card`). Production's homepage card hover only turns the headline primary (`h3 a:hover`)."
+    },
+    {
+      "slug": "blocks-article-row",
+      "name": "Blocks Article Row",
+      "group": "blocks",
+      "layer": "wordpress",
+      "order": 2,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3663:31214",
+      "documentationFrame": "3663:31205",
+      "description": "The article row for Blocks (first used in the For You tab feed). State = Default / Hover / Focus × Device = Mobile / Tablet / Desktop; Show Gallery Icon. Built 2026-10-28 from Horizontal Thumbnail Card, Style=For You, as its own component (Karl).",
+      "rules": [
+        "**Container:** `color/gray/max` fill, 1px `color/gray/500` border, `radius/lg` (8px), clips its content. No shadow.",
+        "**Image:** Article Image Placeholder pinned top-left. 640px and up: 220px wide, filling the row height (minimum 132, 5:3). Below 640px: 90×54, with white space below it.",
+        "**Body:** Article Section Kicker; headline `Editorial/Titles/CardTertiaryCompact` (`color/gray/min`), not clamped; footer with a 1px `color/gray/500` top border, Article Author and Article Timestamp side by side.",
+        "**Spacing:** body padding 16px (`spacing/200`), 12px (`spacing/150`) below 640px; 8px (`spacing/100`) kicker to headline; 12px (`spacing/150`) headline group to footer; 8px (`spacing/100`) above the footer content; 12px (`spacing/150`) between author and timestamp.",
+        "**Hover** (prototype `.row:hover`): border and a 1px outside ring in `color/theme/primary`, headline `color/theme/primary`.",
+        "**Focus** (prototype `.row:focus-visible`): `outline: 2px solid` `color/gray/black`, `outline-offset: 1px`.",
+        "**Gallery Icon Badge:** Size=Large on the 220px image, Size=Small on the 90px image."
+      ],
+      "breakpoints": "| Device | Viewport | Row |\n|---|---|---|\n| Mobile | below 640px | 90×54 image pinned top-left, 12px body padding; built at 340 |\n| Tablet | 640px and up (768 template) | 220px image, 16px body padding; built at 720 |\n| Desktop | 640px and up (1280 template) | Same as Tablet; built at 848 |",
+      "knownIssues": [
+        "The exporter doesn't write Figma effects yet, so the Hover ring (`box-shadow: 0 0 0 1px`) and the Focus outline are in the rules above, not in the tokens or the HTML skeleton."
+      ],
+      "production": "New: the For You tab (prototype `.row`)."
+    },
+    {
+      "slug": "blocks-lead-article-card",
+      "name": "Blocks Lead Article Card",
+      "group": "blocks",
+      "layer": "wordpress",
+      "order": 3,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3663:31557",
+      "documentationFrame": "3663:31548",
+      "description": "The featured (lead) story for Blocks (first used at the top of the For You tab feed). State = Default / Hover × Device = Mobile / Tablet / Desktop × Gallery = Image / Slideshow. Built 2026-10-28 from Zone 1 Lead Article Card, Style=For You, as its own component (Karl).",
+      "rules": [
+        "**Content:** Article Section Kicker 4px (`spacing/050`) above the headline; headline Noto Serif Bold 29/33, −0.87px at 640px and up, 25/29, −0.03em below; excerpt Noto Sans 15/19 `color/gray/100`, 4px below; byline (Article Author and Article Timestamp, 12px `spacing/150` apart, 12px above). No border, badge or Related list.",
+        "**Layout:** follows the lead's width: two columns when it's about 700px wide or more, one column (headline, excerpt, byline, then the image or slideshow) when narrower. The For You feed has no side column, so that means two columns at 640px and up and one column below. Mobile has a 1px bottom rule 20px below the byline.",
+        "**Gallery=Slideshow:** the image is replaced by the Zone 1 Slideshow (Desktop: slideshow 356, text 295; Tablet: the slideshow fills its 358 column).",
+        "**Hover:** the headline is the link and turns `color/theme/primary` (prototype `a:hover`, production `h3 a:hover`). Large text, so 3:1 is enough; theme primary on white is 4.75:1 or more on every site.",
+        "**Focus:** not drawn; the prototype has no custom style for the lead, so use the Blocks Card's `outline: 2px solid` `color/gray/black`, `outline-offset: 1px` on the headline link."
+      ],
+      "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| Mobile | below 640px | One column; 25/29 headline |\n| Tablet | 640px and up (768 template) | Two columns |\n| Desktop | 1024px and up | Two columns (text 295, image 391 or slideshow 356) |",
+      "knownIssues": [
+        "Tablet: the image (391px) is wider than its 358px column (as in Zone 1 Lead Article Card)."
+      ],
+      "production": "New: the For You tab (prototype `.fy-lead`), based on production's Zone 1 lead (`.feature-primary .feature-large`)."
     }
   ]
 }

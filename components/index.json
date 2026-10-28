@@ -205,7 +205,7 @@
         "set": "Article Author"
       },
       "variants": 1,
-      "instances": 16,
+      "instances": 46,
       "knownIssues": 1,
       "exported": "2026-10-28"
     },
@@ -221,7 +221,7 @@
         "set": "Article Section Kicker"
       },
       "variants": 1,
-      "instances": 16,
+      "instances": 46,
       "knownIssues": 1,
       "exported": "2026-10-28"
     },
@@ -237,8 +237,56 @@
         "set": "Article Timestamp"
       },
       "variants": 1,
-      "instances": 18,
+      "instances": 48,
       "knownIssues": 0,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "blocks-article-row",
+      "name": "Blocks Article Row",
+      "group": "blocks",
+      "layer": "wordpress",
+      "path": "components/wordpress/blocks-article-row/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3663:31214",
+        "set": "Blocks Article Row"
+      },
+      "variants": 9,
+      "instances": 0,
+      "knownIssues": 1,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "blocks-card",
+      "name": "Blocks Card",
+      "group": "blocks",
+      "layer": "wordpress",
+      "path": "components/wordpress/blocks-card/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3663:31072",
+        "set": "Blocks Card"
+      },
+      "variants": 3,
+      "instances": 0,
+      "knownIssues": 2,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "blocks-lead-article-card",
+      "name": "Blocks Lead Article Card",
+      "group": "blocks",
+      "layer": "wordpress",
+      "path": "components/wordpress/blocks-lead-article-card/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3663:31557",
+        "set": "Blocks Lead Article Card"
+      },
+      "variants": 12,
+      "instances": 0,
+      "knownIssues": 2,
       "exported": "2026-10-28"
     },
     {
@@ -255,6 +303,22 @@
       "variants": 3,
       "instances": 242,
       "knownIssues": 2,
+      "exported": "2026-10-28"
+    },
+    {
+      "slug": "gallery-icon-badge",
+      "name": "Gallery Icon Badge",
+      "group": "cards",
+      "layer": "wordpress",
+      "path": "components/wordpress/gallery-icon-badge/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3665:32148",
+        "set": "Gallery Icon Badge"
+      },
+      "variants": 4,
+      "instances": 108,
+      "knownIssues": 3,
       "exported": "2026-10-28"
     },
     {
@@ -286,7 +350,7 @@
       },
       "variants": 12,
       "instances": 11,
-      "knownIssues": 3,
+      "knownIssues": 4,
       "exported": "2026-10-28"
     },
     {
@@ -301,7 +365,7 @@
         "set": "Zone 1 Slideshow"
       },
       "variants": 3,
-      "instances": 6,
+      "instances": 15,
       "knownIssues": 3,
       "exported": "2026-10-28"
     },

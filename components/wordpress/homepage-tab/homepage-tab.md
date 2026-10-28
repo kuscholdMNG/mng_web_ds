@@ -26,7 +26,7 @@ exported: 2026-10-28
 
 | Property | Default | Options |
 |---|---|---|
-| State | Default | Default, Hover, Active, Focus |
+| State | Default | Default, Hover, Focus, Active |
 
 | Other property | Type | Default |
 |---|---|---|

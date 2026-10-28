@@ -554,14 +554,14 @@
         "height": {
           "$type": "dimension",
           "$value": {
-            "value": 28,
+            "value": 33,
             "unit": "px"
           }
         },
         "width": {
           "$type": "dimension",
           "$value": {
-            "value": 28,
+            "value": 33,
             "unit": "px"
           }
         }

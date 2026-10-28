@@ -38,9 +38,9 @@ exported: 2026-10-28
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `Desktop` | 356×359 | [3640:50224](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3640-50224) | 2 | ![](previews/zone-1-slideshow--desktop.png) |
-| `Tablet` | 358×319 | [3640:50242](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3640-50242) | 2 | ![](previews/zone-1-slideshow--tablet.png) |
-| `Mobile` | 340×309 | [3640:50260](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3640-50260) | 2 | ![](previews/zone-1-slideshow--mobile.png) |
+| `Desktop` | 356×359 | [3640:50224](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3640-50224) | 5 | ![](previews/zone-1-slideshow--desktop.png) |
+| `Tablet` | 358×319 | [3640:50242](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3640-50242) | 5 | ![](previews/zone-1-slideshow--tablet.png) |
+| `Mobile` | 340×309 | [3640:50260](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3640-50260) | 5 | ![](previews/zone-1-slideshow--mobile.png) |
 
 ## Anatomy
 
@@ -135,9 +135,9 @@ From `zone-1-slideshow.tokens.json`. References point at system tokens (`tokens/
 
 ## Where it is used
 
-Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **6**.
+Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **15**.
 
-Inside components: Zone 1 Lead Article Card ×6.
+Inside components: Zone 1 Lead Article Card ×9, Blocks Lead Article Card ×6.
 
 **Built from:** Slideshow Arrow ×6, Article Image Placeholder ×3
 

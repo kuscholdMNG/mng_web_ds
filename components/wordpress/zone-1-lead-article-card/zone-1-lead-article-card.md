@@ -239,7 +239,8 @@ Production `.feature-primary .feature-large` (Zone 1 lead).
 
 1. Tablet: the image (391px) is wider than its 358px column (both styles).
 2. Column gaps 20px (spacing/250) and 32px (no token) are raw values.
-3. **Values not bound to a token** (literal in the component tokens): `base` 1st-col gap = 4px; `base` 1st-col.relate-articles-zone-1-container gap = 4px; `base` 1st-col.relate-articles-zone-1-container.related-articles-body gap = 4px; `base` 2nd-col.zone-1-slideshow icon-color = #e1a1ff; `base` excerpt-container padding-bottom = 16px; `base` relate-articles-zone-1-container gap = 4px; `base` relate-articles-zone-1-container padding-bottom = 16px; `base` relate-articles-zone-1-container.related-articles-body gap = 4px; `device-desktop` root gap = 20px; `device-mobile` root gap = 8px; `device-tablet` root gap = 32px; `base` root padding-bottom = 16px; and 1 more.
+3. Style=For You is superseded by Blocks Lead Article Card (2026-10-28), which has the Hover state.
+4. **Values not bound to a token** (literal in the component tokens): `base` 1st-col gap = 4px; `base` 1st-col.relate-articles-zone-1-container gap = 4px; `base` 1st-col.relate-articles-zone-1-container.related-articles-body gap = 4px; `base` 2nd-col.zone-1-slideshow icon-color = #e1a1ff; `base` excerpt-container padding-bottom = 16px; `base` relate-articles-zone-1-container gap = 4px; `base` relate-articles-zone-1-container padding-bottom = 16px; `base` relate-articles-zone-1-container.related-articles-body gap = 4px; `device-desktop` root gap = 20px; `device-mobile` root gap = 8px; `device-tablet` root gap = 32px; `base` root padding-bottom = 16px; and 1 more.
 
 ## Files
 

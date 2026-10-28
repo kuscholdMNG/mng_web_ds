@@ -14,7 +14,7 @@ exported: 2026-10-28
 
 # Horizontal Thumbnail Card
 
-> Horizontal article row. Style=Standard: compact thumbnail list item (Photos Block secondary list). Style=For You: the bordered For You tab article row.
+> Horizontal article row. Style=Standard: compact thumbnail list item (Photos Block secondary list). Style=For You: the bordered For You tab article row, now its own component, Blocks Article Row (2026-10-28); the Style=For You variants stay here for now.
 
 ## Figma
 
@@ -52,7 +52,7 @@ Default variant `Standard / Desktop` (hidden layers marked):
   - **Content** `FRAME`: 336×74, horizontal, gap 12, padding 0/0/0/0, fill×hug
     - **Image Container** `FRAME`: 110×74, horizontal, gap 0, padding 0/0/0/0, fixed×fixed
       - **Article Image Placeholder** `INSTANCE`: 110×74, vertical, gap 8, padding 0/0/0/0, fixed×fixed, instance of Article Image Placeholder ()
-      - **Gallery Icon Badge** `INSTANCE`: 28×28, horizontal, gap 0, padding 0/0/0/0, fixed×fixed, absolute, instance of Gallery Icon Badge ()
+      - **Gallery Icon Badge** `INSTANCE`: 20×20, horizontal, gap 0, padding 0/0/0/0, fixed×fixed, absolute, instance of Gallery Icon Badge (Size=Small, State=Default)
     - **Headline** `FRAME`: 214×57, vertical, gap 0, padding 0/0/0/0, fill×hug
       - **Article Headline on News paper homepage in thumbnail list position** `TEXT`: 214×57, fill×hug, "Article Headline on News paper homepage ", Noto Sans SemiBold 15px
   - **Bottom Border Line** `LINE`: 336×0, fill×fixed
@@ -74,8 +74,8 @@ From `horizontal-thumbnail-card.tokens.json`. References point at system tokens 
 | `horizontal-thumbnail-card.style-standard.content.headline.article-headline-on-news-paper-homepage-in-thumbnail-list-position.letter-spacing` | -0.15px |
 | `horizontal-thumbnail-card.style-standard.content.headline.article-headline-on-news-paper-homepage-in-thumbnail-list-position.line-height` | 19px |
 | `horizontal-thumbnail-card.style-standard.content.image-container.article-image-placeholder.icon-color` | `{color.gray.min}` |
-| `horizontal-thumbnail-card.style-standard.content.image-container.gallery-icon-badge.height` | 28px |
-| `horizontal-thumbnail-card.style-standard.content.image-container.gallery-icon-badge.width` | 28px |
+| `horizontal-thumbnail-card.style-standard.content.image-container.gallery-icon-badge.height` | 20px |
+| `horizontal-thumbnail-card.style-standard.content.image-container.gallery-icon-badge.width` | 20px |
 | `horizontal-thumbnail-card.style-for-you.card-body.gap` | `{spacing.150}` |
 | `horizontal-thumbnail-card.style-for-you.card-body.card-footer.border-color` | `{color.gray.500}` |
 | `horizontal-thumbnail-card.style-for-you.card-body.card-footer.border-style` | solid |
@@ -97,8 +97,6 @@ From `horizontal-thumbnail-card.tokens.json`. References point at system tokens 
 | `horizontal-thumbnail-card.style-for-you.card-body.headline-container.headline.font-weight` | 700 |
 | `horizontal-thumbnail-card.style-for-you.card-body.headline-container.headline.line-height` | 18.88px |
 | `horizontal-thumbnail-card.style-for-you.image-container.article-image-placeholder.icon-color` | `{color.gray.min}` |
-| `horizontal-thumbnail-card.style-for-you.image-container.gallery-icon-badge.height` | 28px |
-| `horizontal-thumbnail-card.style-for-you.image-container.gallery-icon-badge.width` | 28px |
 | `horizontal-thumbnail-card.style-for-you.root.background` | `{color.gray.max}` |
 | `horizontal-thumbnail-card.style-for-you.root.border-color` | `{color.gray.500}` |
 | `horizontal-thumbnail-card.style-for-you.root.border-radius` | `{radius.lg}` |
@@ -116,6 +114,8 @@ From `horizontal-thumbnail-card.tokens.json`. References point at system tokens 
 | `horizontal-thumbnail-card.device-desktop.image-container.width` | 220px |
 | `horizontal-thumbnail-card.device-desktop.image-container.article-image-placeholder.height` | 132px |
 | `horizontal-thumbnail-card.device-desktop.image-container.article-image-placeholder.width` | 220px |
+| `horizontal-thumbnail-card.device-desktop.image-container.gallery-icon-badge.height` | 33px |
+| `horizontal-thumbnail-card.device-desktop.image-container.gallery-icon-badge.width` | 33px |
 | `horizontal-thumbnail-card.device-desktop.root.gap` | 8px |
 | `horizontal-thumbnail-card.device-desktop.root.padding-bottom` | 8px |
 | `horizontal-thumbnail-card.device-desktop.root.padding-top` | 8px |
@@ -131,6 +131,8 @@ From `horizontal-thumbnail-card.tokens.json`. References point at system tokens 
 | `horizontal-thumbnail-card.device-mobile.image-container.width` | 90px |
 | `horizontal-thumbnail-card.device-mobile.image-container.article-image-placeholder.height` | 54px |
 | `horizontal-thumbnail-card.device-mobile.image-container.article-image-placeholder.width` | 90px |
+| `horizontal-thumbnail-card.device-mobile.image-container.gallery-icon-badge.height` | 20px |
+| `horizontal-thumbnail-card.device-mobile.image-container.gallery-icon-badge.width` | 20px |
 | `horizontal-thumbnail-card.device-mobile.root.gap` | 4px |
 | `horizontal-thumbnail-card.device-mobile.root.padding-bottom` | 6px |
 | `horizontal-thumbnail-card.device-mobile.root.padding-top` | 6px |
@@ -146,6 +148,8 @@ From `horizontal-thumbnail-card.tokens.json`. References point at system tokens 
 | `horizontal-thumbnail-card.device-tablet.image-container.width` | 220px |
 | `horizontal-thumbnail-card.device-tablet.image-container.article-image-placeholder.height` | 132px |
 | `horizontal-thumbnail-card.device-tablet.image-container.article-image-placeholder.width` | 220px |
+| `horizontal-thumbnail-card.device-tablet.image-container.gallery-icon-badge.height` | 33px |
+| `horizontal-thumbnail-card.device-tablet.image-container.gallery-icon-badge.width` | 33px |
 | `horizontal-thumbnail-card.device-tablet.root.gap` | 8px |
 | `horizontal-thumbnail-card.device-tablet.root.padding-bottom` | 8px |
 | `horizontal-thumbnail-card.device-tablet.root.padding-top` | 8px |
@@ -172,7 +176,7 @@ From `horizontal-thumbnail-card.tokens.json`. References point at system tokens 
 - **Style=For You body:** Article Section Kicker; headline in `Editorial/Titles/CardTertiaryCompact` (Noto Serif Bold 16/18.88, `color/gray/min`), not clamped; footer with a 1px `color/gray/500` top border, Article Author and Article Timestamp side by side.
 - **Style=For You spacing:** body padding 16px (`spacing/200`), 12px (`spacing/150`) below 640px; 8px (`spacing/100`) kicker to headline; 12px (`spacing/150`) headline group to footer; 8px (`spacing/100`) above the footer content; 12px (`spacing/150`) between author and timestamp.
 - **Style=For You width:** fills the feed column; rows stack 16px apart.
-- **Gallery Icon Badge** (`Show Gallery Icon`, both styles): 28px black circle with a 16px white gallery icon, 6px in from the image's bottom-right corner.
+- **Gallery Icon Badge** (`Show Gallery Icon`, both styles): Size=Small (20px, 3.75px right and 5px bottom) on the 90 and 110px images, Size=Large (33px, 5px in) on the 220px image. See Gallery Icon Badge.
 
 ## Accessibility
 
@@ -195,7 +199,7 @@ No production selector recorded yet. Production gaps go in `design-vs-production
 
 ## Known issues
 
-1. Style=For You: hover state not built yet (parked).
+1. Style=For You is superseded by Blocks Article Row (which has the Hover and Focus states); the variants here have none.
 2. **Values not bound to a token** (literal in the component tokens): `device-desktop` content gap = 12px; `device-mobile` content gap = 15px; `device-tablet` content gap = 12px; `device-desktop` root gap = 8px; `device-mobile` root gap = 4px; `device-tablet` root gap = 8px; `device-desktop` root padding-bottom = 8px; `device-mobile` root padding-bottom = 6px; `device-tablet` root padding-bottom = 8px; `device-desktop` root padding-top = 8px; `device-mobile` root padding-top = 6px; `device-tablet` root padding-top = 8px.
 
 ## Files

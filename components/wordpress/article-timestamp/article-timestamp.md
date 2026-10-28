@@ -30,7 +30,7 @@ No variant properties (single component).
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `Article Timestamp` | 90×18 | [3621:38794](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3621-38794) | 18 | ![](previews/article-timestamp--default.png) |
+| `Article Timestamp` | 90×18 | [3621:38794](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3621-38794) | 48 | ![](previews/article-timestamp--default.png) |
 
 ## Anatomy
 
@@ -74,10 +74,10 @@ No Breakpoint property: one size at every width.
 
 ## Where it is used
 
-Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **18**.
+Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **48**.
 
-Inside components: Zone 1 Lead Article Card ×6, Horizontal Thumbnail Card ×3, 1Col Article Card ×1, Style=For You ×1.
-Placed on pages: Homepage ×7.
+Inside components: Blocks Lead Article Card ×12, Blocks Article Row ×10, Zone 1 Lead Article Card ×6, Horizontal Thumbnail Card ×3, Blocks Card ×3, Style=For You ×1, 1Col Article Card ×1.
+Placed on pages: Homepage ×12.
 
 **Built from:** Icons ×1
 Icon variants: `access-time` ×1.

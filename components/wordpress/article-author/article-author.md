@@ -30,7 +30,7 @@ No variant properties (single component).
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `Article Author` | 84×16 | [3609:39115](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3609-39115) | 16 | ![](previews/article-author--default.png) |
+| `Article Author` | 84×16 | [3609:39115](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3609-39115) | 46 | ![](previews/article-author--default.png) |
 
 ## Anatomy
 
@@ -69,10 +69,10 @@ No Breakpoint property: one size at every width.
 
 ## Where it is used
 
-Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **16**.
+Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **46**.
 
-Inside components: Zone 1 Lead Article Card ×6, Horizontal Thumbnail Card ×3, 1Col Article Card ×1, Style=For You ×1.
-Placed on pages: Homepage ×5.
+Inside components: Blocks Lead Article Card ×12, Blocks Article Row ×10, Zone 1 Lead Article Card ×6, Horizontal Thumbnail Card ×3, Blocks Card ×3, 1Col Article Card ×1, Style=For You ×1.
+Placed on pages: Homepage ×10.
 
 **Built from:** no nested components.
 

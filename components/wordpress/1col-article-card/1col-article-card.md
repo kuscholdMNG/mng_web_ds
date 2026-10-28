@@ -109,8 +109,8 @@ From `1col-article-card.tokens.json`. References point at system tokens (`tokens
 | `1col-article-card.style-for-you.card-body.headline-container.headline.font-size` | 16px |
 | `1col-article-card.style-for-you.card-body.headline-container.headline.font-weight` | 700 |
 | `1col-article-card.style-for-you.card-body.headline-container.headline.line-height` | 18.88px |
-| `1col-article-card.style-for-you.gallery-icon-badge.height` | 28px |
-| `1col-article-card.style-for-you.gallery-icon-badge.width` | 28px |
+| `1col-article-card.style-for-you.gallery-icon-badge.height` | 33px |
+| `1col-article-card.style-for-you.gallery-icon-badge.width` | 33px |
 | `1col-article-card.style-for-you.root.border-color` | `{color.gray.500}` |
 | `1col-article-card.style-for-you.root.border-radius` | `{radius.lg}` |
 | `1col-article-card.style-for-you.root.border-style` | solid |
@@ -161,7 +161,7 @@ No production selector recorded yet. Production gaps go in `design-vs-production
 
 ## Known issues
 
-1. Style=For You: hover state (primary border and ring, primary headline) not built yet (parked).
+1. Style=For You is superseded by Blocks Card (2026-10-28), which has the Hover and Focus states.
 2. **Values not bound to a token** (literal in the component tokens): `base` root gap = 8px; `base` root padding-bottom = 16px.
 
 ## Files
