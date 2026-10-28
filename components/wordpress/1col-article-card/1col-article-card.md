@@ -6,7 +6,7 @@ figma_file: b1iZxkFwtAYq9rElmnCAzd
 figma_set: "1Col Article Card"
 figma_node: "3536:39065"
 component_key: d527b9d45b9d427355fa4f71183d2232ca6eaf27
-variants: 3
+variants: 2
 tokens: 1col-article-card.tokens.json
 skeleton: 1col-article-card.html
 exported: 2026-10-28
@@ -14,7 +14,7 @@ exported: 2026-10-28
 
 # 1Col Article Card
 
-> Single-column article card. Style=Standard (4:3 image, CardQuaternary headline, compact excerpt: section-highlight lead cards), Style=Media Lead (16:9 image, TitleMedia headline, excerpt: the Photos lead) and Style=For You (bordered card for the For You tab).
+> Single-column article card. Style=Standard (4:3 image, CardQuaternary headline, compact excerpt: section-highlight lead cards) and Style=Media Lead (16:9 image, TitleMedia headline, excerpt: the Photos lead). The For You tab card is its own component, Blocks Card (2026-10-28).
 
 ## Figma
 
@@ -26,7 +26,7 @@ exported: 2026-10-28
 
 | Property | Default | Options |
 |---|---|---|
-| Style | Standard | Standard, Media Lead, For You |
+| Style | Standard | Standard, Media Lead |
 
 | Other property | Type | Default |
 |---|---|---|
@@ -34,7 +34,6 @@ exported: 2026-10-28
 | Show Subscriber Badge | boolean | False |
 | Show Excerpt | boolean | True |
 | Show Meta | boolean | False |
-| Show Gallery Icon | boolean | True |
 
 ## Variants
 
@@ -42,7 +41,6 @@ exported: 2026-10-28
 |---|---|---|---|---|
 | `Standard` | 296×372 | [3352:24163](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3352-24163) | 230 | ![](previews/1col-article-card--standard.png) |
 | `Media Lead` | 296×413.5 | [3536:39050](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3536-39050) | 12 | ![](previews/1col-article-card--media-lead.png) |
-| `For You` | 296×331.5 | [3628:44640](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3628-44640) | 0 | ![](previews/1col-article-card--for-you.png) |
 
 ## Anatomy
 
@@ -85,36 +83,6 @@ From `1col-article-card.tokens.json`. References point at system tokens (`tokens
 | `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-weight` | 700 |
 | `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.letter-spacing` | -1.16px |
 | `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.line-height` | 33px |
-| `1col-article-card.style-for-you.article-graphic.height` | 166.5px |
-| `1col-article-card.style-for-you.card-body.gap` | `{spacing.150}` |
-| `1col-article-card.style-for-you.card-body.padding-bottom` | `{spacing.200}` |
-| `1col-article-card.style-for-you.card-body.padding-left` | `{spacing.200}` |
-| `1col-article-card.style-for-you.card-body.padding-right` | `{spacing.200}` |
-| `1col-article-card.style-for-you.card-body.padding-top` | `{spacing.200}` |
-| `1col-article-card.style-for-you.card-body.card-footer.border-color` | `{color.gray.500}` |
-| `1col-article-card.style-for-you.card-body.card-footer.border-style` | solid |
-| `1col-article-card.style-for-you.card-body.card-footer.border-top-width` | 1px |
-| `1col-article-card.style-for-you.card-body.card-footer.padding-top` | `{spacing.100}` |
-| `1col-article-card.style-for-you.card-body.card-footer.article-author.height` | 16px |
-| `1col-article-card.style-for-you.card-body.card-footer.article-author.icon-color` | `{color.gray.min}` |
-| `1col-article-card.style-for-you.card-body.card-footer.article-author.width` | 84px |
-| `1col-article-card.style-for-you.card-body.card-footer.article-timestamp.height` | 18px |
-| `1col-article-card.style-for-you.card-body.card-footer.article-timestamp.width` | 90px |
-| `1col-article-card.style-for-you.card-body.headline-container.gap` | `{spacing.100}` |
-| `1col-article-card.style-for-you.card-body.headline-container.article-section-kicker.height` | 13px |
-| `1col-article-card.style-for-you.card-body.headline-container.article-section-kicker.icon-color` | `{color.theme.primary}` |
-| `1col-article-card.style-for-you.card-body.headline-container.article-section-kicker.width` | 135px |
-| `1col-article-card.style-for-you.card-body.headline-container.headline.color` | `{color.gray.min}` |
-| `1col-article-card.style-for-you.card-body.headline-container.headline.font-family` | Noto Serif |
-| `1col-article-card.style-for-you.card-body.headline-container.headline.font-size` | 16px |
-| `1col-article-card.style-for-you.card-body.headline-container.headline.font-weight` | 700 |
-| `1col-article-card.style-for-you.card-body.headline-container.headline.line-height` | 18.88px |
-| `1col-article-card.style-for-you.gallery-icon-badge.height` | 33px |
-| `1col-article-card.style-for-you.gallery-icon-badge.width` | 33px |
-| `1col-article-card.style-for-you.root.border-color` | `{color.gray.500}` |
-| `1col-article-card.style-for-you.root.border-radius` | `{radius.lg}` |
-| `1col-article-card.style-for-you.root.border-style` | solid |
-| `1col-article-card.style-for-you.root.border-width` | 1px |
 | `1col-article-card.base.article-graphic.icon-color` | `{color.gray.min}` |
 | `1col-article-card.base.article-graphic.width` | 296px |
 | `1col-article-card.base.bottom-border-line.border-color` | `{color.gray.500}` |
@@ -132,12 +100,8 @@ From `1col-article-card.tokens.json`. References point at system tokens (`tokens
 
 No Breakpoint property: one size at every width.
 
-- **Style=For You container:** `color/gray/max` fill, 1px `color/gray/500` border, `radius/lg` (8px) corners, clips its content. No shadow.
-- **Style=For You content:** 16:9 Article Image Placeholder (Show Image applies); Article Section Kicker; headline in `Editorial/Titles/CardTertiaryCompact` (Noto Serif Bold 16/18.88, `color/gray/min`), max 5 lines with an ellipsis; footer with a 1px `color/gray/500` top border, Article Author with the Article Timestamp under it.
-- **Style=For You spacing:** 16px (`spacing/200`) body padding; 8px (`spacing/100`) between kicker and headline; 12px (`spacing/150`) between the headline group and the footer; 8px (`spacing/100`) above the author.
-- **Style=For You width:** fills its column, 16px between cards: 3-up from 800px, 2-up at 640–799px, 1-up below 640px. Built at 296px.
-- **Equal-height rows:** in code the card body is also `justify-content: space-between`, so footers line up when cards in a row stretch to the same height. Figma can't combine that with a fixed gap, so the Figma card uses the 12px gap.
-- **Properties:** Show Subscriber Badge, Show Excerpt and Show Meta apply to Standard and Media Lead only. Show Gallery Icon (added 2026-10-26) applies to For You: 28px badge, 6px in from the image's bottom-right corner, as in Horizontal Thumbnail Card.
+- **Properties:** Show Image, Show Subscriber Badge, Show Excerpt and Show Meta.
+- **The For You card** moved to Blocks Card (Karl, 2026-10-28); its Style=For You variant and the Show Gallery Icon property were deleted.
 
 ## Accessibility
 
@@ -153,7 +117,7 @@ Inside components: Section Rail Card ×32, Feature + List Content Block ×6, Pho
 Placed on pages: Homepage ×162.
 36 instances are nested inside other instances.
 
-**Built from:** Article Image Placeholder ×3, Article Section Kicker ×1, Article Author ×1, Article Timestamp ×1, Gallery Icon Badge ×1
+**Built from:** Article Image Placeholder ×2
 
 ## Production
 
@@ -161,8 +125,7 @@ No production selector recorded yet. Production gaps go in `design-vs-production
 
 ## Known issues
 
-1. Style=For You is superseded by Blocks Card (2026-10-28), which has the Hover and Focus states.
-2. **Values not bound to a token** (literal in the component tokens): `base` root gap = 8px; `base` root padding-bottom = 16px.
+1. **Values not bound to a token** (literal in the component tokens): `base` root gap = 8px; `base` root padding-bottom = 16px.
 
 ## Files
 

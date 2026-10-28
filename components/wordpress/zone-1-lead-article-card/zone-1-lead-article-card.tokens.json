@@ -29,141 +29,7 @@
             }
           }
         },
-        "byline": {
-          "gap": {
-            "$type": "dimension",
-            "$value": "{spacing.150}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Spacing & Radius/spacing/150"
-                }
-              }
-            }
-          },
-          "padding-top": {
-            "$type": "dimension",
-            "$value": "{spacing.100}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Spacing & Radius/spacing/100"
-                }
-              }
-            }
-          },
-          "article-author": {
-            "height": {
-              "$type": "dimension",
-              "$value": {
-                "value": 16,
-                "unit": "px"
-              }
-            },
-            "icon-color": {
-              "$type": "color",
-              "$value": "{color.gray.min}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Colors/color/gray/min"
-                  }
-                }
-              }
-            },
-            "width": {
-              "$type": "dimension",
-              "$value": {
-                "value": 84,
-                "unit": "px"
-              }
-            }
-          },
-          "article-timestamp": {
-            "height": {
-              "$type": "dimension",
-              "$value": {
-                "value": 18,
-                "unit": "px"
-              }
-            },
-            "width": {
-              "$type": "dimension",
-              "$value": {
-                "value": 90,
-                "unit": "px"
-              }
-            }
-          }
-        },
         "excerpt-container": {
-          "the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16": {
-            "color": {
-              "$type": "color",
-              "$value": "{color.gray.100}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Colors/color/gray/100"
-                  }
-                }
-              }
-            },
-            "font-family": {
-              "$type": "fontFamily",
-              "$value": "Noto Sans",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Family",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
-                  }
-                }
-              }
-            },
-            "font-size": {
-              "$type": "dimension",
-              "$value": {
-                "value": 15,
-                "unit": "px"
-              },
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
-                  }
-                }
-              }
-            },
-            "font-weight": {
-              "$type": "fontWeight",
-              "$value": 400,
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
-                  }
-                }
-              }
-            },
-            "line-height": {
-              "$type": "dimension",
-              "$value": {
-                "value": 19,
-                "unit": "px"
-              },
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/LineHeight",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
-                  }
-                }
-              }
-            }
-          },
           "vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail": {
             "color": {
               "$type": "color",
@@ -290,108 +156,6 @@
               "$value": {
                 "value": 33,
                 "unit": "px"
-              }
-            }
-          }
-        },
-        "headline-group": {
-          "gap": {
-            "$type": "dimension",
-            "$value": "{spacing.050}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Spacing & Radius/spacing/050"
-                }
-              }
-            }
-          },
-          "article-section-kicker": {
-            "height": {
-              "$type": "dimension",
-              "$value": {
-                "value": 13,
-                "unit": "px"
-              }
-            },
-            "icon-color": {
-              "$type": "color",
-              "$value": "{color.theme.primary}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Colors/color/theme/primary"
-                  }
-                }
-              }
-            },
-            "width": {
-              "$type": "dimension",
-              "$value": {
-                "value": 135,
-                "unit": "px"
-              }
-            }
-          },
-          "headline-container": {
-            "norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment": {
-              "color": {
-                "$type": "color",
-                "$value": "{color.gray.min}",
-                "$extensions": {
-                  "com.mng": {
-                    "figma": {
-                      "variable": "Colors/color/gray/min"
-                    }
-                  }
-                }
-              },
-              "font-family": {
-                "$type": "fontFamily",
-                "$value": "{font.family.noto-serif}",
-                "$extensions": {
-                  "com.mng": {
-                    "figma": {
-                      "variable": "Type Primitives/font/family/noto-serif"
-                    }
-                  }
-                }
-              },
-              "font-size": {
-                "$type": "dimension",
-                "$value": "{font.size.29}",
-                "$extensions": {
-                  "com.mng": {
-                    "figma": {
-                      "variable": "Type Primitives/font/size/29"
-                    }
-                  }
-                }
-              },
-              "font-weight": {
-                "$type": "fontWeight",
-                "$value": "{font.weight.bold}",
-                "$extensions": {
-                  "com.mng": {
-                    "figma": {
-                      "variable": "Type Primitives/font/style/bold"
-                    }
-                  }
-                }
-              },
-              "letter-spacing": {
-                "$type": "dimension",
-                "$value": {
-                  "value": -3,
-                  "unit": "px"
-                }
-              },
-              "line-height": {
-                "$type": "dimension",
-                "$value": {
-                  "value": 33,
-                  "unit": "px"
-                }
               }
             }
           }
@@ -579,232 +343,6 @@
           }
         }
       },
-      "byline": {
-        "gap": {
-          "$type": "dimension",
-          "$value": "{spacing.150}",
-          "$extensions": {
-            "com.mng": {
-              "figma": {
-                "variable": "Spacing & Radius/spacing/150"
-              }
-            }
-          }
-        },
-        "padding-bottom": {
-          "$type": "dimension",
-          "$value": "{spacing.150}",
-          "$extensions": {
-            "com.mng": {
-              "figma": {
-                "variable": "Spacing & Radius/spacing/150"
-              }
-            }
-          }
-        },
-        "padding-top": {
-          "$type": "dimension",
-          "$value": "{spacing.050}",
-          "$extensions": {
-            "com.mng": {
-              "figma": {
-                "variable": "Spacing & Radius/spacing/050"
-              }
-            }
-          }
-        },
-        "article-author": {
-          "height": {
-            "$type": "dimension",
-            "$value": {
-              "value": 16,
-              "unit": "px"
-            }
-          },
-          "icon-color": {
-            "$type": "color",
-            "$value": "{color.gray.min}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Colors/color/gray/min"
-                }
-              }
-            }
-          },
-          "width": {
-            "$type": "dimension",
-            "$value": {
-              "value": 84,
-              "unit": "px"
-            }
-          }
-        },
-        "article-timestamp": {
-          "height": {
-            "$type": "dimension",
-            "$value": {
-              "value": 18,
-              "unit": "px"
-            }
-          },
-          "width": {
-            "$type": "dimension",
-            "$value": {
-              "value": 90,
-              "unit": "px"
-            }
-          }
-        }
-      },
-      "excerpt-container": {
-        "padding-bottom": {
-          "$type": "dimension",
-          "$value": {
-            "value": 16,
-            "unit": "px"
-          },
-          "$extensions": {
-            "com.mng": {
-              "unbound": true
-            }
-          }
-        },
-        "the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16": {
-          "color": {
-            "$type": "color",
-            "$value": "{color.gray.100}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Colors/color/gray/100"
-                }
-              }
-            }
-          },
-          "font-family": {
-            "$type": "fontFamily",
-            "$value": "Noto Sans",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Family",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
-                }
-              }
-            }
-          },
-          "font-size": {
-            "$type": "dimension",
-            "$value": {
-              "value": 15,
-              "unit": "px"
-            },
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
-                }
-              }
-            }
-          },
-          "font-weight": {
-            "$type": "fontWeight",
-            "$value": 400,
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
-                }
-              }
-            }
-          },
-          "line-height": {
-            "$type": "dimension",
-            "$value": {
-              "value": 19,
-              "unit": "px"
-            },
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/LineHeight",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
-                }
-              }
-            }
-          }
-        },
-        "vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail": {
-          "color": {
-            "$type": "color",
-            "$value": "{color.gray.100}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Colors/color/gray/100"
-                }
-              }
-            }
-          },
-          "font-family": {
-            "$type": "fontFamily",
-            "$value": "Noto Sans",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Family",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
-                }
-              }
-            }
-          },
-          "font-size": {
-            "$type": "dimension",
-            "$value": {
-              "value": 15,
-              "unit": "px"
-            },
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
-                }
-              }
-            }
-          },
-          "font-weight": {
-            "$type": "fontWeight",
-            "$value": 400,
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
-                }
-              }
-            }
-          },
-          "line-height": {
-            "$type": "dimension",
-            "$value": {
-              "value": 19,
-              "unit": "px"
-            },
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/LineHeight",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
-                }
-              }
-            }
-          }
-        }
-      },
       "featured-image": {
         "height": {
           "$type": "dimension",
@@ -837,307 +375,6 @@
             "$value": {
               "value": 340,
               "unit": "px"
-            }
-          }
-        }
-      },
-      "headline-container": {
-        "man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point": {
-          "color": {
-            "$type": "color",
-            "$value": "{color.gray.min}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Colors/color/gray/min"
-                }
-              }
-            }
-          },
-          "font-family": {
-            "$type": "fontFamily",
-            "$value": "{font.family.noto-serif}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Type Primitives/font/family/noto-serif"
-                }
-              }
-            }
-          },
-          "font-size": {
-            "$type": "dimension",
-            "$value": "{font.size.25}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Type Primitives/font/size/25"
-                }
-              }
-            }
-          },
-          "font-weight": {
-            "$type": "fontWeight",
-            "$value": "{font.weight.bold}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Type Primitives/font/style/bold"
-                }
-              }
-            }
-          },
-          "letter-spacing": {
-            "$type": "dimension",
-            "$value": {
-              "value": -3,
-              "unit": "px"
-            }
-          },
-          "line-height": {
-            "$type": "dimension",
-            "$value": {
-              "value": 29,
-              "unit": "px"
-            }
-          }
-        }
-      },
-      "headline-group": {
-        "gap": {
-          "$type": "dimension",
-          "$value": "{spacing.050}",
-          "$extensions": {
-            "com.mng": {
-              "figma": {
-                "variable": "Spacing & Radius/spacing/050"
-              }
-            }
-          }
-        },
-        "article-section-kicker": {
-          "height": {
-            "$type": "dimension",
-            "$value": {
-              "value": 13,
-              "unit": "px"
-            }
-          },
-          "icon-color": {
-            "$type": "color",
-            "$value": "{color.theme.primary}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Colors/color/theme/primary"
-                }
-              }
-            }
-          },
-          "width": {
-            "$type": "dimension",
-            "$value": {
-              "value": 135,
-              "unit": "px"
-            }
-          }
-        },
-        "headline-container": {
-          "norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment": {
-            "color": {
-              "$type": "color",
-              "$value": "{color.gray.min}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Colors/color/gray/min"
-                  }
-                }
-              }
-            },
-            "font-family": {
-              "$type": "fontFamily",
-              "$value": "{font.family.noto-serif}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Type Primitives/font/family/noto-serif"
-                  }
-                }
-              }
-            },
-            "font-size": {
-              "$type": "dimension",
-              "$value": "{font.size.25}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Type Primitives/font/size/25"
-                  }
-                }
-              }
-            },
-            "font-weight": {
-              "$type": "fontWeight",
-              "$value": "{font.weight.bold}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Type Primitives/font/style/bold"
-                  }
-                }
-              }
-            },
-            "letter-spacing": {
-              "$type": "dimension",
-              "$value": {
-                "value": -3,
-                "unit": "px"
-              }
-            },
-            "line-height": {
-              "$type": "dimension",
-              "$value": {
-                "value": 29,
-                "unit": "px"
-              }
-            }
-          }
-        }
-      },
-      "relate-articles-zone-1-container": {
-        "gap": {
-          "$type": "dimension",
-          "$value": {
-            "value": 4,
-            "unit": "px"
-          },
-          "$extensions": {
-            "com.mng": {
-              "unbound": true
-            }
-          }
-        },
-        "padding-bottom": {
-          "$type": "dimension",
-          "$value": {
-            "value": 16,
-            "unit": "px"
-          },
-          "$extensions": {
-            "com.mng": {
-              "unbound": true
-            }
-          }
-        },
-        "related-articles-body": {
-          "gap": {
-            "$type": "dimension",
-            "$value": {
-              "value": 4,
-              "unit": "px"
-            },
-            "$extensions": {
-              "com.mng": {
-                "unbound": true
-              }
-            }
-          },
-          "related-article-list-item": {
-            "height": {
-              "$type": "dimension",
-              "$value": {
-                "value": 41,
-                "unit": "px"
-              }
-            },
-            "icon-color": {
-              "$type": "color",
-              "$value": "{color.gray.min}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Colors/color/gray/min"
-                  }
-                }
-              }
-            },
-            "width": {
-              "$type": "dimension",
-              "$value": {
-                "value": 340,
-                "unit": "px"
-              }
-            }
-          }
-        },
-        "related-articles-header": {
-          "border-bottom-width": {
-            "$type": "dimension",
-            "$value": {
-              "value": 1,
-              "unit": "px"
-            }
-          },
-          "border-color": {
-            "$type": "color",
-            "$value": "{color.gray.200}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Colors/color/gray/200"
-                }
-              }
-            }
-          },
-          "border-style": {
-            "$type": "strokeStyle",
-            "$value": "solid"
-          },
-          "header": {
-            "color": {
-              "$type": "color",
-              "$value": "{color.gray.200}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Colors/color/gray/200"
-                  }
-                }
-              }
-            },
-            "font-family": {
-              "$type": "fontFamily",
-              "$value": "{font.family.noto-serif}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Type Primitives/font/family/noto-serif"
-                  }
-                }
-              }
-            },
-            "font-size": {
-              "$type": "dimension",
-              "$value": "{font.size.12}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Type Primitives/font/size/12"
-                  }
-                }
-              }
-            },
-            "font-weight": {
-              "$type": "fontWeight",
-              "$value": "{font.weight.bold}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Type Primitives/font/style/bold"
-                  }
-                }
-              }
             }
           }
         }
@@ -1371,6 +608,286 @@
           "$value": {
             "value": 0,
             "unit": "px"
+          }
+        }
+      },
+      "excerpt-container": {
+        "padding-bottom": {
+          "$type": "dimension",
+          "$value": {
+            "value": 16,
+            "unit": "px"
+          },
+          "$extensions": {
+            "com.mng": {
+              "unbound": true
+            }
+          }
+        },
+        "vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail": {
+          "color": {
+            "$type": "color",
+            "$value": "{color.gray.100}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Colors/color/gray/100"
+                }
+              }
+            }
+          },
+          "font-family": {
+            "$type": "fontFamily",
+            "$value": "Noto Sans",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Family",
+                  "note": "Bound in Figma, but no single system token matches; literal value."
+                }
+              }
+            }
+          },
+          "font-size": {
+            "$type": "dimension",
+            "$value": {
+              "value": 15,
+              "unit": "px"
+            },
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size",
+                  "note": "Bound in Figma, but no single system token matches; literal value."
+                }
+              }
+            }
+          },
+          "font-weight": {
+            "$type": "fontWeight",
+            "$value": 400,
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style",
+                  "note": "Bound in Figma, but no single system token matches; literal value."
+                }
+              }
+            }
+          },
+          "line-height": {
+            "$type": "dimension",
+            "$value": {
+              "value": 19,
+              "unit": "px"
+            },
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/LineHeight",
+                  "note": "Bound in Figma, but no single system token matches; literal value."
+                }
+              }
+            }
+          }
+        }
+      },
+      "headline-container": {
+        "man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point": {
+          "color": {
+            "$type": "color",
+            "$value": "{color.gray.min}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Colors/color/gray/min"
+                }
+              }
+            }
+          },
+          "font-family": {
+            "$type": "fontFamily",
+            "$value": "{font.family.noto-serif}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Type Primitives/font/family/noto-serif"
+                }
+              }
+            }
+          },
+          "font-size": {
+            "$type": "dimension",
+            "$value": "{font.size.25}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Type Primitives/font/size/25"
+                }
+              }
+            }
+          },
+          "font-weight": {
+            "$type": "fontWeight",
+            "$value": "{font.weight.bold}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Type Primitives/font/style/bold"
+                }
+              }
+            }
+          },
+          "letter-spacing": {
+            "$type": "dimension",
+            "$value": {
+              "value": -3,
+              "unit": "px"
+            }
+          },
+          "line-height": {
+            "$type": "dimension",
+            "$value": {
+              "value": 29,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "relate-articles-zone-1-container": {
+        "gap": {
+          "$type": "dimension",
+          "$value": {
+            "value": 4,
+            "unit": "px"
+          },
+          "$extensions": {
+            "com.mng": {
+              "unbound": true
+            }
+          }
+        },
+        "padding-bottom": {
+          "$type": "dimension",
+          "$value": {
+            "value": 16,
+            "unit": "px"
+          },
+          "$extensions": {
+            "com.mng": {
+              "unbound": true
+            }
+          }
+        },
+        "related-articles-body": {
+          "gap": {
+            "$type": "dimension",
+            "$value": {
+              "value": 4,
+              "unit": "px"
+            },
+            "$extensions": {
+              "com.mng": {
+                "unbound": true
+              }
+            }
+          },
+          "related-article-list-item": {
+            "height": {
+              "$type": "dimension",
+              "$value": {
+                "value": 41,
+                "unit": "px"
+              }
+            },
+            "icon-color": {
+              "$type": "color",
+              "$value": "{color.gray.min}",
+              "$extensions": {
+                "com.mng": {
+                  "figma": {
+                    "variable": "Colors/color/gray/min"
+                  }
+                }
+              }
+            },
+            "width": {
+              "$type": "dimension",
+              "$value": {
+                "value": 340,
+                "unit": "px"
+              }
+            }
+          }
+        },
+        "related-articles-header": {
+          "border-bottom-width": {
+            "$type": "dimension",
+            "$value": {
+              "value": 1,
+              "unit": "px"
+            }
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{color.gray.200}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Colors/color/gray/200"
+                }
+              }
+            }
+          },
+          "border-style": {
+            "$type": "strokeStyle",
+            "$value": "solid"
+          },
+          "header": {
+            "color": {
+              "$type": "color",
+              "$value": "{color.gray.200}",
+              "$extensions": {
+                "com.mng": {
+                  "figma": {
+                    "variable": "Colors/color/gray/200"
+                  }
+                }
+              }
+            },
+            "font-family": {
+              "$type": "fontFamily",
+              "$value": "{font.family.noto-serif}",
+              "$extensions": {
+                "com.mng": {
+                  "figma": {
+                    "variable": "Type Primitives/font/family/noto-serif"
+                  }
+                }
+              }
+            },
+            "font-size": {
+              "$type": "dimension",
+              "$value": "{font.size.12}",
+              "$extensions": {
+                "com.mng": {
+                  "figma": {
+                    "variable": "Type Primitives/font/size/12"
+                  }
+                }
+              }
+            },
+            "font-weight": {
+              "$type": "fontWeight",
+              "$value": "{font.weight.bold}",
+              "$extensions": {
+                "com.mng": {
+                  "figma": {
+                    "variable": "Type Primitives/font/style/bold"
+                  }
+                }
+              }
+            }
           }
         }
       },

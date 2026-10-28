@@ -1,6 +1,6 @@
 # For You prototype fixes: prompt for the prototype project
 
-> **Updated 2026-10-28 (later):** section 6, the gallery badge, now uses production's format and sizes (Karl). The card and row hover already match the Blocks components. **Earlier, 2026-10-28,** after the For You components cleanup and export: section 4 (subhead gap 6 → 8px, Section Title now uses spacing/100), section 5 (the rule gray is per theme; the prototype is Bold Coastal), section 8 (header icon on the title's baseline) and a pointer to the exported specs. The list is complete: paste everything below the line into the For You Tab MVP project in one go. Card hover is parked (Karl). **2026-10-26:** added section 10, the featured-story slideshow. **First written 2026-10-23.** Status and node IDs: `components/for-you-ds-components-status.md`.
+> **Updated 2026-10-28 (latest):** the For You cards are their own Blocks components now (the old Style=For You variants were deleted, Karl), so the prompt names them: a component map under the intro, section 10 points at Blocks Lead Article Card, and new section 11 adds the featured story's headline focus outline. **Earlier, 2026-10-28 (later):** section 6, the gallery badge, now uses production's format and sizes (Karl). The card and row hover already match the Blocks components. **Earlier, 2026-10-28,** after the For You components cleanup and export: section 4 (subhead gap 6 → 8px, Section Title now uses spacing/100), section 5 (the rule gray is per theme; the prototype is Bold Coastal), section 8 (header icon on the title's baseline) and a pointer to the exported specs. The list is complete: paste everything below the line into the For You Tab MVP project in one go. Card hover is parked (Karl). **2026-10-26:** added section 10, the featured-story slideshow. **First written 2026-10-23.** Status and node IDs: `components/for-you-ds-components-status.md`.
 
 Every value below is an existing MNG Web Design System token (hex shown for Bold Coastal). Where production used a value with no token, it has been rounded to the nearest token (Karl, 2026-10-23), so don't reintroduce the old production values.
 
@@ -9,6 +9,17 @@ Every value below is an existing MNG Web Design System token (hex shown for Bold
 In `claude-design-v3/Main.dc.html`, update the For You prototype to match the MNG Web Design System components built from it. Use only the values given below. Don't add new colors, sizes or spacing, and don't change anything else on the page. When you're done, check at 340, 360, 768, 1024 and 1280 that nothing overflows the page.
 
 Reference specs for every component below (exported 2026-10-28; Markdown spec, DTCG tokens, an HTML/CSS skeleton and previews per component): https://github.com/kuscholdMNG/mng_web_ds/tree/main/components (`core/` for the MNG Web Design System, `wordpress/` for WordPress Elements; list in `components/index.json`). If a spec and this prompt disagree, follow this prompt and tell me.
+
+Which design-system component each part of the page matches (all in WordPress Elements unless noted; specs under `components/wordpress/<slug>/`):
+- Feed cards (`.card`): **Blocks Card** (`blocks-card`).
+- Feed rows (`.row`): **Blocks Article Row** (`blocks-article-row`).
+- Featured story (`.fy-lead`): **Blocks Lead Article Card** (`blocks-lead-article-card`), with **Zone 1 Slideshow** for galleries.
+- Gallery badge: **Gallery Icon Badge** (`gallery-icon-badge`).
+- Kicker, author and timestamp: **Article Section Kicker**, **Article Author**, **Article Timestamp**.
+- Tab bar: **Homepage Tabs** / **Homepage Tab**. Feed header: **Section Title / Eyebrow**. Load More: **Show More Affordance**.
+- Toggletip: **Tooltip** (MNG Web Design System, `components/core/tooltip/`). CTA panel: **InLineMessage DashSubsNonSub** (`components/core/inline-message-dashsubsnonsub/`). Welcome modal: **ModalsCenter** (`components/core/modals-center/`).
+
+The card and row hover (`border-color` and a 1px `box-shadow` ring in #007580, headline #007580) and their focus outline (2px solid #000000, offset 1px) already match Blocks Card and Blocks Article Row: keep them.
 
 ## 1. Homepage tab bar (Editor's Picks / For You)
 
@@ -121,7 +132,7 @@ The modal (`.mc`) already matches the MNG Web Design System ModalsCenter: 444px 
 
 ## 10. Featured story as a photo gallery: inline slideshow (replaces the image)
 
-When the featured story (`.fy-lead`) is a photo gallery, production doesn't show a gallery badge. It swaps the image for an inline slideshow (production `article.slideshow.feature-large > .article-slideshow`, seen on develop.denverpost.com). Figma: WordPress Elements ▸ Homepage ▸ Zone 1 Slideshow, and Zone 1 Lead Article Card, Gallery=Slideshow.
+When the featured story (`.fy-lead`) is a photo gallery, production doesn't show a gallery badge. It swaps the image for an inline slideshow (production `article.slideshow.feature-large > .article-slideshow`, seen on develop.denverpost.com). Figma: WordPress Elements ▸ Homepage ▸ Zone 1 Slideshow, and Blocks Lead Article Card, Gallery=Slideshow.
 
 - Sample data: mark the featured story as a gallery with 5 sample photos (reuse existing sample images), each with a caption. When it isn't a gallery, keep the current image.
 - Layout:
@@ -142,3 +153,7 @@ When the featured story (`.fy-lead`) is a photo gallery, production doesn't show
   - **No photo credit line** (it's optional and off by default in the design system).
 - 12px (spacing/150) below the slideshow, then the featured story's existing bottom spacing and rule.
 - Check at 340, 360, 768, 1024 and 1280 that the arrows stay inside the page and nothing overflows.
+
+## 11. Featured story headline focus
+
+- The featured story's headline link (`.fy-lead h2 a`) has no focus style. Give it the same outline as the cards and rows: `.fy-lead h2 a:focus-visible{outline:2px solid #000000;outline-offset:1px}` (color/gray/black). Keep its hover as it is (headline #007580, from `a:hover`).
