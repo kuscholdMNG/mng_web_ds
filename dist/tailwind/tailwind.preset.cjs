@@ -112,7 +112,9 @@ module.exports = {
         "mng-150": "12px",
         "mng-200": "16px",
         "mng-250": "20px",
-        "mng-300": "24px"
+        "mng-300": "24px",
+        "mng-400": "32px",
+        "mng-500": "40px"
       },
       "borderRadius": {
         "sm": "4px",

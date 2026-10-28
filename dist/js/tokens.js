@@ -93,7 +93,9 @@ export const core = {
     "150": "12px",
     "200": "16px",
     "250": "20px",
-    "300": "24px"
+    "300": "24px",
+    "400": "32px",
+    "500": "40px"
   },
   "radius": {
     "sm": "4px",
@@ -1993,6 +1995,8 @@ export const cssVars = {
   "spacing.200": "var(--mng-spacing-200)",
   "spacing.250": "var(--mng-spacing-250)",
   "spacing.300": "var(--mng-spacing-300)",
+  "spacing.400": "var(--mng-spacing-400)",
+  "spacing.500": "var(--mng-spacing-500)",
   "radius.sm": "var(--mng-radius-sm)",
   "radius.utility": "var(--mng-radius-utility)",
   "radius.lg": "var(--mng-radius-lg)",

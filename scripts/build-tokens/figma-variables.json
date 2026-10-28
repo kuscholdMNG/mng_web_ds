@@ -8,7 +8,7 @@
    "Type Primitives": 31,
    "Typeography Tokens": 110,
    "Typography Theme": 7,
-   "Spacing & Radius": 9
+   "Spacing & Radius": 11
   },
   "effectStyles": 3
  },
@@ -18,7 +18,7 @@
    "Type Primitives": "03e9b7706ae082",
    "Typeography Tokens": "0b5b4326362dd5",
    "Typography Theme": "003945fc31d96f",
-   "Spacing & Radius": "0697f301df98f3"
+   "Spacing & Radius": "1daf7e21793c3c"
   },
   "effectStyles": "0f6040d9ec89ac"
  },
@@ -2761,6 +2761,28 @@
     "description": "5px. Containers only: Reader Dashboard InLineMessage, modals, form fields, check boxes, status badge, masthead account dropdown. Not for buttons (buttons use radius/sm, 4px).",
     "scopes": [
      "CORNER_RADIUS"
+    ]
+   },
+   {
+    "name": "spacing/400",
+    "type": "FLOAT",
+    "values": {
+     "Value": 32
+    },
+    "description": "32px. Added 2026-10-27 (Karl) for ModalsOffset FixedFooter (text clears the close button).",
+    "scopes": [
+     "GAP"
+    ]
+   },
+   {
+    "name": "spacing/500",
+    "type": "FLOAT",
+    "values": {
+     "Value": 40
+    },
+    "description": "40px. Added 2026-10-27 (Karl) for ModalsCenter card padding (matches the live Reader Dashboard modal).",
+    "scopes": [
+     "GAP"
     ]
    }
   ]
