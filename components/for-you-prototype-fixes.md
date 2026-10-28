@@ -1,12 +1,14 @@
 # For You prototype fixes: prompt for the prototype project
 
-> **Updated 2026-10-26** (added section 10, the featured-story slideshow). **First written 2026-10-23.** Started with the homepage tabs and the kicker letter spacing. More sections get added here as each For You component is built in Figma (tooltip, CTA panel, modal and Load More parity checks, card hover). When the list is complete, paste everything below the line into the For You Tab MVP project in one go. Status and node IDs: `components/for-you-ds-components-status.md`.
+> **Updated 2026-10-28** after the For You components cleanup and export: section 4 (subhead gap 6 → 8px, Section Title now uses spacing/100), section 5 (the rule gray is per theme; the prototype is Bold Coastal), section 8 (header icon on the title's baseline) and a pointer to the exported specs. The list is complete: paste everything below the line into the For You Tab MVP project in one go. Card hover is parked (Karl). **2026-10-26:** added section 10, the featured-story slideshow. **First written 2026-10-23.** Status and node IDs: `components/for-you-ds-components-status.md`.
 
 Every value below is an existing MNG Web Design System token (hex shown for Bold Coastal). Where production used a value with no token, it has been rounded to the nearest token (Karl, 2026-10-23), so don't reintroduce the old production values.
 
 ---
 
 In `claude-design-v3/Main.dc.html`, update the For You prototype to match the MNG Web Design System components built from it. Use only the values given below. Don't add new colors, sizes or spacing, and don't change anything else on the page. When you're done, check at 340, 360, 768, 1024 and 1280 that nothing overflows the page.
+
+Reference specs for every component below (exported 2026-10-28; Markdown spec, DTCG tokens, an HTML/CSS skeleton and previews per component): https://github.com/kuscholdMNG/mng_web_ds/tree/main/components (`core/` for the MNG Web Design System, `wordpress/` for WordPress Elements; list in `components/index.json`). If a spec and this prompt disagree, follow this prompt and tell me.
 
 ## 1. Homepage tab bar (Editor's Picks / For You)
 
@@ -60,7 +62,7 @@ Box styles:
 
 The line under "While You Were Away" ("Based on what you read." + the info button), in both copies of `.fyh`:
 
-- `.fyh p`: `font: 400 13px/normal 'Noto Sans', sans-serif`; color #5E5D5C (color/gray/200); keep the 6px top margin; gap between the text and the info button 4px (spacing/050; was 6px).
+- `.fyh p`: `font: 400 13px/normal 'Noto Sans', sans-serif`; color #5E5D5C (color/gray/200); top margin 8px (spacing/100; was 6px, the Section Title gaps are now 8px); gap between the text and the info button 4px (spacing/050; was 6px).
 - Info icon (`.tipb .ic`): 12px, color #5E5D5C (was 13px). Keep the button's invisible 12px hit-area extension and focus outline.
 - Leave the eyebrow (`.eb`) as it is.
 
@@ -78,6 +80,7 @@ Use the production Load More (the same rule as production's `.load-more` / `.sho
 .load-more:focus-visible { outline: 2px solid #000000; outline-offset: 5px; }
 ```
 
+- The rule and notch-edge gray differs per theme in production (#D7D6D2 Bold Coastal, #C8C4C0 Measured Vibrant, #DDD8D5 Modern Earthy). The prototype is Bold Coastal, so keep #D7D6D2.
 - Remove the old `.lm` padding (16px 0 8px) so the 40px above and below comes from the button. It's the same at every width; don't add breakpoints.
 
 ## 6. Article rows on phones, and the gallery badge
@@ -110,6 +113,7 @@ The modal (`.mc`) already matches the MNG Web Design System ModalsCenter: 444px 
 
 - Change the card border color from #83827F to #838280 (the exact color/gray/300 value).
 - Keep the `info` icon in the header (ModalsCenter's sample uses `notification`; the icon is content and can change).
+- Header: the icon sits in its own box before the title/subtitle stack, aligned to the title's first-line baseline (`align-items:baseline` or equivalent; no extra top padding), so it stays level with the title when the title wraps, and the subtitle lines up under the title, not under the icon.
 
 ## 9. Article timestamp (already done 2026-10-23)
 
