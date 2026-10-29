@@ -17,12 +17,12 @@ writes `<out>/project/` in the Design System artifact's file format, plus `<out>
 | Colors (3 themes, Bold Coastal first), spacing, radius, shadow, breakpoints, font sizes and weights | `tokens/core/`, `tokens/themes/{bold-coastal,measured-vibrant,modern-earthy}.tokens.json`, `tokens/wordpress/breakpoint.tokens.json` |
 | Editorial type styles, per-theme font roles and eyebrow | `tokens/wordpress/typography-editorial.tokens.json`, `tokens/wordpress/type-theme/` |
 | Icon font and names | `tokens/icons/icomoon.woff2`, `tokens/icons/icons.json` |
-| Logos | `logos/logos.json` and its SVGs; `tokens/icons/svg-missing/` (next font build) |
+| Placeholder logos (publication logos are linked from the Overview, not included; Karl, 2026-10-29) | `logos/logos.json` placeholders and their SVGs; `tokens/icons/svg-missing/` (next font build) |
 | Components | `components/<layer>/<slug>/` (`<slug>.md` spec, `<slug>.tokens.json`, `<slug>.html` skeleton, `previews/`) |
 
 ## Hand-written sources (`src/`)
 
-- `README.md`: the system's brand book (usage rules). `{{COMPONENT_TABLE}}`, `{{NAMESPACE}}`, `{{REF}}` are filled in.
+- `README.md`: the system's Overview, in plain language for designers, with a "For developers" section at the end. `{{CORE_TABLE}}`, `{{WORDPRESS_TABLE}}`, `{{INVENTORY}}`, `{{NAMESPACE}}`, `{{REF}}` are filled in. `build.py` also adds a header to every preview (system, full name, Figma link), a Figma link to every component's guidance, and the full token name to every token's usage note.
 - `inventory.json`: every element and component, present and future (from the Figma libraries), with its status and the date it was last updated in Claude; rendered as the README's Inventory section. The build stops if a built component isn't listed.
 - `token-notes.json`: usage notes for tokens; the build adds which components use each token and contrast ratios.
 - `runtime.js`, `base.css`, `index.d.ts`: shared runtime (`h`, `cx`, `slug`, `stateClass`, `rest`, `Icon`, `ArticleImage`, `Specimen`) and base styles.

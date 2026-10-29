@@ -71,6 +71,38 @@ COMPONENTS = [
 # Not an exported component set: the icon font as a component (icons.json names).
 EXTRA = [("Icon", "Icon", "Core")]
 
+# Figma files (CLAUDE.md, "Figma files"). Links open the component set or page in Figma.
+FIGMA_FILES = {
+    "core": ("jFHYqhZbJjvWQmDI4myCsd", "MNG Web Design System"),
+    "wordpress": ("b1iZxkFwtAYq9rElmnCAzd", "WordPress Elements"),
+}
+ICONS_PAGE = ("jFHYqhZbJjvWQmDI4myCsd", "1082:55553")  # main file, Icons page
+
+def figma_url(key, node=None):
+    return f"https://www.figma.com/design/{key}/" + (f"?node-id={node.replace(':', '-')}" if node else "")
+
+def spec_figma_url(slug, layer):
+    """Link to the component set in Figma, from the spec's figma_node."""
+    md = (REPO / "components" / layer / slug / f"{slug}.md").read_text()
+    m = re.search(r'figma_node: "([0-9]+:[0-9]+)"', md)
+    if not m:
+        raise SystemExit(f"{slug}: no figma_node in its spec")
+    return figma_url(FIGMA_FILES[layer][0], m.group(1))
+
+def card_head(sec, figma, ident, url):
+    """Header on top of every preview card: which system, the full Figma name, the code name, a Figma link.
+    The page cuts long names off in its Name column and doesn't show groups (Karl, 2026-10-29)."""
+    e = html.escape
+    return (f'<header class="mngds-cardhead"><span class="mngds-cardhead__system">{e(sec)}</span>'
+            f'<span class="mngds-cardhead__name">{e(figma)}</span>'
+            f'<code class="mngds-cardhead__code">{e(ident)}</code>'
+            f'<a class="mngds-cardhead__link" href="{e(url)}" target="_blank" rel="noopener">Open in Figma ↗</a></header>\n')
+
+def with_card_head(preview, head):
+    if "<body>\n" not in preview:
+        raise SystemExit("preview.html has no <body> line")
+    return preview.replace("<body>\n", "<body>\n" + head, 1)
+
 
 # ---------------------------------------------------------------- helpers
 def load(p):
@@ -301,6 +333,15 @@ def build_tokens(notes):
         "fontSize": {"note": "Type primitives (Type Primitives collection). Editorial styles and components reference these.", "tokens": fs},
         "fontWeight": {"note": "Font weight primitives. Figma style names: Regular, Medium, SemiBold, Bold.", "tokens": fw},
     }
+    # The page cuts long token names off in its Name column (Karl, 2026-10-29: make the full name viewable).
+    # Each usage note starts with the full name; the note opens from the row's note button. The page skips
+    # a token's own name when it looks for contrast backgrounds, so this doesn't change the contrast checks.
+    for fam in ("color", "spacing", "radius", "shadow", "breakpoint", "fontSize", "fontWeight"):
+        for t in tokens[fam]["tokens"]:
+            t["usage"] = clamp(f"Full name: {t['name']}. " + t.get("usage", ""), 1000)
+    for g in tokens["type"]["groups"]:
+        for st in g["styles"]:
+            st["usage"] = clamp(f"Full name: {st['name']}. " + st.get("usage", ""), 1000)
     return tokens, role_map, type_theme
 
 def tokens_css(tokens):
@@ -431,7 +472,9 @@ def component_readme(slug, ident, figma, sec, layer):
     figma_sec = fix_links(s.get("Figma", ""), rel)
     lines = [f"# {ident}", ""]
     lead = summary if summary else f"{figma}."
-    lines += [f"{lead} Figma: **{figma}** ({sec}). Spec: [`{rel}/{slug}.md`](https://github.com/kuscholdMNG/mng_web_ds/blob/main/{rel}/{slug}.md).", ""]
+    url = spec_figma_url(slug, layer)
+    lines += [lead, "",
+              f"**Part of:** {sec} · **Figma:** [{figma}]({url}) · **Spec:** [`{rel}/{slug}.md`](https://github.com/kuscholdMNG/mng_web_ds/blob/main/{rel}/{slug}.md)", ""]
     if api:
         lines += ["## Use", "", api, ""]
     if notes:
@@ -461,6 +504,43 @@ def icons_payload():
 
 
 # ---------------------------------------------------------------- inventory
+
+# Figma pages, for links in the Inventory's "In Figma" column (page ids read 2026-10-29).
+MAIN, WP, RD, LOGOS = "jFHYqhZbJjvWQmDI4myCsd", "b1iZxkFwtAYq9rElmnCAzd", "PhXogWaQcnNSnQqxyRu4b2", "oXaN4tEoa4GsH4x7kWpAFZ"
+FIGMA_PAGES = [  # (text at the start of an Inventory "where", file, page node)
+    ("Main file, Colors collection; Color Pallets", MAIN, "2321:5"), ("Main file, Shadows", MAIN, "7376:25745"),
+    ("Main file, Icons", MAIN, "1082:55553"), ("Main file, Fonts", MAIN, "1079:4658"), ("Main file", MAIN, None),
+    ("Buttons", MAIN, "1079:34282"), ("Tooltips", MAIN, "7372:25702"), ("Modal Panels", MAIN, "1079:12064"),
+    ("In-Line Content Containers", MAIN, "1079:15767"), ("Check Boxes", MAIN, "1079:30579"),
+    ("Toggle Switches", MAIN, "1235:46"), ("Style Guide | Radio Buttons", MAIN, "1415:3442"),
+    ("Form Fields", MAIN, "1079:19470"), ("*** Dropdown Menus", MAIN, "1079:23173"), ("Icons", MAIN, "1082:55553"),
+    ("Style Guide | Themes", MAIN, "1079:955"), ("Slider Carousel", MAIN, "1079:41688"),
+    ("***Breakpoints and Page Templates", MAIN, "1782:1151"), ("Elements to be detailed still", MAIN, "0:1"),
+    ("Menus and Parts", WP, "14:499"), ("Homepage", WP, "0:1"), ("Article Page", WP, "14:1697"),
+    ("Obits: ET and Local", WP, "1139:19238"), ("Paywalls", WP, "1492:23325"), ("Ads and Sponsored", WP, "496:7890"),
+    ("Photo Carousel Widget", WP, "1294:21973"), ("WordPress Elements effect style", WP, None),
+    ("WordPress Elements pages", WP, None), ("Newspaper Logos, Favicons, User Pics", LOGOS, None),
+    ("Reader Dashboard v2.0", RD, None), ("Components | 2026.02.25", RD, None),
+]
+
+def link_where(where, group):
+    """Inventory 'In Figma' text with clickable Figma links: the page name, and every node id."""
+    default = WP if group.startswith("WordPress") else RD if group.startswith("Reader") else MAIN
+    out = where
+    for text, key, node in FIGMA_PAGES:
+        if where.startswith(text):
+            out = f"[{text}]({figma_url(key, node)})" + where[len(text):]
+            default = key
+            break
+    def linked(pt):
+        def node(m):
+            key = WP if pt[m.end():].startswith(" (WordPress Elements)") else default
+            return f"[{m.group(1)}]({figma_url(key, m.group(1))})"
+        return re.sub(r"(?<![\w:])(\d+:\d+)(?![\w:])", node, pt)
+    # node ids outside links we already made
+    parts = re.split(r"(\[[^\]]*\]\([^)]*\))", out)
+    return "".join(pt if pt.startswith("[") else linked(pt) for pt in parts)
+
 def inventory_md(comps):
     """README Inventory section from src/inventory.json; every built component must be listed."""
     inv = json.loads((SRC / "inventory.json").read_text())
@@ -484,7 +564,7 @@ def inventory_md(comps):
         for it in g["items"]:
             name = it["name"] + (f" (`{it['component']}`)" if it.get("component") else "")
             cell = lambda t: str(t).replace("|", "\\|")
-            out.append(f"| {cell(name)} | {cell(it['where'])} | {it['status']} | {it.get('updated', '—')} | {cell(it.get('note', ''))} |")
+            out.append(f"| {cell(name)} | {cell(link_where(it['where'], g['name']))} | {it['status']} | {it.get('updated', '—')} | {cell(it.get('note', ''))} |")
     return "\n".join(out)
 
 
@@ -553,11 +633,13 @@ def main():
         cd = proj / "components" / ident
         cd.mkdir()
         (cd / "README.md").write_text(component_readme(slug, ident, figma, sec, layer))
-        shutil.copy(SRC / "components" / ident / "preview.html", cd / "preview.html")
+        prev = (SRC / "components" / ident / "preview.html").read_text()
+        (cd / "preview.html").write_text(with_card_head(prev, card_head(sec, figma, ident, spec_figma_url(slug, layer))))
     icd = proj / "components/Icon"
     icd.mkdir()
     shutil.copy(SRC / "components/Icon/README.md", icd / "README.md")
-    shutil.copy(SRC / "components/Icon/preview.html", icd / "preview.html")
+    prev = (SRC / "components/Icon/preview.html").read_text()
+    (icd / "preview.html").write_text(with_card_head(prev, card_head("Core", "Icons (icon font)", "Icon", figma_url(*ICONS_PAGE))))
     cov = proj / "components/Cover"
     if (SRC / "cover.html").exists():
         cov.mkdir()
@@ -565,8 +647,16 @@ def main():
 
     # README
     readme = (SRC / "README.md").read_text()
-    comp_rows = "\n".join(f"| `{i}` | {f} | {s} |" for _, i, f, s in comps)
-    readme = readme.replace("{{COMPONENT_TABLE}}", "| Component | Figma name | Section |\n|---|---|---|\n| `Icon` | Icons (icon font) | Core |\n" + comp_rows)
+    def comp_table(section):
+        rows = ["| Component | Code name | Figma |", "|---|---|---|"]
+        if section == "Core":
+            rows.append(f"| Icons (icon font) | `Icon` | [Icons page]({figma_url(*ICONS_PAGE)}) |")
+        for slug, i, f, sec in comps:
+            if sec == section:
+                layer = "core" if sec == "Core" else "wordpress"
+                rows.append(f"| {f} | `{i}` | [Open in Figma]({spec_figma_url(slug, layer)}) |")
+        return "\n".join(rows)
+    readme = readme.replace("{{CORE_TABLE}}", comp_table("Core")).replace("{{WORDPRESS_TABLE}}", comp_table("WordPress Elements"))
     readme = readme.replace("{{INVENTORY}}", inventory_md(comps))
     readme = readme.replace("{{NAMESPACE}}", NAMESPACE).replace("{{REF}}", tokens["meta"]["ref"])
     (proj / "README.md").write_text(readme)
@@ -574,7 +664,8 @@ def main():
     # assets: READMEs here; SVG uploads listed for the publish step
     assets = []
     lj = load("logos/logos.json")
-    for g, items, key in (("Logos", lj["logos"], "publication"), ("Placeholder Logos", lj["placeholders"], "name")):
+    # Publication logos stay out of the system (Karl, 2026-10-29); the README links to them. Placeholders stay.
+    for g, items, key in (("Placeholder Logos", lj["placeholders"], "name"),):
         for it in items:
             for layout in ("horizontal", "stacked", "stacked-tall", "lettermark"):
                 if layout in it:
@@ -582,7 +673,7 @@ def main():
                         assets.append({"group": g, "name": Path(f).name, "src": f"logos/{f}"})
     for f in sorted((REPO / "tokens/icons/svg-missing").glob("*.svg")):
         assets.append({"group": "Icons Next Build", "name": f.name, "src": f"tokens/icons/svg-missing/{f.name}"})
-    for g in ("Logos", "Placeholder Logos", "Icons Next Build"):
+    for g in ("Placeholder Logos", "Icons Next Build"):
         rd = SRC / "assets" / g / "README.md"
         if rd.exists():
             (proj / "assets" / g).mkdir(parents=True, exist_ok=True)

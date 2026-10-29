@@ -35,3 +35,22 @@
 .mngds-specimen-section { display: flex; flex-direction: column; gap: var(--mng-spacing-150); margin: 0 0 var(--mng-spacing-400); }
 .mngds-specimen-section__title { margin: 0; font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-14); font-weight: 600; color: var(--mng-color-gray-min); }
 .mngds-specimen-section__note { margin: 0; font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-12); line-height: 18px; color: var(--mng-color-gray-200); max-width: 70ch; }
+
+/* ---- Card header (added by build.py on every preview card): which system the component belongs to,
+   its full Figma name, its code name and a link to it in Figma. The page cuts long names off in its
+   Name column and doesn't show the Core / WordPress Elements groups (Karl, 2026-10-29). */
+.mngds-cardhead {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--mng-spacing-100) var(--mng-spacing-150);
+  margin: 0 0 var(--mng-spacing-300); padding: 0 0 var(--mng-spacing-150);
+  border-bottom: 1px solid var(--mng-color-gray-500);
+  font-family: var(--mng-font-family-noto-sans); color: var(--mng-color-gray-min);
+}
+.mngds-cardhead__system {
+  font-size: var(--mng-font-size-12); line-height: 16px; font-weight: var(--mng-font-weight-semibold);
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--mng-color-gray-100);
+  background: var(--mng-color-gray-600); border-radius: var(--mng-radius-sm); padding: 2px var(--mng-spacing-100);
+}
+.mngds-cardhead__name { font-size: var(--mng-font-size-18); line-height: 24px; font-weight: var(--mng-font-weight-bold); }
+.mngds-cardhead__code { font-size: var(--mng-font-size-12); line-height: 16px; color: var(--mng-color-gray-200); }
+.mngds-cardhead__link { margin-left: auto; font-size: var(--mng-font-size-14); line-height: 20px; color: var(--mng-color-theme-primary); }
+.mngds-cardhead__link:focus-visible { outline: 2px solid var(--mng-color-gray-black); outline-offset: 1px; }

@@ -8,7 +8,6 @@
 <script>
   var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
   var Icon = NS.Icon;
-  var flags = { 'production-class-wrong-glyph': 'production class shows another glyph', 'no-production-class': 'no production class yet' };
   function Sheet() {
     return h('div', { className: 'mngds-icon-sheet' }, Object.keys(Icon.categories).map(function (cat) {
       var names = Icon.categories[cat];
@@ -17,8 +16,7 @@
           var m = Icon.meta[n] || {};
           return h('div', { key: n, className: 'mngds-icon-sheet__cell', title: m.description || n },
             h(Icon, { name: n, size: 24 }),
-            h('span', { className: 'mngds-icon-sheet__name' }, n),
-            flags[m.status] ? h('span', { className: 'mngds-icon-sheet__flag' }, flags[m.status]) : null);
+            h('span', { className: 'mngds-icon-sheet__name' }, n));
         })));
     }));
   }

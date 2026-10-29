@@ -85,10 +85,17 @@
      "updated": "2026-10-29"
     },
     {
-     "name": "Newspaper logos (124) and placeholder logos",
-     "where": "logos/",
+     "name": "Placeholder logos (Fakeville Daily News, Newspaper Town Times, Newspaper Town News)",
+     "where": "Main file, FAKE NEWSPAPER LOGOS 3051:2728; logos/placeholder/",
      "status": "In system",
-     "note": "Assets.",
+     "note": "Assets › Placeholder Logos.",
+     "updated": "2026-10-29"
+    },
+    {
+     "name": "Newspaper logos (124 publications)",
+     "where": "Newspaper Logos, Favicons, User Pics (oXaN4tEoa4GsH4x7kWpAFZ); logos/",
+     "status": "Removed",
+     "note": "Kept out of the system on purpose (Karl, 2026-10-29); the Overview links to Figma and the repo's logos folder.",
      "updated": "2026-10-29"
     },
     {

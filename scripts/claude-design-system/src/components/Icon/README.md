@@ -22,9 +22,7 @@ h(Icon, { name: 'close', size: 16, label: 'Close' })    // meaningful on its own
 - Inside a labelled control an icon is decorative (`aria-hidden`); an icon-only control needs an `aria-label` on the control.
 - Names never change to IcoMoon's names: production names are kept, always (Karl, 2026-10-22). Search IcoMoon by `icomoonName` in `icons.json`.
 
-## Known issues (from `tokens/icons/README.md`)
+## Known issues
 
-- 3 production classes show the wrong glyph (the right glyph is in the font): `grid2` → U+E932, `windows8` → U+E987, `book3` → U+E993. This component draws the design glyph.
-- 2 icons have no production class yet: `content_copy` (U+E921) and `ios_share` (U+E93A).
 - The next font build (17 new icons and new `notification` / `notification2` artwork) is not in production. Its SVG artwork is in the **Icons Next Build** asset group; those names don't render through `Icon` until the font ships.
-- Production-only classes with no Figma entry (`icon-google-plus`, `icon-mng-podcast1`, `icon-users4`) are left out. Differences in production: `design-vs-production.md` entry 1.
+- Where production's icon classes differ from the design (wrong glyph, missing class, production-only classes), see the drift doc, [`design-vs-production.md` entry 1](https://github.com/kuscholdMNG/mng_web_ds/blob/main/design-vs-production.md). This component always draws the design glyph.
