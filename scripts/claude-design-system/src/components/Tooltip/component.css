@@ -1,0 +1,59 @@
+/* Root: box + 12x6 caret in a column, overlapping by 1px (root gap -1px) so no seam shows. */
+.mngds-tooltip { display: inline-flex; flex-direction: column; align-items: center; width: max-content; max-width: 100%; }
+.mngds-tooltip__box { position: relative; box-sizing: border-box; display: flex; align-items: flex-start; border-radius: var(--mng-tooltip-base-box-border-radius); box-shadow: var(--mng-shadow-lg); }
+.mngds-tooltip__caret { position: relative; z-index: 1; flex-shrink: 0; display: block; width: var(--mng-tooltip-base-caret-width); height: var(--mng-tooltip-base-caret-height); }
+.mngds-tooltip--top .mngds-tooltip__caret { margin-top: var(--mng-tooltip-base-root-gap); }
+.mngds-tooltip--bottom .mngds-tooltip__caret { margin-bottom: var(--mng-tooltip-base-root-gap); }
+.mngds-tooltip__caret-border, .mngds-tooltip__caret-fill { position: absolute; left: 50%; transform: translateX(-50%); display: block; }
+.mngds-tooltip--top .mngds-tooltip__caret-border, .mngds-tooltip--top .mngds-tooltip__caret-fill { top: 0; clip-path: polygon(0 0, 100% 0, 50% 100%); }
+.mngds-tooltip--bottom .mngds-tooltip__caret-border, .mngds-tooltip--bottom .mngds-tooltip__caret-fill { bottom: 0; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+/* Type=Tooltip: gray/100 box, 4px/8px padding, Noto Sans 12 gray/max; hugs its text up to 240px, then wraps. */
+.mngds-tooltip--tooltip .mngds-tooltip__box {
+  max-width: 240px;
+  padding: var(--mng-tooltip-type-tooltip-box-padding-top) var(--mng-tooltip-type-tooltip-box-padding-right) var(--mng-tooltip-type-tooltip-box-padding-bottom) var(--mng-tooltip-type-tooltip-box-padding-left);
+  background: var(--mng-tooltip-type-tooltip-box-background);
+}
+.mngds-tooltip__label {
+  flex: 1 1 auto; min-width: 0;
+  font-family: var(--mng-tooltip-type-tooltip-box-label-font-family); font-size: var(--mng-tooltip-type-tooltip-box-label-font-size);
+  font-weight: var(--mng-tooltip-type-tooltip-box-label-font-weight); line-height: normal;
+  color: var(--mng-tooltip-type-tooltip-box-label-color); text-align: left;
+}
+.mngds-tooltip--tooltip .mngds-tooltip__caret-fill {
+  width: var(--mng-tooltip-type-tooltip-caret-caret-fill-width); height: var(--mng-tooltip-type-tooltip-caret-caret-fill-height);
+  background: var(--mng-tooltip-type-tooltip-caret-caret-fill-background);
+}
+
+/* Type=Toggletip: 275px white box, 1px gray/300 edge, 12px around the text, In-Line Close at the top right. */
+.mngds-tooltip--toggletip .mngds-tooltip__box {
+  width: var(--mng-tooltip-type-toggletip-box-width); max-width: 100%;
+  background: var(--mng-tooltip-type-toggletip-box-background);
+  /* 1px inside edge (Figma inside stroke, as in the skeleton), plus shadow/lg. */
+  box-shadow: inset 0 0 0 var(--mng-tooltip-type-toggletip-box-border-width) var(--mng-tooltip-type-toggletip-box-border-color), var(--mng-shadow-lg);
+}
+.mngds-tooltip__text-container {
+  flex: 1 1 0; min-width: 0; display: flex; flex-direction: column;
+  padding: var(--mng-tooltip-type-toggletip-box-text-container-padding-top) var(--mng-tooltip-type-toggletip-box-text-container-padding-right) var(--mng-tooltip-type-toggletip-box-text-container-padding-bottom) var(--mng-tooltip-type-toggletip-box-text-container-padding-left);
+}
+.mngds-tooltip__text {
+  margin: 0;
+  font-family: var(--mng-tooltip-type-toggletip-box-text-container-text-font-family); font-size: var(--mng-tooltip-type-toggletip-box-text-container-text-font-size);
+  font-weight: var(--mng-tooltip-type-toggletip-box-text-container-text-font-weight); line-height: normal;
+  color: var(--mng-tooltip-type-toggletip-box-text-container-text-color); text-align: left;
+}
+.mngds-tooltip__close { width: var(--mng-tooltip-type-toggletip-box-close-width); height: var(--mng-tooltip-type-toggletip-box-close-height); }
+.mngds-tooltip--toggletip .mngds-tooltip__caret-border {
+  width: var(--mng-tooltip-type-toggletip-caret-caret-border-width); height: var(--mng-tooltip-type-toggletip-caret-caret-border-height);
+  background: var(--mng-tooltip-type-toggletip-caret-caret-border-background);
+}
+.mngds-tooltip--toggletip .mngds-tooltip__caret-fill {
+  width: var(--mng-tooltip-type-toggletip-caret-caret-fill-width); height: var(--mng-tooltip-type-toggletip-caret-caret-fill-height);
+  background: var(--mng-tooltip-type-toggletip-caret-caret-fill-background);
+}
+
+/* Anchored to a trigger: centered on it, 8px (spacing/100) between the trigger and the caret tip. */
+.mngds-tooltip-anchor { position: relative; display: inline-flex; }
+.mngds-tooltip--anchored { position: absolute; left: 50%; transform: translateX(-50%); z-index: 10; max-width: none; }
+.mngds-tooltip--anchored.mngds-tooltip--top { bottom: calc(100% + var(--mng-spacing-100)); }
+.mngds-tooltip--anchored.mngds-tooltip--bottom { top: calc(100% + var(--mng-spacing-100)); }

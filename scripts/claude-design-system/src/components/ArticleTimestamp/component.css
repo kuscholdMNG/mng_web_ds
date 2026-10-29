@@ -1,0 +1,16 @@
+.mngds-article-timestamp {
+  display: flex; flex-direction: row; align-items: center; box-sizing: border-box; margin: 0; padding: 0;
+  gap: var(--mng-article-timestamp-base-root-gap); width: max-content; max-width: 100%;
+}
+.mngds-article-timestamp__icon {
+  width: var(--mng-article-timestamp-base-clock-icon-width); height: var(--mng-article-timestamp-base-clock-icon-height);
+  color: var(--mng-article-timestamp-base-clock-icon-icon-color);
+  display: inline-flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.mngds-article-timestamp__time {
+  font-family: var(--mng-article-timestamp-base-time-font-family);
+  font-size: var(--mng-article-timestamp-base-time-font-size);
+  font-weight: var(--mng-article-timestamp-base-time-font-weight);
+  line-height: normal; color: var(--mng-article-timestamp-base-time-color);
+  text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;
+}

@@ -1,0 +1,26 @@
+<!-- @dsCard group="WordPress Elements" height=2045 subtitle="Figma: Blocks Article Row · 9 variants (State × Device) + Show Gallery Icon" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>BlocksArticleRow</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var widths = { Mobile: 340, Tablet: 720, Desktop: 848 };
+  var notes = {
+    Mobile: 'Below 640px: 90×54 image pinned top-left (white space below it), Small badge, 12px body padding. Built at 340px.',
+    Tablet: '640px and up (768 template): 220px image filling the row height (min 132), Large badge, 16px body padding. Built at 720px.',
+    Desktop: '640px and up (1280 template): same as Tablet. Built at 848px.'
+  };
+  function section(dev) {
+    var items = ['Default', 'Hover', 'Focus'].map(function (st) {
+      return { label: st + ' / ' + dev, width: widths[dev] + 32, node: h(NS.BlocksArticleRow, { device: dev, state: st }) };
+    });
+    if (dev === 'Mobile') items.push({ label: 'Default / Mobile, Show Gallery Icon = false', width: widths[dev] + 32, node: h(NS.BlocksArticleRow, { device: dev, showGalleryIcon: false }) });
+    return h(I.SpecimenSection, { key: dev, title: 'Device=' + dev, note: notes[dev] }, h(I.Specimen, { items: items }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null, section('Mobile'), section('Tablet'), section('Desktop')));
+</script>
+</body>
+</html>

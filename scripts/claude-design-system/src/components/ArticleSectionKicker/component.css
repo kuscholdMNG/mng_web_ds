@@ -1,0 +1,10 @@
+.mngds-article-section-kicker {
+  display: block; box-sizing: border-box; margin: 0; padding: 0; width: max-content; max-width: 100%;
+  font-family: var(--mng-article-section-kicker-base-section-font-family);
+  font-size: var(--mng-article-section-kicker-base-section-font-size);
+  font-weight: var(--mng-article-section-kicker-base-section-font-weight);
+  line-height: var(--mng-article-section-kicker-base-section-line-height);
+  color: var(--mng-article-section-kicker-base-section-color);
+  text-transform: uppercase; text-align: left;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}

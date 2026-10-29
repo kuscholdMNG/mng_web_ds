@@ -1,0 +1,37 @@
+.mngds-non-button-hyperlink {
+  display: inline-flex; flex-direction: row; align-items: center; justify-content: center; max-width: 100%; box-sizing: border-box; vertical-align: bottom;
+  padding: 0 0 var(--mng-non-button-hyperlink-state-default-root-padding-bottom);
+  border-bottom: var(--mng-non-button-hyperlink-base-root-border-bottom-width) var(--mng-non-button-hyperlink-state-default-root-border-style) var(--mng-non-button-hyperlink-base-root-border-color);
+  text-decoration: none; outline: none; color: var(--mng-non-button-hyperlink-base-label-color);
+}
+.mngds-non-button-hyperlink__underline { display: inline-flex; flex-direction: row; align-items: center; justify-content: center; min-width: 0; }
+.mngds-non-button-hyperlink__label {
+  font-family: var(--mng-non-button-hyperlink-base-label-font-family);
+  font-size: var(--mng-non-button-hyperlink-base-label-font-size);
+  font-weight: var(--mng-non-button-hyperlink-base-label-font-weight);
+  line-height: normal; color: var(--mng-non-button-hyperlink-base-label-color); text-align: right;
+}
+.mngds-non-button-hyperlink:hover, .mngds-non-button-hyperlink.is-hover {
+  padding-bottom: var(--mng-non-button-hyperlink-state-hover-root-padding-bottom);
+  border-bottom-style: var(--mng-non-button-hyperlink-state-hover-root-border-style);
+}
+.mngds-non-button-hyperlink:active, .mngds-non-button-hyperlink.is-pressed {
+  padding-bottom: var(--mng-non-button-hyperlink-state-pressed-root-padding-bottom);
+  border-bottom-style: var(--mng-non-button-hyperlink-state-pressed-root-border-style);
+}
+/* InFocus: the root becomes the 2px box (part of the layout); the dashed underline moves to the inner Underline frame. */
+.mngds-non-button-hyperlink:focus-visible, .mngds-non-button-hyperlink.is-infocus {
+  padding-bottom: var(--mng-non-button-hyperlink-state-infocus-root-padding-bottom);
+  border: var(--mng-non-button-hyperlink-state-infocus-root-border-width) var(--mng-non-button-hyperlink-state-infocus-root-border-style) var(--mng-non-button-hyperlink-base-root-border-color);
+  border-radius: var(--mng-non-button-hyperlink-state-infocus-root-border-radius);
+}
+.mngds-non-button-hyperlink:focus-visible .mngds-non-button-hyperlink__underline, .mngds-non-button-hyperlink.is-infocus .mngds-non-button-hyperlink__underline {
+  padding-bottom: var(--mng-non-button-hyperlink-state-infocus-underline-padding-bottom);
+  border-bottom: var(--mng-non-button-hyperlink-state-infocus-underline-border-bottom-width) var(--mng-non-button-hyperlink-state-infocus-underline-border-style) var(--mng-non-button-hyperlink-state-infocus-underline-border-color);
+}
+.mngds-non-button-hyperlink:focus-visible .mngds-non-button-hyperlink__label, .mngds-non-button-hyperlink.is-infocus .mngds-non-button-hyperlink__label {
+  font-family: var(--mng-non-button-hyperlink-state-infocus-underline-label-font-family);
+  font-size: var(--mng-non-button-hyperlink-state-infocus-underline-label-font-size);
+  font-weight: var(--mng-non-button-hyperlink-state-infocus-underline-label-font-weight);
+  color: var(--mng-non-button-hyperlink-state-infocus-underline-label-color);
+}

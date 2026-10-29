@@ -1,0 +1,18 @@
+<!-- @dsCard group="Core" height=200 subtitle="Figma: Button Action · 4 variants (State)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ButtonAction</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var items = ['Default', 'Hover', 'Pressed', 'InFocus'].map(function (st) {
+    return { label: 'State=' + st, node: h(NS.ButtonAction, { state: st, label: 'Copy Link', iconName: 'content_copy' }) };
+  });
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(I.SpecimenSection, { title: 'Button Action (exported as Action Button)', note: 'One size at every width (32px tall, hugs icon + label). No box at rest; a 1px color/gray/min box on Hover, Pressed and InFocus.' },
+      h(I.Specimen, { items: items })));
+</script>
+</body>
+</html>

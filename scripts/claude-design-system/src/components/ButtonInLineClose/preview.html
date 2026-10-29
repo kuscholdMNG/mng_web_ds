@@ -1,0 +1,17 @@
+<!-- @dsCard group="Core" height=230 subtitle="Figma: Button In-Line Close · 4 variants (State)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ButtonInLineClose</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var items = ['Default', 'Hover', 'Pressed', 'InFocus'].map(function (st) {
+    return { label: 'State=' + st, node: h(NS.ButtonInLineClose, { state: st }) };
+  });
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(I.SpecimenSection, { title: 'State', note: '40×40 hit area in every state. Default and InFocus show the bare icon; Hover and Pressed add the 28px white box with a 1px color/gray/min border; InFocus adds the 2px ring with 4px corners 1px outside the hit area.' }, h(I.Specimen, { items: items })));
+</script>
+</body>
+</html>

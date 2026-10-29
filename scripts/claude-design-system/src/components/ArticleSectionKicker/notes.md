@@ -1,0 +1,4 @@
+- Root is a single block-level `<span>` (the Figma frame and its `Section` text collapse into one element; no padding, gap 0).
+- One line is enforced with `white-space: nowrap` and an ellipsis when the column is narrower than the text (spec: "One line"; it gives no overflow rule).
+- Height renders 12.5px (the 12.5px line-height token); the Figma text box is rounded to 13px, so parents come out about 0.5px shorter than their Figma frames.
+- Contrast (text on `color/gray/max`): Bold Coastal 5.45:1, Measured Vibrant 6.87:1, Modern Earthy 5.20:1. All pass.

@@ -1,0 +1,3 @@
+- The clock is the runtime `Icon` (`access-time`, U+E900), sized by the 11px clock-icon width token and `aria-hidden`.
+- Optional `dateTime` renders the text as `<time dateTime>`. This isn't in Figma; it's there for production markup.
+- Contrast: `color/gray/200` on `color/gray/max` 6.57:1 in all three themes.

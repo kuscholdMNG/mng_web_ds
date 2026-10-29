@@ -1,0 +1,5 @@
+- The 1px border is drawn as `box-shadow: inset 0 0 0 <border-width> <state border-color>` from the component tokens, not a CSS `border`: Figma's stroke is INSIDE, so the button stays 155×40 as in Figma and the skeleton, and the state color change never shifts layout. `border-style` (solid) is implied.
+- Icon-to-label gap: token `base.button.content.gap` = `spacing/200` (16px), matching ButtonPrimary/Secondary and the variant PNGs; the skeleton/anatomy give the `Content` frame gap 8. Used the token.
+- `base.root.width` (324px) is the Figma frame width, not applied: Desktop hugs, Mobile fills (spec Behavior). Focus ring offset 1px is from the spec prose.
+- Contrast (same in all themes, grays are not themed): label `color/gray/min` on `color/gray/600` 16.04:1, on `color/gray/max` (Hover, Pressed) 18.42:1. Pass.
+- Hover/Pressed border `color/gray/500` on a white fill is very faint (about 1.6:1 against white); it is decorative, not text, and matches Figma.

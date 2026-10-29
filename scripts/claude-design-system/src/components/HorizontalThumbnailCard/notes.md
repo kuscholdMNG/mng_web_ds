@@ -1,0 +1,9 @@
+- Headline: the component tokens (Noto Sans SemiBold 15/19, −0.15px, `color/gray/min`); the literal "Noto Sans" family is `--mng-font-family-noto-sans`. The spec names no editorial style, so the headline stays Noto Sans in every theme. These values equal `Editorial/Titles/HeadlineList` (15 / 600 / 1.2667 / −0.01em, small-headline family); if that style is intended, the spec should name it.
+- Mobile headline: the Figma text box is fixed at 51px (the `device-mobile.content.headline.height` token) and the PNG shows two lines and an ellipsis. Built as a 51px frame with a two-line clamp (`-webkit-line-clamp: 2`); the spec doesn't state the max lines in prose. Desktop and Tablet aren't clamped (three lines fit beside the 74 / 60px thumbnail).
+- Width: fills its column (`width: 100%`); the 336 / 358px root width tokens are used only as the preview widths. The thumbnail keeps its fixed per-device size.
+- Gallery Icon Badge: `GalleryIconBadge` Size=Small, positioned 3.75px from the right and 5px from the bottom (spec prose; matches the skeleton's left 86.25 / 66.25 and top 49 / 35 / 26). Its width and height come from this card's 20px badge tokens.
+- `style` is the Figma Style variant (only Standard). An object passed as `style` goes to the root as inline styles.
+- Link: Figma draws no hover or focus state. With `href` the headline text is the link (`color: inherit`, no underline); the browser's default focus ring is kept.
+- Bottom rule: a 0-height div with a 1px top border; it takes 1px of layout where the Figma line takes 0 (99 / 85 / 68px vs 98 / 84 / 67).
+- The Figma thumbnails show the placeholder label cut off ("APHIC / IMA"); the runtime `ArticleImage` does the same, without the Figma halo.
+- Contrast: headline `color/gray/min` on `color/gray/max` (the card has no fill; on the page background) 18.42:1 in all themes. Passes.

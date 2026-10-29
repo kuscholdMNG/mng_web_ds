@@ -1,0 +1,3 @@
+- Root is a single block-level `<span>`; one line with an ellipsis if the column is too narrow (the spec gives no overflow rule).
+- Plain text, not a link: Blocks cards and rows are one link each, and nested links are invalid.
+- Contrast: `color/gray/min` on `color/gray/max` 18.42:1 in all three themes.

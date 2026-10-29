@@ -1,0 +1,47 @@
+/* Root: the 1px border is an overlay (::after) drawn over the image, like Figma's inside stroke: the image stays the full
+   card width (296 x 166.5 at the built size). Hover adds a 1px ring outside; Focus is a 2px color/gray/black outline 1px out. */
+.mngds-blocks-card {
+  position: relative; box-sizing: border-box; display: flex; flex-direction: column; width: 100%; min-width: 0; margin: 0;
+  background: var(--mng-blocks-card-base-root-background);
+  border-radius: var(--mng-blocks-card-base-root-border-radius);
+  overflow: hidden; text-decoration: none; color: inherit; outline: none;
+}
+.mngds-blocks-card::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  border: var(--mng-blocks-card-base-root-border-width) var(--mng-blocks-card-base-root-border-style) var(--mng-blocks-card-state-default-root-border-color);
+}
+.mngds-blocks-card__media { position: relative; flex-shrink: 0; width: 100%; aspect-ratio: 16 / 9; }
+.mngds-blocks-card__image, .mngds-blocks-card__img { width: 100%; height: 100%; }
+.mngds-blocks-card__badge { position: absolute; right: 5px; bottom: 5px; }
+.mngds-blocks-card__body {
+  box-sizing: border-box; flex: 1 1 auto; display: flex; flex-direction: column; justify-content: space-between; min-width: 0;
+  gap: var(--mng-blocks-card-base-card-body-gap);
+  padding: var(--mng-blocks-card-base-card-body-padding-top) var(--mng-blocks-card-base-card-body-padding-right) var(--mng-blocks-card-base-card-body-padding-bottom) var(--mng-blocks-card-base-card-body-padding-left);
+}
+.mngds-blocks-card__headline-container { display: flex; flex-direction: column; align-items: flex-start; gap: var(--mng-blocks-card-base-card-body-headline-container-gap); min-width: 0; }
+.mngds-blocks-card__headline {
+  margin: 0; align-self: stretch; text-align: left;
+  font-family: var(--mng-editorial-titles-card-tertiary-compact-font-family);
+  font-size: var(--mng-editorial-titles-card-tertiary-compact-font-size);
+  font-weight: var(--mng-editorial-titles-card-tertiary-compact-font-weight);
+  line-height: var(--mng-editorial-titles-card-tertiary-compact-line-height);
+  letter-spacing: var(--mng-editorial-titles-card-tertiary-compact-letter-spacing);
+  color: var(--mng-blocks-card-state-default-card-body-headline-container-headline-color);
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; line-clamp: 5; overflow: hidden;
+}
+.mngds-blocks-card__footer {
+  display: flex; flex-direction: column; align-items: flex-start; min-width: 0;
+  padding-top: var(--mng-blocks-card-base-card-body-card-footer-padding-top);
+  border-top: var(--mng-blocks-card-base-card-body-card-footer-border-top-width) var(--mng-blocks-card-base-card-body-card-footer-border-style) var(--mng-blocks-card-base-card-body-card-footer-border-color);
+}
+/* Hover (prototype .card:hover): border + 1px outside ring + headline in color/theme/primary. The badge stays default. */
+.mngds-blocks-card:hover, .mngds-blocks-card.is-hover { box-shadow: 0 0 0 var(--mng-blocks-card-base-root-border-width) var(--mng-blocks-card-state-hover-root-border-color); }
+.mngds-blocks-card:hover::after, .mngds-blocks-card.is-hover::after { border-color: var(--mng-blocks-card-state-hover-root-border-color); }
+.mngds-blocks-card:hover .mngds-blocks-card__headline, .mngds-blocks-card.is-hover .mngds-blocks-card__headline { color: var(--mng-blocks-card-state-hover-card-body-headline-container-headline-color); }
+.mngds-blocks-card .mngds-blocks-card__badge:hover {
+  background: var(--mng-gallery-icon-badge-state-default-root-background); border-color: var(--mng-gallery-icon-badge-state-default-root-border-color);
+}
+/* Focus (keyboard; prototype .card:focus-visible) */
+.mngds-blocks-card:focus-visible, .mngds-blocks-card.is-focus { outline: 2px solid var(--mng-color-gray-black); outline-offset: 1px; }
+.mngds-blocks-card.is-focus::after { border-color: var(--mng-blocks-card-state-focus-root-border-color); }
+.mngds-blocks-card.is-focus .mngds-blocks-card__headline { color: var(--mng-blocks-card-state-focus-card-body-headline-container-headline-color); }

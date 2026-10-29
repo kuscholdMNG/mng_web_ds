@@ -1,0 +1,8 @@
+- Headline uses `Editorial/Titles/CardTertiaryCompact` (`--mng-editorial-titles-card-tertiary-compact-*`), as the spec names it, instead of the literal Noto Serif 16 / 700 / 18.88px headline tokens. The headline font then follows the theme (Modern Earthy renders it in Noto Sans).
+- Border: Figma's inside stroke is drawn over the image (image 296×166.5, full width). It is a `::after` overlay border, not a CSS border, so the image isn't inset. Hover adds `box-shadow: 0 0 0 1px` (spec). Focus is `outline: 2px solid color/gray/black; outline-offset: 1px` (spec prose; no token).
+- The Focus-state tokens equal Default. They are applied only to the forced `state: 'Focus'`; real `:focus-visible` adds the outline only, so a hovered and focused card keeps the hover colors.
+- Width: fills its column (`width: 100%`); the 296px `base.root.width` token is used only as the preview width. Image is `aspect-ratio: 16 / 9` (spec "16:9"), which gives the 166.5px token height at 296.
+- Body is space-between (spec known issue 1). Max 5 lines is `-webkit-line-clamp: 5`.
+- Renders 330.6px tall vs Figma 331.5: the kicker is 12.5px (its line-height token) where the Figma text box is 13, and the headline is 3 × 18.88.
+- The placeholder label in the Figma PNGs has a light halo behind "GRAPHIC / IMAGE". That comes from the runtime `ArticleImage`, not this component.
+- Contrast: headline `color/gray/min` 18.42:1; hover headline `color/theme/primary` 5.45 / 6.87 / 5.20:1 (Bold Coastal / Measured Vibrant / Modern Earthy). All pass.

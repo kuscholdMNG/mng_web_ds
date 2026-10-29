@@ -1,0 +1,4 @@
+- Focus ring "2px set 3px inside the tab" (spec; skeleton draws it as an inset box-shadow) is built as an `outline` with a negative offset (`-3px - 2px`), so it never changes the tab's size. This is the one ring that sits inside the element, as the spec asks.
+- `selected` is the real-use prop (Active look + `aria-selected`); `state: 'Active'` maps to it for documentation. Keyboard focus on the active tab keeps its underline (Figma's Focus variant shows the unselected tab).
+- Label line height is `normal` (spec: "line height auto"). Chromium rounds Noto Sans 12's auto line to 17px where Figma reports 16, so the tab renders 123×43 instead of 123×42.
+- Previews are shown on white (the bar's `color/gray/max`) rather than the `color/gray/500` documentation stage, so the Default gray reads as it ships.

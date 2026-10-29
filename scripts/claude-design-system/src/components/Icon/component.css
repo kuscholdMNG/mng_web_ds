@@ -1,0 +1,7 @@
+/* ---- Icon: see .mngds-icon in the base rules above. */
+.mngds-icon-sheet { display: flex; flex-direction: column; gap: var(--mng-spacing-300); }
+.mngds-icon-sheet__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: var(--mng-spacing-100); }
+.mngds-icon-sheet__cell { display: flex; flex-direction: column; align-items: center; gap: var(--mng-spacing-100); padding: var(--mng-spacing-150) var(--mng-spacing-050); background: var(--mng-color-gray-max); box-shadow: inset 0 0 0 1px var(--mng-color-gray-500); border-radius: var(--mng-radius-sm); min-width: 0; }
+.mngds-icon-sheet__cell .mngds-icon { color: var(--mng-color-gray-min); }
+.mngds-icon-sheet__name { font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-11); line-height: 14px; color: var(--mng-color-gray-100); text-align: center; overflow-wrap: anywhere; }
+.mngds-icon-sheet__flag { font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-10); line-height: 12px; color: var(--mng-color-feedback-high-error); text-align: center; }

@@ -1,0 +1,19 @@
+<!-- @dsCard group="WordPress Elements" height=212 subtitle="Figma: Article Section Kicker · 1 variant" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ArticleSectionKicker</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(I.SpecimenSection, { title: 'Article Section Kicker',
+      note: 'Noto Sans Bold 10/12.5, uppercase, color/theme/primary. One line; hugs its text. Shown with other section names used in the Blocks components.' },
+      h(I.Specimen, { items: [
+        { label: 'Article Section Kicker', node: h(NS.ArticleSectionKicker, { section: 'Crime and Public Safety' }) },
+        { label: 'Section = "Transportation"', node: h(NS.ArticleSectionKicker, { section: 'Transportation' }) }
+      ] })));
+</script>
+</body>
+</html>

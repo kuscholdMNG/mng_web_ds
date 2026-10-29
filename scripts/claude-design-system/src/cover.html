@@ -1,0 +1,48 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MNG Web Design System</title>
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--mng-color-gray-max); color: var(--mng-color-gray-min); overflow: hidden; }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; }
+  .band { position: absolute; left: 0; top: 0; width: 960px; height: 112px; display: block; }
+  .primary { fill: var(--mng-color-theme-primary); }
+  .dark { fill: var(--mng-color-theme-primary-darker); }
+  .secondary { fill: var(--mng-color-theme-secondary); }
+  .ink { fill: var(--mng-color-gray-min); }
+  .tint { fill: var(--mng-color-gray-600); }
+  .rule { stroke: var(--mng-color-gray-500); stroke-width: 1; }
+  .words { position: absolute; left: var(--mng-spacing-300); right: var(--mng-spacing-300); bottom: var(--mng-spacing-300); }
+  .name { margin: 0; font-family: var(--mng-font-theme-heading-family); font-weight: var(--mng-font-weight-bold); font-size: 64px; line-height: 0.95; letter-spacing: -0.03em; color: var(--mng-color-gray-min); white-space: nowrap; }
+  .tag { margin: var(--mng-spacing-100) 0 0 2px; font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-14); line-height: 20px; color: var(--mng-color-gray-200); max-width: 440px; }
+</style>
+</head>
+<body>
+<div class="cover">
+<svg class="band" viewBox="0 0 960 112" width="960" height="112" aria-hidden="true">
+<!--
+  blocks      theme-primary 400×112 (the brand color, largest) · primary-darker 144×80 · secondary 48×80 (an accent, fills only) · gray-min slab 320 wide bleeding off the right edge · gray-600 tint 96×48 — about a third of 960×288
+  arrangement a strip of unequal bands, like newspaper columns on the 16-column WordPress grid, bottoms stepped
+  pattern     hairline column rules (editorial, serif headlines, borders not shadows): four 1px gray-500 rules in the 16px gutters
+  scales      sides in spacing-200 (16) multiples; gutters spacing-200; corners square (radius-sm 4px is for controls, cards use radius-lg only)
+-->
+<rect class="primary" x="0" y="0" width="400" height="112"/>
+<rect class="dark" x="416" y="0" width="144" height="80"/>
+<rect class="secondary" x="576" y="0" width="48" height="80"/>
+<rect class="tint" x="576" y="96" width="48" height="16"/>
+<rect class="tint" x="416" y="96" width="144" height="16"/>
+<rect class="ink" x="640" y="0" width="320" height="112"/>
+<line class="rule" x1="408.5" y1="0" x2="408.5" y2="112"/>
+<line class="rule" x1="568.5" y1="0" x2="568.5" y2="112"/>
+<line class="rule" x1="632.5" y1="0" x2="632.5" y2="112"/>
+</svg>
+<div class="words">
+<h1 class="name">MNG Web Design System</h1>
+<p class="tag">Production-accurate web components and tokens for MediaNews Group's news sites.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.mngds-article-author {
+  display: block; box-sizing: border-box; margin: 0; padding: 0; width: max-content; max-width: 100%;
+  font-family: var(--mng-article-author-base-author-font-family);
+  font-size: var(--mng-article-author-base-author-font-size);
+  font-weight: var(--mng-article-author-base-author-font-weight);
+  line-height: var(--mng-article-author-base-author-line-height);
+  color: var(--mng-article-author-base-author-color);
+  text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}

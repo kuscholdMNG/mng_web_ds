@@ -1,0 +1,18 @@
+<!-- @dsCard group="Core" height=210 subtitle="Figma: Hyperlink · 4 variants (State)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Hyperlink</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var items = ['Default', 'Hover', 'Pressed', 'InFocus'].map(function (st) {
+    return { label: 'State=' + st, node: h(NS.Hyperlink, { state: st, label: '...hyperlink text...', href: '#' }) };
+  });
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(I.SpecimenSection, { title: 'Hyperlink (exported as Non-Button Hyperlink)', note: '16.5px brand-primary text over a 1px underline: dashed at rest, solid on Hover and Pressed. InFocus adds a 2px brand-primary box with 4px corners around the dashed underline (2px taller, intentional).' },
+      h(I.Specimen, { items: items })));
+</script>
+</body>
+</html>

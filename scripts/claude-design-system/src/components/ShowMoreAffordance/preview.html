@@ -1,0 +1,30 @@
+<!-- @dsCard group="WordPress Elements" height=1010 subtitle="Figma: Show More Affordance · 1 variant" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ShowMoreAffordance</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var S = NS.ShowMoreAffordance;
+  /* 32px of top stage padding (16 + 16) leaves room for the half of the notch that rises above the rule. */
+  function item(label, node, w) { return { label: label, white: true, width: w, node: h('div', { style: { paddingTop: 16 } }, node) }; }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+    h(I.SpecimenSection, { title: 'Show More Affordance', note: 'Fills its column (793px in Figma). Label text property: "Load More" on section fronts and in the For You feed, "Show More Photos" in Photos Block.' },
+      h(I.Specimen, { items: [
+        item('Show More Affordance (793px)', h(S, { label: 'Load More', tabIndex: -1 }), 793 + 32),
+        item('Label = Show More Photos (600px)', h(S, { label: 'Show More Photos', tabIndex: -1 }), 600 + 32)
+      ] })),
+    h(I.SpecimenSection, { title: 'Production states (not Figma variants)', note: 'Hover: label #0A0908. Keyboard focus: 2px black outline, 5px offset.' },
+      h(I.Specimen, { items: [
+        item('Hover', h(S, { label: 'Load More', state: 'Hover', tabIndex: -1 }), 360 + 32),
+        item('Focus', h('div', { style: { padding: '0 8px 8px' } }, h(S, { label: 'Load More', state: 'Focus', tabIndex: -1 })), 360 + 32)
+      ] })),
+    h(I.SpecimenSection, { title: 'Rule and notch edge per theme' },
+      h(I.Specimen, { items: [['bold-coastal', 'Bold Coastal #D7D6D2'], ['measured-vibrant', 'Measured Vibrant #C8C4C0'], ['modern-earthy', 'Modern Earthy #DDD8D5']].map(function (t) {
+        return item(t[1], h('div', { 'data-theme': t[0] }, h(S, { label: 'Load More', tabIndex: -1 })), 260 + 32);
+      }) }))));
+</script>
+</body>
+</html>

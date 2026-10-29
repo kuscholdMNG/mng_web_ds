@@ -1,0 +1,17 @@
+<!-- @dsCard group="Core" height=210 subtitle="Figma: Button Modal Close · 4 variants (State)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ButtonModalClose</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var items = ['Default', 'Hover', 'Pressed', 'InFocus'].map(function (st) {
+    return { label: 'State=' + st, node: h(NS.ButtonModalClose, { state: st }) };
+  });
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(I.SpecimenSection, { title: 'State', note: '32×32 in every state. Hover and Pressed are identical (white fill, color/gray/500 border); InFocus keeps the Default look and adds the 2px ring 1px outside.' }, h(I.Specimen, { items: items })));
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- @dsCard group="WordPress Elements" height=820 subtitle="Figma: Horizontal Thumbnail Card · 3 variants (Style × Device) + Show Gallery Icon" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>HorizontalThumbnailCard</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var width = { Desktop: 336, Mobile: 336, Tablet: 358 };
+  function item(dev, extra, label) {
+    return { label: label || ('Standard / ' + dev), width: width[dev] + 32,
+      node: h(NS.HorizontalThumbnailCard, Object.assign({ device: dev }, extra)) };
+  }
+  var variants = h(I.SpecimenSection, { title: 'Style=Standard × Device',
+    note: 'Photos Block secondary list item. Thumbnail Desktop 110×74, Tablet 90×60, Mobile 90×51 (headline clipped to two lines). Built at 336 / 358px; fills its column.' },
+    h(I.Specimen, { items: ['Desktop', 'Tablet', 'Mobile'].map(function (d) { return item(d); }) }));
+  var noBadge = h(I.SpecimenSection, { title: 'Show Gallery Icon = false' },
+    h(I.Specimen, { items: ['Desktop', 'Tablet', 'Mobile'].map(function (d) {
+      return item(d, { showGalleryIcon: false }, 'Standard / ' + d + ', Show Gallery Icon = false');
+    }) }));
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null, variants, noBadge));
+</script>
+</body>
+</html>

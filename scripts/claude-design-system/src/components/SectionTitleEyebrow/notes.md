@@ -1,0 +1,6 @@
+- Letter spacing: the tokens are px literals (Underline `0.7px`, Bold `0.595px`: 3.5% of 20px and of 17px), the spec says "3.5% letter spacing" for every theme. Built as `0.035em` so it follows each theme's eyebrow size (Bold Coastal 0.7px, Measured Vibrant 0.595px, Modern Earthy 0.735px).
+- The 8px gap between title row, underline and subhead row applies to both styles (spec: "Spacing: 8px … between the title row, the underline and the subhead row"); the token exists only as `style-underline.root.gap`.
+- Subhead row values come from the spec and skeleton (the hidden layers have no component tokens): `font/size/13`, `color/gray/200`, 4px `spacing/050` gap, 12px info icon.
+- The info button's focus ring (2px `color/gray/black`, 2px offset) and the section link's focus ring are not in the spec; they use the system's black focus ring. The 12px invisible hit area around the info button comes from `components/for-you-prototype-fixes.md` (section 3). The toggletip itself (Tooltip, Type=Toggletip) is not part of this component; the consumer renders it and passes `infoExpanded` / `infoControls`.
+- The Figma prop is `Style`, so the `style` prop is the variant; inline styles go in `rootStyle`.
+- Previews are shown on white (the page background the title sits on) rather than the `color/gray/500` documentation stage, so the text colors read as they ship.

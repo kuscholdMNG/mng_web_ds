@@ -1,0 +1,6 @@
+- Figma's `Style` property collides with React's `style` prop: a string is the Figma Style, an object is inline CSS.
+- Spec prose says the 1px box appears on Hover/Pressed; the skeleton, the variant PNGs and the documentation ("InFocus adds a 2px black focus ring… plus the 1px Hover-style border") also draw it on InFocus, without the underline. Built that way.
+- The box is an inset `box-shadow` (Figma INSIDE stroke), so showing it never changes the 138×38 size or shifts layout. Focus ring offset 1px is from the spec prose.
+- `Style=Stacked` max widths 91px / 115px (with an icon) are raw numbers from the spec and skeleton (no token); they are documentation of the wrapped case.
+- New-tab links (`target="_blank"`) get visually hidden text " (opens in a new tab)", as the spec's Behavior asks.
+- Contrast: label `color/theme/primary` on white 5.45 / 6.87 / 5.20 (Bold Coastal / Measured Vibrant / Modern Earthy), pass; the control has no fill, so check it against the real background where it is placed.

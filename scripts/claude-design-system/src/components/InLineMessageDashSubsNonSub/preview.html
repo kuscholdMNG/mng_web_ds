@@ -1,0 +1,23 @@
+<!-- @dsCard group="Core" height=925 subtitle="Figma: InLineMessage DashSubsNonSub · 3 variants (Device)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>InLineMessageDashSubsNonSub</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+    h(I.SpecimenSection, { title: 'Device',
+      note: 'Priority=Medium, Location=DashSubsNonSub, PanelType=Alert. Desktop 546px, 24px padding, 16px between parts; Mobile 328px and FOLD 308px (16px from each screen edge), 16px padding, 8px between parts. Close button hidden in this Location.' },
+      h(I.Specimen, { items: ['Desktop', 'Mobile', 'FOLD'].map(function (d) {
+        return { label: 'Device=' + d, white: true, node: h(NS.InLineMessageDashSubsNonSub, { device: d }) };
+      }) })),
+    h(I.SpecimenSection, { title: 'For You tab, non-subscriber (Desktop)' },
+      h(I.Specimen, { items: [{ label: 'Device=Desktop', white: true, node: h(NS.InLineMessageDashSubsNonSub, {
+        title: 'Your personalized feed is waiting',
+        description: 'Subscribe to unlock a feed tailored to what you actually read — local news, sports, tech, and more.',
+        buttonLabel: 'Subscribe Now' }) }] }))));
+</script>
+</body>
+</html>

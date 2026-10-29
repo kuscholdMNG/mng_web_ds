@@ -1,0 +1,5 @@
+- The border is a real CSS `border` with `box-sizing: border-box` (the Figma inside stroke), so the circle stays 20/33px.
+- Accessible name: the spec doesn't set one. The badge is `role="img"`, `aria-label="Photo gallery"` by default, so a card link's name says it's a gallery. `label={null}` makes it decorative.
+- `:hover` on the badge itself applies State=Hover (rule 2). The Blocks components override that inside their cards: the spec says the Blocks components keep the default badge while hovered.
+- The badge has no position; its parent places it (Large 5px right/bottom, Small 3.75px right / 5px bottom: spec values with no token).
+- The Figma variant PNGs are exported without the 85% opacity, so they look darker than the render: the render applies the `base.root.opacity` token as the spec says.

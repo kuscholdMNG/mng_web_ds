@@ -1,0 +1,5 @@
+- Figma set name is **Button Action** (7075:6357); the export folder, tokens and classes use **Action Button** (`action-button`, `--mng-action-button-*`, `.mngds-action-button`). The identifier follows the Figma set name.
+- The 1px box (Hover, Pressed, InFocus per the skeleton and PNGs; spec summary names Hover/Pressed only) is an inset `box-shadow` (Figma INSIDE stroke) using `base.button.border-*`, so the button stays 95×32 and never shifts. Focus ring offset 1px is from the spec prose.
+- The root's 1px `gap` from the skeleton is not applied: the root has a single child, so it has no effect.
+- The hidden `Icon Right` is not rendered (spec Known issue 3).
+- Contrast: label `color/gray/min` on white 18.42:1 (all themes; no fill, so check against the real background).

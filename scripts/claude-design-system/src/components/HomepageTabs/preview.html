@@ -1,0 +1,21 @@
+<!-- @dsCard group="WordPress Elements" height=460 subtitle="Figma: Homepage Tabs · 2 variants" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>HomepageTabs</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var tabs = [{ label: "Editor's Picks", id: 'pv-tab-picks' }, { label: 'For You', id: 'pv-tab-fy' }];
+  function sec(bp, w, note) {
+    return h(I.SpecimenSection, { key: bp, title: 'Breakpoint=' + bp, note: note },
+      h(I.Specimen, { items: [{ label: bp + ' (' + (bp === 'Desktop' ? '1280px bar, shown at the card width' : '360px') + ')', width: w + 32,
+        node: h(NS.HomepageTabs, { breakpoint: bp, tabs: tabs.map(function (t) { return { label: t.label, id: t.id + '-' + bp }; }), 'aria-label': 'Homepage feeds' }) }] }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+    sec('Desktop', 1280, '640px and up: full-width color/gray/max bar; nav 1200px max, centered, 24px (spacing/300) side padding. Click a tab to select it.'),
+    sec('Mobile', 360, 'Below 640px: no nav side padding. Tabs are 24px apart and scroll sideways (scrollbar hidden) if they don’t fit.')));
+</script>
+</body>
+</html>

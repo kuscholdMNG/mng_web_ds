@@ -1,0 +1,21 @@
+.mngds-gallery-icon-badge {
+  box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0; padding: 0;
+  background: var(--mng-gallery-icon-badge-state-default-root-background);
+  border: var(--mng-gallery-icon-badge-base-root-border-width) var(--mng-gallery-icon-badge-base-root-border-style) var(--mng-gallery-icon-badge-state-default-root-border-color);
+  opacity: var(--mng-gallery-icon-badge-base-root-opacity);
+}
+.mngds-gallery-icon-badge--small {
+  width: var(--mng-gallery-icon-badge-size-small-root-width); height: var(--mng-gallery-icon-badge-size-small-root-height);
+  border-radius: var(--mng-gallery-icon-badge-size-small-root-border-radius);
+}
+.mngds-gallery-icon-badge--large {
+  width: var(--mng-gallery-icon-badge-size-large-root-width); height: var(--mng-gallery-icon-badge-size-large-root-height);
+  border-radius: var(--mng-gallery-icon-badge-size-large-root-border-radius);
+}
+.mngds-gallery-icon-badge__icon { display: inline-flex; align-items: center; justify-content: center; overflow: hidden; color: var(--mng-gallery-icon-badge-base-icons-icon-color); }
+.mngds-gallery-icon-badge--small .mngds-gallery-icon-badge__icon { width: var(--mng-gallery-icon-badge-size-small-icons-width); height: var(--mng-gallery-icon-badge-size-small-icons-height); }
+.mngds-gallery-icon-badge--large .mngds-gallery-icon-badge__icon { width: var(--mng-gallery-icon-badge-size-large-icons-width); height: var(--mng-gallery-icon-badge-size-large-icons-height); }
+.mngds-gallery-icon-badge:hover, .mngds-gallery-icon-badge.is-hover {
+  background: var(--mng-gallery-icon-badge-state-hover-root-background);
+  border-color: var(--mng-gallery-icon-badge-state-hover-root-border-color);
+}

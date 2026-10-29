@@ -1,0 +1,26 @@
+<!-- @dsCard group="WordPress Elements" height=1460 subtitle="Figma: 1Col Article Card · 2 variants (Style)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>OneColArticleCard</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var W = 296 + 32;
+  var styles = h(I.SpecimenSection, { title: 'Style',
+    note: 'Built at 296px; fills its column. Standard: 4:3 image, CardQuaternary headline, ExcerptCompact excerpt (section-highlight lead cards). Media Lead: 16:9 image, TitleMedia headline, Excerpt excerpt (the Photos lead).' },
+    h(I.Specimen, { items: ['Standard', 'Media Lead'].map(function (s) {
+      return { label: s, width: W, node: h(NS.OneColArticleCard, { style: s }) };
+    }) }));
+  var toggles = h(I.SpecimenSection, { title: 'Boolean properties',
+    note: 'Show Subscriber Badge and Show Meta are off by default; Show Image and Show Excerpt are on.' },
+    h(I.Specimen, { items: [
+      { label: 'Standard, Show Subscriber Badge = true, Show Meta = true', width: W, node: h(NS.OneColArticleCard, { showSubscriberBadge: true, showMeta: true }) },
+      { label: 'Media Lead, Show Subscriber Badge = true, Show Meta = true', width: W, node: h(NS.OneColArticleCard, { style: 'Media Lead', showSubscriberBadge: true, showMeta: true }) },
+      { label: 'Standard, Show Image = false, Show Excerpt = false', width: W, node: h(NS.OneColArticleCard, { showImage: false, showExcerpt: false }) }
+    ] }));
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null, styles, toggles));
+</script>
+</body>
+</html>

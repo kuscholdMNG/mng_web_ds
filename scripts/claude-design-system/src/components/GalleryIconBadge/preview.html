@@ -1,0 +1,29 @@
+<!-- @dsCard group="WordPress Elements" height=570 subtitle="Figma: Gallery Icon Badge · 4 variants (State × Size)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>GalleryIconBadge</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var items = [];
+  ['Default', 'Hover'].forEach(function (st) { ['Small', 'Large'].forEach(function (sz) {
+    items.push({ label: st + ' / ' + sz, node: h(NS.GalleryIconBadge, { state: st, size: sz }) });
+  }); });
+  var onImage = [
+    { label: 'Size=Small on a 90×54 thumbnail', node: h('div', { style: { position: 'relative', width: 90, height: 54 } },
+        h(I.ArticleImage, { style: { height: '100%' } }),
+        h(NS.GalleryIconBadge, { size: 'Small', style: { position: 'absolute', right: 3.75, bottom: 5 } })) },
+    { label: 'Size=Large on a 296×166.5 card image', node: h('div', { style: { position: 'relative', width: 296, height: 166.5 } },
+        h(I.ArticleImage, { style: { height: '100%' } }),
+        h(NS.GalleryIconBadge, { size: 'Large', style: { position: 'absolute', right: 5, bottom: 5 } })) }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+    h(I.SpecimenSection, { title: 'State × Size', note: 'color/gray/min circle with a 1px color/gray/max border, 85% opacity, white slideshow icon. Hover: circle and border color/theme/primary.' },
+      h(I.Specimen, { items: items })),
+    h(I.SpecimenSection, { title: 'Placement', note: 'Bottom-right corner of the image: Large 5px in from the right and bottom; Small 3.75px right, 5px bottom.' },
+      h(I.Specimen, { items: onImage }))));
+</script>
+</body>
+</html>

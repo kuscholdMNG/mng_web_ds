@@ -1,0 +1,6 @@
+- Figma set "Button Modal Close"; the repo export (and its slug) is named "Pop-Up Modal Close" (`components/core/pop-up-modal-close`). Same component.
+- The root is the 32px `<button>` itself (the Figma variant frame has no wrapper or margin; margin is an open spec gap).
+- The 1px border is a real CSS border with `box-sizing: border-box`, so the circle stays 32×32 like the skeleton's inset shadow.
+- Focus ring: `outline` 2px `color/gray/black`, offset 1px; it follows the 40px root radius, which equals the focus-ring radius token (40px).
+- Accessible name defaults to "Close" (`aria-label`); the spec gives no wording.
+- Close icon: the icon font's `close` glyph is drawn smaller than its 12px em square (about 8px), so the X reads smaller than in the Figma previews, where the vector fills the 12px frame.

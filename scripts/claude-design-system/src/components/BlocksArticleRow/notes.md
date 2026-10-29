@@ -1,0 +1,7 @@
+- Headline uses `Editorial/Titles/CardTertiaryCompact` (spec) instead of the literal Noto Serif 16 / 700 / 18.88px tokens, so it follows the theme's heading font.
+- Border: a real 1px CSS border. Figma includes this stroke in layout (848 = 1 + 220 + 626 + 1, height 134 = 1 + 132 + 1), and the PNGs show the image inside the border. Hover adds `box-shadow: 0 0 0 1px`; Focus is a 2px `color/gray/black` outline, 1px out (spec prose).
+- Width fills the feed column (`width: 100%`); the 340/720/848 `device-*.root.width` tokens are the preview widths only. Device is chosen by the consumer (`device` prop; the spec's breakpoint is 640px).
+- The Figma per-device width tokens for the nested Kicker/Author/Timestamp instances (91, 81px...) are their hugged text sizes; the atoms hug their text instead.
+- Badge: Large 5px in on the 220px image; Small 3.75px right / 5px bottom on the 90×54 image (Gallery Icon Badge spec, no tokens). Hovering the row (or the badge) keeps the default badge.
+- Mobile renders 161px tall vs Figma 162 (kicker 12.5 vs the 13px Figma text box).
+- Contrast: as Blocks Card (18.42:1; hover primary 5.45 / 6.87 / 5.20:1).

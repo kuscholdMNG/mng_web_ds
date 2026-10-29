@@ -1,0 +1,24 @@
+<!-- @dsCard group="Core" height=980 subtitle="Figma: Button Linkstyle · 24 variants (Icon × Style × State)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ButtonLinkstyle</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var states = ['Default', 'Hover', 'Pressed', 'InFocus'], icons = ['None', 'Left', 'Right'];
+  function section(style) {
+    var items = [];
+    icons.forEach(function (ic) { states.forEach(function (st) {
+      items.push({ label: ic + ' / ' + style + ' / ' + st,
+        node: h(NS.ButtonLinkstyle, { icon: ic, style: style, state: st, label: 'Linkstyle Button' }) });
+    }); });
+    return h(I.SpecimenSection, { key: style, title: 'Style=' + style,
+      note: style === '1 Row' ? 'Hugs its label, no max width. Underlined at rest; a 1px brand-primary box on Hover, Pressed and InFocus.' : 'The wrapped case: max width 91px (115px with an icon), so the label wraps at 75px. Icon=Left is left-justified; None and Right are right-justified.' },
+      h(I.Specimen, { items: items, columns: 4 }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null, section('1 Row'), section('Stacked')));
+</script>
+</body>
+</html>

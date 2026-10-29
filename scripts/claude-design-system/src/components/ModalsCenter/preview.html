@@ -1,0 +1,37 @@
+<!-- @dsCard group="Core" height=2085 subtitle="Figma: ModalsCenter · 6 variants (Device)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ModalsCenter</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var LONG = 'Body Section (As Needed) All of this text is just to push the container past the end of the screen.\nAll of this text is just to push the container past the end of the screen. All of this text is just to push the container past the end of the screen.\n\nAll of this text is just to push the container past the end of the screen.All of this text is just to push the container past the end of the screen.\nAll of this text is just to push the container past the end of the screen.\n\nAll of this text is just to push the container past the end of the screen. All of this text is just to push the container past the end of the screen.\nAll of this text is just to push the container past the end of the screen.';
+  function screen(device, zoom, extra) {
+    return h('div', { style: { zoom: zoom } }, h(NS.ModalsCenter, Object.assign({ device: device, inline: true }, extra)));
+  }
+  function Demo() {
+    var s = React.useState(false);
+    return h('div', null,
+      h(NS.ButtonPrimary, { label: 'Open modal', onClick: function () { s[1](true); } }),
+      s[0] ? h(NS.ModalsCenter, { device: 'Desktop', onClose: function () { s[1](false); },
+        onPrimary: function () { s[1](false); }, onTopLink: function () { s[1](false); }, onBottomLink: function () { s[1](false); } }) : null);
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+    h(I.SpecimenSection, { title: 'Device (inline, scaled)',
+      note: 'Each variant is the whole screen with the 50% black overlay. Desktop, TabletH and TabletV: a 444px card, centered, padding 40/40/24/40. Mobile and FOLD: the screen width minus 24px each side, padding 24. Button Modal Close sits on the card’s top-right corner. Shown with inline: true at 45% (desktop and tablets) and 65% (phones).' },
+      h(I.Specimen, { items: [
+        { label: 'Device=Desktop (1280×960, 45%)', node: screen('Desktop', 0.45) },
+        { label: 'Device=TabletH (1024×768, 45%)', node: screen('TabletH', 0.45) },
+        { label: 'Device=TabletV (768×1024, 45%)', node: screen('TabletV', 0.45) },
+        { label: 'Device=Mobile (360×800, 65%)', node: screen('Mobile', 0.65) },
+        { label: 'Device=FOLD (340×882, 65%)', node: screen('FOLD', 0.65) },
+        { label: 'Device=MobileScroll (360×960, 65%)', node: screen('MobileScroll', 0.65, { body: LONG }) }
+      ] })),
+    h(I.SpecimenSection, { title: 'As a modal',
+      note: 'Without inline the overlay is fixed over the viewport (offsetTop leaves the masthead visible). Focus moves into the dialog and stays there; the close button, Esc, a CTA or a click outside the card closes it.' },
+      h(Demo))));
+</script>
+</body>
+</html>

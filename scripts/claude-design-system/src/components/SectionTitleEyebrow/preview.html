@@ -1,0 +1,31 @@
+<!-- @dsCard group="WordPress Elements" height=780 subtitle="Figma: Section Title / Eyebrow · 2 variants" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>SectionTitleEyebrow</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var S = NS.SectionTitleEyebrow;
+  var variants = ['Underline', 'Bold'].map(function (st) {
+    return { label: 'Style=' + st, white: true, node: h(S, { style: st, title: 'Latest Headlines' }) };
+  });
+  var options = [
+    { label: 'Underline / Chevron off', white: true, node: h(S, { style: 'Underline', chevron: false, title: 'Latest Headlines' }) },
+    { label: 'Bold / Chevron off', white: true, node: h(S, { style: 'Bold', chevron: false, title: 'Latest Headlines' }) },
+    { label: 'Underline / Show Subhead + Show Info (For You feed)', white: true, node: h(S, { style: 'Underline', chevron: false, showSubhead: true, title: 'While You Were Away', subhead: 'Based on what you read.', infoExpanded: false }) },
+    { label: 'Underline / Show Subhead, Show Info off', white: true, node: h(S, { style: 'Underline', chevron: false, showSubhead: true, showInfo: false, title: 'While You Were Away' }) }
+  ];
+  var themes = [['bold-coastal', 'Bold Coastal: Noto Sans 20 / 400'], ['measured-vibrant', 'Measured Vibrant: Noto Sans 17 / 700'], ['modern-earthy', 'Modern Earthy: Noto Serif 21 / 400']].map(function (t) {
+    return { label: t[1], white: true, node: h('div', { 'data-theme': t[0] }, h(S, { style: 'Underline', chevron: false, showSubhead: true, title: 'While You Were Away' })) };
+  });
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+    h(I.SpecimenSection, { title: 'Style', note: 'Defaults: Chevron on, Show Subhead off. Underline: color/gray/100 title, 22px line height, 2px color/theme/primary underline as wide as the title. Bold: color/theme/primary title, no underline.' },
+      h(I.Specimen, { items: variants })),
+    h(I.SpecimenSection, { title: 'Boolean and text properties' }, h(I.Specimen, { items: options })),
+    h(I.SpecimenSection, { title: 'Theme eyebrow type (font/theme/eyebrow-family, -size, -weight)', note: 'Each sample is forced to its theme with data-theme.' },
+      h(I.Specimen, { items: themes }))));
+</script>
+</body>
+</html>

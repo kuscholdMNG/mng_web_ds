@@ -1,0 +1,64 @@
+/* Root: vertical (content row, then the bottom rule). Fills its column (built at 336 Desktop / Mobile, 358 Tablet).
+   Desktop and Tablet: 8px top / bottom padding, 8px gap; Mobile: 6px padding, 4px gap. */
+.mngds-horizontal-thumbnail-card {
+  box-sizing: border-box; display: flex; flex-direction: column; align-items: stretch; width: 100%; min-width: 0; margin: 0; overflow: hidden;
+}
+.mngds-horizontal-thumbnail-card--desktop {
+  gap: var(--mng-horizontal-thumbnail-card-device-desktop-root-gap);
+  padding: var(--mng-horizontal-thumbnail-card-device-desktop-root-padding-top) 0 var(--mng-horizontal-thumbnail-card-device-desktop-root-padding-bottom) 0;
+}
+.mngds-horizontal-thumbnail-card--tablet {
+  gap: var(--mng-horizontal-thumbnail-card-device-tablet-root-gap);
+  padding: var(--mng-horizontal-thumbnail-card-device-tablet-root-padding-top) 0 var(--mng-horizontal-thumbnail-card-device-tablet-root-padding-bottom) 0;
+}
+.mngds-horizontal-thumbnail-card--mobile {
+  gap: var(--mng-horizontal-thumbnail-card-device-mobile-root-gap);
+  padding: var(--mng-horizontal-thumbnail-card-device-mobile-root-padding-top) 0 var(--mng-horizontal-thumbnail-card-device-mobile-root-padding-bottom) 0;
+}
+/* Content: thumbnail | headline, top-aligned. Gap 12 (Desktop, Tablet) / 15 (Mobile). */
+.mngds-horizontal-thumbnail-card__content { display: flex; flex-direction: row; align-items: flex-start; min-width: 0; overflow: hidden; }
+.mngds-horizontal-thumbnail-card--desktop .mngds-horizontal-thumbnail-card__content { gap: var(--mng-horizontal-thumbnail-card-device-desktop-content-gap); }
+.mngds-horizontal-thumbnail-card--tablet .mngds-horizontal-thumbnail-card__content { gap: var(--mng-horizontal-thumbnail-card-device-tablet-content-gap); }
+.mngds-horizontal-thumbnail-card--mobile .mngds-horizontal-thumbnail-card__content { gap: var(--mng-horizontal-thumbnail-card-device-mobile-content-gap); }
+/* Image container: fixed size per device; the placeholder fills it. */
+.mngds-horizontal-thumbnail-card__media { position: relative; flex-shrink: 0; }
+.mngds-horizontal-thumbnail-card--desktop .mngds-horizontal-thumbnail-card__media {
+  width: var(--mng-horizontal-thumbnail-card-device-desktop-content-image-container-width); height: var(--mng-horizontal-thumbnail-card-device-desktop-content-image-container-height);
+}
+.mngds-horizontal-thumbnail-card--tablet .mngds-horizontal-thumbnail-card__media {
+  width: var(--mng-horizontal-thumbnail-card-device-tablet-content-image-container-width); height: var(--mng-horizontal-thumbnail-card-device-tablet-content-image-container-height);
+}
+.mngds-horizontal-thumbnail-card--mobile .mngds-horizontal-thumbnail-card__media {
+  width: var(--mng-horizontal-thumbnail-card-device-mobile-content-image-container-width); height: var(--mng-horizontal-thumbnail-card-device-mobile-content-image-container-height);
+}
+.mngds-horizontal-thumbnail-card__image, .mngds-horizontal-thumbnail-card__img { width: 100%; height: 100%; }
+/* Gallery Icon Badge, Size=Small (20px): 3.75px from the right, 5px from the bottom (spec; skeleton left 86.25 / 66.25) */
+.mngds-horizontal-thumbnail-card__badge {
+  position: absolute; right: 3.75px; bottom: 5px;
+  width: var(--mng-horizontal-thumbnail-card-base-content-image-container-gallery-icon-badge-width);
+  height: var(--mng-horizontal-thumbnail-card-base-content-image-container-gallery-icon-badge-height);
+}
+/* Headline: Noto Sans SemiBold 15/19, -0.15px, color/gray/min; fills the rest of the row. */
+.mngds-horizontal-thumbnail-card__headline {
+  flex: 1 1 0; min-width: 0; margin: 0; text-align: left; overflow: hidden;
+  font-family: var(--mng-font-family-noto-sans);
+  font-size: var(--mng-horizontal-thumbnail-card-base-content-headline-article-headline-on-news-paper-homepage-in-thumbnail-list-position-font-size);
+  font-weight: var(--mng-horizontal-thumbnail-card-base-content-headline-article-headline-on-news-paper-homepage-in-thumbnail-list-position-font-weight);
+  line-height: var(--mng-horizontal-thumbnail-card-base-content-headline-article-headline-on-news-paper-homepage-in-thumbnail-list-position-line-height);
+  letter-spacing: var(--mng-horizontal-thumbnail-card-base-content-headline-article-headline-on-news-paper-homepage-in-thumbnail-list-position-letter-spacing);
+  color: var(--mng-horizontal-thumbnail-card-base-content-headline-article-headline-on-news-paper-homepage-in-thumbnail-list-position-color);
+}
+/* Mobile: the headline frame is fixed at 51px (the thumbnail height); Figma truncates to the two whole lines that fit. */
+.mngds-horizontal-thumbnail-card--mobile .mngds-horizontal-thumbnail-card__headline {
+  height: var(--mng-horizontal-thumbnail-card-device-mobile-content-headline-height);
+}
+.mngds-horizontal-thumbnail-card__text { display: block; }
+.mngds-horizontal-thumbnail-card--mobile .mngds-horizontal-thumbnail-card__text {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+}
+.mngds-horizontal-thumbnail-card__link { color: inherit; text-decoration: none; }
+/* Bottom rule (a 0-height Figma line with a 1px stroke) */
+.mngds-horizontal-thumbnail-card__rule {
+  flex-shrink: 0; height: var(--mng-horizontal-thumbnail-card-base-bottom-border-line-height);
+  border-top: var(--mng-horizontal-thumbnail-card-base-bottom-border-line-border-width) var(--mng-horizontal-thumbnail-card-base-bottom-border-line-border-style) var(--mng-horizontal-thumbnail-card-base-bottom-border-line-border-color);
+}

@@ -1,0 +1,32 @@
+.mngds-in-line-close {
+  position: relative; box-sizing: border-box; flex-shrink: 0; margin: 0; padding: 0; border: 0; background: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: var(--mng-in-line-close-base-button-width); height: var(--mng-in-line-close-base-button-height);
+  border-radius: var(--mng-in-line-close-base-button-border-radius);
+  cursor: pointer; font: inherit; color: inherit; outline: none;
+}
+/* Box: hugs the 12px icon with 8px padding (28px). Default and InFocus have no fill or border. */
+.mngds-in-line-close__box {
+  box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;
+  padding: var(--mng-in-line-close-base-button-box-padding-top) var(--mng-in-line-close-base-button-box-padding-right) var(--mng-in-line-close-base-button-box-padding-bottom) var(--mng-in-line-close-base-button-box-padding-left);
+  border-radius: var(--mng-in-line-close-base-button-box-border-radius);
+}
+.mngds-in-line-close__icon {
+  width: var(--mng-in-line-close-base-button-box-icon-width); height: var(--mng-in-line-close-base-button-box-icon-height);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--mng-in-line-close-base-button-box-icon-icon-color);
+}
+/* Hover and Pressed: white box with a 1px inside border (drawn inside so the box stays 28px, as in the skeleton). */
+.mngds-in-line-close:hover .mngds-in-line-close__box, .mngds-in-line-close.is-hover .mngds-in-line-close__box,
+.mngds-in-line-close:active .mngds-in-line-close__box, .mngds-in-line-close.is-pressed .mngds-in-line-close__box {
+  background: var(--mng-in-line-close-base-button-box-background);
+  box-shadow: inset 0 0 0 var(--mng-in-line-close-base-button-box-border-width) var(--mng-in-line-close-base-button-box-border-color);
+}
+/* InFocus: no box; a 2px ring with 4px corners 1px outside the 40px hit area (pseudo-element, since the
+   hit area itself is a 40px-radius circle). */
+.mngds-in-line-close.is-infocus .mngds-in-line-close__box { background: none; box-shadow: none; }
+.mngds-in-line-close:focus-visible::after, .mngds-in-line-close.is-infocus::after {
+  content: ""; position: absolute; inset: -1px; pointer-events: none;
+  border-radius: var(--mng-in-line-close-state-infocus-focus-ring-border-radius);
+  outline: var(--mng-in-line-close-state-infocus-focus-ring-border-width) var(--mng-in-line-close-state-infocus-focus-ring-border-style) var(--mng-in-line-close-state-infocus-focus-ring-border-color);
+}

@@ -1,0 +1,6 @@
+- The 1px border is drawn as `box-shadow: inset 0 0 0 <border-width> <border-color>` from the component tokens, not a CSS `border`: Figma's stroke is INSIDE, so the button stays 175×40 (label + 2×16px padding) as in Figma and the skeleton. `border-style` (solid) is implied. (ButtonPrimary uses a real `border`, so it renders 2px wider than its Figma size.)
+- Icon-to-label gap: the token `base.button.content.gap` = `spacing/200` (16px) and the documentation frame ("Spacing between icon and Button Label is 16px") and variant PNGs (measured 16px) agree; the skeleton/anatomy give the `Content` frame gap 8 (`spacing/100`). Used the token (16px), same as ButtonPrimary.
+- Skeleton colors hidden `Icon Left`/`Icon Right` `color/gray/max`; the token file and the visible-icon variants use `color/theme/primary`. Used the tokens.
+- `base.root.width` (324px) is the Figma frame width, not applied: Desktop hugs, Mobile fills its container (spec Behavior). The preview shows Mobile at 324px.
+- Focus ring offset 1px is from the spec prose (no token).
+- Contrast: label `color/theme/primary` on `color/gray/max` 5.45 / 6.87 / 5.20 and on `color/gray/600` (Hover, Pressed) 4.74 / 5.98 / 4.53 (Bold Coastal / Measured Vibrant / Modern Earthy): all pass 4.5:1.

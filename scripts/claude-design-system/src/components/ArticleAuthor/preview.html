@@ -1,0 +1,19 @@
+<!-- @dsCard group="WordPress Elements" height=200 subtitle="Figma: Article Author · 1 variant" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ArticleAuthor</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(I.SpecimenSection, { title: 'Article Author',
+      note: 'Noto Sans Medium 12/16, color/gray/min. One line; hugs its text.' },
+      h(I.Specimen, { items: [
+        { label: 'Article Author', node: h(NS.ArticleAuthor, { author: 'Ruby Gonzales' }) },
+        { label: 'Author = "Laylan Connelly"', node: h(NS.ArticleAuthor, { author: 'Laylan Connelly' }) }
+      ] })));
+</script>
+</body>
+</html>

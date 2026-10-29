@@ -1,0 +1,5 @@
+- Raw values by decision (spec: "Production values on purpose"): the Measured Vibrant `#C8C4C0` and Modern Earthy `#DDD8D5` rule/notch grays (spec prose; the token file only has Bold Coastal's `#d7d6d2`), the hover label `#0A0908`, the 2px / 5px focus outline and the 40px padding above and below the label (spec prose and design-vs-production entry 18; no spacing token is that large). The per-theme gray is a private variable `--mngds-show-more-affordance-edge` set on `:root` and each `[data-theme]`.
+- Notch size: the spec says "35px square with 1px left and bottom edges"; the tokens say 36×36 with 1px borders. Built as a 36px `border-box` square (35px fill + 1px edge), which satisfies both.
+- Notch position reproduces production's `left: 50%; transform: rotate(-45deg) translateY(-50%)` (design-vs-production 18), which puts it 5.27px right of center; `top` is derived so its center sits on the rule, as in the Figma preview.
+- The whole affordance is the control (production `.load-more`), so the focus outline goes around the full width with a 5px offset.
+- The notch extends 25px above the component's box (also in Figma, where the preview PNG includes it).

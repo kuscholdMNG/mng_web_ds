@@ -1,0 +1,46 @@
+.mngds-section-title-eyebrow {
+  box-sizing: border-box; display: flex; flex-direction: column; align-items: stretch; width: max-content; max-width: 100%;
+  gap: var(--mng-section-title-eyebrow-style-underline-root-gap); margin: 0; padding: 0;
+}
+.mngds-section-title-eyebrow__title-row, .mngds-section-title-eyebrow__link {
+  display: flex; align-items: center; gap: var(--mng-section-title-eyebrow-base-title-row-gap); margin: 0; min-width: 0;
+}
+.mngds-section-title-eyebrow__link { color: inherit; text-decoration: none; }
+.mngds-section-title-eyebrow__link:focus-visible { outline: 2px solid var(--mng-color-gray-black); outline-offset: 2px; }
+.mngds-section-title-eyebrow__title {
+  font-family: var(--mng-section-title-eyebrow-base-title-row-latest-headlines-font-family);
+  font-size: var(--mng-section-title-eyebrow-base-title-row-latest-headlines-font-size);
+  font-weight: var(--mng-section-title-eyebrow-base-title-row-latest-headlines-font-weight);
+  letter-spacing: 0.035em; /* 3.5% of the theme's eyebrow size (spec); the px tokens are 3.5% of 20 and of 17 */
+  text-transform: uppercase; white-space: nowrap; text-align: left;
+}
+.mngds-section-title-eyebrow--underline .mngds-section-title-eyebrow__title {
+  color: var(--mng-section-title-eyebrow-style-underline-title-row-latest-headlines-color);
+  line-height: var(--mng-section-title-eyebrow-style-underline-title-row-latest-headlines-line-height);
+}
+.mngds-section-title-eyebrow--bold .mngds-section-title-eyebrow__title {
+  color: var(--mng-section-title-eyebrow-style-bold-title-row-latest-headlines-color);
+  line-height: normal;
+}
+.mngds-section-title-eyebrow__chevron {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;
+  width: var(--mng-section-title-eyebrow-base-title-row-icons-width); height: var(--mng-section-title-eyebrow-base-title-row-icons-height);
+  color: var(--mng-section-title-eyebrow-base-title-row-icons-icon-color);
+}
+.mngds-section-title-eyebrow__underline {
+  display: block; height: var(--mng-section-title-eyebrow-style-underline-underline-height);
+  background: var(--mng-section-title-eyebrow-style-underline-underline-background);
+}
+.mngds-section-title-eyebrow__subhead-row { display: flex; align-items: center; gap: var(--mng-spacing-050); margin: 0; }
+.mngds-section-title-eyebrow__subhead {
+  font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-13); font-weight: var(--mng-font-weight-regular);
+  line-height: normal; color: var(--mng-color-gray-200); white-space: nowrap;
+}
+.mngds-section-title-eyebrow__info {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 12px; height: 12px; margin: 0; padding: 0; border: 0; background: none; cursor: pointer;
+  color: var(--mng-color-gray-200); outline: none;
+}
+/* Invisible 12px hit-area extension around the 12px icon (For You prototype fixes, section 3). */
+.mngds-section-title-eyebrow__info::before { content: ""; position: absolute; inset: -12px; }
+.mngds-section-title-eyebrow__info:focus-visible, .mngds-section-title-eyebrow__info.is-focus { outline: 2px solid var(--mng-color-gray-black); outline-offset: 2px; }

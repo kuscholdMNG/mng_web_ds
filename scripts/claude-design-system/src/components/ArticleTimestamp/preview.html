@@ -1,0 +1,19 @@
+<!-- @dsCard group="WordPress Elements" height=220 subtitle="Figma: Article Timestamp · 1 variant" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ArticleTimestamp</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(I.SpecimenSection, { title: 'Article Timestamp',
+      note: 'Icons access-time 11px + Noto Sans Regular 13 (line height auto), both color/gray/200, 4px apart, centered vertically. Hugs its content.' },
+      h(I.Specimen, { items: [
+        { label: 'Article Timestamp', node: h(NS.ArticleTimestamp, { time: '56 mins ago' }) },
+        { label: 'Time = "3 days ago"', node: h(NS.ArticleTimestamp, { time: '3 days ago' }) }
+      ] })));
+</script>
+</body>
+</html>

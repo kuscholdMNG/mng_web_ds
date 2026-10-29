@@ -1,0 +1,231 @@
+.mngds-modals-center {
+  --mc-bg: var(--mng-modals-center-base-desktop-modal-container-content-frame-background);
+  --mc-bc: var(--mng-modals-center-base-desktop-modal-container-content-frame-border-color);
+  --mc-bw: var(--mng-modals-center-base-desktop-modal-container-content-frame-border-width);
+  --mc-bs: var(--mng-modals-center-base-desktop-modal-container-content-frame-border-style);
+  --mc-radius: var(--mng-modals-center-base-desktop-modal-container-content-frame-border-radius);
+  --mc-gap: var(--mng-modals-center-base-desktop-modal-container-content-frame-gap);
+  --mc-pb: var(--mng-modals-center-base-desktop-modal-container-content-frame-padding-bottom);
+  --mc-body-bc: var(--mng-modals-center-base-desktop-modal-container-content-frame-body-container-border-color);
+  --mc-body-bw: var(--mng-modals-center-base-desktop-modal-container-content-frame-body-container-border-width);
+  --mc-body-bs: var(--mng-modals-center-base-desktop-modal-container-content-frame-body-container-border-style);
+  --mc-body-radius: var(--mng-modals-center-base-desktop-modal-container-content-frame-body-container-border-radius);
+  --mc-body-color: var(--mng-modals-center-base-desktop-modal-container-content-frame-body-container-body-content-body-content-color);
+  --mc-body-ff: var(--mng-modals-center-base-desktop-modal-container-content-frame-body-container-body-content-body-content-font-family);
+  --mc-body-fs: var(--mng-modals-center-base-desktop-modal-container-content-frame-body-container-body-content-body-content-font-size);
+  --mc-body-fw: var(--mng-modals-center-base-desktop-modal-container-content-frame-body-container-body-content-body-content-font-weight);
+  --mc-cta-gap: var(--mng-modals-center-base-desktop-modal-container-content-frame-cta-gap);
+  --mc-header-gap: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-gap);
+  --mc-icon-w: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-icon-container-icons-width);
+  --mc-icon-h: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-icon-container-icons-height);
+  --mc-icon-color: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-icon-container-icons-icon-color);
+  --mc-title-color: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-text-container-title-title-color);
+  --mc-title-ff: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-text-container-title-title-font-family);
+  --mc-title-fs: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-text-container-title-title-font-size);
+  --mc-title-fw: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-text-container-title-title-font-weight);
+  --mc-sub-color: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-text-container-subtitle-subtitle-color);
+  --mc-sub-ff: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-text-container-subtitle-subtitle-font-family);
+  --mc-sub-fs: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-text-container-subtitle-subtitle-font-size);
+  --mc-sub-fw: var(--mng-modals-center-base-desktop-modal-container-content-frame-header-text-container-subtitle-subtitle-font-weight);
+  --mc-close-w: var(--mng-modals-center-base-desktop-modal-container-content-frame-button-modal-close-width); --mc-close-h: var(--mng-modals-center-base-desktop-modal-container-content-frame-button-modal-close-height);
+  --mc-card-w: var(--mng-modals-center-base-desktop-width);
+}
+.mngds-modals-center--desktop {
+  --mc-root-w: var(--mng-modals-center-device-desktop-root-width);
+  --mc-root-h: var(--mng-modals-center-device-desktop-root-height);
+  --mc-root-pt: var(--mng-modals-center-device-desktop-root-padding-top);
+  --mc-root-pr: var(--mng-modals-center-device-desktop-root-padding-right);
+  --mc-root-pb: var(--mng-modals-center-device-desktop-root-padding-bottom);
+  --mc-root-pl: var(--mng-modals-center-device-desktop-root-padding-left);
+  --mc-pt: var(--mng-modals-center-device-desktop-desktop-modal-container-content-frame-padding-top);
+  --mc-pr: var(--mng-modals-center-device-desktop-desktop-modal-container-content-frame-padding-right);
+  --mc-pl: var(--mng-modals-center-device-desktop-desktop-modal-container-content-frame-padding-left);
+  --mc-body-pt: var(--mng-modals-center-device-desktop-desktop-modal-container-content-frame-body-container-padding-top);
+  --mc-body-pr: var(--mng-modals-center-device-desktop-desktop-modal-container-content-frame-body-container-padding-right);
+  --mc-body-pb: var(--mng-modals-center-device-desktop-desktop-modal-container-content-frame-body-container-padding-bottom);
+  --mc-body-pl: var(--mng-modals-center-device-desktop-desktop-modal-container-content-frame-body-container-padding-left);
+}
+.mngds-modals-center--tablet-h {
+  --mc-root-w: var(--mng-modals-center-device-tableth-root-width);
+  --mc-root-h: var(--mng-modals-center-device-tableth-root-height);
+  --mc-root-pt: var(--mng-modals-center-device-tableth-root-padding-top);
+  --mc-root-pr: var(--mng-modals-center-device-tableth-root-padding-right);
+  --mc-root-pb: var(--mng-modals-center-device-tableth-root-padding-bottom);
+  --mc-root-pl: var(--mng-modals-center-device-tableth-root-padding-left);
+  --mc-pt: var(--mng-modals-center-device-tableth-desktop-modal-container-content-frame-padding-top);
+  --mc-pr: var(--mng-modals-center-device-tableth-desktop-modal-container-content-frame-padding-right);
+  --mc-pl: var(--mng-modals-center-device-tableth-desktop-modal-container-content-frame-padding-left);
+  --mc-body-pt: var(--mng-modals-center-device-tableth-desktop-modal-container-content-frame-body-container-padding-top);
+  --mc-body-pr: var(--mng-modals-center-device-tableth-desktop-modal-container-content-frame-body-container-padding-right);
+  --mc-body-pb: var(--mng-modals-center-device-tableth-desktop-modal-container-content-frame-body-container-padding-bottom);
+  --mc-body-pl: var(--mng-modals-center-device-tableth-desktop-modal-container-content-frame-body-container-padding-left);
+  --mc-close-w: var(--mng-modals-center-device-tableth-desktop-modal-container-button-modal-close-width); --mc-close-h: var(--mng-modals-center-device-tableth-desktop-modal-container-button-modal-close-height);
+}
+.mngds-modals-center--tablet-v {
+  --mc-root-w: var(--mng-modals-center-device-tabletv-root-width);
+  --mc-root-h: var(--mng-modals-center-device-tabletv-root-height);
+  --mc-root-pt: var(--mng-modals-center-device-tabletv-root-padding-top);
+  --mc-root-pr: var(--mng-modals-center-device-tabletv-root-padding-right);
+  --mc-root-pb: var(--mng-modals-center-device-tabletv-root-padding-bottom);
+  --mc-root-pl: var(--mng-modals-center-device-tabletv-root-padding-left);
+  --mc-pt: var(--mng-modals-center-device-tabletv-desktop-modal-container-content-frame-padding-top);
+  --mc-pr: var(--mng-modals-center-device-tabletv-desktop-modal-container-content-frame-padding-right);
+  --mc-pl: var(--mng-modals-center-device-tabletv-desktop-modal-container-content-frame-padding-left);
+  --mc-body-pt: var(--mng-modals-center-device-tabletv-desktop-modal-container-content-frame-body-container-padding-top);
+  --mc-body-pr: var(--mng-modals-center-device-tabletv-desktop-modal-container-content-frame-body-container-padding-right);
+  --mc-body-pb: var(--mng-modals-center-device-tabletv-desktop-modal-container-content-frame-body-container-padding-bottom);
+  --mc-body-pl: var(--mng-modals-center-device-tabletv-desktop-modal-container-content-frame-body-container-padding-left);
+}
+.mngds-modals-center--mobile {
+  --mc-root-w: var(--mng-modals-center-device-mobile-root-width);
+  --mc-root-h: var(--mng-modals-center-device-mobile-root-height);
+  --mc-root-pt: var(--mng-modals-center-device-mobile-root-padding-top);
+  --mc-root-pr: var(--mng-modals-center-device-mobile-root-padding-right);
+  --mc-root-pb: var(--mng-modals-center-device-mobile-root-padding-bottom);
+  --mc-root-pl: var(--mng-modals-center-device-mobile-root-padding-left);
+  --mc-pt: var(--mng-modals-center-device-mobile-desktop-modal-container-content-frame-padding-top);
+  --mc-pr: var(--mng-modals-center-device-mobile-desktop-modal-container-content-frame-padding-right);
+  --mc-pl: var(--mng-modals-center-device-mobile-desktop-modal-container-content-frame-padding-left);
+  --mc-body-pt: var(--mng-modals-center-device-mobile-desktop-modal-container-content-frame-body-container-padding-top);
+  --mc-body-pr: var(--mng-modals-center-device-mobile-desktop-modal-container-content-frame-body-container-padding-right);
+  --mc-body-pb: var(--mng-modals-center-device-mobile-desktop-modal-container-content-frame-body-container-padding-bottom);
+  --mc-body-pl: var(--mng-modals-center-device-mobile-desktop-modal-container-content-frame-body-container-padding-left);
+  --mc-card-w: auto;
+}
+.mngds-modals-center--fold {
+  --mc-root-w: var(--mng-modals-center-device-fold-root-width);
+  --mc-root-h: var(--mng-modals-center-device-fold-root-height);
+  --mc-root-pt: var(--mng-modals-center-device-fold-root-padding-top);
+  --mc-root-pr: var(--mng-modals-center-device-fold-root-padding-right);
+  --mc-root-pb: var(--mng-modals-center-device-fold-root-padding-bottom);
+  --mc-root-pl: var(--mng-modals-center-device-fold-root-padding-left);
+  --mc-bg: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-background);
+  --mc-bc: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-border-color);
+  --mc-bw: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-border-width);
+  --mc-bs: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-border-style);
+  --mc-radius: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-border-radius);
+  --mc-gap: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-gap);
+  --mc-pb: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-padding-bottom);
+  --mc-body-bc: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-border-color);
+  --mc-body-bw: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-border-width);
+  --mc-body-bs: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-border-style);
+  --mc-body-radius: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-border-radius);
+  --mc-body-color: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-body-content-body-content-color);
+  --mc-body-ff: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-body-content-body-content-font-family);
+  --mc-body-fs: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-body-content-body-content-font-size);
+  --mc-body-fw: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-body-content-body-content-font-weight);
+  --mc-cta-gap: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-cta-gap);
+  --mc-header-gap: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-gap);
+  --mc-icon-w: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-icon-container-icons-width);
+  --mc-icon-h: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-icon-container-icons-height);
+  --mc-icon-color: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-icon-container-icons-icon-color);
+  --mc-title-color: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-text-container-title-title-color);
+  --mc-title-ff: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-text-container-title-title-font-family);
+  --mc-title-fs: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-text-container-title-title-font-size);
+  --mc-title-fw: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-text-container-title-title-font-weight);
+  --mc-sub-color: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-text-container-subtitle-subtitle-color);
+  --mc-sub-ff: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-text-container-subtitle-subtitle-font-family);
+  --mc-sub-fs: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-text-container-subtitle-subtitle-font-size);
+  --mc-sub-fw: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-header-text-container-subtitle-subtitle-font-weight);
+  --mc-pt: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-padding-top);
+  --mc-pr: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-padding-right);
+  --mc-pl: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-padding-left);
+  --mc-body-pt: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-padding-top);
+  --mc-body-pr: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-padding-right);
+  --mc-body-pb: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-padding-bottom);
+  --mc-body-pl: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-body-container-padding-left);
+  --mc-close-w: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-button-modal-close-width); --mc-close-h: var(--mng-modals-center-device-fold-fold-modal-modal-container-content-frame-button-modal-close-height);
+  --mc-card-w: auto;
+}
+.mngds-modals-center--mobile-scroll {
+  --mc-root-w: var(--mng-modals-center-device-mobilescroll-root-width);
+  --mc-root-h: var(--mng-modals-center-device-mobilescroll-root-height);
+  --mc-bg: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-background);
+  --mc-bc: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-border-color);
+  --mc-bw: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-border-width);
+  --mc-bs: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-border-style);
+  --mc-radius: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-border-radius);
+  --mc-gap: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-gap);
+  --mc-pb: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-padding-bottom);
+  --mc-body-bc: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-border-color);
+  --mc-body-bw: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-border-width);
+  --mc-body-bs: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-border-style);
+  --mc-body-radius: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-border-radius);
+  --mc-body-color: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-body-content-body-content-color);
+  --mc-body-ff: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-body-content-body-content-font-family);
+  --mc-body-fs: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-body-content-body-content-font-size);
+  --mc-body-fw: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-body-content-body-content-font-weight);
+  --mc-cta-gap: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-cta-gap);
+  --mc-header-gap: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-gap);
+  --mc-icon-w: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-icon-container-icons-width);
+  --mc-icon-h: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-icon-container-icons-height);
+  --mc-icon-color: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-icon-container-icons-icon-color);
+  --mc-title-color: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-text-container-title-title-color);
+  --mc-title-ff: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-text-container-title-title-font-family);
+  --mc-title-fs: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-text-container-title-title-font-size);
+  --mc-title-fw: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-text-container-title-title-font-weight);
+  --mc-sub-color: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-text-container-subtitle-subtitle-color);
+  --mc-sub-ff: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-text-container-subtitle-subtitle-font-family);
+  --mc-sub-fs: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-text-container-subtitle-subtitle-font-size);
+  --mc-sub-fw: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-header-text-container-subtitle-subtitle-font-weight);
+  --mc-pt: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-padding-top);
+  --mc-pr: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-padding-right);
+  --mc-pl: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-padding-left);
+  --mc-body-pt: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-padding-top);
+  --mc-body-pr: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-padding-right);
+  --mc-body-pb: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-padding-bottom);
+  --mc-body-pl: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-content-frame-body-container-padding-left);
+  --mc-close-w: var(--mng-modals-center-device-mobilescroll-controls-overlay-button-modal-close-width); --mc-close-h: var(--mng-modals-center-device-mobilescroll-controls-overlay-button-modal-close-height);
+  --mc-card-w: auto;
+}
+
+/* Screen: the 50% black overlay (base.root.background). Fixed over the viewport (below `offsetTop`), or
+   in flow at the Figma Device size with `inline` (previews, design canvases). */
+.mngds-modals-center {
+  box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: var(--mc-root-pt, 0) var(--mc-root-pr, 0) var(--mc-root-pb, 0) var(--mc-root-pl, 0);
+  background: var(--mng-modals-center-base-root-background);
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000; overflow-y: auto;
+}
+.mngds-modals-center--inline { position: relative; z-index: auto; width: var(--mc-root-w); height: var(--mc-root-h); max-width: 100%; overflow: hidden; }
+/* Desktop / Tablets: 444px card, centered. Mobile / Fold: screen width minus the 24px root padding. */
+.mngds-modals-center__card { box-sizing: border-box; width: var(--mc-card-w); max-width: 100%; flex-shrink: 0; margin: auto 0; }
+.mngds-modals-center--mobile .mngds-modals-center__card, .mngds-modals-center--fold .mngds-modals-center__card { align-self: stretch; }
+/* Content Frame = the dialog card. */
+.mngds-modals-center__content {
+  position: relative; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: var(--mc-gap);
+  padding: var(--mc-pt) var(--mc-pr) var(--mc-pb) var(--mc-pl);
+  /* 1px border drawn inside (Figma inside stroke, as in the skeleton) so the padding stays measured from the edge. */
+  background: var(--mc-bg); border-radius: var(--mc-radius);
+  box-shadow: inset 0 0 0 var(--mc-bw) var(--mc-bc), var(--mng-shadow-lg); outline: none; text-align: left;
+}
+/* Close: centered on the card's top-right corner. */
+.mngds-modals-center__close { position: absolute; top: calc(var(--mc-close-h) / -2); right: calc(var(--mc-close-w) / -2); z-index: 1; width: var(--mc-close-w); height: var(--mc-close-h); }
+.mngds-modals-center__header { align-self: stretch; display: flex; flex-direction: row; align-items: baseline; gap: var(--mc-header-gap); }
+.mngds-modals-center__icon-container { display: flex; align-items: center; }
+.mngds-modals-center__icon { width: var(--mc-icon-w); height: var(--mc-icon-h); color: var(--mc-icon-color); display: inline-flex; align-items: center; justify-content: center; }
+.mngds-modals-center__text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
+.mngds-modals-center__title { margin: 0; font-family: var(--mc-title-ff); font-size: var(--mc-title-fs); font-weight: var(--mc-title-fw); line-height: normal; color: var(--mc-title-color); }
+.mngds-modals-center__subtitle { margin: 0; font-family: var(--mc-sub-ff); font-size: var(--mc-sub-fs); font-weight: var(--mc-sub-fw); line-height: normal; color: var(--mc-sub-color); }
+.mngds-modals-center__body {
+  align-self: stretch; box-sizing: border-box; display: flex; flex-direction: column; gap: var(--mng-spacing-200);
+  padding: var(--mc-body-pt) var(--mc-body-pr) var(--mc-body-pb) var(--mc-body-pl);
+  box-shadow: inset 0 0 0 var(--mc-body-bw) var(--mc-body-bc); border-radius: var(--mc-body-radius);
+}
+.mngds-modals-center__body-text { margin: 0; font-family: var(--mc-body-ff); font-size: var(--mc-body-fs); font-weight: var(--mc-body-fw); line-height: normal; color: var(--mc-body-color); white-space: pre-line; }
+.mngds-modals-center__message { align-self: stretch; }
+.mngds-modals-center__cta { align-self: stretch; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--mc-cta-gap); }
+
+/* MobileScroll: no top or bottom margin; the card scrolls inside the screen and the close button stays
+   8px from the top (Controls Overlay). */
+.mngds-modals-center--mobile-scroll { padding: 0; justify-content: flex-start; overflow: hidden; }
+.mngds-modals-center__scroller {
+  box-sizing: border-box; align-self: stretch; flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+  padding: var(--mng-modals-center-device-mobilescroll-mobile-modal-container-padding-top) var(--mng-modals-center-device-mobilescroll-mobile-padding-right) var(--mng-modals-center-device-mobilescroll-mobile-modal-container-padding-bottom) var(--mng-modals-center-device-mobilescroll-mobile-padding-left);
+}
+.mngds-modals-center__controls {
+  position: absolute; top: 0; right: 0; z-index: 2; display: flex; flex-direction: column; align-items: flex-end; pointer-events: none;
+  padding: var(--mng-modals-center-device-mobilescroll-controls-overlay-padding-top) var(--mng-modals-center-device-mobilescroll-controls-overlay-padding-right) 0 0;
+}
+.mngds-modals-center__controls > * { pointer-events: auto; }
+.mngds-modals-center--mobile-scroll .mngds-modals-center__close { position: static; }

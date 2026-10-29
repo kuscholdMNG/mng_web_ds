@@ -1,0 +1,38 @@
+<!-- @dsCard group="Core" height=735 subtitle="Figma: Tooltip · 4 variants (Placement × Type)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Tooltip</title>
+<style>
+  body{margin:0;padding:16px;background:var(--mng-color-gray-max);}
+  .demo-row{display:flex;flex-wrap:wrap;gap:var(--mng-spacing-500);align-items:flex-start;padding:var(--mng-spacing-500) var(--mng-spacing-200) 0;}
+  .demo-text{display:inline-flex;align-items:center;gap:var(--mng-spacing-050);font-family:var(--mng-font-family-noto-sans);font-size:var(--mng-font-size-14);color:var(--mng-color-gray-min);}
+  .demo-trigger{display:inline-flex;align-items:center;justify-content:center;margin:0;padding:0;border:0;background:none;color:var(--mng-color-gray-min);cursor:pointer;}
+  .demo-trigger:focus-visible{outline:2px solid var(--mng-color-gray-black);outline-offset:1px;}
+  .demo-stage{min-height:110px;}
+</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var items = [];
+  ['Top', 'Bottom'].forEach(function (pl) { ['Tooltip', 'Toggletip'].forEach(function (ty) {
+    items.push({ label: pl + ' / ' + ty, node: h(NS.Tooltip, { placement: pl, type: ty }) });
+  }); });
+  function infoButton(label) {
+    return h('button', { type: 'button', className: 'demo-trigger', 'aria-label': label }, h(NS.Icon, { name: 'info', size: 16 }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+    h(I.SpecimenSection, { title: 'Placement × Type',
+      note: 'Tooltip: a short label for an icon-only control, shown on hover or focus (not on touch). Toggletip: an explanation opened by clicking or tapping an info button, with Button In-Line Close (Show Close). The 12×6 caret points at the trigger.' },
+      h(I.Specimen, { items: items })),
+    h(I.SpecimenSection, { title: 'With a trigger',
+      note: 'Pass the trigger element: the popup centers on it 8px from the caret tip and flips when there is no room. Left: Type=Toggletip, Placement=Bottom on the For You feed header info button (shown open; click, Esc, the close button or a click outside toggles it). Right: Type=Tooltip on an icon-only button (hover or focus it).' },
+      h('div', { className: 'demo-row' },
+        h('div', { className: 'demo-stage' },
+          h('span', { className: 'demo-text' }, 'Based on what you read.',
+            h(NS.Tooltip, { type: 'Toggletip', placement: 'Bottom', defaultOpen: true, flip: false, trigger: infoButton('About this feed') }))),
+        h('div', { className: 'demo-stage' },
+          h(NS.Tooltip, { type: 'Tooltip', placement: 'Top', label: 'About this feed', trigger: infoButton('About this feed') }))))));
+</script>
+</body>
+</html>

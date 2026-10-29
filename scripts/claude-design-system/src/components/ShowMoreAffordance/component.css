@@ -1,0 +1,36 @@
+/* Rule and notch edge gray per theme (spec: production values, not tokens): Bold Coastal = the component token. */
+:root, [data-theme="bold-coastal"] { --mngds-show-more-affordance-edge: var(--mng-show-more-affordance-base-rule-background); }
+[data-theme="measured-vibrant"] { --mngds-show-more-affordance-edge: #c8c4c0; }
+[data-theme="modern-earthy"] { --mngds-show-more-affordance-edge: #ddd8d5; }
+
+.mngds-show-more-affordance {
+  position: relative; box-sizing: border-box; display: block; width: 100%; margin: 0; border: 0; border-radius: 0;
+  background: none; font: inherit; text-align: center; text-decoration: none; cursor: pointer; outline: none;
+  padding: calc(var(--mng-show-more-affordance-base-rule-height) + 40px) 0 40px; /* 1 + 40 + 16 + 40 = 97px */
+}
+.mngds-show-more-affordance__rule {
+  position: absolute; left: 0; right: 0; top: 0; height: var(--mng-show-more-affordance-base-rule-height);
+  background: var(--mngds-show-more-affordance-edge);
+}
+/* Production's ::before: left 50%, rotate(-45deg) translateY(-50%). That lands the notch's center
+   36/2 x (1 - cos 45deg) = 5.27px right of center (the spec's "about 5px"); `top` puts the center on the rule. */
+.mngds-show-more-affordance__notch {
+  position: absolute; box-sizing: border-box; left: 50%;
+  top: calc(var(--mng-show-more-affordance-base-rule-height) / 2 - var(--mng-show-more-affordance-base-notch-height) / 2 * (1 - 0.70711));
+  width: var(--mng-show-more-affordance-base-notch-width); height: var(--mng-show-more-affordance-base-notch-height);
+  background: var(--mng-show-more-affordance-base-notch-background);
+  border-style: var(--mng-show-more-affordance-base-notch-border-style); border-color: var(--mngds-show-more-affordance-edge);
+  border-width: 0 0 var(--mng-show-more-affordance-base-notch-border-bottom-width) var(--mng-show-more-affordance-base-notch-border-left-width);
+  transform: rotate(-45deg) translateY(-50%);
+}
+.mngds-show-more-affordance__label {
+  display: block; position: relative;
+  font-family: var(--mng-show-more-affordance-base-label-font-family);
+  font-size: var(--mng-show-more-affordance-base-label-font-size);
+  font-weight: var(--mng-show-more-affordance-base-label-font-weight);
+  line-height: var(--mng-show-more-affordance-base-label-line-height);
+  color: var(--mng-show-more-affordance-base-label-color); text-transform: uppercase; text-align: center;
+}
+/* Production states (not Figma variants): hover label #0A0908; keyboard focus 2px black outline, 5px offset. */
+.mngds-show-more-affordance:hover .mngds-show-more-affordance__label, .mngds-show-more-affordance.is-hover .mngds-show-more-affordance__label { color: #0a0908; }
+.mngds-show-more-affordance:focus-visible, .mngds-show-more-affordance.is-focus { outline: 2px solid var(--mng-color-gray-black); outline-offset: 5px; }

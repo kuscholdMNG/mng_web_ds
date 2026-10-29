@@ -1,0 +1,24 @@
+<!-- @dsCard group="Core" height=900 subtitle="Figma: Button Primary · 24 variants (Breakpoint × Icon × State)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>ButtonPrimary</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var states = ['Default', 'Hover', 'Pressed', 'InFocus'], icons = ['None', 'Left', 'Right'];
+  function section(bp) {
+    var items = [];
+    icons.forEach(function (ic) { states.forEach(function (st) {
+      items.push({ label: bp + ' / ' + ic + ' / ' + st, width: bp === 'Mobile' ? 323.75 + 32 : undefined,
+        node: h(NS.ButtonPrimary, { breakpoint: bp, icon: ic, state: st, label: 'Primary Button', tabIndex: undefined }) });
+    }); });
+    return h(I.SpecimenSection, { key: bp, title: 'Breakpoint=' + bp,
+      note: bp === 'Desktop' ? '640px and up: the button hugs its label inside an 8px side margin.' : '639px and below: the button fills its container (shown at the 323.75px Figma width).' },
+      h(I.Specimen, { items: items }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null, section('Desktop'), section('Mobile')));
+</script>
+</body>
+</html>

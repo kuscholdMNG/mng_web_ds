@@ -1,0 +1,5 @@
+- Figma: the InLineMessage set's DashSubsNonSub variants (display name "InLineMessage DashSubsNonSub"); only Device=Desktop is exported with tokens.
+- Mobile and FOLD have no component tokens: width 328 / 308px, 16px padding (`spacing/200`) and 8px gaps (`spacing/100`) come from the spec's Behavior table and the documentation PNG.
+- Button label "Subscribe Now" comes from the documentation PNG (the skeleton's Button Primary instance has no label); title and description defaults are the skeleton's sample text.
+- The Icon and Title frame is a fixed 296px in Figma with a no-wrap title; here it hugs the title and wraps within the panel, so longer titles (the For You copy) don't overflow.
+- Title contrast: `color/feedback/medium` on `color/gray/600` is 4.51:1 in all three themes (passes AA by 0.01).

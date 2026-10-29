@@ -1,0 +1,4 @@
+- The bar is `width: 100%` (spec: "Bar: full width"); the root-width tokens (1280 / 360) are the Figma frame widths and are not applied. The nav uses the 1200px token as `max-width` (spec: "max width 1200px, centered").
+- The 1px bottom rule has no height token; 1px is from the skeleton (Bottom Border, `top: 41px; height: 1px`). The nav sits above it so the Active tab's 2px underline overlaps the rule, as the spec says.
+- `homepage-tabs.base.nav.tab-list.tab.width` (85px), `.tab.height` (42px) and `.tab.icon-color` are the exported sizes and placeholder color of the nested instances; the tabs hug their labels instead (85px is the "For You" tab's hug width).
+- No arrow-key navigation: the spec lists only the tablist roles (`ul role=tablist`, `li role=presentation`, `aria-selected`, `aria-controls`). Every tab stays in the Tab order and is selected by click / Enter / Space.

@@ -1,0 +1,29 @@
+.mngds-pop-up-modal-close {
+  position: relative; box-sizing: border-box; flex-shrink: 0; margin: 0; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: var(--mng-pop-up-modal-close-base-root-width); height: var(--mng-pop-up-modal-close-base-root-height);
+  border: var(--mng-pop-up-modal-close-base-root-border-width) var(--mng-pop-up-modal-close-base-root-border-style) var(--mng-pop-up-modal-close-state-default-root-border-color);
+  border-radius: var(--mng-pop-up-modal-close-base-root-border-radius);
+  background: var(--mng-pop-up-modal-close-state-default-root-background);
+  cursor: pointer; font: inherit; outline: none;
+}
+.mngds-pop-up-modal-close__icon {
+  width: var(--mng-pop-up-modal-close-base-icon-width); height: var(--mng-pop-up-modal-close-base-icon-height);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--mng-pop-up-modal-close-base-icon-icon-color);
+}
+.mngds-pop-up-modal-close:hover, .mngds-pop-up-modal-close.is-hover {
+  background: var(--mng-pop-up-modal-close-state-hover-root-background);
+  border-color: var(--mng-pop-up-modal-close-state-hover-root-border-color);
+}
+.mngds-pop-up-modal-close:active, .mngds-pop-up-modal-close.is-pressed {
+  background: var(--mng-pop-up-modal-close-state-pressed-root-background);
+  border-color: var(--mng-pop-up-modal-close-state-pressed-root-border-color);
+}
+/* InFocus keeps the Default fill and border and adds the ring 1px outside (never a size change). */
+.mngds-pop-up-modal-close:focus-visible, .mngds-pop-up-modal-close.is-infocus {
+  background: var(--mng-pop-up-modal-close-state-infocus-root-background);
+  border-color: var(--mng-pop-up-modal-close-state-infocus-root-border-color);
+  outline: var(--mng-pop-up-modal-close-state-infocus-focus-ring-border-width) var(--mng-pop-up-modal-close-state-infocus-focus-ring-border-style) var(--mng-pop-up-modal-close-state-infocus-focus-ring-border-color);
+  outline-offset: 1px;
+}

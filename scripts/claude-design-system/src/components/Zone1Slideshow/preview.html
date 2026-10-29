@@ -1,0 +1,35 @@
+<!-- @dsCard group="WordPress Elements" height=3050 subtitle="Figma: Zone 1 Slideshow · 3 variants (Breakpoint)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Zone1Slideshow</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var Z = NS.Zone1Slideshow;
+  var CAPTION = 'Los Angeles Chargers quarterback Justin Herbert, right, sits on the ground after being sacked and losing the ball on the last play of the game as members of the Denver Broncos celebrate during the second half of an NFL football game.';
+  function item(label, props) { return { label: label, white: true, node: h(Z, Object.assign({ tabIndex: undefined }, props)) }; }
+  var slides = [1, 2, 3].map(function () { return { caption: CAPTION, credit: 'AP Photo/Gregory Bull', imageAlt: 'Justin Herbert sits on the field after being sacked' }; });
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+    h(I.SpecimenSection, { title: 'Breakpoint', note: 'Desktop 356 (large controls, 800px and up); Tablet 358 (the 768 template: small controls); Mobile 340 (small controls). Image area 16:9; Show Credit off by default.' },
+      h(I.Specimen, { items: [
+        item('Breakpoint=Desktop', { breakpoint: 'Desktop' }),
+        item('Breakpoint=Tablet', { breakpoint: 'Tablet' }),
+        item('Breakpoint=Mobile', { breakpoint: 'Mobile' })
+      ] })),
+    h(I.SpecimenSection, { title: 'Show Credit, controls and Slideshow Arrow focus', note: 'Credit: Noto Sans Bold 11, color/gray/200. Controls follow production\u2019s 800px breakpoint: from 800 to 1023px a Tablet-size slideshow uses the large controls; from 640 to 799px a Desktop-size one uses the small ones. Arrow hover has no visual change; keyboard focus is a 2px color/gray/max outline 3px outside the button, at its 75% opacity (buttons labelled "Previous" / "Next").' },
+      h(I.Specimen, { items: [
+        item('Desktop / Show Credit / Arrows Size=Large, State=Focus', { breakpoint: 'Desktop', showCredit: true, arrowState: 'Focus' }),
+        item('Mobile / Show Credit / Arrows Size=Small, State=Focus', { breakpoint: 'Mobile', showCredit: true, arrowState: 'Focus' }),
+        item('Tablet / controls=Large (800\u20131023px)', { breakpoint: 'Tablet', controls: 'Large' }),
+        item('Desktop / controls=Small (640\u2013799px)', { breakpoint: 'Desktop', controls: 'Small' })
+      ] })),
+    h(I.SpecimenSection, { title: 'Live: slides + fill', note: 'Three slides; Previous on slide 1 loops to the last. Drag or swipe the image to page. The count is announced (aria-live="polite"). fill: the slideshow fills its column (shown 500px) and the image area keeps 16:9.' },
+      h(I.Specimen, { items: [
+        { label: 'slides (3), Desktop', white: true, node: h(Z, { breakpoint: 'Desktop', slides: slides, showCredit: true }) },
+        { label: 'fill, Desktop controls (500px column)', white: true, width: 500 + 32, node: h(Z, { breakpoint: 'Desktop', fill: true }) }
+      ] }))));
+</script>
+</body>
+</html>

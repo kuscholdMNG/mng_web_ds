@@ -1,0 +1,6 @@
+- Figma set name is **Hyperlink** (6282:5568); the export folder, tokens and classes use **Non-Button Hyperlink** (`non-button-hyperlink`, `--mng-non-button-hyperlink-*`, `.mngds-non-button-hyperlink`).
+- Default height: the tokens give `padding-bottom` 1px plus a 1px `border-bottom`, which renders 24px (16.5px Noto Sans line + 1 + 1); Figma reports 133×23 because its stroke does not add to the frame size. Kept the token values (as the skeleton does), so the dashes sit 1px lower than in the PNG.
+- InFocus box: built as in the skeleton, a 2px `border` (token width/style, `base.root.border-color`, `radius/sm`) that is part of the layout (spec: "the focus box is part of the layout"). In the Figma PNG the 2px stroke is centered on the 133×25 frame edge and overlaps the first/last glyphs; here it sits outside the text, so the InFocus link is 4px wider and 4px taller than Default rather than only 2px taller.
+- Chrome draws a 1px `dashed` border with 3px dashes; Figma's dash pattern is finer (about 1px dashes), so the rest-state underline looks coarser than in the PNG.
+- Rendered as an `inline-flex` box (hugs its text, as in Figma) so the InFocus nesting works; a long link wraps inside its own box, not across the paragraph's lines.
+- Contrast: `color/theme/primary` text on white 5.45 / 6.87 / 5.20 (Bold Coastal / Measured Vibrant / Modern Earthy), pass.

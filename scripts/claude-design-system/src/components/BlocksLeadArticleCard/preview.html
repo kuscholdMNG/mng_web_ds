@@ -1,0 +1,30 @@
+<!-- @dsCard group="WordPress Elements" height=5415 subtitle="Figma: Blocks Lead Article Card · 12 variants (State × Device × Gallery)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>BlocksLeadArticleCard</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var stage = { Mobile: 340 + 32, Tablet: 391 + 358 + 32 + 32, Desktop: 706 + 32 };
+  var notes = {
+    Mobile: 'Below 640px: one column, 25/29 headline. Image under the headline; slideshow after the byline; 8px gaps; 1px color/gray/500 rule 20px below the byline. Built at 340px.',
+    Tablet: '640px and up (768 template): two 358px columns, 32px apart. The 391px image overflows its column (spec known issue); the slideshow fills it.',
+    Desktop: '1024px and up: text 295 | image 391 (20px gap) or slideshow 356 (706px wide).'
+  };
+  function section(dev) {
+    var items = [];
+    ['Image', 'Slideshow'].forEach(function (g) { ['Default', 'Hover'].forEach(function (st) {
+      items.push({ label: st + ' / ' + dev + ' / ' + g, width: stage[dev],
+        node: h(NS.BlocksLeadArticleCard, { device: dev, gallery: g, state: st }) });
+    }); });
+    return h(I.SpecimenSection, { key: dev, title: 'Device=' + dev, note: notes[dev] }, h(I.Specimen, { items: items }));
+  }
+  var focus = h(I.SpecimenSection, { title: 'Focus (not a Figma variant)', note: 'Keyboard focus on the headline link: 2px color/gray/black outline, 1px out (the Blocks Card style).' },
+    h(I.Specimen, { items: [{ label: 'Focus / Mobile / Image', width: 340 + 32,
+      node: h(NS.BlocksLeadArticleCard, { device: 'Mobile', state: 'Focus', href: '#' }) }] }));
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null, section('Desktop'), section('Tablet'), section('Mobile'), focus));
+</script>
+</body>
+</html>

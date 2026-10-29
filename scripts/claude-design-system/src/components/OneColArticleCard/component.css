@@ -1,0 +1,64 @@
+/* Root: color/gray/max fill, one column with 8px gaps, 16px bottom padding. Fills its column (built at 296px). */
+.mngds-1col-article-card {
+  box-sizing: border-box; display: flex; flex-direction: column; align-items: flex-start; width: 100%; min-width: 0; margin: 0;
+  gap: var(--mng-1col-article-card-base-root-gap);
+  padding: 0 0 var(--mng-1col-article-card-base-root-padding-bottom) 0;
+  background: var(--mng-1col-article-card-base-root-background);
+}
+/* Image: Standard 4:3 (296 x 222), Media Lead 16:9 (296 x 166.5) */
+.mngds-1col-article-card__image { align-self: stretch; flex-shrink: 0; aspect-ratio: 4 / 3; }
+.mngds-1col-article-card--media-lead .mngds-1col-article-card__image { aspect-ratio: 16 / 9; }
+.mngds-1col-article-card__img { width: 100%; height: 100%; }
+/* Subscriber badge (Article Status Badge, Type=Subscriber; legacy export): color/theme/primary chip, white Noto Sans SemiBold 13 caps */
+.mngds-1col-article-card__badge {
+  box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  padding: 2px 5px; background: var(--mng-color-theme-primary); color: var(--mng-color-gray-max);
+  font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-13); font-weight: var(--mng-font-weight-semibold);
+  line-height: 22.65px; text-transform: uppercase; white-space: nowrap;
+}
+/* Headline: Standard = Editorial/Titles/CardQuaternary (19/24, -0.035em); Media Lead = Editorial/Titles/TitleMedia (29/33, -0.04em) */
+.mngds-1col-article-card__headline {
+  margin: 0; align-self: stretch; text-align: left; min-width: 0;
+  font-family: var(--mng-editorial-titles-card-quaternary-font-family);
+  font-size: var(--mng-editorial-titles-card-quaternary-font-size);
+  font-weight: var(--mng-editorial-titles-card-quaternary-font-weight);
+  line-height: var(--mng-editorial-titles-card-quaternary-line-height);
+  letter-spacing: var(--mng-editorial-titles-card-quaternary-letter-spacing);
+  color: var(--mng-1col-article-card-base-headline-container-article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block-color);
+}
+.mngds-1col-article-card--media-lead .mngds-1col-article-card__headline {
+  font-family: var(--mng-editorial-titles-title-media-font-family);
+  font-size: var(--mng-editorial-titles-title-media-font-size);
+  font-weight: var(--mng-editorial-titles-title-media-font-weight);
+  line-height: var(--mng-editorial-titles-title-media-line-height);
+  letter-spacing: var(--mng-editorial-titles-title-media-letter-spacing);
+}
+.mngds-1col-article-card__link { color: inherit; text-decoration: none; }
+/* Excerpt: Standard = Editorial/Body/ExcerptCompact (15/19); Media Lead = Editorial/Body/Excerpt (15/21); color/gray/100 */
+.mngds-1col-article-card__excerpt {
+  margin: 0; align-self: stretch; text-align: left; min-width: 0;
+  font-family: var(--mng-editorial-body-excerpt-compact-font-family);
+  font-size: var(--mng-editorial-body-excerpt-compact-font-size);
+  font-weight: var(--mng-editorial-body-excerpt-compact-font-weight);
+  line-height: var(--mng-editorial-body-excerpt-compact-line-height);
+  letter-spacing: var(--mng-editorial-body-excerpt-compact-letter-spacing);
+  color: var(--mng-1col-article-card-base-excerpt-container-vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail-color);
+}
+.mngds-1col-article-card--media-lead .mngds-1col-article-card__excerpt {
+  font-family: var(--mng-editorial-body-excerpt-font-family);
+  font-size: var(--mng-editorial-body-excerpt-font-size);
+  font-weight: var(--mng-editorial-body-excerpt-font-weight);
+  line-height: var(--mng-editorial-body-excerpt-line-height);
+  letter-spacing: var(--mng-editorial-body-excerpt-letter-spacing);
+}
+/* Meta: Noto Sans Regular 13, line height normal, color/gray/200 */
+.mngds-1col-article-card__meta {
+  align-self: stretch; text-align: left;
+  font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-13); font-weight: var(--mng-font-weight-regular);
+  line-height: normal; color: var(--mng-color-gray-200);
+}
+/* Bottom rule (a 0-height Figma line with a 1px stroke) */
+.mngds-1col-article-card__rule {
+  align-self: stretch; flex-shrink: 0; height: var(--mng-1col-article-card-base-bottom-border-line-height);
+  border-top: var(--mng-1col-article-card-base-bottom-border-line-border-width) var(--mng-1col-article-card-base-bottom-border-line-border-style) var(--mng-1col-article-card-base-bottom-border-line-border-color);
+}

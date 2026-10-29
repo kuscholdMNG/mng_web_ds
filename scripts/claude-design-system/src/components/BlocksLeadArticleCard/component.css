@@ -1,0 +1,67 @@
+/* Root: color/gray/max fill, 16px bottom padding, no border. Tablet/Desktop: two columns; Mobile: one column.
+   Token names for the headline and excerpt carry the Figma layer names (the sample text). */
+.mngds-blocks-lead-article-card {
+  box-sizing: border-box; display: flex; margin: 0; min-width: 0;
+  background: var(--mng-blocks-lead-article-card-base-root-background); padding: 0 0 var(--mng-blocks-lead-article-card-base-root-padding-bottom) 0;
+}
+.mngds-blocks-lead-article-card--desktop { flex-direction: row; align-items: flex-start; justify-content: space-between; width: var(--mng-blocks-lead-article-card-device-desktop-root-width); max-width: 100%; gap: var(--mng-blocks-lead-article-card-device-desktop-root-gap); }
+.mngds-blocks-lead-article-card--tablet { flex-direction: row; align-items: flex-start; width: max-content; max-width: 100%; gap: var(--mng-blocks-lead-article-card-device-tablet-root-gap); }
+.mngds-blocks-lead-article-card--mobile { flex-direction: column; align-items: stretch; width: 100%; gap: var(--mng-blocks-lead-article-card-device-mobile-root-gap); }
+.mngds-blocks-lead-article-card__col1 { display: flex; flex-direction: column; align-items: stretch; flex-shrink: 0; min-width: 0; gap: var(--mng-blocks-lead-article-card-base-1st-col-gap); }
+.mngds-blocks-lead-article-card--desktop .mngds-blocks-lead-article-card__col1 { width: var(--mng-blocks-lead-article-card-device-desktop-1st-col-width); }
+.mngds-blocks-lead-article-card--tablet .mngds-blocks-lead-article-card__col1 { width: var(--mng-blocks-lead-article-card-device-tablet-1st-col-width); }
+.mngds-blocks-lead-article-card__col2 { display: flex; flex-direction: column; align-items: flex-start; flex-shrink: 0; }
+.mngds-blocks-lead-article-card--desktop.mngds-blocks-lead-article-card--image .mngds-blocks-lead-article-card__col2 { width: var(--mng-blocks-lead-article-card-device-desktop-gallery-image-2nd-col-width); height: var(--mng-blocks-lead-article-card-base-2nd-col-height); }
+.mngds-blocks-lead-article-card--desktop.mngds-blocks-lead-article-card--slideshow .mngds-blocks-lead-article-card__col2 { width: var(--mng-blocks-lead-article-card-device-desktop-gallery-slideshow-2nd-col-width); }
+.mngds-blocks-lead-article-card--tablet.mngds-blocks-lead-article-card--image .mngds-blocks-lead-article-card__col2 { width: var(--mng-blocks-lead-article-card-device-tablet-gallery-image-2nd-col-width); height: var(--mng-blocks-lead-article-card-base-2nd-col-height); }
+.mngds-blocks-lead-article-card--tablet.mngds-blocks-lead-article-card--slideshow .mngds-blocks-lead-article-card__col2 { width: var(--mng-blocks-lead-article-card-device-tablet-gallery-slideshow-2nd-col-width); }
+/* Image: 391 x 271 at 640px and up (on Tablet it overflows the 358px column, as in Figma: spec known issue);
+   Mobile: full width x 235.65. */
+.mngds-blocks-lead-article-card__col2 .mngds-blocks-lead-article-card__image { flex-shrink: 0; width: var(--mng-blocks-lead-article-card-base-2nd-col-article-image-placeholder-width); height: var(--mng-blocks-lead-article-card-base-2nd-col-article-image-placeholder-height); }
+.mngds-blocks-lead-article-card--mobile .mngds-blocks-lead-article-card__image { flex-shrink: 0; width: 100%; height: var(--mng-blocks-lead-article-card-base-featured-image-article-image-placeholder-height); }
+.mngds-blocks-lead-article-card__img { width: 100%; height: 100%; }
+.mngds-blocks-lead-article-card__slideshow { align-self: stretch; display: flex; flex-direction: column; min-width: 0; }
+.mngds-blocks-lead-article-card--desktop .mngds-blocks-lead-article-card__slideshow-fallback { height: var(--mng-blocks-lead-article-card-device-desktop-2nd-col-zone-1-slideshow-height); }
+.mngds-blocks-lead-article-card--tablet .mngds-blocks-lead-article-card__slideshow-fallback { height: var(--mng-blocks-lead-article-card-device-tablet-2nd-col-zone-1-slideshow-height); }
+.mngds-blocks-lead-article-card--mobile .mngds-blocks-lead-article-card__slideshow-fallback { height: var(--mng-blocks-lead-article-card-base-slideshow-zone-1-slideshow-height); }
+/* Headline group: kicker 4px above the headline */
+.mngds-blocks-lead-article-card__headline-group { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; gap: var(--mng-blocks-lead-article-card-base-1st-col-headline-group-gap); }
+.mngds-blocks-lead-article-card--mobile .mngds-blocks-lead-article-card__headline-group { gap: var(--mng-blocks-lead-article-card-device-mobile-headline-group-gap); }
+/* Headline: Noto Serif Bold 29/33 at 640px and up, 25/29 below; -0.03em (spec prose; the token's -3px is a percent misread). */
+.mngds-blocks-lead-article-card__headline {
+  margin: 0; align-self: stretch; text-align: left; letter-spacing: -0.03em;
+  font-family: var(--mng-blocks-lead-article-card-base-1st-col-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-font-family); font-size: var(--mng-blocks-lead-article-card-base-1st-col-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-font-size); font-weight: var(--mng-blocks-lead-article-card-base-1st-col-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-font-weight); line-height: var(--mng-blocks-lead-article-card-base-1st-col-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-line-height);
+  color: var(--mng-blocks-lead-article-card-state-default-1st-col-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-color);
+}
+.mngds-blocks-lead-article-card--mobile .mngds-blocks-lead-article-card__headline {
+  font-family: var(--mng-blocks-lead-article-card-device-mobile-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-font-family); font-size: var(--mng-blocks-lead-article-card-device-mobile-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-font-size); font-weight: var(--mng-blocks-lead-article-card-device-mobile-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-font-weight); line-height: var(--mng-blocks-lead-article-card-device-mobile-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-line-height);
+  color: var(--mng-blocks-lead-article-card-state-default-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-color);
+}
+.mngds-blocks-lead-article-card__link { display: block; color: inherit; text-decoration: none; outline: none; }
+/* Hover: the headline link turns color/theme/primary (prototype a:hover). */
+.mngds-blocks-lead-article-card__link:hover, .mngds-blocks-lead-article-card.is-hover .mngds-blocks-lead-article-card__headline { color: var(--mng-blocks-lead-article-card-state-hover-1st-col-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-color); }
+.mngds-blocks-lead-article-card--mobile .mngds-blocks-lead-article-card__link:hover, .mngds-blocks-lead-article-card--mobile.is-hover .mngds-blocks-lead-article-card__headline { color: var(--mng-blocks-lead-article-card-state-hover-headline-group-headline-container-norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment-color); }
+/* Focus (not drawn in Figma; spec: the Blocks Card's outline on the headline link) */
+.mngds-blocks-lead-article-card__link:focus-visible, .mngds-blocks-lead-article-card__link.is-focus { outline: 2px solid var(--mng-color-gray-black); outline-offset: 1px; }
+/* Excerpt: Noto Sans 15/19, color/gray/100 */
+.mngds-blocks-lead-article-card__excerpt {
+  margin: 0; text-align: left; min-width: 0;
+  font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-blocks-lead-article-card-base-1st-col-excerpt-container-the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16-font-size); font-weight: var(--mng-blocks-lead-article-card-base-1st-col-excerpt-container-the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16-font-weight); line-height: var(--mng-blocks-lead-article-card-base-1st-col-excerpt-container-the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16-line-height); color: var(--mng-blocks-lead-article-card-base-1st-col-excerpt-container-the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16-color);
+}
+.mngds-blocks-lead-article-card--mobile .mngds-blocks-lead-article-card__excerpt {
+  font-size: var(--mng-blocks-lead-article-card-device-mobile-excerpt-container-the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16-font-size); font-weight: var(--mng-blocks-lead-article-card-device-mobile-excerpt-container-the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16-font-weight); line-height: var(--mng-blocks-lead-article-card-device-mobile-excerpt-container-the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16-line-height); color: var(--mng-blocks-lead-article-card-device-mobile-excerpt-container-the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16-color);
+}
+/* Byline: Article Author + Article Timestamp side by side, 12px apart */
+.mngds-blocks-lead-article-card__byline {
+  display: flex; flex-direction: row; align-items: center; min-width: 0; overflow: hidden;
+  gap: var(--mng-blocks-lead-article-card-base-1st-col-byline-gap); padding-top: var(--mng-blocks-lead-article-card-base-1st-col-byline-padding-top);
+}
+.mngds-blocks-lead-article-card__byline > * { flex-shrink: 0; }
+.mngds-blocks-lead-article-card--mobile .mngds-blocks-lead-article-card__byline {
+  gap: var(--mng-blocks-lead-article-card-device-mobile-byline-gap); padding: var(--mng-blocks-lead-article-card-device-mobile-byline-padding-top) 0 var(--mng-blocks-lead-article-card-device-mobile-byline-padding-bottom) 0;
+}
+/* Mobile bottom rule (a 0-height Figma line with a 1px stroke) */
+.mngds-blocks-lead-article-card__rule {
+  flex-shrink: 0; height: var(--mng-blocks-lead-article-card-device-mobile-bottom-border-line-height);
+  border-top: var(--mng-blocks-lead-article-card-device-mobile-bottom-border-line-border-width) var(--mng-blocks-lead-article-card-device-mobile-bottom-border-line-border-style) var(--mng-blocks-lead-article-card-device-mobile-bottom-border-line-border-color);
+}

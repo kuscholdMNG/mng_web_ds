@@ -1,0 +1,28 @@
+<!-- @dsCard group="Core" height=1600 subtitle="Icons: production icomoon font, 171 icons in 6 categories (tokens/icons/icons.json)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Icon</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var Icon = NS.Icon;
+  var flags = { 'production-class-wrong-glyph': 'production class shows another glyph', 'no-production-class': 'no production class yet' };
+  function Sheet() {
+    return h('div', { className: 'mngds-icon-sheet' }, Object.keys(Icon.categories).map(function (cat) {
+      var names = Icon.categories[cat];
+      return h(I.SpecimenSection, { key: cat, title: cat + ' (' + names.length + ')' },
+        h('div', { className: 'mngds-icon-sheet__grid' }, names.map(function (n) {
+          var m = Icon.meta[n] || {};
+          return h('div', { key: n, className: 'mngds-icon-sheet__cell', title: m.description || n },
+            h(Icon, { name: n, size: 24 }),
+            h('span', { className: 'mngds-icon-sheet__name' }, n),
+            flags[m.status] ? h('span', { className: 'mngds-icon-sheet__flag' }, flags[m.status]) : null);
+        })));
+    }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Sheet));
+</script>
+</body>
+</html>
