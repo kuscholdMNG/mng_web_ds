@@ -25,6 +25,7 @@ We are building a full design system based on in-production websites in our foot
 - MNG Web Design System (main library): `jFHYqhZbJjvWQmDI4myCsd`
 - WordPress Elements (page templates, Masthead): `b1iZxkFwtAYq9rElmnCAzd`
 - Reader Dashboard v2.0: `PhXogWaQcnNSnQqxyRu4b2`. Part of the MNG Web Design System; not added to the token files yet.
+- Newspaper Logos, Favicons, User Pics: `oXaN4tEoa4GsH4x7kWpAFZ`. Holds the newspaper `Logo` component set for now (Karl, 2026-10-08).
 - CRUX Style Library: `uwKNDnGRH0otKDrgYiWmUw`. Read-only. Never edit.
 - Never move components between files, because live instances depend on them. Renaming is safe. Value changes need Karl's review.
 - Never use `figma_arrange_component_set` or `autoArrange: true`. It once deleted the Button / Primary set. Position components by hand.

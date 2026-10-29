@@ -21,6 +21,7 @@ logos/
 - **124 publications.** 83 of the 97 publications in `tokens/colors/mng-colors-sites.csv` have a logo (`in_color_tokens: true` in the manifest). The other 41 are sub-market weeklies that only exist in the PageSuite set (Alameda Journal, Almaden Resident, Berkeley Voice and so on); they're kept because they came free with the source.
 - **14 color-token publications have no logo yet.** See "Missing" below.
 - **3 placeholder brands × 4 layouts × 2 colors** (24 files), from the main Figma file's "FAKE NEWSPAPER LOGOS" set (`jFHYqhZbJjvWQmDI4myCsd`, node `3051:2728`). Use these in mock-ups and templates instead of real mastheads.
+- **Figma component** (2026-10-29): the `Logo` component set (`389:385`) in Newspaper Logos, Favicons, User Pics (`oXaN4tEoa4GsH4x7kWpAFZ`, page `339:2`), built from these SVGs: Publication × Layout × Color (Black / White), 190 variants, covering the 83 color-token publications and the 3 placeholder brands. The 41 other publications aren't in Figma yet. If you rebuild an SVG, rebuild its Figma variant too.
 
 ## How the files are built
 

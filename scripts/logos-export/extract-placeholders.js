@@ -4,7 +4,7 @@
 // Save the result as scripts/logos-export/figma-placeholders.json (build-logos.py reshapes it the same
 // way as the committed file: brands -> layouts -> paths) and rerun build-logos.py.
 // Layout names: Masthead -> horizontal, StackedWide -> stacked, StackedTall -> stacked-tall,
-// Square -> lettermark. Fakeville's light square frame is named 'FakevilleDailyNews-Master-02 1'.
+// Square -> lettermark. (Fakeville's square frame was 'FakevilleDailyNews-Master-02 1' until 2026-10-29.)
 const ids = {
   'fakeville-daily-news': { horizontal: '3050:2313', stacked: '3050:2353', 'stacked-tall': '3050:2394', lettermark: '3050:2439' },
   'newspaper-town-times': { horizontal: '3050:2445', stacked: '3050:2485', 'stacked-tall': '3050:2525', lettermark: '3050:2565' },
