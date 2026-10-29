@@ -23,6 +23,7 @@ writes `<out>/project/` in the Design System artifact's file format, plus `<out>
 ## Hand-written sources (`src/`)
 
 - `README.md`: the system's brand book (usage rules). `{{COMPONENT_TABLE}}`, `{{NAMESPACE}}`, `{{REF}}` are filled in.
+- `inventory.json`: every element and component, present and future (from the Figma libraries), with its status and the date it was last updated in Claude; rendered as the README's Inventory section. The build stops if a built component isn't listed.
 - `token-notes.json`: usage notes for tokens; the build adds which components use each token and contrast ratios.
 - `runtime.js`, `base.css`, `index.d.ts`: shared runtime (`h`, `cx`, `slug`, `stateClass`, `rest`, `Icon`, `ArticleImage`, `Specimen`) and base styles.
 - `components/<Identifier>/`: one folder per component:

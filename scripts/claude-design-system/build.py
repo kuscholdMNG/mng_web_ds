@@ -49,7 +49,6 @@ COMPONENTS = [
     ("non-button-hyperlink", "Hyperlink", "Hyperlink", "Core"),
     ("tooltip", "Tooltip", "Tooltip", "Core"),
     ("modals-center", "ModalsCenter", "ModalsCenter", "Core"),
-    ("modals-offset", "ModalsOffset", "ModalsOffset", "Core"),
     ("inline-message-dashsubsnonsub", "InLineMessageDashSubsNonSub", "InLineMessage DashSubsNonSub", "Core"),
     # WordPress Elements
     ("homepage-tabs", "HomepageTabs", "Homepage Tabs", "WordPress Elements"),
@@ -68,6 +67,7 @@ COMPONENTS = [
     ("horizontal-thumbnail-card", "HorizontalThumbnailCard", "Horizontal Thumbnail Card", "WordPress Elements"),
     ("zone-1-lead-article-card", "Zone1LeadArticleCard", "Zone 1 Lead Article Card", "WordPress Elements"),
 ]
+# ModalsOffset is left out on purpose (Karl, 2026-10-29: not part of the design system).
 # Not an exported component set: the icon font as a component (icons.json names).
 EXTRA = [("Icon", "Icon", "Core")]
 
@@ -460,6 +460,32 @@ def icons_payload():
     return icons, cats, meta, d
 
 
+# ---------------------------------------------------------------- inventory
+def inventory_md(comps):
+    """README Inventory section from src/inventory.json; every built component must be listed."""
+    inv = json.loads((SRC / "inventory.json").read_text())
+    listed = {it.get("component") for g in inv["groups"] for it in g["items"] if it["status"] in ("In system", "Partial")}
+    missing = [i for _, i, _, _ in comps if i not in listed]
+    if missing:
+        raise SystemExit(f"src/inventory.json doesn't list these built components: {missing}")
+    counts = {}
+    for g in inv["groups"]:
+        for it in g["items"]:
+            counts[it["status"]] = counts.get(it["status"], 0) + 1
+    order = list(inv["statuses"])
+    out = ["## Inventory", "",
+           "Everything in the MNG Web Design System, present and future, from the Figma libraries (MNG Web Design System, WordPress Elements, Reader Dashboard v2.0). "
+           + ", ".join(f"{counts[k]} {k.lower()}" for k in order if k in counts) + ". Updated in Claude = the date the item was last built or changed here.", ""]
+    out += [f"- **{k}:** {v}" for k, v in inv["statuses"].items()]
+    for g in inv["groups"]:
+        out += ["", f"### {g['name']}", "", "| Element | In Figma | Status | Updated in Claude | Notes |", "|---|---|---|---|---|"]
+        for it in g["items"]:
+            name = it["name"] + (f" (`{it['component']}`)" if it.get("component") else "")
+            cell = lambda t: str(t).replace("|", "\\|")
+            out.append(f"| {cell(name)} | {cell(it['where'])} | {it['status']} | {it.get('updated', '—')} | {cell(it.get('note', ''))} |")
+    return "\n".join(out)
+
+
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
@@ -539,6 +565,7 @@ def main():
     readme = (SRC / "README.md").read_text()
     comp_rows = "\n".join(f"| `{i}` | {f} | {s} |" for _, i, f, s in comps)
     readme = readme.replace("{{COMPONENT_TABLE}}", "| Component | Figma name | Section |\n|---|---|---|\n| `Icon` | Icons (icon font) | Core |\n" + comp_rows)
+    readme = readme.replace("{{INVENTORY}}", inventory_md(comps))
     readme = readme.replace("{{NAMESPACE}}", NAMESPACE).replace("{{REF}}", tokens["meta"]["ref"])
     (proj / "README.md").write_text(readme)
 

@@ -12,6 +12,8 @@ The MNG Web Design System is MediaNews Group's design system for its news websit
 
 {{COMPONENT_TABLE}}
 
+{{INVENTORY}}
+
 ## Themes
 
 Every site loads one of three shared WordPress themes and can override colors in the Customizer (scoped to `#page`). Colors resolve theme → sub-theme → site override. This system carries the three themes; per-site themes come later (the type holds at most 8 themes).
