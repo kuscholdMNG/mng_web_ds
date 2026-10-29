@@ -1,5 +1,5 @@
 {
- "$about": "Every element and component of the MNG Web Design System, present and future, for the README's Inventory section. Edit here; build.py renders it and checks that every built component is listed as In system or Partial. Figma component lists read with the Desktop Bridge plugin on 2026-10-29 (main file and WordPress Elements); Reader Dashboard v2.0 from Reader-Dashboard-Library-Impact-Map.md until the file is read again.",
+ "$about": "Every element and component of the MNG Web Design System, present and future, for the README's Inventory section. Edit here; build.py renders it and checks that every built component is listed as In system or Partial. Figma component lists read with the Desktop Bridge plugin on 2026-10-29 (main file and WordPress Elements); Reader Dashboard v2.0 from Reader-Dashboard-Library-Impact-Map.md: its audit isn't complete (Karl, 2026-10-29). Obits isn't connected to the system yet; audit it in the future.",
  "statuses": {
   "In system": "Built here, with a live preview card.",
   "Partial": "Built here, but only part of the Figma component or family.",
@@ -442,9 +442,9 @@
     },
     {
      "name": "SlideShow family: Obits slideshow",
-     "where": "Obits (not found as a Figma component on the Obits page on 2026-10-29)",
-     "status": "To add",
-     "note": "Build with the SlideShow family (Karl, 2026-10-29)."
+     "where": "Obits (not connected to the design system yet)",
+     "status": "To review",
+     "note": "Obits isn't connected yet: audit it in the future (Karl, 2026-10-29), then build it with the SlideShow family."
     },
     {
      "name": "Photo Carousel Widget: PhotoCarousel, Image Viewer, FilmStrip, Figcaption, Slide Controls, Slide Counter, Button Backward / Forward, Image and Caption Collection",
@@ -588,7 +588,8 @@
     {
      "name": "ObitMastHead",
      "where": "Obits: ET and Local, 1139:22369",
-     "status": "To add"
+     "status": "To add",
+     "note": "Obits isn't connected yet: part of the future Obits audit (Karl, 2026-10-29)."
     },
     {
      "name": "Engage Paywall Modal",
@@ -642,10 +643,11 @@
     {
      "name": "The rest of its 21 component sets",
      "where": "Reader Dashboard v2.0 (PhXogWaQcnNSnQqxyRu4b2)",
-     "status": "To add",
+     "status": "To review",
      "note": "Full list when the file is read again with the Desktop Bridge plugin. A v2.1 upgrade is planned (open item 2)."
     }
-   ]
+   ],
+   "note": "Audit not complete (Karl, 2026-10-29): this list comes from Reader-Dashboard-Library-Impact-Map.md (2026-09-02), not a full read of the file. It's good enough for now; review the whole file before building any of it."
   }
  ]
 }

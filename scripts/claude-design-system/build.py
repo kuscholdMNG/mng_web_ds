@@ -475,10 +475,12 @@ def inventory_md(comps):
     order = list(inv["statuses"])
     out = ["## Inventory", "",
            "Everything in the MNG Web Design System, present and future, from the Figma libraries (MNG Web Design System, WordPress Elements, Reader Dashboard v2.0). "
-           + ", ".join(f"{counts[k]} {k.lower()}" for k in order if k in counts) + ". Updated in Claude = the date the item was last built or changed here.", ""]
+           + ", ".join(f"{counts[k]} {k.lower()}" for k in order if k in counts) + ". Updated in Claude = the date the item was last built or changed here.", "",
+           "**Still to audit:** Obits isn't connected to the design system yet (audit it in the future), and the Reader Dashboard v2.0 audit isn't complete (its list below is good for now; review the whole file before building from it).", ""]
     out += [f"- **{k}:** {v}" for k, v in inv["statuses"].items()]
     for g in inv["groups"]:
-        out += ["", f"### {g['name']}", "", "| Element | In Figma | Status | Updated in Claude | Notes |", "|---|---|---|---|---|"]
+        out += ["", f"### {g['name']}"] + (["", f"> {g['note']}"] if g.get("note") else [])
+        out += ["", "| Element | In Figma | Status | Updated in Claude | Notes |", "|---|---|---|---|---|"]
         for it in g["items"]:
             name = it["name"] + (f" (`{it['component']}`)" if it.get("component") else "")
             cell = lambda t: str(t).replace("|", "\\|")
