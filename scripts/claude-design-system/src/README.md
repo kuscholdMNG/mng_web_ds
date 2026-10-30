@@ -95,6 +95,8 @@ Figma: [Breakpoints and Page Templates](https://www.figma.com/design/jFHYqhZbJjv
 - **MNG Device** (core; the Figma screen widths; Reader Dashboard): Fold 340, Mobile 360, Tablet 768, Tablet landscape 1024, Desktop 1280.
 - **WordPress grid** (WordPress themes, including Obituaries; legacy): 320, 640, 800, 1040 (the masthead switches to desktop here), 1280 (container width: 16 columns × 80px, 20px gutters).
 - Components with Mobile and Desktop versions switch at 640px unless their guidance says otherwise.
+- **Component breakpoints are production's, for now** (Karl, 2026-10-30). Many production components switch at their own widths, so each component's guidance lists its real ranges, and its `device` values are named by them (for example the TopZone Article Card: `XS (≤639px)`, `M (800–1039px)`, `L (1040–1279px)`, `XL (≥1280px)`). Use the variant for the range you're designing at.
+- **Future:** everything moves to the MNG Device breakpoints above. Each component's guidance shows which Device breakpoint each of its ranges will become (not adopted yet).
 
 ## Icons
 
@@ -116,7 +118,7 @@ The icons are the production icon font (the same file on every MNG site): 171 ic
 ## Rules
 
 - Design (Figma) is the source of truth. Production gaps go in the [drift doc](https://github.com/kuscholdMNG/mng_web_ds/blob/main/design-vs-production.md), one entry per component; the system never changes to match production.
-- No off-system values in new work: round a production value to the nearest token or official breakpoint, and log the production value in the drift doc.
+- No off-system values in new work: round a production value to the nearest token and log the production value in the drift doc. Breakpoints are the exception: components keep production's ranges for now (see Breakpoints).
 - Accessibility as specced: real buttons and links, tabs and dialogs marked up as such, decorative icons hidden from screen readers, a label on icon-only controls, visible focus rings, readable text (WCAG AA).
 - Each component's guidance keeps its known issues and production notes. Read them before using it in a layout.
 

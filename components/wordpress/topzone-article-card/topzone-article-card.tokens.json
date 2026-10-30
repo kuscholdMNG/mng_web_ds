@@ -9,13 +9,103 @@
         "componentSet": "TopZone Article Card",
         "page": "Homepage"
       },
-      "production": "Production homepage Zone 1 (`.feature-primary`), the four secondary stories beside the lead. Not audited for this export.",
+      "production": "Production homepage Zone 1 (`.feature-primary.busy .feature-small`), the four secondary stories beside the lead. CSS scanned on all 6 review sites 2026-10-30; live width at 1728px: 345px.",
       "layer": "wordpress",
       "exported": "2026-10-30"
     }
   },
   "topzone-article-card": {
-    "device-desktop": {
+    "device-m-800-1039px": {
+      "article-image-placeholder": {
+        "height": {
+          "$type": "dimension",
+          "$value": {
+            "value": 110.81,
+            "unit": "px"
+          }
+        },
+        "width": {
+          "$type": "dimension",
+          "$value": {
+            "value": 197,
+            "unit": "px"
+          }
+        }
+      },
+      "headline": {
+        "article-headline-on-news-paper-homepage-in-second-zone-position": {
+          "font-family": {
+            "$type": "fontFamily",
+            "$value": "{font.theme.heading-family}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Family"
+                }
+              }
+            }
+          },
+          "font-size": {
+            "$type": "dimension",
+            "$value": "{font.size.16}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Size"
+                }
+              }
+            }
+          },
+          "font-weight": {
+            "$type": "fontWeight",
+            "$value": "{font.weight.bold}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Style"
+                }
+              }
+            }
+          },
+          "line-height": {
+            "$type": "dimension",
+            "$value": {
+              "value": 18.88,
+              "unit": "px"
+            },
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/LineHeight",
+                  "note": "Bound in Figma, but no single system token matches; literal value."
+                }
+              }
+            }
+          }
+        }
+      },
+      "root": {
+        "gap": {
+          "$type": "dimension",
+          "$value": "{spacing.100}",
+          "$extensions": {
+            "com.mng": {
+              "figma": {
+                "variable": "Spacing & Radius/spacing/100"
+              }
+            }
+          }
+        },
+        "width": {
+          "$type": "dimension",
+          "$value": {
+            "value": 197,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "device-xl-1280px": {
       "article-image-placeholder": {
         "height": {
           "$type": "dimension",
@@ -120,96 +210,6 @@
         }
       }
     },
-    "device-1024": {
-      "article-image-placeholder": {
-        "height": {
-          "$type": "dimension",
-          "$value": {
-            "value": 110.81,
-            "unit": "px"
-          }
-        },
-        "width": {
-          "$type": "dimension",
-          "$value": {
-            "value": 197,
-            "unit": "px"
-          }
-        }
-      },
-      "headline": {
-        "article-headline-on-news-paper-homepage-in-second-zone-position": {
-          "font-family": {
-            "$type": "fontFamily",
-            "$value": "{font.theme.heading-family}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Family"
-                }
-              }
-            }
-          },
-          "font-size": {
-            "$type": "dimension",
-            "$value": "{font.size.16}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Size"
-                }
-              }
-            }
-          },
-          "font-weight": {
-            "$type": "fontWeight",
-            "$value": "{font.weight.bold}",
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Style"
-                }
-              }
-            }
-          },
-          "line-height": {
-            "$type": "dimension",
-            "$value": {
-              "value": 18.88,
-              "unit": "px"
-            },
-            "$extensions": {
-              "com.mng": {
-                "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/LineHeight",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
-                }
-              }
-            }
-          }
-        }
-      },
-      "root": {
-        "gap": {
-          "$type": "dimension",
-          "$value": "{spacing.100}",
-          "$extensions": {
-            "com.mng": {
-              "figma": {
-                "variable": "Spacing & Radius/spacing/100"
-              }
-            }
-          }
-        },
-        "width": {
-          "$type": "dimension",
-          "$value": {
-            "value": 197,
-            "unit": "px"
-          }
-        }
-      }
-    },
     "base": {
       "article-image-placeholder": {
         "icon-color": {
@@ -294,7 +294,7 @@
         }
       }
     },
-    "device-mobile": {
+    "device-xs-639px": {
       "bottom-border-line": {
         "border-color": {
           "$type": "color",
@@ -420,7 +420,7 @@
         }
       }
     },
-    "device-1100": {
+    "device-l-1040-1279px": {
       "content": {
         "gap": {
           "$type": "dimension",
