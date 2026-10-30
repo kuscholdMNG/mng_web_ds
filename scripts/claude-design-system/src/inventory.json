@@ -536,8 +536,8 @@
     {
      "name": "Masthead",
      "where": "Menus and Parts, 456:2572 (90 variants)",
-     "status": "Partial",
-     "note": "Page=Home built (Default, AdFree, Scrolled, AdFree-Scrolled at all 5 devices, sticky bar on scroll); Section Front, Article, Obituaries and Dashboard are exported, not built yet. AdFree-Scrolled added for Home, Section Front and Article 2026-10-30.",
+     "status": "In system",
+     "note": "All 5 pages built (Home, Section Front, Article, Obituaries, Dashboard) with every state at all 5 devices and the sticky condensed state on scroll. AdFree-Scrolled added for Home, Section Front and Article 2026-10-30. Not built: the open section menu, account dropdown and search field.",
      "updated": "2026-10-30",
      "component": "Masthead"
     },

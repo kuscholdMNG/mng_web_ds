@@ -2,11 +2,11 @@ export type MastheadDevice = 'XL-Desktop' | 'LG-TabletH' | 'MD-TabletV' | 'SM-Mo
 export interface MastheadLink { label: React.ReactNode; href?: string; onClick?: (e: React.MouseEvent) => void; id?: string; }
 export interface MastheadUser { name?: string; initials?: string; imageSrc?: string; }
 export interface MastheadProps extends React.HTMLAttributes<HTMLElement> {
-  /** Figma Page. Only 'Home' is built so far (others render as Home and warn). Default 'Home'. */
+  /** Figma Page. Default 'Home'. */
   page?: 'Home' | 'SectionFront' | 'Article' | 'Obituaries' | 'Dashboard';
   /** Figma Device. Default: from the rendered width (>=1040 XL-Desktop, 800-1039 LG-TabletH, 640-799 MD-TabletV, 360-639 SM-Mobile, below 360 XS-Fold). */
   device?: MastheadDevice;
-  /** Figma State, forced (documentation). Leave unset: adFree and scrolling decide. */
+  /** Figma State, forced (documentation). Leave unset: adFree and scrolling decide. Dashboard has Default and Scrolled only. */
   state?: 'Default' | 'AdFree' | 'Scrolled' | 'AdFree-Scrolled';
   /** Subscriber (ad-free): the avatar replaces Subscribe / Log In and no ads show. Default false. */
   adFree?: boolean;
@@ -18,7 +18,7 @@ export interface MastheadProps extends React.HTMLAttributes<HTMLElement> {
   sticky?: boolean;
   /** Scroll container when it isn't the page (IntersectionObserver root). */
   scrollRoot?: Element | null;
-  /** Pixels of scrolling before the bar appears. Default 450 at 1040px and up, 1 below (production). */
+  /** Pixels of scrolling before the condensed masthead appears. Default 450 at 1040px and up, 1 below (production), on Home, Section Front and Article; on Obituaries and Dashboard, once the whole masthead has scrolled away. */
   scrollThreshold?: number;
   navItems?: Array<string | MastheadLink>;
   navLabel?: string;
@@ -43,5 +43,25 @@ export interface MastheadProps extends React.HTMLAttributes<HTMLElement> {
   logo?: React.ReactNode;
   siteName?: string;
   homeHref?: string;
+  /** Section Front / Article: the section name. Default 'Section Name'. */
+  sectionName?: string;
+  /** Article: the headline in the condensed bar at 1040px and up; '' hides it. */
+  articleTitle?: string;
+  /** Article SocialButtons: called with the icon name ('facebook', 'email', 'x', 'reddit', 'gift2-share-01', 'link'). */
+  onShare?: (name: string, e: React.MouseEvent) => void;
+  onSave?: (e: React.MouseEvent) => void;
+  saved?: boolean;
+  /** Obituaries: the page title. Default 'Obituaries'. */
+  pageTitle?: string;
+  obitsSearchPlaceholder?: string;
+  /** Obituaries search submit; when given, the form doesn't navigate. */
+  onObitsSearch?: (query: string, e: React.FormEvent) => void;
+  onObitsFilter?: (e: React.MouseEvent) => void;
+  submitObituaryHref?: string;
+  onSubmitObituary?: (e: React.MouseEvent) => void;
+  /** Dashboard below 800px: the NavMenu label. Default 'Reader Dashboard'. */
+  dashboardLabel?: string;
+  onDashboardMenuClick?: (e: React.MouseEvent) => void;
+  dashboardMenuOpen?: boolean;
 }
 export declare function Masthead(props: MastheadProps): React.ReactElement;

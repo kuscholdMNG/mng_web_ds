@@ -2,7 +2,7 @@
 
 Oct 29, 2026 · @Karl
 
-> **Updated 2026-10-30 (later)**: Masthead for the other page types added to P1 (Karl). **Earlier, 2026-10-30,** for P1 (Masthead, Footer, Ad Blocks): cleaned up in Figma, exported to `components/wordpress/` and **In system** in the Claude DS (Masthead: Page = Home). Status column below. Tracked in `MNG-Web-Design-System-Status.md`, open item 19.
+> **Updated 2026-10-30 (latest)**: Masthead for the other page types built in the Claude DS; P1 done. **Earlier, 2026-10-30 (later):** Masthead for the other page types added to P1 (Karl). **Earlier, 2026-10-30,** for P1 (Masthead, Footer, Ad Blocks): cleaned up in Figma, exported to `components/wordpress/` and **In system** in the Claude DS (Masthead: Page = Home). Status column below. Tracked in `MNG-Web-Design-System-Status.md`, open item 19.
 
 ## Context
 
@@ -21,7 +21,7 @@ These three replace the biggest placeholders and bring back the masthead scroll 
 | Masthead | WP Elements ▸ Menus and Parts `456:2572` (75 variants) | Page=Home, Default and Scrolled, at XL-Desktop, LG-TabletH, MD-TabletV, SM-Mobile, XS-Fold; subscriber (AdFree) and anonymous. Parts: SectionMenu / SectionMenuHeader / SectionMenuItem (`456:5837`, `456:5745`, `456:5781`), AccountMenu (`910:16425`), SearchBar (`456:5910`), UserImage / UserPic / UserStatus (`456:5708`, `456:5674`, `456:5728`), Weather Bug (`654:10020`). Token: `shadow/masthead` | Top of every page and breakpoint; sticky condensed bar on scroll | **Done 2026-10-30** (`Masthead`, Page = Home; parts exported to `components/wordpress/`, drawn inside the Masthead in their closed states) |
 | Footer | WP Elements ▸ Menus and Parts `354:1282`, Footer\_w\_signup `801:1755` | Desktop, tablet and mobile layouts | Bottom of every page | **Footer done 2026-10-30** (`Footer`). Footer_w_signup is now **Blocks Footer** (Homepage ▸ Blocks, tokens only), exported, left out of Claude for now (Karl) |
 | Ad Blocks | WP Elements ▸ Ads and Sponsored `517:4304` (37 variants) | Top Leaderboard 970×250, 728×90, 320×50, 320×100; Cube 300×1050, 300×600, 300×250; Sponsorship 970×250, 728×90, 320×50; Mobile Adhesion 728×90 and 320×50 with its close button | Anonymous view only: masthead, Editor's Picks rails and rows, adhesion below 800px | **Done 2026-10-30** (`AdBlocks`, all 37 units) |
-| Masthead, other page types | WP Elements ▸ Menus and Parts `456:2572` | Page = SectionFront, Article, Obituaries, Dashboard (Default, AdFree, Scrolled, AdFree-Scrolled at all 5 devices); already exported with the set, not built in Claude. Article's scrolled bar (section name, headline, share buttons); Obituaries' search and Submit an Obituary (not audited yet, open item 17); Dashboard's Reader Dashboard menu | Section fronts, articles, obituaries, Reader Dashboard | Not started (added by Karl, 2026-10-30) |
+| Masthead, other page types | WP Elements ▸ Menus and Parts `456:2572` | Page = SectionFront, Article, Obituaries, Dashboard (Default, AdFree, Scrolled, AdFree-Scrolled at all 5 devices); already exported with the set, not built in Claude. Article's scrolled bar (section name, headline, share buttons); Obituaries' search and Submit an Obituary (not audited yet, open item 17); Dashboard's Reader Dashboard menu | Section fronts, articles, obituaries, Reader Dashboard | **Done 2026-10-30** (`Masthead` `page` prop: all 90 Figma variants; Obituaries' title row below 800px to confirm with Karl) |
 
 ## P2: Editor's Picks zones
 

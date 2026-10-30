@@ -1,38 +1,63 @@
-<!-- @dsCard group="WordPress Elements" height=3600 subtitle="Figma: Masthead · Page=Home, 20 of 90 variants" -->
+<!-- @dsCard group="WordPress Elements" height=6600 subtitle="Figma: Masthead · all 90 variants (Page × State × Device); pick the page at the top" -->
 <!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><title>Masthead</title>
-<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<style>
+  body{margin:0;padding:16px;background:var(--mng-color-gray-max);}
+  .pv-pages{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none;font-family:var(--mng-font-family-noto-sans);}
+  .pv-pages button{font:inherit;font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid var(--mng-color-gray-400);background:var(--mng-color-gray-max);color:var(--mng-color-gray-min);cursor:pointer;}
+  .pv-pages button[aria-pressed="true"]{background:var(--mng-color-gray-min);color:var(--mng-color-gray-max);border-color:var(--mng-color-gray-min);}
+</style></head>
 <body>
 <div id="root"></div>
 <script>
   var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
   var M = NS.Masthead;
   var devices = [['XL-Desktop', 1040, '1040px and up'], ['LG-TabletH', 1024, '800–1039px'], ['MD-TabletV', 768, '640–799px'], ['SM-Mobile', 360, 'below 640px, built 360'], ['XS-Fold', 340, 'below 640px, built 340']];
-  function sec(state, note) {
-    return h(I.SpecimenSection, { key: state, title: 'State=' + state + ', Page=Home', note: note },
+  var pages = [
+    ['Home', 'Home page.'],
+    ['SectionFront', 'Section front: at 1040px and up the logo moves up to the menus row, the section name (Noto Serif Bold 40, color/theme/primary) takes its place, and the Top Nav lists the section’s own pages. Below 1040px it matches Home.'],
+    ['Article', 'Article: the top of the page is the Section Front layout with the main Top Nav. The condensed bar at 1040px and up carries the section name (color/theme/primary-dark) and headline, ellipsized, and the SocialButtons. Below 1040px it matches Home.'],
+    ['Obituaries', 'Obituaries (Endless Tributes): page title, Sponsorship 1 300x50 at 800px and up (no Top Leaderboard), the obituary search, “Powered by” Endless Tributes and Submit an Obituary. The condensed state keeps the search row.'],
+    ['Dashboard', 'Reader Dashboard: always a logged-in reader and no ads, so Figma has Default and Scrolled only. Below 800px the NavMenu (“Reader Dashboard”) sits under the bar.']];
+  var notes = {
+    Default: 'Top of the page with ads (logged out or non-subscriber).',
+    AdFree: 'Top of the page for a subscriber: no ads; the avatar replaces Subscribe / Log In.',
+    Scrolled: 'The sticky condensed state once the reader scrolls (logged out): 1px color/gray/400 rule, shadow/masthead.',
+    'AdFree-Scrolled': 'The sticky condensed state for a subscriber.'
+  };
+  function sec(page, state) {
+    var note = page === 'Dashboard' ? (state === 'Default' ? 'Top of the page: always a logged-in reader, no ads.' : 'The sticky condensed state once the reader scrolls: 1px color/gray/400 rule (on the bar at 800px and up), shadow/masthead.') : notes[state];
+    return h(I.SpecimenSection, { key: page + state, title: 'State=' + state + ', Page=' + page, note: note },
       h(I.Specimen, { items: devices.map(function (d) {
         return { label: 'Device=' + d[0] + ' (' + d[2] + ')', width: d[1] + 32,
-          node: h('div', { style: { width: d[1] } }, h(M, { state: state, device: d[0], user: { name: 'Gina Moreno' } })) };
+          node: h('div', { style: { width: d[1] } }, h(M, { page: page, state: state, device: d[0], user: { name: 'Gina Moreno' } })) };
       }) }));
   }
-  function Demo() {
+  function Demo(p) {
     var el = React.useState(null);
     return h('div', { ref: el[1], style: { height: 420, overflow: 'auto', background: 'var(--mng-color-gray-max)', boxShadow: 'inset 0 0 0 1px var(--mng-color-gray-500)' } },
       el[0] ? h(React.Fragment, null,
-        h(M, { scrollRoot: el[0], scrollThreshold: 200 }),
+        h(M, { key: p.page, page: p.page, scrollRoot: el[0], scrollThreshold: p.page === 'Obituaries' || p.page === 'Dashboard' ? undefined : 200, user: { name: 'Gina Moreno' } }),
         Array.from({ length: 30 }).map(function (_, i) {
           return h('p', { key: i, style: { margin: '0 24px 16px', fontFamily: 'var(--mng-font-family-noto-sans)', fontSize: 16, lineHeight: '24px', color: 'var(--mng-color-gray-200)' } },
-            'Page content line ' + (i + 1) + '. Scroll this box: the condensed bar appears and sticks to the top.');
+            'Page content line ' + (i + 1) + '. Scroll this box: the condensed masthead appears and sticks to the top.');
         })) : null);
   }
-  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
-    h(I.SpecimenSection, { title: 'Live: scroll behavior', note: 'The masthead takes its device from its width. Scroll the box: after the threshold (450px at 1040px and up in production, 200px here so the demo is short; 1px below 1040px) the condensed 64px bar sticks to the top with the color/gray/400 rule and shadow/masthead.' },
-      h(I.Specimen, { items: [{ label: 'Anonymous reader, at the card width', width: '100%', node: h(Demo) }] })),
-    sec('Default', 'Top of the page with ads (logged out or non-subscriber). At 1040px and up: menus row, weather / date / logo / Sponsorship 1 320x50, Top Nav (clipped at both edges when it overflows, as in production), Trending, Top Leaderboard 970x250. Below: one 64px row and the Top Leaderboard for the width.'),
-    sec('AdFree', 'Top of the page for a subscriber: no ads; the avatar replaces Subscribe / Log In.'),
-    sec('Scrolled', 'The sticky condensed bar once the reader scrolls (logged out): 64px, 1px color/gray/400 rule, shadow/masthead.'),
-    sec('AdFree-Scrolled', 'The sticky condensed bar for a subscriber (added 2026-10-30).')));
+  function App() {
+    var pg = React.useState('Home');
+    var page = pg[0];
+    var info = pages.filter(function (x) { return x[0] === page; })[0];
+    var states = page === 'Dashboard' ? ['Default', 'Scrolled'] : ['Default', 'AdFree', 'Scrolled', 'AdFree-Scrolled'];
+    return h('div', null,
+      h('ul', { className: 'pv-pages', 'aria-label': 'Page' }, pages.map(function (x) {
+        return h('li', { key: x[0] }, h('button', { type: 'button', 'aria-pressed': x[0] === page ? 'true' : 'false', onClick: function () { pg[1](x[0]); } }, 'Page=' + x[0]));
+      })),
+      h(I.SpecimenSection, { title: 'Live: Page=' + page + ', scroll behavior', note: info[1] + ' The masthead takes its device from its width. Scroll the box: on Home, Section Front and Article the condensed state takes over after 450px at 1040px and up in production (200px here so the demo is short; 1px below 1040px); on Obituaries and Dashboard once the whole masthead has scrolled away.' },
+        h(I.Specimen, { items: [{ label: 'At the card width', width: '100%', node: h(Demo, { page: page }) }] })),
+      states.map(function (s) { return sec(page, s); }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(App));
 </script>
 </body>
 </html>
