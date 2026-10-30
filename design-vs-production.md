@@ -1534,6 +1534,23 @@ Sizes, gaps and type otherwise match Figma at both widths (L: 507 card, 280×157
 
 **Status:** Open. Added 2026-10-30.
 
+### 16.5 Latest Headlines (Zone 1 headline list) — title gap on Bold Coastal, rule color and headline weight
+
+**Found:** 2026-10-30, CSS and computed styles on all 6 review sites at 1728px, and on ocregister.com at 700px (Karl resized the window). The `.busy .headline-list` rules are identical on all 6. **Team:** CMS. Figma: WordPress Elements ▸ Homepage ▸ Latest Headlines (`3476:62396`) and Latest Headlines List Item (`3336:46118`).
+
+**Design:** built to match production (Karl, 2026-10-30), with the nearest existing token where one exists. Figma was changed the same day: time inline after the headline, headline 15 / 19px in `color/gray/black`, the S (640–799px) variant full width, title-to-list gap `font/theme/eyebrow-size`.
+
+**Production (still different):**
+- **Title to the first item, Bold Coastal:** `margin-bottom: 15px` on the 20px title (ocregister, denverpost). The design is `font/theme/eyebrow-size` (20px on Bold Coastal); Measured Vibrant (17px) and Modern Earthy (21px) already match.
+- **Rule between items:** #D7D6D2 (Bold Coastal), #C8C4C0 (Measured Vibrant), #DDD8D5 (Modern Earthy). The design is `color/gray/500` (#CCCAC7). The Bold Coastal value is also entry 3 (`--site-branding-gray-500`).
+- **Headline weight:** CSS `font-weight: 600`, but the sites load only the 400 and 700 faces of Noto Sans and Noto Serif, so it renders Bold. The design is Bold (`font/weight/bold`).
+
+Everything else matches: one column at every width (capped at 540px below 640px, full width at 640–799px, a 40% / 30.77% / 25% side column from 800px), 12px between items, 1px top rule with 16px below it, headline 15 / 19px #000000 in the theme heading family, time Noto Sans 13 #5D5B5A inline after the headline.
+
+**Fix:** set the Bold Coastal title margin to the eyebrow size (20px) or confirm 15px is intended; set the rule to `color/gray/500`; set the headline weight to 700 (or load a 600 face and confirm the lighter weight is wanted).
+
+**Status:** Open. Added 2026-10-30.
+
 ---
 
 ## 17. Zone 1 slideshow (gallery lead) — type, spacing and colors off the design tokens; slide count not announced

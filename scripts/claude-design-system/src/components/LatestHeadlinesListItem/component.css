@@ -1,0 +1,73 @@
+/* Latest Headlines List Item: values from components/wordpress/latest-headlines-list-item (component tokens -> system tokens).
+   Matches production (Karl, 2026-10-30). Fills its column (Figma builds it at 226). color/gray/max background. */
+.mngds-latest-headlines-list-item {
+  box-sizing: border-box; display: flex; flex-direction: column; align-items: flex-start; width: 100%; min-width: 0; margin: 0;
+  background: var(--mng-latest-headlines-list-item-base-root-background);
+}
+.mngds-latest-headlines-list-item *, .mngds-latest-headlines-list-item *::before, .mngds-latest-headlines-list-item *::after { box-sizing: border-box; }
+/* Standard and Sponsored: 1px color/gray/500 rule on top, 16px (spacing/200) to the content. */
+.mngds-latest-headlines-list-item--standard, .mngds-latest-headlines-list-item--sponsored {
+  border-top: var(--mng-latest-headlines-list-item-base-bottom-border-line-border-width) var(--mng-latest-headlines-list-item-base-bottom-border-line-border-style) var(--mng-latest-headlines-list-item-base-bottom-border-line-border-color);
+  padding-top: var(--mng-latest-headlines-list-item-base-root-gap);
+}
+.mngds-latest-headlines-list-item--sponsored { gap: var(--mng-latest-headlines-list-item-type-sponsored-content-card-gap); }
+
+/* Headline: theme heading family Bold 15 / 19px, color/gray/black (21:1 on color/gray/max). */
+.mngds-latest-headlines-list-item__headline {
+  margin: 0; text-align: left;
+  font-family: var(--mng-latest-headlines-list-item-type-first-headline-container-headline-and-time-font-family);
+  font-size: var(--mng-latest-headlines-list-item-type-first-headline-container-headline-and-time-font-size);
+  font-weight: var(--mng-latest-headlines-list-item-type-first-headline-container-headline-and-time-font-weight);
+  line-height: var(--mng-latest-headlines-list-item-type-first-headline-container-headline-and-time-line-height);
+  color: var(--mng-latest-headlines-list-item-type-first-headline-container-headline-and-time-color);
+}
+/* First and Standard: the headline and the time share one line box, like production's inline h3 + time. */
+.mngds-latest-headlines-list-item__line {
+  width: 100%;
+  line-height: var(--mng-latest-headlines-list-item-type-first-headline-container-headline-and-time-line-height);
+}
+.mngds-latest-headlines-list-item__line .mngds-latest-headlines-list-item__headline { display: inline; }
+/* Time: Noto Sans Regular 13 / 23px, color/gray/200 (6.6:1). The time range isn't in the component tokens (rules). */
+.mngds-latest-headlines-list-item__time {
+  display: inline; font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-13);
+  font-weight: var(--mng-font-weight-regular); line-height: 23px; color: var(--mng-color-gray-200); white-space: normal;
+}
+.mngds-latest-headlines-list-item__link { color: inherit; text-decoration: none; }
+.mngds-latest-headlines-list-item__link:hover { text-decoration: underline; }
+.mngds-latest-headlines-list-item__link:focus-visible { outline: 2px solid var(--mng-color-gray-black); outline-offset: 2px; }
+
+/* Sponsored content badge: Article Status Badge, Type=Sponsored. #7D161E stays raw by design (design-vs-production 22),
+   white (color/gray/max) Noto Sans SemiBold 13 caps, 2px / 5px padding; 10.5:1. */
+.mngds-latest-headlines-list-item__badge {
+  display: inline-flex; align-items: center; padding: 2px 5px; background: #7D161E;
+  color: var(--mng-latest-headlines-list-item-type-sponsored-content-card-badge-container-article-status-badge-icon-color);
+  font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-13); font-weight: var(--mng-font-weight-semibold);
+  line-height: 22.652px; text-transform: uppercase;
+}
+.mngds-latest-headlines-list-item--sponsored .mngds-latest-headlines-list-item__headline {
+  width: 100%;
+  font-family: var(--mng-latest-headlines-list-item-type-sponsored-content-card-headline-container-headline-font-family);
+  font-size: var(--mng-latest-headlines-list-item-type-sponsored-content-card-headline-container-headline-font-size);
+  font-weight: var(--mng-latest-headlines-list-item-type-sponsored-content-card-headline-container-headline-font-weight);
+  line-height: var(--mng-latest-headlines-list-item-type-sponsored-content-card-headline-container-headline-line-height);
+  color: var(--mng-latest-headlines-list-item-type-sponsored-content-card-headline-container-headline-color);
+}
+/* "By <sponsor>" over the 60x12 sponsor logo, 8px (spacing/100) apart. */
+.mngds-latest-headlines-list-item__meta {
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: var(--mng-latest-headlines-list-item-type-sponsored-content-card-meta-container-gap);
+}
+.mngds-latest-headlines-list-item__byline {
+  font-family: var(--mng-latest-headlines-list-item-type-sponsored-content-card-meta-container-byline-font-family);
+  font-size: var(--mng-latest-headlines-list-item-type-sponsored-content-card-meta-container-byline-font-size);
+  font-weight: var(--mng-latest-headlines-list-item-type-sponsored-content-card-meta-container-byline-font-weight);
+  color: var(--mng-latest-headlines-list-item-type-sponsored-content-card-meta-container-byline-color);
+  line-height: normal;
+}
+.mngds-latest-headlines-list-item__logo {
+  display: block; object-fit: contain; object-position: left center;
+  width: var(--mng-latest-headlines-list-item-type-sponsored-content-card-meta-container-sponsor-logo-width);
+  height: var(--mng-latest-headlines-list-item-type-sponsored-content-card-meta-container-sponsor-logo-height);
+}
+/* Without `sponsorLogo`: an empty color/gray/600 box where the logo goes (Figma shows a sample sponsor's artwork). */
+.mngds-latest-headlines-list-item__logo--placeholder { background: var(--mng-color-gray-600); }

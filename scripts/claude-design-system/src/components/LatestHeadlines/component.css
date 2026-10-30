@@ -1,0 +1,26 @@
+/* Latest Headlines: values from components/wordpress/latest-headlines (component tokens -> system tokens).
+   Matches production (Karl, 2026-10-30). Fills its column (Figma builds XS 340, S 748, (≥800px) 226). */
+.mngds-latest-headlines {
+  box-sizing: border-box; display: flex; flex-direction: column; width: 100%; min-width: 0; margin: 0;
+  background: var(--mng-latest-headlines-base-root-background);
+}
+.mngds-latest-headlines *, .mngds-latest-headlines *::before, .mngds-latest-headlines *::after { box-sizing: border-box; }
+/* XS (639px and below): production caps the list at 33.75em (540px) and centers it. No token for this width. */
+.mngds-latest-headlines--xs { max-width: 540px; margin-left: auto; margin-right: auto; }
+/* Title to the first item = the theme's eyebrow size (15 / 17 / 21 in production; the token gives Bold Coastal 20). */
+.mngds-latest-headlines__header {
+  background: var(--mng-latest-headlines-base-header-container-background);
+  padding-bottom: var(--mng-latest-headlines-base-header-container-padding-bottom);
+}
+.mngds-latest-headlines__list {
+  list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;
+  gap: var(--mng-latest-headlines-base-list-gap);
+}
+.mngds-latest-headlines__item { margin: 0; padding: 0; min-width: 0; }
+/* Stand-in for Newsletter Signup until it is in the system: its Figma height (135), magenta like the prototype placeholders. */
+.mngds-latest-headlines__placeholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  height: var(--mng-latest-headlines-base-list-newsletter-signup-height);
+  border: 2px dashed #C2185B; color: #880E4F; background: var(--mng-color-gray-max);
+  font-family: var(--mng-font-family-noto-sans); font-size: var(--mng-font-size-13); font-weight: var(--mng-font-weight-bold);
+}

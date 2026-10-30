@@ -32,9 +32,15 @@
     "Device": [
       "XS (≤639px)",
       "S (640–799px)",
+      "(≥800px)",
       "M (800–1039px)",
       "L (1040–1279px)",
       "XL (≥1280px)"
+    ],
+    "Type": [
+      "First",
+      "Standard",
+      "Sponsored"
     ]
   },
   "propertyOrder": [
@@ -492,6 +498,64 @@
         "Off-token by decision: the notch sits about 5px right of center and the colors aren't tokens (design-vs-production entry 18, on hold)."
       ],
       "production": "Production `.load-more` / `.show-more-videos`, every width (checked on all 6 review sites, 2026-10-27)."
+    },
+    {
+      "slug": "latest-headlines-list-item",
+      "name": "Latest Headlines List Item",
+      "group": "homepage",
+      "layer": "wordpress",
+      "order": 3,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3336:46118",
+      "documentationFrame": "3484:67635",
+      "description": "One headline in the Zone 1 Latest Headlines list (production `article.headline-only` in `.headline-list`), built to match production (Karl, 2026-10-30). Type = First (no rule), Standard (rule above) and Sponsored (rule above, Article Status Badge, sponsor byline and logo).",
+      "rules": [
+        "**Matches production** (Karl, 2026-10-30: components match production; where a value has a token, use the nearest existing token). Checked on all 6 review sites 2026-10-30.",
+        "**Rule:** First has none. Standard and Sponsored draw a 1px `color/gray/500` rule on top, then 16px (`spacing/200`) to the content. The 12px above the rule belongs to the list (Latest Headlines). Production: `border-top: 1px` with `padding-top: 16px` and `margin-top: 12px` on every item after the first.",
+        "**Headline:** `Editorial/Titles/AdditionalHeadline`: `font/theme/heading-family` Bold 15 (`font/size/15`), 19px line height (changed from auto 2026-10-30, to match production), `color/gray/black` (was `color/gray/min`) on `color/gray/max`, 21:1. The family follows the theme (style bound 2026-10-30; it was Noto Serif itself): Noto Serif in Bold Coastal and Measured Vibrant, Noto Sans in Modern Earthy, as production renders it. Production's CSS weight is 600, but the sites load only the 400 and 700 faces of Noto Sans and Noto Serif, so it renders Bold; Figma keeps Bold. The style is also used by the Section Front page template (39 text layers), which follows these changes.",
+        "**Time (First, Standard):** inline right after the headline, in the same text layer (since 2026-10-30, as production does): Noto Sans Regular 13 (`font/size/13`), 23px line height, `color/gray/200`, 6.6:1. It wraps under the headline when the headline's last line is full.",
+        "**Sponsored:** Article Status Badge (`Type = Sponsored`) in a Badge Container, 4px (`spacing/050`) to the headline, 4px to the meta: \"By <sponsor>\" (Noto Sans Regular 13, `color/gray/200`) and the 60×12 sponsor logo, 8px (`spacing/100`) apart.",
+        "**Markup:** `li > article` with the headline in an `h3` link followed by a `time` element (both inline); the list is a `ul`."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Production rule is #D7D6D2 (Bold Coastal), #C8C4C0 (Measured Vibrant), #DDD8D5 (Modern Earthy); the design keeps `color/gray/500` #CCCAC7, the nearest token (Karl, 2026-10-30; design-vs-production 16.5; the Bold Coastal value is also entry 3).",
+        "Production's CSS headline weight is 600 with only the 400 and 700 font faces loaded, so it renders Bold; the design is Bold (design-vs-production 16.5).",
+        "The component tokens carry the headline's values for the First and Standard text layer (the exporter reads its first text run); the inline time's values (Noto Sans Regular 13 / 23px, `color/gray/200`) are in the rules above.",
+        "Figma wraps the time with the headline text; production does the same with inline elements, so line breaks can differ by a word.",
+        "Sponsored is drawn with a sample sponsor (Xcel Energy) and its logo as an image fill; no live sponsored item was on the 6 review sites on 2026-10-30, so Sponsored isn't checked against production."
+      ],
+      "production": "Production `.headline-list ul > li > article.headline-only` (homepage Zone 1, all 6 review sites, measured 2026-10-30 at 1728px and on ocregister.com at 700px)."
+    },
+    {
+      "slug": "latest-headlines",
+      "name": "Latest Headlines",
+      "group": "homepage",
+      "layer": "wordpress",
+      "order": 4,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3476:62396",
+      "documentationFrame": "3484:67618",
+      "description": "The Zone 1 Latest Headlines rail (Editor's Picks): Section Title / Eyebrow, 8 Latest Headlines List Items (First, Standard ×6, Sponsored) and Newsletter Signup in one column. Device values are production's own breakpoints for this list (`.busy .headline-list`, identical on all 6 review sites); only the width changes.",
+      "rules": [
+        "**Matches production** (Karl, 2026-10-30: components match production; where a value has a token, use the nearest existing token). CSS and live measurements on all 6 review sites 2026-10-30.",
+        "**Breakpoints are production's, for this component** (Karl, 2026-10-30): each Device value is named by the range it covers (`XS (≤639px)`, `S (640–799px)`, `(≥800px)`); the width a variant is drawn at is a note, not a breakpoint. The list is one column at every width. Production CSS `.busy .headline-list` at 640 / 800 / 1040 / 1280px, the same on all 6 review sites (scan 2026-10-30, `components/breakpoint-audit.md`).",
+        "**XS** (639px and below, built 340): full width of the page. Production caps it at 540px (33.75em) and centers it.",
+        "**S** (640–799px, built 748): full width of the column. The items and Newsletter Signup fill the variant (fixed 2026-10-30, Karl: they were stuck at 340), as production does (680px wide on ocregister.com at a 700px window).",
+        "**(≥800px)** (built 226): the side column beside the Zone 1 lead. Production width `calc(40% - 0.75rem)` at 800–1039, `calc(30.7692% - 0.87rem)` at 1040–1279 and `calc(25% - 0.94rem)` at 1280 and up (224px). TOP ZONE Block draws it at 252 (1024) and 219 (1100). Everything inside fills the width.",
+        "**Title:** Section Title / Eyebrow, Style = Underline. Title to the first item is `font/theme/eyebrow-size`, the Header Container's bottom padding (Karl, 2026-10-30: nearest existing token). Production uses `margin-bottom` on the title: 17px on Measured Vibrant and 21px on Modern Earthy (1em, which the token matches) but 15px on Bold Coastal, where the token gives 20 (design-vs-production 16.5). Figma draws Bold Coastal's 20. Before 2026-10-30 Figma had 16px (XS, S) and 12px (≥800).",
+        "**List:** 12px (`spacing/150`) between the items and before Newsletter Signup (the `List` frame); Standard and Sponsored items draw their own top rule. Production: `margin-top: 12px` on every `li` after the first.",
+        "**Contrast** is in the parts: headline 21:1 and time 6.6:1 (Latest Headlines List Item), eyebrow `color/gray/100` 11.6:1 (Section Title / Eyebrow)."
+      ],
+      "breakpoints": "| Device (production range) | Grid token | Production layout | Built at | Future MNG Device breakpoint (not adopted yet) |\n|---|---|---|---|---|\n| XS (≤639px) | `wordpress-grid.xs` | Full width, capped at 540px and centered | 340px | Mobile (below 768) |\n| S (640–799px) | `wordpress-grid.s` | Full width of the column | 748px | Mobile / Tablet (decide when standardizing) |\n| (≥800px), M (800–1039px) | `wordpress-grid.m` | Side column, 40% − 12px | 226px (TOP ZONE Block 252) | Tablet (768–1023) |\n| (≥800px), L (1040–1279px) | `wordpress-grid.l` | Side column, 30.77% − 13.92px | 226px (TOP ZONE Block 219) | Tablet landscape (1024–1279) |\n| (≥800px), XL (≥1280px) | `wordpress-grid.xl` | Side column, 25% − 15px (224px) | 226px | Desktop (1280 and up) |",
+      "knownIssues": [
+        "One variant, `(≥800px)`, covers three production ranges whose only difference is the column width (the list is the same).",
+        "Below 640px production caps the list at 540px; the XS variant is drawn at 340.",
+        "Bold Coastal: production's title-to-list gap is 15px; `font/theme/eyebrow-size` gives 20 (design-vs-production 16.5).",
+        "Newsletter Signup instances keep their component's fixed 135px height (next in the P2 list).",
+        "The eyebrow's production color and underline differ (design-vs-production 14)."
+      ],
+      "production": "Production homepage Zone 1 `.feature-primary.busy .headline-list` (`div.headline-list > h2.headline-list-title + ul`), 7 headlines plus the newsletter `li.social-links`. CSS scanned on all 6 review sites 2026-10-30; measured live at 1728px on all 6 and on ocregister.com at 700px (Karl resized the window)."
     },
     {
       "slug": "tooltip",
