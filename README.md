@@ -56,7 +56,7 @@ mng_web_ds/
 │   └── icons/                              ← production icon font (icomoon .ttf/.woff/.woff2), glyph map,
 │                                             CSS and preview
 ├── logos/                                  ← newspaper logos: transparent SVGs (publications/, placeholder/),
-│                                             logos.json manifest, preview.html, README
+│                                             logos.json manifest, preview.html, README, missing-logos.md (what Marketing still owes)
 ├── figma-exports/                          ← LEGACY, frozen 2026-10-13: older Figma → spec exports.
 │                                             Kept, not updated; new exports follow EXPORT-STANDARD.md
 │   ├── mng-design-system-export/           ← homepage, menus-and-parts, form-fields
@@ -96,6 +96,7 @@ mng_web_ds/
 | Typography tokens or decisions | `tokens/typography/` |
 | Icon font, glyph map, icon previews | `tokens/icons/` (edit `icons.json`, then run `scripts/icon-font/build.py` to rebuild `icomoon.css` and `preview.html`) |
 | Newspaper logo SVGs, manifest, preview | `logos/` (rebuilt by `scripts/logos-export/build-logos.py`; don't hand-edit the SVGs) |
+| Missing newspaper logos (what to ask Marketing for) | Update `logos/missing-logos.md` in place |
 | A token or component export | Follow `EXPORT-STANDARD.md` (DTCG `.tokens.json`, layers, `dist/`). Never add to `figma-exports/` (legacy). |
 | A script that rebuilds an export | `scripts/<export-name>/` (inputs and outputs explained at the top of the script) |
 | The Design System artifact in Claude (components, previews, guidance) | `scripts/claude-design-system/src/`; rebuild with `build.py --out <folder outside the repo>` and republish (that folder's README) |
