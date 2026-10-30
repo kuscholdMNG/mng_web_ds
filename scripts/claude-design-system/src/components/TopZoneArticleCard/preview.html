@@ -1,4 +1,4 @@
-<!-- @dsCard group="WordPress Elements" height=620 subtitle="Figma: TopZone Article Card · 4 variants (Device = production breakpoints)" -->
+<!-- @dsCard group="WordPress Elements" height=620 subtitle="Figma: TopZone Article Card · 5 variants (Device = production breakpoints)" -->
 <!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><title>TopZoneArticleCard</title>
@@ -7,10 +7,10 @@
 <div id="root"></div>
 <script>
   var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
-  var width = { XS: 340, M: 197, L: 507, XL: 336 };
-  var range = { XS: '639px and below', M: '800–1039px', L: '1040–1279px', XL: '1280px and up' };
-  var variants = h(I.SpecimenSection, { title: 'Device', note: 'The four Zone 1 story cards beside the Zone 1 lead. Device values are production’s breakpoints for these cards (identical on all 6 review sites): M and XL stack the image over the headline; XS and L are thumbnail rows, XS with a bottom rule. Production’s 640–799px layout has no variant yet. Drawn at the Figma widths; the card fills its column.' },
-    h(I.Specimen, { items: ['XS', 'M', 'L', 'XL'].map(function (d) {
+  var width = { XS: 340, S: 330, M: 197, L: 507, XL: 336 };
+  var range = { XS: '639px and below', S: '640–799px', M: '800–1039px', L: '1040–1279px', XL: '1280px and up' };
+  var variants = h(I.SpecimenSection, { title: 'Device', note: 'The four Zone 1 story cards beside the Zone 1 lead. Device values are production’s breakpoints for these cards (identical on all 6 review sites): M and XL stack the image over the headline; XS, S and L are thumbnail rows, XS and S with a bottom rule. Drawn at the Figma widths; the card fills its column.' },
+    h(I.Specimen, { items: ['XS', 'S', 'M', 'L', 'XL'].map(function (d) {
       return { label: 'Device=' + d + ' (' + range[d] + ', built ' + width[d] + 'px)', width: width[d] + 32, node: h('div', { style: { width: width[d] } }, h(NS.TopZoneArticleCard, { device: d })) };
     }) }));
   ReactDOM.createRoot(document.getElementById('root')).render(variants);

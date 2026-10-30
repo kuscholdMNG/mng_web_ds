@@ -1517,6 +1517,23 @@ Both hero and feature-medium images use `object-fit: fill` with no `aspect-ratio
 
 **Status:** Open.
 
+### 16.4 TopZone Article Card (Zone 1 secondary stories) — headline color, rule color and image box
+
+**Found:** 2026-10-30, measured live on ocregister.com at 1100px and 700px (Karl resized the window); the `.busy .feature-small` CSS is identical on all 6 review sites. **Team:** CMS. Figma: WordPress Elements ▸ Homepage ▸ TopZone Article Card (`3336:46079`).
+
+**Design:** headline `color/gray/min` (#141414); the 1px bottom rule (XS and S) `color/gray/500` (#CCCAC7); the image fills its box (280×157 at L, 97×54 at S).
+
+**Production:**
+- Headline color `#000000` (rgb 0, 0, 0) instead of `color/gray/min`.
+- Bottom rule `#AAA7A4` at 640–799px instead of `color/gray/500` (#CCCAC7). Not measured below 640px.
+- Images keep their own proportions inside the image box, top-aligned (at 1100px: 108, 177 and 157px tall in a 157px box), so wide photos leave white space under them; the box also has 8px of margin below it. Related to 16.3.
+
+Sizes, gaps and type otherwise match Figma at both widths (L: 507 card, 280×157 image, 20px gap, Noto Serif Bold 18/21.6; S: 330 card, 97×54 image, 20px gap, 16/18.88).
+
+**Fix:** set the headline to `color/gray/min` and the rule to `color/gray/500`; fill the image box (`object-fit: cover`, image 100% of the box) or confirm the letterboxing is intended.
+
+**Status:** Open. Added 2026-10-30.
+
 ---
 
 ## 17. Zone 1 slideshow (gallery lead) — type, spacing and colors off the design tokens; slide count not announced

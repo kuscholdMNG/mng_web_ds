@@ -29,7 +29,7 @@ These fill the production homepage layout on the Editor's Picks tab. All are in 
 
 | Component | Figma | Notes | Where it shows | Status |
 | --- | --- | --- | --- | --- |
-| TopZone Article Card | `3336:46079` | 4 cards in a 2×2 grid beside the Zone 1 lead; switches to thumbnail rows below 800px | Zone 1 | **Done 2026-10-30** (`TopZoneArticleCard`; 15px headline gap kept raw; Device renamed to production's ranges XS / M / L / XL, Karl). No variant yet for production's 640–799px layout |
+| TopZone Article Card | `3336:46079` | 4 cards in a 2×2 grid beside the Zone 1 lead; switches to thumbnail rows below 800px | Zone 1 | **Done 2026-10-30** (`TopZoneArticleCard`; 15px headline gap kept raw; Device renamed to production's ranges XS / S / M / L / XL; S added from production, Karl) |
 | Latest Headlines + Latest Headlines List Item | `3476:62396`, `3336:46118` | 7 items with kicker, headline and time; the Section Title / Eyebrow above it is already in the DS | Zone 1, right column | Not started |
 | Newsletter Signup | `3336:44765` | Under Latest Headlines (anonymous view). The 10px padding above and below the heading stays raw (Karl, 2026-10-30) | Zone 1 | Not started |
 | Most Popular List Item + Blueconic Block | `3352:24171`, `3352:20526` | 10 numbered items, 2 columns (1 below 640px) | Zone 2 | Not started |

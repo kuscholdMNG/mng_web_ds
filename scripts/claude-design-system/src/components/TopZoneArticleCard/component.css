@@ -1,5 +1,5 @@
 /* TopZone Article Card: values from components/wordpress/topzone-article-card (component tokens -> system tokens).
-   Fills its column; Figma builds XL 336, M 197, L 507, XS 340. color/gray/max card, 16px (spacing/200) bottom padding. */
+   Fills its column; Figma builds XL 336, L 507, M 197, S 330, XS 340. color/gray/max card, 16px (spacing/200) bottom padding. */
 .mngds-topzone-article-card {
   box-sizing: border-box; display: flex; flex-direction: column; align-items: stretch; width: 100%; min-width: 0; margin: 0;
   background: var(--mng-topzone-article-card-base-root-background);
@@ -8,19 +8,25 @@
 .mngds-topzone-article-card *, .mngds-topzone-article-card *::before, .mngds-topzone-article-card *::after { box-sizing: border-box; }
 .mngds-topzone-article-card--xl { gap: var(--mng-topzone-article-card-device-xl-1280px-root-gap); }
 .mngds-topzone-article-card--m { gap: var(--mng-topzone-article-card-device-m-800-1039px-root-gap); }
-.mngds-topzone-article-card--xs { gap: var(--mng-topzone-article-card-device-xs-639px-root-gap); padding-bottom: 0; }
+.mngds-topzone-article-card--xs { gap: var(--mng-topzone-article-card-device-xs-639px-root-gap); }
+.mngds-topzone-article-card--s { gap: var(--mng-topzone-article-card-device-s-640-799px-root-gap); }
 
 /* Stacked (XL, M): the image keeps Figma's 16:9 (336x189, 197x111) at the column width. */
 .mngds-topzone-article-card__image { width: 100%; aspect-ratio: 16 / 9; flex-shrink: 0; }
 .mngds-topzone-article-card__img { width: 100%; height: 100%; }
 
-/* Rows (L, XS): fixed thumbnail beside the headline column, top-aligned. */
+/* Rows (L, S, XS): fixed thumbnail beside the headline column, top-aligned. */
 .mngds-topzone-article-card__content { display: flex; flex-direction: row; align-items: flex-start; min-width: 0; }
 .mngds-topzone-article-card--l .mngds-topzone-article-card__content { gap: var(--mng-topzone-article-card-device-l-1040-1279px-content-gap); }
 .mngds-topzone-article-card--xs .mngds-topzone-article-card__content { gap: var(--mng-topzone-article-card-device-xs-639px-content-gap); }
+.mngds-topzone-article-card--s .mngds-topzone-article-card__content { gap: var(--mng-topzone-article-card-device-s-640-799px-content-gap); }
 .mngds-topzone-article-card--l .mngds-topzone-article-card__image {
   width: var(--mng-topzone-article-card-device-l-1040-1279px-content-article-image-placeholder-width);
   height: var(--mng-topzone-article-card-device-l-1040-1279px-content-article-image-placeholder-height); aspect-ratio: auto;
+}
+.mngds-topzone-article-card--s .mngds-topzone-article-card__image {
+  width: var(--mng-topzone-article-card-device-s-640-799px-content-article-image-placeholder-width);
+  height: var(--mng-topzone-article-card-device-s-640-799px-content-article-image-placeholder-height); aspect-ratio: auto;
 }
 .mngds-topzone-article-card--xs .mngds-topzone-article-card__image {
   width: var(--mng-topzone-article-card-device-xs-639px-content-article-image-placeholder-width);
@@ -36,7 +42,8 @@
   font-weight: var(--mng-editorial-titles-card-tertiary-font-weight); line-height: var(--mng-editorial-titles-card-tertiary-line-height);
   letter-spacing: var(--mng-editorial-titles-card-tertiary-letter-spacing);
 }
-.mngds-topzone-article-card--m .mngds-topzone-article-card__headline {
+.mngds-topzone-article-card--m .mngds-topzone-article-card__headline,
+.mngds-topzone-article-card--s .mngds-topzone-article-card__headline {
   font-family: var(--mng-editorial-titles-card-tertiary-compact-font-family); font-size: var(--mng-editorial-titles-card-tertiary-compact-font-size);
   font-weight: var(--mng-editorial-titles-card-tertiary-compact-font-weight); line-height: var(--mng-editorial-titles-card-tertiary-compact-line-height);
   letter-spacing: var(--mng-editorial-titles-card-tertiary-compact-letter-spacing);
@@ -56,8 +63,8 @@
 .mngds-topzone-article-card__link { color: inherit; text-decoration: none; }
 .mngds-topzone-article-card__link:hover { text-decoration: underline; }
 .mngds-topzone-article-card__link:focus-visible { outline: 2px solid var(--mng-color-gray-black); outline-offset: 2px; }
-/* XS bottom rule (a 0-height Figma line with a 1px color/gray/500 stroke) */
+/* XS and S bottom rule (a 0-height Figma line with a 1px color/gray/500 stroke) */
 .mngds-topzone-article-card__rule {
   flex-shrink: 0; height: 0;
-  border-top: var(--mng-topzone-article-card-device-xs-639px-bottom-border-line-border-width) var(--mng-topzone-article-card-device-xs-639px-bottom-border-line-border-style) var(--mng-topzone-article-card-device-xs-639px-bottom-border-line-border-color);
+  border-top: var(--mng-topzone-article-card-base-bottom-border-line-border-width) var(--mng-topzone-article-card-base-bottom-border-line-border-style) var(--mng-topzone-article-card-base-bottom-border-line-border-color);
 }

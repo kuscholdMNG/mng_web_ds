@@ -355,24 +355,25 @@
       "file": "b1iZxkFwtAYq9rElmnCAzd",
       "node": "3336:46079",
       "documentationFrame": "3484:67610",
-      "description": "The four homepage Zone 1 story cards beside the Zone 1 lead (Editor's Picks). Device values are production's own breakpoints for these cards (`.busy .feature-small`, identical on all 6 review sites): image beside the headline at XS and L, image over the headline at M and XL.",
+      "description": "The four homepage Zone 1 story cards beside the Zone 1 lead (Editor's Picks). Device values are production's own breakpoints for these cards (`.busy .feature-small`, identical on all 6 review sites): image beside the headline at XS, S and L, image over the headline at M and XL.",
       "rules": [
-        "**Breakpoints are production's, for this component** (Karl, 2026-10-30): each Device value is named by the range it covers (`XS (≤639px)`, `M (800–1039px)`, `L (1040–1279px)`, `XL (≥1280px)`); the width a variant is drawn at is a note, not a breakpoint. Production CSS: `.busy .feature-small` at 640 / 800 / 1040 / 1280px, the same on all 6 review sites (scan 2026-10-30, `components/breakpoint-audit.md`).",
+        "**Breakpoints are production's, for this component** (Karl, 2026-10-30): each Device value is named by the range it covers (`XS (≤639px)`, `S (640–799px)`, `M (800–1039px)`, `L (1040–1279px)`, `XL (≥1280px)`); the width a variant is drawn at is a note, not a breakpoint. Production CSS: `.busy .feature-small` at 640 / 800 / 1040 / 1280px, the same on all 6 review sites (scan 2026-10-30, `components/breakpoint-audit.md`).",
         "**XL** (1280px and up, built 336): two per row. Article Image 336×189; 8px (`spacing/100`) to the headline; headline `Editorial/Titles/CardTertiary` (20/23.6, −0.4px); 16px (`spacing/200`) bottom padding.",
-        "**L** (1040–1279px, built 507): one per row, thumbnail row. Article Image 280×157; 20px (`spacing/250`) to the headline column; headline `Editorial/Titles/CardTertiaryRow` (18/21.6); 16px bottom padding; the bottom rule is hidden.",
+        "**L** (1040–1279px, built 507): one per row, thumbnail row. Article Image 280×157; 20px (`spacing/250`) to the headline column; headline `Editorial/Titles/CardTertiaryRow` (18/21.6); 16px bottom padding; the bottom rule is hidden. Matches production, measured live at 1100px (2026-10-30).",
         "**M** (800–1039px, built 197): two per row. Article Image 197×111; 8px; headline `Editorial/Titles/CardTertiaryCompact` (16/18.88); 16px bottom padding.",
+        "**S** (640–799px, built 330; added 2026-10-30 from production, measured live at 700px, Karl): two per row, thumbnail row. Article Image 97×54; 20px (`spacing/250`) to the headline column; headline `Editorial/Titles/CardTertiaryCompact` (16/18.88); 16px (`spacing/200`) to the 1px `color/gray/500` bottom rule.",
         "**XS** (639px and below, built 340): one per row, thumbnail row. Article Image 100×67; 8px to the headline column; headline Noto Serif Bold 18 (`font/size/18`), auto line height; 16px to the 1px `color/gray/500` bottom rule.",
         "**Headline font follows the theme** (`font/theme/heading-family`; the XS headline bound to it 2026-10-30, like the other headlines). `color/gray/min` on `color/gray/max`, 18.4:1.",
         "**Headline group gap 15px is raw on purpose** (Karl, 2026-10-30): no token is made for it. It only shows when the Article Status Badge is on."
       ],
-      "breakpoints": "| Device (production range) | Grid token | Production layout | Built at | Future MNG Device breakpoint (not adopted yet) |\n|---|---|---|---|---|\n| XS (≤639px) | `wordpress-grid.xs` | One per row, image beside the headline (1/3) | 340px | Mobile (below 768) |\n| S (640–799px) | `wordpress-grid.s` | Two per row, image beside the headline, 16/1.18. **No Figma variant yet** | — | Mobile / Tablet (decide when standardizing) |\n| M (800–1039px) | `wordpress-grid.m` | Two per row, image over the headline, 16/1.18 | 197px | Tablet (768–1023) |\n| L (1040–1279px) | `wordpress-grid.l` | One per row, image beside the headline (CSS 25%), 18/1.2 | 507px | Tablet landscape (1024–1279) |\n| XL (≥1280px) | `wordpress-grid.xl` | Two per row, image over the headline, 20/1.18, −0.02em | 336px | Desktop (1280 and up) |",
+      "breakpoints": "| Device (production range) | Grid token | Production layout | Built at | Future MNG Device breakpoint (not adopted yet) |\n|---|---|---|---|---|\n| XS (≤639px) | `wordpress-grid.xs` | One per row, image beside the headline (1/3) | 340px | Mobile (below 768) |\n| S (640–799px) | `wordpress-grid.s` | Two per row, image beside the headline (97×54), 16/1.18 | 330px | Mobile / Tablet (decide when standardizing) |\n| M (800–1039px) | `wordpress-grid.m` | Two per row, image over the headline, 16/1.18 | 197px | Tablet (768–1023) |\n| L (1040–1279px) | `wordpress-grid.l` | One per row, image beside the headline (280×157), 18/1.2 | 507px | Tablet landscape (1024–1279) |\n| XL (≥1280px) | `wordpress-grid.xl` | Two per row, image over the headline, 20/1.18, −0.02em | 336px | Desktop (1280 and up) |",
       "knownIssues": [
-        "Production has a 640–799px layout (two per row, image beside the headline) with no Figma variant.",
-        "L: Figma gives the image 280 of 507px (55%); production CSS gives it 25% of the card. Not measured live (needs a window about 1100px wide).",
-        "Article Status Badge: hidden in every variant and no component property turns it on; XL and M hold it outside the headline group (Type = Sponsored), XS and L inside it (Type = None).",
+        "Production images keep their own proportions inside the image box, top-aligned, with 8px below the box; Figma fills the box (design-vs-production 16.4).",
+        "Production headline #000000 and, at 640–799px, rule #AAA7A4; the design is `color/gray/min` and `color/gray/500` (design-vs-production 16.4).",
+        "Article Status Badge: hidden in every variant and no component property turns it on; XL and M hold it outside the headline group (Type = Sponsored), XS, S and L inside it (Type = None).",
         "The headline-group gap is 15px with no token (kept raw by decision, Karl 2026-10-30)."
       ],
-      "production": "Production homepage Zone 1 (`.feature-primary.busy .feature-small`), the four secondary stories beside the lead. CSS scanned on all 6 review sites 2026-10-30; live width at 1728px: 345px."
+      "production": "Production homepage Zone 1 (`.feature-primary.busy .feature-small`), the four secondary stories beside the lead. CSS scanned on all 6 review sites 2026-10-30; measured live on ocregister.com at 1728px (XL, 345 wide), 1100px (L) and 700px (S)."
     },
     {
       "slug": "zone-1-slideshow",
