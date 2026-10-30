@@ -7,7 +7,7 @@ Inputs
                                                       the differences from it ("b" = extra, "absent" = missing).
   CLASSIFY below                                      who owns each value and what it should snap to (hand-checked).
   REPO_SOURCES below                                  breakpoints found in the website repo copy (2026-05-08), from
-                                                      status open item 11 and design-vs-production entries 8, 27 and 34.1.
+                                                      status open item 11 and components/breakpoint-audit.md ("All production breakpoints in one place").
 Output
   tokens/breakpoint-inventory.json
 
@@ -145,9 +145,9 @@ REPO_SOURCES = [
      'note': 'The WordPress grid ($columns-map, ai-breakpoint() mixin, written in em). The masthead switches at l (1040).'},
     {'source': 'plugins/mng-digital-subscriber-widgets/reader-dashboard-src (Reader Dashboard, Tailwind v4)',
      'values': [640, 768, 1024, 1280, 1536], 'tier': 'drift', 'set': 'device',
-     'note': 'Tailwind defaults sm/md/lg/xl/2xl; the layout switches at 1024 and 1280. 640 and 1536 are not Device values. Production-vs-design entry 34.1 (questions for DigiScrum).'},
+     'note': 'Tailwind defaults sm/md/lg/xl/2xl; the layout switches at 1024 and 1280. 640 and 1536 are not Device values. Breakpoint reference C.1 (questions for DigiScrum).'},
     {'source': 'Reader Dashboard built CSS', 'values': [361, 413], 'tier': 'drift', 'set': 'device',
-     'note': 'Source not traced yet; close to Device mobile (360). Entry 34.1.'},
+     'note': 'Source not traced yet; close to Device mobile (360). Breakpoint reference C.1.'},
     {'source': 'assets/client/scss/layouts/scng/components/features/_obits.scss (Obituaries)',
      'values': [624, 625, 734, 735, 1000, 1299, 1300], 'tier': 'drift', 'set': 'wordpress-grid',
      'note': 'Obituaries off-grid values; also seen live. Entry 27 (CMS team).'},
@@ -214,8 +214,9 @@ def main():
     out = {
         '$description': 'Every width breakpoint found in MNG production code, classified as official, component or drift '
                         '(EXPORT-STANDARD.md section 6); third-party and WordPress admin-bar values are left out. Built by scripts/breakpoint-inventory/'
-                        'build-inventory.py; never edit by hand. Drift is logged in design-vs-production.md '
-                        '(entries 8, 27 and 34.1) with the official breakpoint to snap to.',
+                        'build-inventory.py; never edit by hand. The human-readable list, with the future target for each value, is '
+                        'components/breakpoint-audit.md, "All production breakpoints in one place" (moved there from '
+                        'design-vs-production.md entries 8, 27 and 34 on 2026-10-30).',
         'scanned': '2026-10-14',
         'method': 'Live CSS scan (scan.js) of every loaded stylesheet, @media width conditions only, on the homepage, an '
                   'article and the obituaries page of each review site, at a 1728px-wide window (media rules are read '

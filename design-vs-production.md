@@ -1309,71 +1309,7 @@ Check after the change: the subscribe CTA keeps its 44px min height and its fill
 
 ## 8. Breakpoints off the official sets — WordPress themes, trust indicators, digisubs (all 6 sites)
 
-**Found:** 2026-10-14, live CSS scan of the homepage, an article and the obituaries page on all 6 review sites (`tokens/breakpoint-inventory.json`, built by `scripts/breakpoint-inventory/`). Every value below was found on all 6 sites (the three theme stylesheets share their media queries). **Teams:** CMS, DigiScrum. **Updated 2026-10-14** with Karl's decisions.
-
-**Design:** two official sets (EXPORT-STANDARD.md section 6). WordPress code follows the **WordPress grid** (min-widths 320 / 640 / 800 / 1040 / 1280; max-widths 639 / 799 / 1039 / 1279). Everything else, including the digisubs plugin and app (Karl, 2026-10-14), follows the **MNG Device breakpoints** (min-widths 340 / 360 / 768 / 1024 / 1280; max-widths 339 / 359 / 767 / 1023 / 1279). Of the 56 values kept in the inventory, 13 are official, 34 are drift (below) and 9 are component breakpoints. Left out: third-party code (paywall, cookie consent, ad vendors), the WordPress admin bar, and the digisubs modal, spoof banner, push prompt, share box and employee debugger (not documented, Karl), and the special investigative header template (see below).
-
-**Production (drift) and fix:** move each rule to the official breakpoint in the right-hand column. The Sports Radar template and the promotion widget follow the WordPress grid (Karl, 2026-10-14). "Off by one" rules (`max-width: 340 / 360 / 800 / 1024 / 1040 / 1280`) overlap the official boundary by 1px and should be one less. The Obituaries values (624 / 625, 1299 / 1300) and the photo gallery (734 / 735) are also in entry 27.
-
-**WordPress themes** (team: CMS; snap to the WordPress grid):
-
-| Production | Where | Snap to |
-|---|---|---|
-| `(max-width: 405px)` | Sports Radar page template (#content.sports-radar-content; local template styling embedded Sportradar data widgets). | `(max-width: 639px)` (WordPress grid s) |
-| `(max-width: 500px)` | Sports Radar page template. | `(max-width: 639px)` (WordPress grid s) |
-| `(max-width: 535px)` | Sports Radar page template. | `(max-width: 639px)` (WordPress grid s) |
-| `(max-width: 624px)` | Obituaries 1-column layout (entry 27). | `(max-width: 639px)` (WordPress grid s) |
-| `(min-width: 625px)` | Obituaries 2-column start (entry 27). | `(min-width: 640px)` (WordPress grid s) |
-| `(max-width: 700px)` | Promotion widget (.promotion-widget, homepage promo tiles, e.g. Chicago Tribune Fun and Games / Tribune Store). | `(max-width: 639px)` (WordPress grid s) |
-| `(max-width: 734px)` | Photo gallery widget (.gallery-container; also entry 27). Fix (Karl). | `(max-width: 799px)` (WordPress grid m) |
-| `(min-width: 735px)` | Photo gallery widget (also entry 27). Fix (Karl). | `(min-width: 800px)` (WordPress grid m) |
-| `(max-width: 800px)` | Off by one: (max-width: 800px) overlaps m; should be 799 (#featured-flex-landing-three). | `(max-width: 799px)` (WordPress grid m) |
-| `(max-width: 900px)` | Promotion widget title. | `(max-width: 799px)` (WordPress grid m) |
-| `(max-width: 930px)` | Footer cookie notice button (Karl: fix to 1039). | `(max-width: 1039px)` (WordPress grid l) |
-| `(max-width: 960px)` | Sports Radar page template. | `(max-width: 1039px)` (WordPress grid l) |
-| `(max-width: 1280px)` | Off by one: (max-width: 1280px) overlaps xl; should be 1279 (.custom-dfm-section.dark-layout). | `(max-width: 1279px)` (WordPress grid xl) |
-| `(max-width: 1299px)` | Obituaries listing (entry 27). | `(max-width: 1279px)` (WordPress grid xl) |
-| `(min-width: 1300px)` | Obituaries "stop scaling" (entry 27). | `(min-width: 1280px)` (WordPress grid xl) |
-
-**dfm-trust-indicators plugin** (team: CMS; snap to the WordPress grid):
-
-| Production | Where | Snap to |
-|---|---|---|
-| `(max-width: 1040px)` | Off by one: (max-width: 1040px) overlaps l; should be 1039 (trust-indicator footer links). | `(max-width: 1039px)` (WordPress grid l) |
-
-**mng-digisubs plugin (account menu, regwall, sign-in, modals)** (team: DigiScrum; snap to the MNG Device set):
-
-| Production | Where | Snap to |
-|---|---|---|
-| `(max-width: 340px)` | Off by one: (max-width: 340px) overlaps fold; should be 339. | `(max-width: 339px)` (MNG Device fold) |
-| `(max-width: 450px)` | Digisubs modals, paywall container, regwall form, save-article and nickname modals, account dropdown (37 rules). | `(max-width: 359px)` (MNG Device mobile) |
-| `(max-width: 550px)` | Regwall (:root:not(:has(#server-regwall))). | `(max-width: 359px)` (MNG Device mobile) |
-| `(max-width: 576px)` | Digisubs content (.sspw-content). | `(max-width: 767px)` (MNG Device tablet) |
-| `(max-width: 600px)` | Shared with the theme. Digisubs change-username modal: snap to Device tablet. Theme article bottom share buttons (.article-bottom-share): snap to WordPress grid s. | `(max-width: 767px)` (MNG Device tablet) / `(max-width: 639px)` (WordPress grid s) |
-| `(max-width: 770px)` | Account dropdown menu. | `(max-width: 767px)` (MNG Device tablet) |
-| `(max-width: 820px)` | Account dropdown menu. | `(max-width: 767px)` (MNG Device tablet) |
-| `(max-width: 1024px)` | Off by one for the Device set (should be 1023); the theme rule (#dfm-digisubs-menu) should use grid l (1039). | `(max-width: 1023px)` (MNG Device tablet-landscape) |
-
-**Digisubs app, plugins.mngdigisubs.com (Bootstrap 5 defaults)** (team: DigiScrum; snap to the MNG Device set):
-
-| Production | Where | Snap to |
-|---|---|---|
-| `(max-width: 360px)` | Off by one: (max-width: 360px) overlaps mobile; should be 359. | `(max-width: 359px)` (MNG Device mobile) |
-| `(max-width: 400px)` | Sign-in modal. | `(max-width: 359px)` (MNG Device mobile) |
-| `(max-width: 575.98px)` | Bootstrap sm-down. | `(max-width: 767px)` (MNG Device tablet) |
-| `(min-width: 576px)` | Bootstrap sm container. | `(min-width: 768px)` (MNG Device tablet) |
-| `(max-width: 991.98px)` | Bootstrap lg-down. | `(max-width: 1023px)` (MNG Device tablet-landscape) |
-| `(min-width: 992px)` | Bootstrap lg container. | `(min-width: 1024px)` (MNG Device tablet-landscape) |
-| `(max-width: 1199.98px)` | Bootstrap xl-down. | `(max-width: 1279px)` (MNG Device desktop) |
-| `(min-width: 1200px)` | Bootstrap xl container. | `(min-width: 1280px)` (MNG Device desktop) |
-| `(max-width: 1399.98px)` | Bootstrap xxl-down: no official breakpoint above 1280. | `(max-width: 1279px)` (MNG Device desktop) |
-| `(min-width: 1400px)` | Bootstrap xxl container: no official breakpoint above 1280. | `(min-width: 1280px)` (MNG Device desktop) |
-
-**Not drift: component breakpoints (keep their own values, Karl):** the Masthead nav icons on very small phones (`max-width: 335px`, `350px`) and the ad rules: top leaderboard (`min-width: 300 / 750 / 1000px`), header banners, the top leaderboard ad container under the masthead (`max-width: 750px`), and the mobile adhesion ad (`max-width: 480 / 1000 / 1025px`). They go in the Masthead and Ad Blocks component tokens (WordPress layer).
-
-**Left out for now:** the special investigative header template (`max-width: 730 / 1150px`, plus 500 / 600 / 750 / 900 / 1024 it shares with other rules). It wasn't found on a live page of the 6 sites. **To do:** find it in production when more article pages are added to WordPress Elements, then classify its breakpoints (Karl, 2026-10-14).
-
-**Status:** Open.
+**Moved 2026-10-30** to [`components/breakpoint-audit.md`, "All production breakpoints in one place", section A](components/breakpoint-audit.md#all-production-breakpoints-in-one-place) (Karl: the breakpoint entries should all be in one place). Under the 2026-10-30 rule, production's breakpoints are documented as they are for now and aren't drift; the earlier snap targets are kept there as the future plan. The number isn't reused.
 
 ---
 
@@ -1781,25 +1717,7 @@ One-line items are unaffected (the 44px height holds), but every extra line adds
 
 ## 27. Obituaries — breakpoints that don't match the WordPress grid (for the CMS team)
 
-**Found:** 2026-10-14, in the Obituaries styles (`assets/client/scss/layouts/scng/components/features/_obits.scss` in the WordPress themes, Karl's local repo copy dated 2026-05-08) and the 2026-09-15 live audit of the Obituaries pages (`components/breakpoint-audit.md`). **Team:** CMS. *Live check still to do.*
-
-**Design (Karl, 2026-10-14):** Obituaries is built on the WordPress theme grid (it uses the theme's `ai-breakpoint()` mixin), so it belongs to the WordPress layer and follows the **WordPress grid breakpoints**: `xs` 320, `s` 640, `m` 800, `l` 1040, `xl` 1280 (min-widths; written as max-widths 639 / 799 / 1039 / 1279). Values that don't match the grid are drift for the CMS team to correct in the future.
-
-**Production:**
-
-| Production breakpoint | Where it's used | Matches the WordPress grid? | Snap to |
-|---|---|---|---|
-| `ai-breakpoint` `s` / `m` / `l` (640 / 800 / 1040) | spacing and layout | Yes | none |
-| ≥1040px (`65em`) / ≤1039px (`64.9375em`) | horizontal layout / 2-column upper bound | Yes (`l`) | none |
-| 800px (`50em`) | filter panel padding when open | Yes (`m`) | none |
-| ≤624px (`39em`, and a raw `624px` rule) / ≥625px (`39.0625em`) | 1-column layout and search form stacking / 2-column start | No | 640 (`s`) |
-| ≥1300px (`81.25em`) / ≤1299px (`81.1875em`) | listing and "stop scaling" | No | 1280 (`xl`) |
-| 1000px (`62.5rem`) | top and bottom leaderboard ad placement | No | 1040 (`l`) |
-| 625–734 / 735–1299px | photo gallery widget (likely shared, not obituary-only) | No | 640 / 800 / 1280 |
-
-**Fix (future, CMS team):** move each non-matching rule to the grid breakpoint in the right-hand column. The gallery widget and the 1000px ad rule may be shared with other pages; confirm before changing them. The Masthead's Obituaries search widget (624) is part of this fix.
-
-**Status:** Open (future).
+**Moved 2026-10-30** to [`components/breakpoint-audit.md`, "All production breakpoints in one place", section B](components/breakpoint-audit.md#all-production-breakpoints-in-one-place) (Karl: the breakpoint entries should all be in one place). Under the 2026-10-30 rule, production's breakpoints are documented as they are for now and aren't drift; the earlier snap targets are kept there as the future plan. The number isn't reused.
 
 ---
 
@@ -1989,30 +1907,7 @@ Only one instance of the disclosure pattern (Login Methods on Profile) was found
 
 ## 34. Reader Dashboard — breakpoints (questions for DigiScrum)
 
-### 34.1 Breakpoints close to, but not on, the Figma screen widths (questions for DigiScrum)
-
-**Found:** 2026-10-14, in the Reader Dashboard source (`plugins/mng-digital-subscriber-widgets/reader-dashboard-src/`, Karl's local copy of the website repo dated 2026-05-08) and its built CSS. **Team:** DigiScrum. *Live check still to do: confirm the current production build matches this copy.*
-
-**Design (source of truth):** Reader Dashboard v2.0 is designed at 5 screen widths: Fold 340, Mobile 360, Tablet (vertical) 768, Tablet (horizontal) 1024, Desktop 1280. These are the MNG Device breakpoints (min-widths 360 / 768 / 1024 / 1280; Fold is everything below 360).
-
-**Production:** 768 (`md`, `min-[768px]`), 1024 (`lg`, `window.innerWidth >= 1024`) and 1280 (`xl`) match. Four values don't, and they are too close to the design widths to be accidents, so **this entry asks why before asking for a fix** (Karl, 2026-10-14). The repo copy has no git history or code comments explaining them; the likely reasons below are inferred.
-
-| Production value | Where it's used | Likely reason | Question for DigiScrum |
-|---|---|---|---|
-| `min-[361px]` | text field size and height, inline form box padding, menu width (344px), page margins, display-name form (`text-field.tsx`, `inline-form-box.tsx`, `reader-dashboard.tsx`, `update-display-name.tsx`) | "Wider than 360": 360 is the most common Android phone width and Figma's largest phone frame. The compact phone styles apply at 360 and below; the roomier ones start at 361. Figma has no design between 361 and 767, so the team picked where the roomier layout starts. | Is 361 meant as "wider than the 360 Mobile frame"? Should the roomier styles start at 360 (Figma's Mobile) or stay at 361? |
-| `min-[413px]` | "No articles saved" empty state alignment (`no-articles-saved.tsx`) | "Wider than 412": 412 is a common large-Android width. Likely a fix for a wrap seen on a specific phone. | Was this a fix for a specific device? Could it use 360 or 768 instead? |
-| `sm` 640 (40rem) | logout status width (`logout-status.tsx`, `sm:w-fit`) and Tailwind's `.container` | Tailwind's default `sm` screen, left in place (the team didn't set its own screens). | Was 640 chosen, or is it Tailwind's default? Could it be 768? |
-| `2xl` 1536 (96rem) | Tailwind's `.container` max width only; no `container` class found in the dashboard source | Tailwind's default `2xl` screen, generated automatically. | Can it be removed? |
-
-**Next step:** ask DigiScrum the questions above. Depending on the answers, each value becomes part of the Device set (if a new screen width is really needed, Figma gets a matching frame first), a documented component breakpoint, or a fix. Our generated Tailwind screens (`dist/tailwind/`) can replace Tailwind's defaults so `sm` / `2xl` disappear.
-
-**Status:** Open — waiting on DigiScrum's answers.
-
-### 34.2 Reader Dashboard's own breakpoint convention differs from the marketing site's
-
-The Reader Dashboard treats 1024×768 and 1280×960 as "menu always visible," a 1024px breakpoint — different from the audited 1039px rule on the main marketing-site nav. Since the Dashboard is a distinct web app from the shared marketing-site theme, this may be a legitimately different, real breakpoint rather than a conflict.
-
-**Status:** Informational / low priority — flagged for awareness, not treated as an error.
+**Moved 2026-10-30** to [`components/breakpoint-audit.md`, "All production breakpoints in one place", section C (C.1 was 34.1, C.2 was 34.2)](components/breakpoint-audit.md#all-production-breakpoints-in-one-place) (Karl: the breakpoint entries should all be in one place). Under the 2026-10-30 rule, production's breakpoints are documented as they are for now and aren't drift; the earlier snap targets are kept there as the future plan. The number isn't reused.
 
 ---
 
@@ -2066,6 +1961,8 @@ The Reader Dashboard treats 1024×768 and 1280×960 as "menu always visible," a 
 ## Notes
 
 **Reading live colors:** read themed CSS variables such as `--primary` on `document.querySelector('#page')`, not on `document.documentElement`. The WordPress Customizer's per-site override is scoped to `#page`, so reading at `:root` only shows the theme default.
+
+**Breakpoints moved 2026-10-30 (Karl):** entries 8, 27 and 34 (34.1, 34.2) moved to `components/breakpoint-audit.md`, "All production breakpoints in one place" (sections A, B and C), so every production breakpoint is in one document; the numbers here point there and aren't reused. Their Google Sheet rows (Other fixes) say Moved.
 
 **Renumbered 2026-10-27 (Karl):** entries are now grouped by component, one entry per component, in this order: icons, fonts, colors, spacing / radius / breakpoints, masthead and navigation, homepage blocks, article page, obituaries, ads and page layout, Reader Dashboard. Every reference in the repo, the Google Sheet and the Figma descriptions was updated. Older references (git history, Jira comments such as CI-14848, dated "Updated" notes) use the old numbers; this table maps them. Old 10, 12, 16 and 17 were groups that were split up (10 → 13 and 22; 12 → 14–16; 16 → 16.3, 28.3, 28.4 and 29; 17 → 10, 25 and 34.2). Sub-entries not listed keep their number under the new parent (old 13.2 → 31.2).
 

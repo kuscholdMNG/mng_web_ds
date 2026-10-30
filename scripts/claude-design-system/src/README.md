@@ -1,4 +1,6 @@
 > **Compiled by Karl Kuschold**, UX/UI Design Lead, MediaNews Group, with Claude (Anthropic). Questions, corrections or requests: [kuschold@medianewsgroup.com](mailto:kuschold@medianewsgroup.com).
+>
+> **Updated {{UPDATED}}.**
 
 The MNG Web Design System is MediaNews Group's design system for its news websites (90+ publications). It's built from what is live on our sites and corrected in Figma, so what you see here is what the sites should look like. Use it to look up colors, type, spacing and components, and to design and prototype in Claude with the real components instead of copies.
 

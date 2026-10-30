@@ -1,5 +1,5 @@
 {
-  "$description": "Every width breakpoint found in MNG production code, classified as official, component or drift (EXPORT-STANDARD.md section 6); third-party and WordPress admin-bar values are left out. Built by scripts/breakpoint-inventory/build-inventory.py; never edit by hand. Drift is logged in design-vs-production.md (entries 8, 27 and 34.1) with the official breakpoint to snap to.",
+  "$description": "Every width breakpoint found in MNG production code, classified as official, component or drift (EXPORT-STANDARD.md section 6); third-party and WordPress admin-bar values are left out. Built by scripts/breakpoint-inventory/build-inventory.py; never edit by hand. The human-readable list, with the future target for each value, is components/breakpoint-audit.md, \"All production breakpoints in one place\" (moved there from design-vs-production.md entries 8, 27 and 34 on 2026-10-30).",
   "scanned": "2026-10-14",
   "method": "Live CSS scan (scan.js) of every loaded stylesheet, @media width conditions only, on the homepage, an article and the obituaries page of each review site, at a 1728px-wide window (media rules are read from the CSS, so the window width does not matter). Cross-origin sheets were fetched; the HTL ad bidder sheet was blocked on most sites. em/rem converted at 16px. JavaScript breakpoints (matchMedia, window.innerWidth) are not included.",
   "officialSets": {
@@ -1730,7 +1730,7 @@
         ],
         "tier": "drift",
         "set": "device",
-        "note": "Tailwind defaults sm/md/lg/xl/2xl; the layout switches at 1024 and 1280. 640 and 1536 are not Device values. Production-vs-design entry 34.1 (questions for DigiScrum)."
+        "note": "Tailwind defaults sm/md/lg/xl/2xl; the layout switches at 1024 and 1280. 640 and 1536 are not Device values. Breakpoint reference C.1 (questions for DigiScrum)."
       },
       {
         "source": "Reader Dashboard built CSS",
@@ -1740,7 +1740,7 @@
         ],
         "tier": "drift",
         "set": "device",
-        "note": "Source not traced yet; close to Device mobile (360). Entry 34.1."
+        "note": "Source not traced yet; close to Device mobile (360). Breakpoint reference C.1."
       },
       {
         "source": "assets/client/scss/layouts/scng/components/features/_obits.scss (Obituaries)",

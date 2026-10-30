@@ -181,6 +181,16 @@ def clamp(s, n):
     s = re.sub(r"\s+", " ", s).strip()
     return s if len(s) <= n else s[: n - 1].rsplit(" ", 1)[0] + "…"
 
+def updated_date():
+    """Date of the repo's last commit, e.g. "October 30, 2026": when the system was last updated."""
+    try:
+        d = subprocess.check_output(["git", "-C", str(REPO), "log", "-1", "--format=%cs"], text=True).strip()
+        dt = datetime.date.fromisoformat(d)
+    except Exception:
+        dt = datetime.date.today()
+    return f"{dt.strftime('%B')} {dt.day}, {dt.year}"
+
+
 def git_ref():
     try:
         sha = subprocess.check_output(["git", "-C", str(REPO), "rev-parse", "--short", "HEAD"], text=True).strip()
@@ -659,7 +669,7 @@ def main():
     cov = proj / "components/Cover"
     if (SRC / "cover.html").exists():
         cov.mkdir()
-        shutil.copy(SRC / "cover.html", cov / "preview.html")
+        (cov / "preview.html").write_text((SRC / "cover.html").read_text().replace("{{UPDATED}}", updated_date()))
 
     # README
     readme = (SRC / "README.md").read_text()
@@ -674,7 +684,7 @@ def main():
         return "\n".join(rows)
     readme = readme.replace("{{CORE_TABLE}}", comp_table("Core")).replace("{{WORDPRESS_TABLE}}", comp_table("WordPress Elements"))
     readme = readme.replace("{{INVENTORY}}", inventory_md(comps))
-    readme = readme.replace("{{NAMESPACE}}", NAMESPACE).replace("{{REF}}", tokens["meta"]["ref"])
+    readme = readme.replace("{{NAMESPACE}}", NAMESPACE).replace("{{REF}}", tokens["meta"]["ref"]).replace("{{UPDATED}}", updated_date())
     (proj / "README.md").write_text(readme)
 
     # assets: READMEs here; SVG uploads listed for the publish step
