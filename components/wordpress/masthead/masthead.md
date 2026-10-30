@@ -45,17 +45,17 @@ exported: 2026-10-30
 | `Default / LG-TabletH (800–1039px) / Home` | 1024×346 | [819:2854](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=819-2854) | 1 | ![](previews/masthead--default-lg-tableth-800-1039px-home.png) |
 | `Default / LG-TabletH (800–1039px) / Article` | 1024×346 | [824:5088](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=824-5088) | 0 | ![](previews/masthead--default-lg-tableth-800-1039px-article.png) |
 | `Default / MD-TabletV (640–799px) / SectionFront` | 768×186 | [456:3100](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3100) | 0 | ![](previews/masthead--default-md-tabletv-640-799px-sectionfront.png) |
-| `Default / MD-TabletV (640–799px) / Obituaries` | 768×300 | [456:3726](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3726) | 0 | ![](previews/masthead--default-md-tabletv-640-799px-obituaries.png) |
+| `Default / MD-TabletV (640–799px) / Obituaries` | 768×349 | [456:3726](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3726) | 0 | ![](previews/masthead--default-md-tabletv-640-799px-obituaries.png) |
 | `Default / MD-TabletV (640–799px) / Dashboard` | 768×104 | [456:3152](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3152) | 8 | ![](previews/masthead--default-md-tabletv-640-799px-dashboard.png) |
 | `Default / MD-TabletV (640–799px) / Home` | 768×186 | [456:3071](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3071) | 9 | ![](previews/masthead--default-md-tabletv-640-799px-home.png) |
 | `Default / MD-TabletV (640–799px) / Article` | 768×186 | [824:5147](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=824-5147) | 0 | ![](previews/masthead--default-md-tabletv-640-799px-article.png) |
 | `Default / SM-Mobile (≤639px · built 360px) / SectionFront` | 360×130 | [456:3230](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3230) | 1 | ![](previews/masthead--default-sm-mobile-639px-built-360px-sectionfront.png) |
-| `Default / SM-Mobile (≤639px · built 360px) / Obituaries` | 360×295 | [456:3531](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3531) | 0 | ![](previews/masthead--default-sm-mobile-639px-built-360px-obituaries.png) |
+| `Default / SM-Mobile (≤639px · built 360px) / Obituaries` | 360×353 | [456:3531](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3531) | 0 | ![](previews/masthead--default-sm-mobile-639px-built-360px-obituaries.png) |
 | `Default / SM-Mobile (≤639px · built 360px) / Dashboard` | 360×104 | [456:3300](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3300) | 12 | ![](previews/masthead--default-sm-mobile-639px-built-360px-dashboard.png) |
 | `Default / SM-Mobile (≤639px · built 360px) / Home` | 360×130 | [456:3201](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3201) | 11 | ![](previews/masthead--default-sm-mobile-639px-built-360px-home.png) |
 | `Default / SM-Mobile (≤639px · built 360px) / Article` | 360×130 | [824:5173](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=824-5173) | 0 | ![](previews/masthead--default-sm-mobile-639px-built-360px-article.png) |
 | `Default / XS-Fold (≤639px · built 340px) / SectionFront` | 340×180 | [736:1647](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=736-1647) | 0 | ![](previews/masthead--default-xs-fold-639px-built-340px-sectionfront.png) |
-| `Default / XS-Fold (≤639px · built 340px) / Obituaries` | 340×295 | [456:3592](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3592) | 0 | ![](previews/masthead--default-xs-fold-639px-built-340px-obituaries.png) |
+| `Default / XS-Fold (≤639px · built 340px) / Obituaries` | 340×353 | [456:3592](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3592) | 0 | ![](previews/masthead--default-xs-fold-639px-built-340px-obituaries.png) |
 | `Default / XS-Fold (≤639px · built 340px) / Dashboard` | 340×104 | [456:3324](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=456-3324) | 0 | ![](previews/masthead--default-xs-fold-639px-built-340px-dashboard.png) |
 | `Default / XS-Fold (≤639px · built 340px) / Home` | 340×180 | [736:2450](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=736-2450) | 1 | ![](previews/masthead--default-xs-fold-639px-built-340px-home.png) |
 | `Default / XS-Fold (≤639px · built 340px) / Article` | 340×180 | [824:5197](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=824-5197) | 0 | ![](previews/masthead--default-xs-fold-639px-built-340px-article.png) |
@@ -68,7 +68,7 @@ exported: 2026-10-30
 | `AdFree / LG-TabletH (800–1039px) / Home` | 1024×64 | [823:3758](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=823-3758) | 0 | ![](previews/masthead--adfree-lg-tableth-800-1039px-home.png) |
 | `AdFree / LG-TabletH (800–1039px) / Article` | 1024×64 | [824:4780](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=824-4780) | 0 | ![](previews/masthead--adfree-lg-tableth-800-1039px-article.png) |
 | `AdFree / MD-TabletV (640–799px) / SectionFront` | 768×64 | [823:3969](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=823-3969) | 0 | ![](previews/masthead--adfree-md-tabletv-640-799px-sectionfront.png) |
-| `AdFree / MD-TabletV (640–799px) / Obituaries` | 768×300 | [827:5573](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=827-5573) | 0 | ![](previews/masthead--adfree-md-tabletv-640-799px-obituaries.png) |
+| `AdFree / MD-TabletV (640–799px) / Obituaries` | 768×285 | [827:5573](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=827-5573) | 0 | ![](previews/masthead--adfree-md-tabletv-640-799px-obituaries.png) |
 | `AdFree / MD-TabletV (640–799px) / Home` | 768×64 | [819:1940](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=819-1940) | 0 | ![](previews/masthead--adfree-md-tabletv-640-799px-home.png) |
 | `AdFree / MD-TabletV (640–799px) / Article` | 768×64 | [824:4885](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=824-4885) | 0 | ![](previews/masthead--adfree-md-tabletv-640-799px-article.png) |
 | `AdFree / SM-Mobile (≤639px · built 360px) / SectionFront` | 360×64 | [823:4068](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=823-4068) | 0 | ![](previews/masthead--adfree-sm-mobile-639px-built-360px-sectionfront.png) |
@@ -602,7 +602,6 @@ From `masthead.tokens.json`. References point at system tokens (`tokens/core/`, 
 | `masthead.base.masthead-container.section-title-row.padding-left` | `{spacing.200}` |
 | `masthead.base.masthead-container.section-title-row.padding-right` | `{spacing.200}` |
 | `masthead.base.masthead-container.section-title-row.contents-container.gap` | 14px |
-| `masthead.base.masthead-container.section-title-row.contents-container.width` | 801px |
 | `masthead.base.masthead-container.section-title-row.contents-container.ad-blocks.height` | 50px |
 | `masthead.base.masthead-container.section-title-row.contents-container.ad-blocks.icon-color` | `{color.gray.min}` |
 | `masthead.base.masthead-container.section-title-row.contents-container.ad-blocks.width` | 300px |
@@ -616,6 +615,9 @@ From `masthead.tokens.json`. References point at system tokens (`tokens/core/`, 
 | `masthead.base.masthead-container.sectionmenu.icon-color` | `{color.gray.max}` |
 | `masthead.base.masthead-container.socialbuttons.height` | 40px |
 | `masthead.base.masthead-container.socialbuttons.width` | 328px |
+| `masthead.base.masthead-container.sponsorship-row.ad-blocks.height` | 50px |
+| `masthead.base.masthead-container.sponsorship-row.ad-blocks.icon-color` | `{color.gray.min}` |
+| `masthead.base.masthead-container.sponsorship-row.ad-blocks.width` | 300px |
 | `masthead.base.masthead-container.title.height` | 30px |
 | `masthead.base.masthead-container.title.width` | 147.03px |
 | `masthead.base.masthead-container.title.vector.background` | `{color.gray.min}` |
@@ -1059,17 +1061,16 @@ From `masthead.tokens.json`. References point at system tokens (`tokens/core/`, 
 | `masthead.base.section-title-row.height` | 80px |
 | `masthead.base.section-title-row.padding-left` | `{spacing.200}` |
 | `masthead.base.section-title-row.padding-right` | `{spacing.200}` |
-| `masthead.base.section-title-row.contents-container.gap` | 14px |
-| `masthead.base.section-title-row.contents-container.width` | 801px |
-| `masthead.base.section-title-row.contents-container.ad-blocks.height` | 50px |
-| `masthead.base.section-title-row.contents-container.ad-blocks.icon-color` | `{color.gray.min}` |
-| `masthead.base.section-title-row.contents-container.ad-blocks.width` | 300px |
 | `masthead.base.section-title-row.contents-container.title-container.padding-left` | `{spacing.200}` |
 | `masthead.base.section-title-row.contents-container.title-container.padding-right` | `{spacing.200}` |
 | `masthead.base.section-title-row.contents-container.title-container.section-title.color` | `{color.theme.primary}` |
 | `masthead.base.section-title-row.contents-container.title-container.section-title.font-family` | `{font.family.noto-serif}` |
 | `masthead.base.section-title-row.contents-container.title-container.section-title.font-size` | `{font.size.26}` |
 | `masthead.base.section-title-row.contents-container.title-container.section-title.font-weight` | `{font.weight.bold}` |
+| `masthead.base.sponsorship-row.padding-bottom` | `{spacing.100}` |
+| `masthead.base.sponsorship-row.ad-blocks.height` | 50px |
+| `masthead.base.sponsorship-row.ad-blocks.icon-color` | `{color.gray.min}` |
+| `masthead.base.sponsorship-row.ad-blocks.width` | 300px |
 | `masthead.base.subtitle.background` | `{color.gray.max}` |
 | `masthead.base.subtitle.navmenu.height` | 40px |
 | `masthead.base.subtitle.navmenu.icon-color` | `{color.gray.min}` |
@@ -1277,6 +1278,7 @@ From `masthead.tokens.json`. References point at system tokens (`tokens/core/`, 
 - **Scroll (Scrolled / AdFree-Scrolled):** after about 450px of scrolling (production adds `.headroom--not-top`) the masthead becomes a 64px bar fixed to the top of the viewport, with the rule and `shadow/masthead` (0 3px 3px, black 25%, production's value). The ads under it scroll away. No shadow at the top of the page. On articles at 1040px and up the bar shows the section name, headline and share buttons instead of All Sections / Subscribe / Log In.
 - **Subscribers (AdFree, AdFree-Scrolled):** no ads; the avatar (AccountMenu, loggedIn) replaces Subscribe / Log In. Below 1040px the subscriber bar is the same at the top and when scrolled. AdFree-Scrolled for Home, Section Front and Article added 2026-10-30 (Karl).
 - **Accessibility:** a `header` landmark with the section links in a `nav` (aria-label "Main"); the hamburger is a button with aria-expanded; search is a labelled button. Keep focused elements clear of the sticky bar (scroll-padding-top 65px).
+- **Obituaries title:** centered horizontally and vertically in its row at every width (Karl, 2026-10-30). Ads show wherever ads are expected: in Default, Sponsorship 1 300x50 sits to the right of the title at 800px and up and in its own centered row under the title below 800px; AdFree hides it.
 
 ## Accessibility
 
@@ -1290,7 +1292,7 @@ Scope: instances in the Figma file **WordPress Elements** only (other files that
 
 Placed on pages: Menus and Parts ×55, Homepage ×6, Article Page ×4, Section Front ×2.
 
-**Built from:** SectionMenu ×90, AccountMenu ×88, Icons ×40, Ad Blocks ×38, Weather Bug ×10, NavMenu ×6, SocialButtons ×2, tornado ×1
+**Built from:** SectionMenu ×90, AccountMenu ×88, Icons ×40, Ad Blocks ×29, Weather Bug ×10, NavMenu ×6, SocialButtons ×2, tornado ×1
 Icon variants: `search` ×20, `equalizer2` ×20.
 
 ## Production
@@ -1305,7 +1307,7 @@ WordPress themes header (`.nav-wrapper-primary`, headroom.js `.headroom--top` / 
 4. The 7px top and bottom padding of the weather row (Home, Section Front, Article, Dashboard) was rounded to 8px (`spacing/100`) on 2026-10-30; the row height didn't change. Production not measured.
 5. The logo is the Fakeville Daily News placeholder drawn as vectors, not an instance of the Logo component (status open item 10(d)).
 6. The search bar's own shadow (production 0 3px 3px, 25%) hasn't been checked.
-7. **Values not bound to a token** (literal in the component tokens): `base` button-frame.button border-radius = 5px; `base` button-frame.powered-by-container gap = 2px; `base` button-frame.search-container.search-field gap = 8px; `base` container.button-frame.button border-radius = 5px; `base` container.container.container.search-field border-radius = 3px; `base` container.container.container.search-field gap = 8px; `base` masthead-container gap = 14px; `base` masthead-container.container gap = 14px; `base` masthead-container.header gap = 14px; `base` masthead-container.masthead-container gap = 14px; `base` masthead-container.mastheadtop.menus-container gap = 14px; `base` masthead-container.menus-container gap = 14px; and 18 more.
+7. **Values not bound to a token** (literal in the component tokens): `base` button-frame.button border-radius = 5px; `base` button-frame.powered-by-container gap = 2px; `base` button-frame.search-container.search-field gap = 8px; `base` container.button-frame.button border-radius = 5px; `base` container.container.container.search-field border-radius = 3px; `base` container.container.container.search-field gap = 8px; `base` masthead-container gap = 14px; `base` masthead-container.container gap = 14px; `base` masthead-container.header gap = 14px; `base` masthead-container.masthead-container gap = 14px; `base` masthead-container.mastheadtop.menus-container gap = 14px; `base` masthead-container.menus-container gap = 14px; and 17 more.
 
 ## Files
 

@@ -239,7 +239,9 @@ function Masthead(props) {
     var titleRow = lgUp
       ? h('div', { className: 'mngds-masthead__title-row' }, h('div', { className: 'mngds-masthead__sponsorship mngds-masthead__sponsorship--spacer' }), title,
           mastheadSponsorship(props, showAds, 'Sponsorship 1 300x50'))
-      : h('div', { className: 'mngds-masthead__title-row' }, title);
+      : h(React.Fragment, null,
+          h('div', { className: cx('mngds-masthead__title-row', showAds && 'mngds-masthead__title-row--with-ad') }, title),
+          showAds ? h('div', { className: 'mngds-masthead__sponsorship-row' }, props.renderAd ? props.renderAd('Sponsorship 1 300x50') : h(AdBlocks, { name: 'Sponsorship 1 300x50' })) : null);
     top = h(React.Fragment, null, xl ? menusRow(logoLarge()) : h(MastheadBar, common), titleRow, h(MastheadObitsNav, extra.obits));
   } else if (dashboard) {
     if (xl) {

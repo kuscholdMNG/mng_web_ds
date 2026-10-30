@@ -137,6 +137,11 @@
 .mngds-masthead--xl-desktop .mngds-masthead__title-row { justify-content: space-between; padding: 0 var(--mng-spacing-500); margin-top: 14px; }
 .mngds-masthead--lg-tablet-h .mngds-masthead__title-row { justify-content: space-between; margin: 14px 0 var(--mng-spacing-200); }
 .mngds-masthead--md-tablet-v .mngds-masthead__title-row { margin: 14px 0 var(--mng-spacing-300); }
+/* Below 800px the Sponsorship 1 300x50 gets its own centered row under the title (Karl, 2026-10-30). */
+.mngds-masthead__sponsorship-row { display: flex; justify-content: center; }
+.mngds-masthead--md-tablet-v .mngds-masthead__title-row--with-ad { margin-bottom: 0; }
+.mngds-masthead--md-tablet-v .mngds-masthead__sponsorship-row { margin: 14px 0 var(--mng-spacing-300); }
+.mngds-masthead--sm-mobile .mngds-masthead__sponsorship-row, .mngds-masthead--xs-fold .mngds-masthead__sponsorship-row { padding-bottom: var(--mng-spacing-100); }
 .mngds-masthead--sm-mobile .mngds-masthead__title-row, .mngds-masthead--xs-fold .mngds-masthead__title-row { min-height: 80px; }
 .mngds-masthead__title-row .mngds-masthead__sponsorship { flex: 0 0 300px; }
 .mngds-masthead__page-title { font-size: var(--mng-font-size-26); padding: 0 var(--mng-spacing-200); }
@@ -184,6 +189,7 @@
 .mngds-masthead__powered-logo { display: inline-flex; padding: var(--mng-spacing-100); }
 .mngds-masthead__powered-logo svg { width: 106px; height: 28px; display: block; }
 .mngds-masthead--sm-mobile .mngds-masthead__powered, .mngds-masthead--xs-fold .mngds-masthead__powered { gap: 2px; }
+.mngds-masthead--sm-mobile .mngds-masthead__powered-text, .mngds-masthead--xs-fold .mngds-masthead__powered-text { text-transform: none; letter-spacing: 0; }
 .mngds-masthead--sm-mobile .mngds-masthead__powered-logo, .mngds-masthead--xs-fold .mngds-masthead__powered-logo { padding: 0; }
 .mngds-masthead--sm-mobile .mngds-masthead__powered-logo svg, .mngds-masthead--xs-fold .mngds-masthead__powered-logo svg { width: 75px; height: 20px; }
 .mngds-masthead__obits-action { display: flex; justify-content: center; }

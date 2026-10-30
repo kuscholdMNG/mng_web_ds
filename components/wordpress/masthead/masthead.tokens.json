@@ -4173,13 +4173,6 @@
                 }
               }
             },
-            "width": {
-              "$type": "dimension",
-              "$value": {
-                "value": 801,
-                "unit": "px"
-              }
-            },
             "ad-blocks": {
               "height": {
                 "$type": "dimension",
@@ -4312,6 +4305,35 @@
             "$value": {
               "value": 328,
               "unit": "px"
+            }
+          }
+        },
+        "sponsorship-row": {
+          "ad-blocks": {
+            "height": {
+              "$type": "dimension",
+              "$value": {
+                "value": 50,
+                "unit": "px"
+              }
+            },
+            "icon-color": {
+              "$type": "color",
+              "$value": "{color.gray.min}",
+              "$extensions": {
+                "com.mng": {
+                  "figma": {
+                    "variable": "Colors/color/gray/min"
+                  }
+                }
+              }
+            },
+            "width": {
+              "$type": "dimension",
+              "$value": {
+                "value": 300,
+                "unit": "px"
+              }
             }
           }
         },
@@ -8942,52 +8964,6 @@
           }
         },
         "contents-container": {
-          "gap": {
-            "$type": "dimension",
-            "$value": {
-              "value": 14,
-              "unit": "px"
-            },
-            "$extensions": {
-              "com.mng": {
-                "unbound": true
-              }
-            }
-          },
-          "width": {
-            "$type": "dimension",
-            "$value": {
-              "value": 801,
-              "unit": "px"
-            }
-          },
-          "ad-blocks": {
-            "height": {
-              "$type": "dimension",
-              "$value": {
-                "value": 50,
-                "unit": "px"
-              }
-            },
-            "icon-color": {
-              "$type": "color",
-              "$value": "{color.gray.min}",
-              "$extensions": {
-                "com.mng": {
-                  "figma": {
-                    "variable": "Colors/color/gray/min"
-                  }
-                }
-              }
-            },
-            "width": {
-              "$type": "dimension",
-              "$value": {
-                "value": 300,
-                "unit": "px"
-              }
-            }
-          },
           "title-container": {
             "padding-left": {
               "$type": "dimension",
@@ -9056,6 +9032,46 @@
                   }
                 }
               }
+            }
+          }
+        }
+      },
+      "sponsorship-row": {
+        "padding-bottom": {
+          "$type": "dimension",
+          "$value": "{spacing.100}",
+          "$extensions": {
+            "com.mng": {
+              "figma": {
+                "variable": "Spacing & Radius/spacing/100"
+              }
+            }
+          }
+        },
+        "ad-blocks": {
+          "height": {
+            "$type": "dimension",
+            "$value": {
+              "value": 50,
+              "unit": "px"
+            }
+          },
+          "icon-color": {
+            "$type": "color",
+            "$value": "{color.gray.min}",
+            "$extensions": {
+              "com.mng": {
+                "figma": {
+                  "variable": "Colors/color/gray/min"
+                }
+              }
+            }
+          },
+          "width": {
+            "$type": "dimension",
+            "$value": {
+              "value": 300,
+              "unit": "px"
             }
           }
         }
