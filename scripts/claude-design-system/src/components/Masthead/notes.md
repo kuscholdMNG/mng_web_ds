@@ -8,4 +8,4 @@
 - **Top Nav** keeps the Figma Default's 11 items and clips at both edges at 1040–1322px, as production does (design-vs-production 9.1). The Figma AdFree variant shows 7 items; here both use the same list.
 - The 1040px menus row's Subscribe / Log In are `ButtonPrimary` with their 8px side margin removed (UserStatus instances carry it as padding inside the 15px gap).
 - Not built: the open section menu drawer (SectionMenu, View = Open), the account dropdown (AccountMenu, View = Open) and the open search field (SearchBar, Status = Open). They're exported to `components/wordpress/` for later.
-- The Weather Bug temperature is Helvetica Bold in Figma (kept for Karl's review); here it's Noto Sans Bold like the rest of the system.
+- The Weather Bug temperature is a third-party widget and stays Helvetica Bold, in Figma and here (Karl, 2026-10-30): `Helvetica, Arial, sans-serif` (Arial where Helvetica isn't installed). The date and E Edition link are Noto Sans.

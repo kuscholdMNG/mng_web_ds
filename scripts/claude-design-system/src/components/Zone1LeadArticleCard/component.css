@@ -49,10 +49,10 @@
 }
 .mngds-zone-1-lead-article-card__link { color: inherit; text-decoration: none; }
 
-/* Excerpt: Noto Sans 15/19, color/gray/100. Mobile: 16px below it. */
+/* Excerpt: Editorial/Body/ExcerptCompact (font/theme/body-family) 15/19, color/gray/100. Mobile: 16px below it. */
 .mngds-zone-1-lead-article-card__excerpt {
   margin: 0; text-align: left; min-width: 0;
-  font-family: var(--mng-font-family-noto-sans);
+  font-family: var(--mng-editorial-body-excerpt-compact-font-family);
   font-size: var(--mng-zone-1-lead-article-card-base-1st-col-excerpt-container-vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail-font-size);
   font-weight: var(--mng-zone-1-lead-article-card-base-1st-col-excerpt-container-vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail-font-weight);
   line-height: var(--mng-zone-1-lead-article-card-base-1st-col-excerpt-container-vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail-line-height);

@@ -329,7 +329,8 @@
         "**Layout:** Desktop and Tablet are two columns (text, then image; 20px and 32px apart); Mobile is one column (headline group, image, excerpt, Related list; 8px gaps) with a 1px bottom rule below.",
         "**Gallery** (Karl, 2026-10-26): `Gallery=Slideshow` replaces the image with the Zone 1 Slideshow, as production does for gallery leads (`.feature-large .article-slideshow`). Zone 1 has no Gallery Icon Badge.",
         "**Gallery=Slideshow layout follows the lead's width, not the screen:** two columns when the lead is about 700px wide or more (Desktop: text 295 and slideshow 356, the rest of the 706 card between them; Tablet: the slideshow fills the 358 column); one column when narrower: headline, excerpt, then the Related list, then the slideshow full width. On the homepage the third page column narrows the lead, so it is one column from 800 to 1279px (594 wide at 1024) and below 640px, and two columns from 640 to 799px and from 1280px up (production, checked on develop.denverpost.com 2026-10-26).",
-        "**The For You featured story** moved to Blocks Lead Article Card (Karl, 2026-10-28); its Style=For You variants were deleted. `Style` has one value (Standard) and is kept so existing instances don't change."
+        "**The For You featured story** moved to Blocks Lead Article Card (Karl, 2026-10-28); its Style=For You variants were deleted. `Style` has one value (Standard) and is kept so existing instances don't change.",
+        "**Headline font follows the theme** (2026-10-30, Karl): bound to `font/theme/heading-family` (Noto Serif in Bold Coastal and Measured Vibrant, Noto Sans in Modern Earthy), like every other headline; it was bound to Noto Serif itself. The excerpt follows `font/theme/body-family`."
       ],
       "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| Mobile | below 640px | One column; 25/29 headline |\n| Tablet | 640px and up (768 template) | Two columns, 32px apart |\n| Desktop | 1024px and up | Two columns, 20px apart (text 295, image 391) |",
       "knownIssues": [
@@ -648,7 +649,8 @@
         "**Layout:** follows the lead's width: two columns when it's about 700px wide or more, one column (headline, excerpt, byline, then the image or slideshow) when narrower. The For You feed has no side column, so that means two columns at 640px and up and one column below. Mobile has a 1px bottom rule 20px below the byline.",
         "**Gallery=Slideshow:** the image is replaced by the Zone 1 Slideshow (Desktop: slideshow 356, text 295; Tablet: the slideshow fills its 358 column).",
         "**Hover:** the headline is the link and turns `color/theme/primary` (prototype `a:hover`, production `h3 a:hover`). Large text, so 3:1 is enough; theme primary on white is 4.75:1 or more on every site.",
-        "**Focus:** not drawn; the prototype has no custom style for the lead, so use the Blocks Card's `outline: 2px solid` `color/gray/black`, `outline-offset: 1px` on the headline link."
+        "**Focus:** not drawn; the prototype has no custom style for the lead, so use the Blocks Card's `outline: 2px solid` `color/gray/black`, `outline-offset: 1px` on the headline link.",
+        "**Headline font follows the theme** (2026-10-30, Karl): bound to `font/theme/heading-family` (Noto Serif in Bold Coastal and Measured Vibrant, Noto Sans in Modern Earthy), like every other headline; it was bound to Noto Serif itself. The excerpt follows `font/theme/body-family`."
       ],
       "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| Mobile | below 640px | One column; 25/29 headline |\n| Tablet | 640px and up (768 template) | Two columns |\n| Desktop | 1024px and up | Two columns (text 295, image 391 or slideshow 356) |",
       "knownIssues": [
@@ -859,12 +861,12 @@
       "description": "Current temperature and weather icon with the date and the Today's E Edition link. Location = Masthead or SectionMenu.",
       "rules": [
         "Masthead: top of the page at 1040px and up, left of the logo.",
-        "SectionMenu: inside the open drawer."
+        "SectionMenu: inside the open drawer.",
+        "**Temperature:** Helvetica Bold 16, on purpose: the weather is a third-party widget we can't control (Karl, 2026-10-30). The date and E Edition link are Noto Sans."
       ],
       "breakpoints": null,
       "knownIssues": [
-        "No documentation container yet.",
-        "The temperature (87°F) is Helvetica Bold, kept for Karl's review; everything else is Noto Sans."
+        "No documentation container yet."
       ],
       "production": "Production masthead weather widget."
     },
@@ -877,21 +879,20 @@
       "file": "b1iZxkFwtAYq9rElmnCAzd",
       "node": "354:1282",
       "documentationFrame": "803:1835",
-      "description": "The site footer on every WordPress page (production, current). Device = the 5 WordPress grid widths: 2 accordion widths below 640px, then 2, 3 and 5 columns.",
+      "description": "The site footer on every WordPress page (production, current). Device = the 5 WordPress grid widths: 2 accordion widths below 640px, then 2, 3 and 5 columns. The future footer with the email signup is Blocks Footer.",
       "rules": [
         "**Band:** `color/gray/600` throughout, with a 1px `color/gray/black` rule at the top. The newspaper logo (235×48) starts the content.",
         "**1040px and up:** 40px (`spacing/500`) sides, 16px (`spacing/200`) top and bottom; 5 columns 32px (`spacing/400`) apart, groups 32px apart in a column (masonry fill, like production); Subscribe Now (Button Primary) alone in the last column. 800–1039px: 3 columns; 640–799px: 2 columns.",
         "**Link group:** a 2px `color/gray/min` rule, the heading in Noto Sans Bold 16 uppercase and the links in Noto Sans Regular 16, all `color/gray/min` (16.0:1 on `color/gray/600`), 15px apart.",
         "**Below 640px:** each group collapses to an accordion row (heading and a chevron); 10px page gutter; Subscribe Now full width.",
-        "**Legal bar:** a 1px `color/gray/min` rule above; copyright and legal links in Noto Sans Regular 16 `color/gray/300`, 15px apart, wrapping.",
+        "**Legal bar:** a 1px `color/gray/min` rule above; copyright and legal links in Noto Sans Regular 16 `color/gray/200` (5.7:1 on `color/gray/600`), 15px apart, wrapping. Changed from `color/gray/300` (3.3:1, failed WCAG AA) on 2026-10-30 (Karl; design-vs-production 36, urgent).",
         "**Production values on purpose (Karl, 2026-10-29):** the 10px gutter and 15px link spacing have no token and stay as they are (design-vs-production 6).",
         "**Accessibility:** a `footer` landmark; each link group is a list under its heading; below 640px the headings are buttons with aria-expanded."
       ],
       "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| XS-Fold | below 640px (built 340) | Accordion groups, 10px gutter |\n| SM-Mobile | below 640px (built 360) | Accordion groups, 10px gutter |\n| MD-TabletV | 640–799px | 2 columns |\n| LG-TabletH | 800–1039px | 3 columns |\n| XL-Desktop | 1040px and up | 5 columns |",
       "knownIssues": [
-        "Legal bar text `color/gray/300` on `color/gray/600` is 3.3:1, below the 4.5:1 WCAG AA minimum; `color/gray/200` (5.7:1) is the closest gray that passes. Flagged for Karl (2026-10-30).",
         "Raw production values: 10px gutter and 15px link spacing (design-vs-production 6).",
-        "Footer_w_signup (`801:1755`, the future footer with the email signup) isn't exported yet: Karl is revising it first."
+        "Production's legal links are #5D5B5A on #F5F5F5 at 13.44px; the design is `color/gray/200` on `color/gray/600` at 16px (design-vs-production 36)."
       ],
       "production": "Production footer (`ul.footer-menus`, `div.colophon`), breakpoints audited on ocregister.com 2026-09-18."
     },
@@ -922,6 +923,32 @@
         "Production: no visible ad disclosure label (design-vs-production 28.4); slot sizes and lazy loading 28.1–28.3; empty adhesion bar at 1024px and up 28.5."
       ],
       "production": "Production GPT slots from the Ad Team's WordPress Ad Map, matched 2026-10-02; legacy export `figma-exports/mng-ads-export/` (2026-10-09, frozen)."
+    },
+    {
+      "slug": "blocks-footer",
+      "name": "Blocks Footer",
+      "group": "blocks",
+      "layer": "wordpress",
+      "order": 4,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "801:1755",
+      "documentationFrame": "3682:22095",
+      "description": "The future site footer with the \"Stay Informed\" email signup (was Footer_w_signup; renamed and moved to WordPress Elements ▸ Homepage ▸ Blocks on 2026-10-30, Karl). Device = the 5 WordPress grid widths. Not in production yet, and not in the Claude design system yet (Karl, 2026-10-30).",
+      "rules": [
+        "**Band:** `color/gray/600` throughout, 1px `color/gray/black` rule at the top; the newspaper logo (235×48) starts the content.",
+        "**1040px and up:** 40px (`spacing/500`) sides, 16px (`spacing/200`) top and bottom; 5 columns 32px (`spacing/400`) apart: [Subscribe, Marketplace] | [Stay Informed, About] | [Advertising] | [Contact, Partners] | [Subscribe Now]. 800–1039px: 3 columns [Subscribe, Marketplace] | [Stay Informed, About, Advertising] | [Contact, Partners, Subscribe Now]; 640–799px: 2 columns [Subscribe, Marketplace, Stay Informed, About] | [Advertising, Contact, Partners, Subscribe Now].",
+        "**Below 640px:** 8px (`spacing/100`) page gutter (Karl, 2026-10-30; production's Footer has 10px); Stay Informed above the accordion groups; Subscribe Now full width.",
+        "**Link group:** 2px `color/gray/min` rule, heading Noto Sans Bold 16 uppercase, links Noto Sans Regular 16, all `color/gray/min` (16.0:1 on `color/gray/600`), 16px (`spacing/200`) apart (production's Footer has 15px).",
+        "**Stay Informed:** heading Noto Sans Bold 16 uppercase, \"Email Address\" label Noto Sans Regular 16, then a Form Field (email) with the mail icon.",
+        "**Legal bar:** 1px `color/gray/min` rule above; links Noto Sans Regular 16 `color/gray/200` (5.7:1), wrapping.",
+        "**Accessibility:** a `footer` landmark; the signup is a `form` with a visible label tied to the email input; below 640px the group headings are buttons with aria-expanded."
+      ],
+      "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| XS-Fold | below 640px (built 340) | Signup, then accordion groups; 8px gutter |\n| SM-Mobile | below 640px (built 360) | Signup, then accordion groups; 8px gutter |\n| MD-TabletV | 640–799px | 2 columns |\n| LG-TabletH | 800–1039px | 3 columns |\n| XL-Desktop | 1040px and up | 5 columns |",
+      "knownIssues": [
+        "No production reference on the 6 review sites; the signup's column placement is a design decision, not an audited fact.",
+        "The XL-Desktop email field is narrower than its placeholder text (\"email@address.c…\")."
+      ],
+      "production": "None yet: a future design. Built from the production Footer (`354:1282`)."
     }
   ]
 }

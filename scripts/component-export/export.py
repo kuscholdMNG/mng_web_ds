@@ -80,8 +80,21 @@ def figma_ref(v):
         p[-1] = 'eyebrow-weight'
     if col == 'Typeography Tokens' and p[0] == 'Shared':
         p = [slug(x) for x in p]
+    if col == 'Typeography Tokens' and p[0] == 'Editorial' and len(p) == 4:
+        # Editorial/<Group>/<Style>/<Family|Size|Style>: the editorial style's own reference (2026-10-30), so a
+        # theme-bound family stays {font.theme.heading-family} instead of becoming a literal.
+        comp = SYSTEM.get('editorial.%s.%s' % (slug(p[1]), kebab(p[2])))
+        key = {'Family': 'fontFamily', 'Size': 'fontSize', 'Style': 'fontWeight', 'Weight': 'fontWeight'}.get(p[3])
+        if comp and key:
+            ref = comp[1]['$value'].get(key)
+            if isinstance(ref, str) and ref.startswith('{') and ref[1:-1] in SYSTEM:
+                return ref[1:-1]
+        return None
     path = '.'.join(p)
     return path if path in SYSTEM else None
+
+def kebab(s):
+    return re.sub(r'([a-z0-9])([A-Z])', r'\1-\2', s).lower()
 
 WEIGHT = {'Thin': 100, 'ExtraLight': 200, 'Light': 300, 'Regular': 400, 'Medium': 500, 'SemiBold': 600, 'Bold': 700, 'ExtraBold': 800, 'Black': 900}
 

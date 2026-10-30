@@ -33,8 +33,8 @@
   font: inherit; color: inherit; text-transform: inherit; text-align: left; cursor: pointer;
 }
 
-/* Legal bar: color/gray/300, 15px apart, wrapping and centered; stacked below 640px */
+/* Legal bar: color/gray/200 (5.7:1 on color/gray/600; was gray/300, 3.3:1, fixed 2026-10-30), 15px apart, wrapping and centered; stacked below 640px */
 .mngds-footer__legal { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--mng-footer-base-footer-bottom-legal-bar-legal-links-gap); margin: 0; padding: 0; list-style: none; }
 .mngds-footer--sm-mobile .mngds-footer__legal, .mngds-footer--xs-fold .mngds-footer__legal { flex-direction: column; align-items: flex-start; }
-.mngds-footer__legal-link { font-size: var(--mng-font-size-16); font-weight: var(--mng-font-weight-regular); line-height: normal; color: var(--mng-color-gray-300); text-decoration: none; }
+.mngds-footer__legal-link { font-size: var(--mng-font-size-16); font-weight: var(--mng-font-weight-regular); line-height: normal; color: var(--mng-color-gray-200); text-decoration: none; }
 .mngds-footer a:focus-visible, .mngds-footer__toggle:focus-visible { outline: 2px solid var(--mng-color-gray-black); outline-offset: 2px; }

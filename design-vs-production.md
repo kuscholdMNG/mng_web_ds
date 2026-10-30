@@ -24,6 +24,7 @@
   - [11. Account menu — dropdown shadow isn't the design token](#11-account-menu--dropdown-shadow-isnt-the-design-token)
   - [12. Homepage tabs (World Cup tabs) — font, colors, spacing and breakpoint off the design system](#12-homepage-tabs-world-cup-tabs--font-colors-spacing-and-breakpoint-off-the-design-system)
   - [13. Breaking News bar — Denver Post uses primary-lighter instead of secondary](#13-breaking-news-bar--denver-post-uses-primary-lighter-instead-of-secondary)
+  - [36. Footer — legal links fail WCAG AA contrast in the design (URGENT)](#36-footer--legal-links-fail-wcag-aa-contrast-in-the-design-urgent)
 - **Homepage blocks**
   - [14. Section title (eyebrow) — color, underline and spacing don't match the design](#14-section-title-eyebrow--color-underline-and-spacing-dont-match-the-design)
   - [15. Section Highlight block — Denver Post shows 4 headline items instead of 3](#15-section-highlight-block--denver-post-shows-4-headline-items-instead-of-3)
@@ -2035,6 +2036,30 @@ The Reader Dashboard treats 1024×768 and 1280×960 as "menu always visible," a 
 **Fix:** restyle `#tiPopupContent` to the Toggletip values above, make the close control a button, and fix `aria-controls` to `tiPopupContent` (an accessibility bug: required).
 
 **Status:** Open.
+
+---
+
+## 36. Footer — legal links fail WCAG AA contrast in the design (URGENT)
+
+**Priority: URGENT** (Karl, 2026-10-30). An accessibility failure in the design spec: fix the design before engineering matches production to it.
+
+**Found:** 2026-10-30, while exporting the Footer (WordPress Elements ▸ Menus and Parts ▸ Footer, `354:1282`) for the For You prototype.
+
+**Design (Figma, before the fix):** the legal bar (copyright, Privacy Policy, Terms Of Use, Accessibility, Cookie Policy, Arbitration, Powered By WordPress.com VIP, Do Not Sell My Info) is Noto Sans Regular 16 `color/gray/300` (#838280) on the footer band `color/gray/600` (#F1EFEB): **3.3:1**, below the 4.5:1 WCAG AA minimum for normal text. Every Footer variant (5 devices) and Footer_w_signup (now Blocks Footer).
+
+**Production:** `.colophon` links `#5D5B5A` on `#F5F5F5`, 13.44px (copyright 12.48px): **6.2:1**, passes. Same on ocregister, denverpost, orlandosentinel and canoncitydailyrecord (2026-10-30); chicagotribune and mcall not checked yet (the browser extension isn't allowed on those sites). Production is the accessible one here: don't move it to the current design color.
+
+| | Text | Background | Contrast | Size |
+|---|---|---|---|---|
+| Design (before 2026-10-30) | `color/gray/300` #838280 | `color/gray/600` #F1EFEB | 3.3:1 (fails) | 16px |
+| Production | #5D5B5A | #F5F5F5 | 6.2:1 | 13.44px (12.48px copyright) |
+| Design (fixed 2026-10-30) | `color/gray/200` #5E5D5C | `color/gray/600` #F1EFEB | 5.7:1 | 16px |
+
+**Design fix: done 2026-10-30** (Karl): the legal links in Footer and Blocks Footer are now `color/gray/200` (5.7:1), the closest gray that passes; the Claude design system matches.
+
+**Fix (production):** `.colophon` links to #5E5D5C (`color/gray/200`; 1 step from today's #5D5B5A), and the band to #F1EFEB (`color/gray/600`) instead of #F5F5F5. The type size difference (16px design vs 13.44px production) is a separate open question.
+
+**Status:** Open, URGENT: design fixed 2026-10-30; production change next.
 
 ---
 

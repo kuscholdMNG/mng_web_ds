@@ -9,7 +9,7 @@ component_key: 12f9d565a5107bd87fbbb91de42b3985cd934ed6
 variants: 3
 tokens: blocks-card.tokens.json
 skeleton: blocks-card.html
-exported: 2026-10-28
+exported: 2026-10-30
 ---
 
 # Blocks Card
@@ -82,9 +82,9 @@ From `blocks-card.tokens.json`. References point at system tokens (`tokens/core/
 | `blocks-card.base.card-body.headline-container.article-section-kicker.height` | 13px |
 | `blocks-card.base.card-body.headline-container.article-section-kicker.icon-color` | `{color.theme.primary}` |
 | `blocks-card.base.card-body.headline-container.article-section-kicker.width` | 135px |
-| `blocks-card.base.card-body.headline-container.headline.font-family` | Noto Serif |
-| `blocks-card.base.card-body.headline-container.headline.font-size` | 16px |
-| `blocks-card.base.card-body.headline-container.headline.font-weight` | 700 |
+| `blocks-card.base.card-body.headline-container.headline.font-family` | `{font.theme.heading-family}` |
+| `blocks-card.base.card-body.headline-container.headline.font-size` | `{font.size.16}` |
+| `blocks-card.base.card-body.headline-container.headline.font-weight` | `{font.weight.bold}` |
 | `blocks-card.base.card-body.headline-container.headline.line-height` | 18.88px |
 | `blocks-card.base.gallery-icon-badge.height` | 33px |
 | `blocks-card.base.gallery-icon-badge.width` | 33px |
@@ -140,4 +140,4 @@ New: the For You tab (prototype `.card`). Production's homepage card hover only 
 - `blocks-card.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-30 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*

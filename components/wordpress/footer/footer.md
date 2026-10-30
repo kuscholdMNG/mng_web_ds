@@ -14,7 +14,7 @@ exported: 2026-10-30
 
 # Footer
 
-> The site footer on every WordPress page (production, current). Device = the 5 WordPress grid widths: 2 accordion widths below 640px, then 2, 3 and 5 columns.
+> The site footer on every WordPress page (production, current). Device = the 5 WordPress grid widths: 2 accordion widths below 640px, then 2, 3 and 5 columns. The future footer with the email signup is Blocks Footer.
 
 ## Figma
 
@@ -120,35 +120,35 @@ From `footer.tokens.json`. References point at system tokens (`tokens/core/`, `t
 | `footer.base.footer-bottom.padding-bottom` | `{spacing.200}` |
 | `footer.base.footer-bottom.padding-top` | `{spacing.200}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.gap` | 15px |
-| `footer.base.footer-bottom.legal-bar.legal-links.accessibility.color` | `{color.gray.300}` |
+| `footer.base.footer-bottom.legal-bar.legal-links.accessibility.color` | `{color.gray.200}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.accessibility.font-family` | `{font.family.noto-sans}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.accessibility.font-size` | `{font.size.16}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.accessibility.font-weight` | `{font.weight.regular}` |
-| `footer.base.footer-bottom.legal-bar.legal-links.arbitration.color` | `{color.gray.300}` |
+| `footer.base.footer-bottom.legal-bar.legal-links.arbitration.color` | `{color.gray.200}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.arbitration.font-family` | `{font.family.noto-sans}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.arbitration.font-size` | `{font.size.16}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.arbitration.font-weight` | `{font.weight.regular}` |
-| `footer.base.footer-bottom.legal-bar.legal-links.cookie-policy.color` | `{color.gray.300}` |
+| `footer.base.footer-bottom.legal-bar.legal-links.cookie-policy.color` | `{color.gray.200}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.cookie-policy.font-family` | `{font.family.noto-sans}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.cookie-policy.font-size` | `{font.size.16}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.cookie-policy.font-weight` | `{font.weight.regular}` |
-| `footer.base.footer-bottom.legal-bar.legal-links.copyright-2022-medianews-group.color` | `{color.gray.300}` |
+| `footer.base.footer-bottom.legal-bar.legal-links.copyright-2022-medianews-group.color` | `{color.gray.200}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.copyright-2022-medianews-group.font-family` | `{font.family.noto-sans}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.copyright-2022-medianews-group.font-size` | `{font.size.16}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.copyright-2022-medianews-group.font-weight` | `{font.weight.regular}` |
-| `footer.base.footer-bottom.legal-bar.legal-links.do-not-sell-my-info.color` | `{color.gray.300}` |
+| `footer.base.footer-bottom.legal-bar.legal-links.do-not-sell-my-info.color` | `{color.gray.200}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.do-not-sell-my-info.font-family` | `{font.family.noto-sans}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.do-not-sell-my-info.font-size` | `{font.size.16}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.do-not-sell-my-info.font-weight` | `{font.weight.regular}` |
-| `footer.base.footer-bottom.legal-bar.legal-links.powered-by-wordpress-com-vip.color` | `{color.gray.300}` |
+| `footer.base.footer-bottom.legal-bar.legal-links.powered-by-wordpress-com-vip.color` | `{color.gray.200}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.powered-by-wordpress-com-vip.font-family` | `{font.family.noto-sans}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.powered-by-wordpress-com-vip.font-size` | `{font.size.16}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.powered-by-wordpress-com-vip.font-weight` | `{font.weight.regular}` |
-| `footer.base.footer-bottom.legal-bar.legal-links.privacy-policy.color` | `{color.gray.300}` |
+| `footer.base.footer-bottom.legal-bar.legal-links.privacy-policy.color` | `{color.gray.200}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.privacy-policy.font-family` | `{font.family.noto-sans}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.privacy-policy.font-size` | `{font.size.16}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.privacy-policy.font-weight` | `{font.weight.regular}` |
-| `footer.base.footer-bottom.legal-bar.legal-links.terms-of-use.color` | `{color.gray.300}` |
+| `footer.base.footer-bottom.legal-bar.legal-links.terms-of-use.color` | `{color.gray.200}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.terms-of-use.font-family` | `{font.family.noto-sans}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.terms-of-use.font-size` | `{font.size.16}` |
 | `footer.base.footer-bottom.legal-bar.legal-links.terms-of-use.font-weight` | `{font.weight.regular}` |
@@ -654,7 +654,7 @@ From `footer.tokens.json`. References point at system tokens (`tokens/core/`, `t
 - **1040px and up:** 40px (`spacing/500`) sides, 16px (`spacing/200`) top and bottom; 5 columns 32px (`spacing/400`) apart, groups 32px apart in a column (masonry fill, like production); Subscribe Now (Button Primary) alone in the last column. 800–1039px: 3 columns; 640–799px: 2 columns.
 - **Link group:** a 2px `color/gray/min` rule, the heading in Noto Sans Bold 16 uppercase and the links in Noto Sans Regular 16, all `color/gray/min` (16.0:1 on `color/gray/600`), 15px apart.
 - **Below 640px:** each group collapses to an accordion row (heading and a chevron); 10px page gutter; Subscribe Now full width.
-- **Legal bar:** a 1px `color/gray/min` rule above; copyright and legal links in Noto Sans Regular 16 `color/gray/300`, 15px apart, wrapping.
+- **Legal bar:** a 1px `color/gray/min` rule above; copyright and legal links in Noto Sans Regular 16 `color/gray/200` (5.7:1 on `color/gray/600`), 15px apart, wrapping. Changed from `color/gray/300` (3.3:1, failed WCAG AA) on 2026-10-30 (Karl; design-vs-production 36, urgent).
 - **Production values on purpose (Karl, 2026-10-29):** the 10px gutter and 15px link spacing have no token and stay as they are (design-vs-production 6).
 - **Accessibility:** a `footer` landmark; each link group is a list under its heading; below 640px the headings are buttons with aria-expanded.
 
@@ -679,10 +679,9 @@ Production footer (`ul.footer-menus`, `div.colophon`), breakpoints audited on oc
 
 ## Known issues
 
-1. Legal bar text `color/gray/300` on `color/gray/600` is 3.3:1, below the 4.5:1 WCAG AA minimum; `color/gray/200` (5.7:1) is the closest gray that passes. Flagged for Karl (2026-10-30).
-2. Raw production values: 10px gutter and 15px link spacing (design-vs-production 6).
-3. Footer_w_signup (`801:1755`, the future footer with the email signup) isn't exported yet: Karl is revising it first.
-4. **Values not bound to a token** (literal in the component tokens): `device-xs-fold` footer-bottom padding-left = 10px; `device-sm-mobile` footer-bottom padding-left = 10px; `device-xs-fold` footer-bottom padding-right = 10px; `device-sm-mobile` footer-bottom padding-right = 10px; `base` footer-bottom.legal-bar.legal-links gap = 15px; `device-xs-fold` footer-content padding-left = 10px; `device-sm-mobile` footer-content padding-left = 10px; `device-xs-fold` footer-content padding-right = 10px; `device-sm-mobile` footer-content padding-right = 10px; `device-md-tabletv` footer-content.link-columns.col-1.group-about-oc-register gap = 15px; `base` footer-content.link-columns.col-1.group-marketplace gap = 15px; `base` footer-content.link-columns.col-1.group-subscribe gap = 15px; and 8 more.
+1. Raw production values: 10px gutter and 15px link spacing (design-vs-production 6).
+2. Production's legal links are #5D5B5A on #F5F5F5 at 13.44px; the design is `color/gray/200` on `color/gray/600` at 16px (design-vs-production 36).
+3. **Values not bound to a token** (literal in the component tokens): `device-xs-fold` footer-bottom padding-left = 10px; `device-sm-mobile` footer-bottom padding-left = 10px; `device-xs-fold` footer-bottom padding-right = 10px; `device-sm-mobile` footer-bottom padding-right = 10px; `base` footer-bottom.legal-bar.legal-links gap = 15px; `device-xs-fold` footer-content padding-left = 10px; `device-sm-mobile` footer-content padding-left = 10px; `device-xs-fold` footer-content padding-right = 10px; `device-sm-mobile` footer-content padding-right = 10px; `device-md-tabletv` footer-content.link-columns.col-1.group-about-oc-register gap = 15px; `base` footer-content.link-columns.col-1.group-marketplace gap = 15px; `base` footer-content.link-columns.col-1.group-subscribe gap = 15px; and 8 more.
 
 ## Files
 

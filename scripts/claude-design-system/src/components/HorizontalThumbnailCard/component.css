@@ -38,10 +38,11 @@
   width: var(--mng-horizontal-thumbnail-card-base-content-image-container-gallery-icon-badge-width);
   height: var(--mng-horizontal-thumbnail-card-base-content-image-container-gallery-icon-badge-height);
 }
-/* Headline: Noto Sans SemiBold 15/19, -0.15px, color/gray/min; fills the rest of the row. */
+/* Headline: Editorial/Titles/HeadlineList (font/theme/small-headline-family: Noto Sans in Bold Coastal and Modern Earthy,
+   Noto Serif in Measured Vibrant) SemiBold 15/19, -0.15px, color/gray/min; fills the rest of the row. */
 .mngds-horizontal-thumbnail-card__headline {
   flex: 1 1 0; min-width: 0; margin: 0; text-align: left; overflow: hidden;
-  font-family: var(--mng-font-family-noto-sans);
+  font-family: var(--mng-editorial-titles-headline-list-font-family);
   font-size: var(--mng-horizontal-thumbnail-card-base-content-headline-article-headline-on-news-paper-homepage-in-thumbnail-list-position-font-size);
   font-weight: var(--mng-horizontal-thumbnail-card-base-content-headline-article-headline-on-news-paper-homepage-in-thumbnail-list-position-font-weight);
   line-height: var(--mng-horizontal-thumbnail-card-base-content-headline-article-headline-on-news-paper-homepage-in-thumbnail-list-position-line-height);

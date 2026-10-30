@@ -9,7 +9,7 @@ component_key: ee1e934379e375720ebe6d4cb298046435b8d9a1
 variants: 12
 tokens: blocks-lead-article-card.tokens.json
 skeleton: blocks-lead-article-card.html
-exported: 2026-10-28
+exported: 2026-10-30
 ---
 
 # Blocks Lead Article Card
@@ -80,18 +80,18 @@ From `blocks-lead-article-card.tokens.json`. References point at system tokens (
 | `blocks-lead-article-card.base.1st-col.byline.article-timestamp.height` | 18px |
 | `blocks-lead-article-card.base.1st-col.byline.article-timestamp.width` | 90px |
 | `blocks-lead-article-card.base.1st-col.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.color` | `{color.gray.100}` |
-| `blocks-lead-article-card.base.1st-col.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-family` | Noto Sans |
-| `blocks-lead-article-card.base.1st-col.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-size` | 15px |
-| `blocks-lead-article-card.base.1st-col.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-weight` | 400 |
+| `blocks-lead-article-card.base.1st-col.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-family` | `{font.theme.body-family}` |
+| `blocks-lead-article-card.base.1st-col.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-size` | `{font.size.15}` |
+| `blocks-lead-article-card.base.1st-col.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-weight` | `{font.weight.regular}` |
 | `blocks-lead-article-card.base.1st-col.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.line-height` | 19px |
 | `blocks-lead-article-card.base.1st-col.headline-group.gap` | `{spacing.050}` |
 | `blocks-lead-article-card.base.1st-col.headline-group.article-section-kicker.height` | 13px |
 | `blocks-lead-article-card.base.1st-col.headline-group.article-section-kicker.icon-color` | `{color.theme.primary}` |
 | `blocks-lead-article-card.base.1st-col.headline-group.article-section-kicker.width` | 135px |
-| `blocks-lead-article-card.base.1st-col.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.font-family` | `{font.family.noto-serif}` |
+| `blocks-lead-article-card.base.1st-col.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.font-family` | `{font.theme.heading-family}` |
 | `blocks-lead-article-card.base.1st-col.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.font-size` | `{font.size.29}` |
 | `blocks-lead-article-card.base.1st-col.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.font-weight` | `{font.weight.bold}` |
-| `blocks-lead-article-card.base.1st-col.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.letter-spacing` | -3px |
+| `blocks-lead-article-card.base.1st-col.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.letter-spacing` | -0.87px |
 | `blocks-lead-article-card.base.1st-col.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.line-height` | 33px |
 | `blocks-lead-article-card.base.2nd-col.height` | 271px |
 | `blocks-lead-article-card.base.2nd-col.article-image-placeholder.height` | 271px |
@@ -137,18 +137,18 @@ From `blocks-lead-article-card.tokens.json`. References point at system tokens (
 | `blocks-lead-article-card.device-mobile.byline.article-timestamp.height` | 18px |
 | `blocks-lead-article-card.device-mobile.byline.article-timestamp.width` | 90px |
 | `blocks-lead-article-card.device-mobile.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.color` | `{color.gray.100}` |
-| `blocks-lead-article-card.device-mobile.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-family` | Noto Sans |
-| `blocks-lead-article-card.device-mobile.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-size` | 15px |
-| `blocks-lead-article-card.device-mobile.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-weight` | 400 |
+| `blocks-lead-article-card.device-mobile.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-family` | `{font.theme.body-family}` |
+| `blocks-lead-article-card.device-mobile.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-size` | `{font.size.15}` |
+| `blocks-lead-article-card.device-mobile.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.font-weight` | `{font.weight.regular}` |
 | `blocks-lead-article-card.device-mobile.excerpt-container.the-norte-fire-broke-out-in-the-area-of-portico-del-norte-in-san-clemente-shortly-after-11-30-a-m-on-friday-oct-16.line-height` | 19px |
 | `blocks-lead-article-card.device-mobile.headline-group.gap` | `{spacing.050}` |
 | `blocks-lead-article-card.device-mobile.headline-group.article-section-kicker.height` | 13px |
 | `blocks-lead-article-card.device-mobile.headline-group.article-section-kicker.icon-color` | `{color.theme.primary}` |
 | `blocks-lead-article-card.device-mobile.headline-group.article-section-kicker.width` | 135px |
-| `blocks-lead-article-card.device-mobile.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.font-family` | `{font.family.noto-serif}` |
+| `blocks-lead-article-card.device-mobile.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.font-family` | `{font.theme.heading-family}` |
 | `blocks-lead-article-card.device-mobile.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.font-size` | `{font.size.25}` |
 | `blocks-lead-article-card.device-mobile.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.font-weight` | `{font.weight.bold}` |
-| `blocks-lead-article-card.device-mobile.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.letter-spacing` | -3px |
+| `blocks-lead-article-card.device-mobile.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.letter-spacing` | -0.75px |
 | `blocks-lead-article-card.device-mobile.headline-group.headline-container.norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment.line-height` | 29px |
 | `blocks-lead-article-card.device-mobile.root.gap` | 8px |
 | `blocks-lead-article-card.device-mobile.root.width` | 340px |
@@ -166,6 +166,7 @@ From `blocks-lead-article-card.tokens.json`. References point at system tokens (
 - **Gallery=Slideshow:** the image is replaced by the Zone 1 Slideshow (Desktop: slideshow 356, text 295; Tablet: the slideshow fills its 358 column).
 - **Hover:** the headline is the link and turns `color/theme/primary` (prototype `a:hover`, production `h3 a:hover`). Large text, so 3:1 is enough; theme primary on white is 4.75:1 or more on every site.
 - **Focus:** not drawn; the prototype has no custom style for the lead, so use the Blocks Card's `outline: 2px solid` `color/gray/black`, `outline-offset: 1px` on the headline link.
+- **Headline font follows the theme** (2026-10-30, Karl): bound to `font/theme/heading-family` (Noto Serif in Bold Coastal and Measured Vibrant, Noto Sans in Modern Earthy), like every other headline; it was bound to Noto Serif itself. The excerpt follows `font/theme/body-family`.
 
 ## Accessibility
 
@@ -195,4 +196,4 @@ New: the For You tab (prototype `.fy-lead`), based on production's Zone 1 lead (
 - `blocks-lead-article-card.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-30 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*

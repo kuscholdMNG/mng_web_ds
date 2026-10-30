@@ -9,7 +9,7 @@ component_key: 20dc946d8602b998c7cb522bb6e28d102459bf66
 variants: 6
 tokens: zone-1-lead-article-card.tokens.json
 skeleton: zone-1-lead-article-card.html
-exported: 2026-10-28
+exported: 2026-10-30
 ---
 
 # Zone 1 Lead Article Card
@@ -70,15 +70,15 @@ From `zone-1-lead-article-card.tokens.json`. References point at system tokens (
 |---|---|
 | `zone-1-lead-article-card.base.1st-col.gap` | 4px |
 | `zone-1-lead-article-card.base.1st-col.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.color` | `{color.gray.100}` |
-| `zone-1-lead-article-card.base.1st-col.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-family` | Noto Sans |
-| `zone-1-lead-article-card.base.1st-col.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-size` | 15px |
-| `zone-1-lead-article-card.base.1st-col.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-weight` | 400 |
+| `zone-1-lead-article-card.base.1st-col.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-family` | `{font.theme.body-family}` |
+| `zone-1-lead-article-card.base.1st-col.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-size` | `{font.size.15}` |
+| `zone-1-lead-article-card.base.1st-col.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-weight` | `{font.weight.regular}` |
 | `zone-1-lead-article-card.base.1st-col.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.line-height` | 19px |
 | `zone-1-lead-article-card.base.1st-col.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.color` | `{color.gray.min}` |
-| `zone-1-lead-article-card.base.1st-col.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.font-family` | `{font.family.noto-serif}` |
+| `zone-1-lead-article-card.base.1st-col.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.font-family` | `{font.theme.heading-family}` |
 | `zone-1-lead-article-card.base.1st-col.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.font-size` | `{font.size.29}` |
 | `zone-1-lead-article-card.base.1st-col.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.font-weight` | `{font.weight.bold}` |
-| `zone-1-lead-article-card.base.1st-col.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.letter-spacing` | -3px |
+| `zone-1-lead-article-card.base.1st-col.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.letter-spacing` | -0.87px |
 | `zone-1-lead-article-card.base.1st-col.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.line-height` | 33px |
 | `zone-1-lead-article-card.base.1st-col.relate-articles-zone-1-container.gap` | 4px |
 | `zone-1-lead-article-card.base.1st-col.relate-articles-zone-1-container.related-articles-body.gap` | 4px |
@@ -125,15 +125,15 @@ From `zone-1-lead-article-card.tokens.json`. References point at system tokens (
 | `zone-1-lead-article-card.device-mobile.bottom-border-line.height` | 0px |
 | `zone-1-lead-article-card.device-mobile.excerpt-container.padding-bottom` | 16px |
 | `zone-1-lead-article-card.device-mobile.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.color` | `{color.gray.100}` |
-| `zone-1-lead-article-card.device-mobile.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-family` | Noto Sans |
-| `zone-1-lead-article-card.device-mobile.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-size` | 15px |
-| `zone-1-lead-article-card.device-mobile.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-weight` | 400 |
+| `zone-1-lead-article-card.device-mobile.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-family` | `{font.theme.body-family}` |
+| `zone-1-lead-article-card.device-mobile.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-size` | `{font.size.15}` |
+| `zone-1-lead-article-card.device-mobile.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-weight` | `{font.weight.regular}` |
 | `zone-1-lead-article-card.device-mobile.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.line-height` | 19px |
 | `zone-1-lead-article-card.device-mobile.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.color` | `{color.gray.min}` |
-| `zone-1-lead-article-card.device-mobile.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.font-family` | `{font.family.noto-serif}` |
+| `zone-1-lead-article-card.device-mobile.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.font-family` | `{font.theme.heading-family}` |
 | `zone-1-lead-article-card.device-mobile.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.font-size` | `{font.size.25}` |
 | `zone-1-lead-article-card.device-mobile.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.font-weight` | `{font.weight.bold}` |
-| `zone-1-lead-article-card.device-mobile.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.letter-spacing` | -3px |
+| `zone-1-lead-article-card.device-mobile.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.letter-spacing` | -0.75px |
 | `zone-1-lead-article-card.device-mobile.headline-container.man-charged-with-murder-after-fatal-attack-on-bicycling-doctor-in-dana-point.line-height` | 29px |
 | `zone-1-lead-article-card.device-mobile.relate-articles-zone-1-container.gap` | 4px |
 | `zone-1-lead-article-card.device-mobile.relate-articles-zone-1-container.padding-bottom` | 16px |
@@ -164,6 +164,7 @@ From `zone-1-lead-article-card.tokens.json`. References point at system tokens (
 - **Gallery** (Karl, 2026-10-26): `Gallery=Slideshow` replaces the image with the Zone 1 Slideshow, as production does for gallery leads (`.feature-large .article-slideshow`). Zone 1 has no Gallery Icon Badge.
 - **Gallery=Slideshow layout follows the lead's width, not the screen:** two columns when the lead is about 700px wide or more (Desktop: text 295 and slideshow 356, the rest of the 706 card between them; Tablet: the slideshow fills the 358 column); one column when narrower: headline, excerpt, then the Related list, then the slideshow full width. On the homepage the third page column narrows the lead, so it is one column from 800 to 1279px (594 wide at 1024) and below 640px, and two columns from 640 to 799px and from 1280px up (production, checked on develop.denverpost.com 2026-10-26).
 - **The For You featured story** moved to Blocks Lead Article Card (Karl, 2026-10-28); its Style=For You variants were deleted. `Style` has one value (Standard) and is kept so existing instances don't change.
+- **Headline font follows the theme** (2026-10-30, Karl): bound to `font/theme/heading-family` (Noto Serif in Bold Coastal and Measured Vibrant, Noto Sans in Modern Earthy), like every other headline; it was bound to Noto Serif itself. The excerpt follows `font/theme/body-family`.
 
 ## Accessibility
 
@@ -196,4 +197,4 @@ Production `.feature-primary .feature-large` (Zone 1 lead).
 - `zone-1-lead-article-card.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-30 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*

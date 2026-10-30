@@ -9,7 +9,7 @@ component_key: f3543c3d3a1ab06000ea1bced9cef16e9c49ea63
 variants: 9
 tokens: blocks-article-row.tokens.json
 skeleton: blocks-article-row.html
-exported: 2026-10-28
+exported: 2026-10-30
 ---
 
 # Blocks Article Row
@@ -84,9 +84,9 @@ From `blocks-article-row.tokens.json`. References point at system tokens (`token
 | `blocks-article-row.base.card-body.headline-container.article-section-kicker.height` | 13px |
 | `blocks-article-row.base.card-body.headline-container.article-section-kicker.icon-color` | `{color.theme.primary}` |
 | `blocks-article-row.base.card-body.headline-container.article-section-kicker.width` | 91px |
-| `blocks-article-row.base.card-body.headline-container.headline.font-family` | Noto Serif |
-| `blocks-article-row.base.card-body.headline-container.headline.font-size` | 16px |
-| `blocks-article-row.base.card-body.headline-container.headline.font-weight` | 700 |
+| `blocks-article-row.base.card-body.headline-container.headline.font-family` | `{font.theme.heading-family}` |
+| `blocks-article-row.base.card-body.headline-container.headline.font-size` | `{font.size.16}` |
+| `blocks-article-row.base.card-body.headline-container.headline.font-weight` | `{font.weight.bold}` |
 | `blocks-article-row.base.card-body.headline-container.headline.line-height` | 18.88px |
 | `blocks-article-row.base.image-container.min-height` | 132px |
 | `blocks-article-row.base.image-container.article-image-placeholder.icon-color` | `{color.gray.min}` |
@@ -175,4 +175,4 @@ New: the For You tab (prototype `.row`).
 - `blocks-article-row.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-30 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*

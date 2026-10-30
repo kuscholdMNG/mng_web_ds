@@ -31,8 +31,8 @@ exported: 2026-10-30
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `SectionMenu` | 300×80 | [654:10019](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=654-10019) | 9 | ![](previews/weather-bug--sectionmenu.png) |
-| `Masthead` | 345×42 | [653:5076](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=653-5076) | 37 | ![](previews/weather-bug--masthead.png) |
+| `SectionMenu` | 300×80 | [654:10019](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=654-10019) | 7 | ![](previews/weather-bug--sectionmenu.png) |
+| `Masthead` | 345×42 | [653:5076](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=653-5076) | 32 | ![](previews/weather-bug--masthead.png) |
 
 ## Anatomy
 
@@ -88,6 +88,7 @@ No Breakpoint property: one size at every width.
 
 - Masthead: top of the page at 1040px and up, left of the logo.
 - SectionMenu: inside the open drawer.
+- **Temperature:** Helvetica Bold 16, on purpose: the weather is a third-party widget we can't control (Karl, 2026-10-30). The date and E Edition link are Noto Sans.
 
 ## Accessibility
 
@@ -97,11 +98,11 @@ No Breakpoint property: one size at every width.
 
 ## Where it is used
 
-Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **46**.
+Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **39**.
 
 Inside components: Masthead ×18, SectionMenuItem ×1.
-Placed on pages: Menus and Parts ×14, Article Page ×2, Homepage ×2, Section Front ×1.
-8 instances are nested inside other instances.
+Placed on pages: Menus and Parts ×14.
+6 instances are nested inside other instances.
 
 **Built from:** tornado ×2
 
@@ -112,9 +113,8 @@ Production masthead weather widget.
 ## Known issues
 
 1. No documentation container yet.
-2. The temperature (87°F) is Helvetica Bold, kept for Karl's review; everything else is Noto Sans.
-3. **Values not bound to a token** (literal in the component tokens): `base` weather.87-f font-family = Helvetica; `base` weather.87-f font-weight = 700.
-4. **Fonts outside Noto Sans / Noto Serif:** Helvetica.
+2. **Values not bound to a token** (literal in the component tokens): `base` weather.87-f font-family = Helvetica; `base` weather.87-f font-weight = 700.
+3. **Fonts outside Noto Sans / Noto Serif:** Helvetica.
 
 ## Files
 

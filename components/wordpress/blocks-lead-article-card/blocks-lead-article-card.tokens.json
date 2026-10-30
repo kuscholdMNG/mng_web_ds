@@ -11,7 +11,7 @@
       },
       "production": "New: the For You tab (prototype `.fy-lead`), based on production's Zone 1 lead (`.feature-primary .feature-large`).",
       "layer": "wordpress",
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
     }
   },
   "blocks-lead-article-card": {
@@ -111,39 +111,33 @@
             },
             "font-family": {
               "$type": "fontFamily",
-              "$value": "Noto Sans",
+              "$value": "{font.theme.body-family}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Family",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
+                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Family"
                   }
                 }
               }
             },
             "font-size": {
               "$type": "dimension",
-              "$value": {
-                "value": 15,
-                "unit": "px"
-              },
+              "$value": "{font.size.15}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
+                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size"
                   }
                 }
               }
             },
             "font-weight": {
               "$type": "fontWeight",
-              "$value": 400,
+              "$value": "{font.weight.regular}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
+                    "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style"
                   }
                 }
               }
@@ -208,11 +202,11 @@
             "norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment": {
               "font-family": {
                 "$type": "fontFamily",
-                "$value": "{font.family.noto-serif}",
+                "$value": "{font.theme.heading-family}",
                 "$extensions": {
                   "com.mng": {
                     "figma": {
-                      "variable": "Type Primitives/font/family/noto-serif"
+                      "variable": "Typography Theme/font/theme/heading-family"
                     }
                   }
                 }
@@ -242,7 +236,7 @@
               "letter-spacing": {
                 "$type": "dimension",
                 "$value": {
-                  "value": -3,
+                  "value": -0.87,
                   "unit": "px"
                 }
               },
@@ -751,39 +745,33 @@
           },
           "font-family": {
             "$type": "fontFamily",
-            "$value": "Noto Sans",
+            "$value": "{font.theme.body-family}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Family",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Family"
                 }
               }
             }
           },
           "font-size": {
             "$type": "dimension",
-            "$value": {
-              "value": 15,
-              "unit": "px"
-            },
+            "$value": "{font.size.15}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size"
                 }
               }
             }
           },
           "font-weight": {
             "$type": "fontWeight",
-            "$value": 400,
+            "$value": "{font.weight.regular}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style"
                 }
               }
             }
@@ -848,11 +836,11 @@
           "norte-fire-that-destroyed-homes-in-south-orange-county-is-at-80-containment": {
             "font-family": {
               "$type": "fontFamily",
-              "$value": "{font.family.noto-serif}",
+              "$value": "{font.theme.heading-family}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Type Primitives/font/family/noto-serif"
+                    "variable": "Typography Theme/font/theme/heading-family"
                   }
                 }
               }
@@ -882,7 +870,7 @@
             "letter-spacing": {
               "$type": "dimension",
               "$value": {
-                "value": -3,
+                "value": -0.75,
                 "unit": "px"
               }
             },

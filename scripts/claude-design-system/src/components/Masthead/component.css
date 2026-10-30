@@ -61,6 +61,8 @@
 .mngds-masthead__weather { gap: var(--mng-spacing-150); align-items: flex-start; }
 .mngds-masthead__temp { display: flex; align-items: flex-start; }
 .mngds-masthead__temp-value, .mngds-masthead__date-text { font-size: var(--mng-font-size-16); font-weight: var(--mng-font-weight-bold); line-height: normal; white-space: nowrap; }
+/* Weather Bug temperature: a third-party widget, Helvetica Bold as in Figma and production (Karl, 2026-10-30). No token. */
+.mngds-masthead__temp-value { font-family: Helvetica, Arial, sans-serif; }
 .mngds-masthead__weather-icon { width: 26px; height: 26px; color: var(--mng-color-gray-min); }
 .mngds-masthead__date { display: flex; flex-direction: column; gap: var(--mng-spacing-050); }
 .mngds-masthead__e-edition { font-size: var(--mng-font-size-12); font-weight: var(--mng-font-weight-regular); line-height: normal; color: var(--mng-color-gray-min); text-decoration: none; }

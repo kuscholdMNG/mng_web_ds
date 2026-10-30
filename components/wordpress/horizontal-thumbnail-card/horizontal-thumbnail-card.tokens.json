@@ -11,7 +11,7 @@
       },
       "production": null,
       "layer": "wordpress",
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
     }
   },
   "horizontal-thumbnail-card": {
@@ -63,39 +63,33 @@
             },
             "font-family": {
               "$type": "fontFamily",
-              "$value": "Noto Sans",
+              "$value": "{font.theme.small-headline-family}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Typeography Tokens/Editorial/Titles/HeadlineList/Family",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
+                    "variable": "Typeography Tokens/Editorial/Titles/HeadlineList/Family"
                   }
                 }
               }
             },
             "font-size": {
               "$type": "dimension",
-              "$value": {
-                "value": 15,
-                "unit": "px"
-              },
+              "$value": "{font.size.15}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Typeography Tokens/Editorial/Titles/HeadlineList/Size",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
+                    "variable": "Typeography Tokens/Editorial/Titles/HeadlineList/Size"
                   }
                 }
               }
             },
             "font-weight": {
               "$type": "fontWeight",
-              "$value": 600,
+              "$value": "{font.weight.semibold}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Typeography Tokens/Editorial/Titles/HeadlineList/Style",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
+                    "variable": "Typeography Tokens/Editorial/Titles/HeadlineList/Style"
                   }
                 }
               }

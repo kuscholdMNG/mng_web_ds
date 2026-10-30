@@ -271,7 +271,7 @@
       "variants": 9,
       "instances": 0,
       "knownIssues": 1,
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
     },
     {
       "slug": "blocks-card",
@@ -287,7 +287,23 @@
       "variants": 3,
       "instances": 0,
       "knownIssues": 2,
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "blocks-footer",
+      "name": "Blocks Footer",
+      "group": "blocks",
+      "layer": "wordpress",
+      "path": "components/wordpress/blocks-footer/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "801:1755",
+        "set": "Blocks Footer"
+      },
+      "variants": 5,
+      "instances": 0,
+      "knownIssues": 3,
+      "exported": "2026-10-30"
     },
     {
       "slug": "blocks-lead-article-card",
@@ -303,7 +319,7 @@
       "variants": 12,
       "instances": 0,
       "knownIssues": 2,
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
     },
     {
       "slug": "1col-article-card",
@@ -317,9 +333,9 @@
         "set": "1Col Article Card"
       },
       "variants": 2,
-      "instances": 242,
+      "instances": 32,
       "knownIssues": 1,
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
     },
     {
       "slug": "gallery-icon-badge",
@@ -349,9 +365,9 @@
         "set": "Horizontal Thumbnail Card"
       },
       "variants": 3,
-      "instances": 77,
+      "instances": 43,
       "knownIssues": 1,
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
     },
     {
       "slug": "zone-1-lead-article-card",
@@ -367,7 +383,7 @@
       "variants": 6,
       "instances": 11,
       "knownIssues": 3,
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
     },
     {
       "slug": "zone-1-slideshow",
@@ -446,7 +462,7 @@
       },
       "variants": 5,
       "instances": 43,
-      "knownIssues": 4,
+      "knownIssues": 3,
       "exported": "2026-10-30"
     },
     {
@@ -621,8 +637,8 @@
         "set": "Weather Bug"
       },
       "variants": 2,
-      "instances": 46,
-      "knownIssues": 4,
+      "instances": 39,
+      "knownIssues": 3,
       "exported": "2026-10-30"
     }
   ]

@@ -78,11 +78,11 @@
             "accessibility": {
               "color": {
                 "$type": "color",
-                "$value": "{color.gray.300}",
+                "$value": "{color.gray.200}",
                 "$extensions": {
                   "com.mng": {
                     "figma": {
-                      "variable": "Colors/color/gray/300"
+                      "variable": "Colors/color/gray/200"
                     }
                   }
                 }
@@ -124,11 +124,11 @@
             "arbitration": {
               "color": {
                 "$type": "color",
-                "$value": "{color.gray.300}",
+                "$value": "{color.gray.200}",
                 "$extensions": {
                   "com.mng": {
                     "figma": {
-                      "variable": "Colors/color/gray/300"
+                      "variable": "Colors/color/gray/200"
                     }
                   }
                 }
@@ -170,11 +170,11 @@
             "cookie-policy": {
               "color": {
                 "$type": "color",
-                "$value": "{color.gray.300}",
+                "$value": "{color.gray.200}",
                 "$extensions": {
                   "com.mng": {
                     "figma": {
-                      "variable": "Colors/color/gray/300"
+                      "variable": "Colors/color/gray/200"
                     }
                   }
                 }
@@ -216,11 +216,11 @@
             "copyright-2022-medianews-group": {
               "color": {
                 "$type": "color",
-                "$value": "{color.gray.300}",
+                "$value": "{color.gray.200}",
                 "$extensions": {
                   "com.mng": {
                     "figma": {
-                      "variable": "Colors/color/gray/300"
+                      "variable": "Colors/color/gray/200"
                     }
                   }
                 }
@@ -262,11 +262,11 @@
             "do-not-sell-my-info": {
               "color": {
                 "$type": "color",
-                "$value": "{color.gray.300}",
+                "$value": "{color.gray.200}",
                 "$extensions": {
                   "com.mng": {
                     "figma": {
-                      "variable": "Colors/color/gray/300"
+                      "variable": "Colors/color/gray/200"
                     }
                   }
                 }
@@ -308,11 +308,11 @@
             "powered-by-wordpress-com-vip": {
               "color": {
                 "$type": "color",
-                "$value": "{color.gray.300}",
+                "$value": "{color.gray.200}",
                 "$extensions": {
                   "com.mng": {
                     "figma": {
-                      "variable": "Colors/color/gray/300"
+                      "variable": "Colors/color/gray/200"
                     }
                   }
                 }
@@ -354,11 +354,11 @@
             "privacy-policy": {
               "color": {
                 "$type": "color",
-                "$value": "{color.gray.300}",
+                "$value": "{color.gray.200}",
                 "$extensions": {
                   "com.mng": {
                     "figma": {
-                      "variable": "Colors/color/gray/300"
+                      "variable": "Colors/color/gray/200"
                     }
                   }
                 }
@@ -400,11 +400,11 @@
             "terms-of-use": {
               "color": {
                 "$type": "color",
-                "$value": "{color.gray.300}",
+                "$value": "{color.gray.200}",
                 "$extensions": {
                   "com.mng": {
                     "figma": {
-                      "variable": "Colors/color/gray/300"
+                      "variable": "Colors/color/gray/200"
                     }
                   }
                 }

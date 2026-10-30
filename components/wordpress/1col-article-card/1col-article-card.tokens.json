@@ -11,7 +11,7 @@
       },
       "production": null,
       "layer": "wordpress",
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
     }
   },
   "1col-article-card": {
@@ -40,27 +40,22 @@
           },
           "font-size": {
             "$type": "dimension",
-            "$value": {
-              "value": 15,
-              "unit": "px"
-            },
+            "$value": "{font.size.15}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Size"
                 }
               }
             }
           },
           "font-weight": {
             "$type": "fontWeight",
-            "$value": 400,
+            "$value": "{font.weight.regular}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Body/ExcerptCompact/Style"
                 }
               }
             }
@@ -86,39 +81,33 @@
         "article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block": {
           "font-family": {
             "$type": "fontFamily",
-            "$value": "Noto Sans",
+            "$value": "{font.theme.small-headline-family}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/CardQuaternary/Family",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Titles/CardQuaternary/Family"
                 }
               }
             }
           },
           "font-size": {
             "$type": "dimension",
-            "$value": {
-              "value": 19,
-              "unit": "px"
-            },
+            "$value": "{font.size.19}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/CardQuaternary/Size",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Titles/CardQuaternary/Size"
                 }
               }
             }
           },
           "font-weight": {
             "$type": "fontWeight",
-            "$value": 600,
+            "$value": "{font.weight.semibold}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/CardQuaternary/Style",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Titles/CardQuaternary/Style"
                 }
               }
             }
@@ -170,39 +159,33 @@
         "vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail": {
           "font-family": {
             "$type": "fontFamily",
-            "$value": "Noto Sans",
+            "$value": "{font.theme.body-family}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/Excerpt/Family",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Body/Excerpt/Family"
                 }
               }
             }
           },
           "font-size": {
             "$type": "dimension",
-            "$value": {
-              "value": 15,
-              "unit": "px"
-            },
+            "$value": "{font.size.15}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/Excerpt/Size",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Body/Excerpt/Size"
                 }
               }
             }
           },
           "font-weight": {
             "$type": "fontWeight",
-            "$value": 400,
+            "$value": "{font.weight.regular}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Body/Excerpt/Style",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Body/Excerpt/Style"
                 }
               }
             }
@@ -228,39 +211,33 @@
         "article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block": {
           "font-family": {
             "$type": "fontFamily",
-            "$value": "Noto Serif",
+            "$value": "{font.theme.heading-family}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/TitleMedia/Family",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Titles/TitleMedia/Family"
                 }
               }
             }
           },
           "font-size": {
             "$type": "dimension",
-            "$value": {
-              "value": 29,
-              "unit": "px"
-            },
+            "$value": "{font.size.29}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/TitleMedia/Size",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Titles/TitleMedia/Size"
                 }
               }
             }
           },
           "font-weight": {
             "$type": "fontWeight",
-            "$value": 700,
+            "$value": "{font.weight.bold}",
             "$extensions": {
               "com.mng": {
                 "figma": {
-                  "variable": "Typeography Tokens/Editorial/Titles/TitleMedia/Style",
-                  "note": "Bound in Figma, but no single system token matches; literal value."
+                  "variable": "Typeography Tokens/Editorial/Titles/TitleMedia/Style"
                 }
               }
             }

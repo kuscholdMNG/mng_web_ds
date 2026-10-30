@@ -384,6 +384,12 @@
      "component": "BlocksLeadArticleCard"
     },
     {
+     "name": "Blocks Footer (was Footer_w_signup)",
+     "where": "Homepage, Blocks section, 801:1755",
+     "status": "To add",
+     "note": "Future footer with the email signup. Exported 2026-10-30; left out of the Claude system for now (Karl, 2026-10-30)."
+    },
+    {
      "name": "Gallery Icon Badge",
      "where": "Homepage, 3665:32148",
      "status": "In system",
@@ -574,13 +580,13 @@
      "name": "Weather Bug",
      "where": "Menus and Parts, 654:10020",
      "status": "To add",
-     "note": "Exported 2026-10-30; drawn inside Masthead. Its temperature is still Helvetica in Figma, kept for Karl’s review (Noto Sans in the Claude system)."
+     "note": "Exported 2026-10-30; drawn inside Masthead. The temperature is a third-party widget and stays Helvetica (Karl, 2026-10-30)."
     },
     {
-     "name": "Footer, Footer_w_signup",
-     "where": "Menus and Parts, 354:1282, 801:1755",
-     "status": "Partial",
-     "note": "Footer built (all 5 devices; production values on purpose). Footer_w_signup waits for Karl’s revision.",
+     "name": "Footer",
+     "where": "Menus and Parts, 354:1282",
+     "status": "In system",
+     "note": "All 5 devices; production spacing kept on purpose. Legal links color/gray/200 since 2026-10-30 (contrast fix).",
      "updated": "2026-10-30",
      "component": "Footer"
     },

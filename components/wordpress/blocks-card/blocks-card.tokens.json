@@ -11,7 +11,7 @@
       },
       "production": "New: the For You tab (prototype `.card`). Production's homepage card hover only turns the headline primary (`h3 a:hover`).",
       "layer": "wordpress",
-      "exported": "2026-10-28"
+      "exported": "2026-10-30"
     }
   },
   "blocks-card": {
@@ -219,39 +219,33 @@
           "headline": {
             "font-family": {
               "$type": "fontFamily",
-              "$value": "Noto Serif",
+              "$value": "{font.theme.heading-family}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Family",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
+                    "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Family"
                   }
                 }
               }
             },
             "font-size": {
               "$type": "dimension",
-              "$value": {
-                "value": 16,
-                "unit": "px"
-              },
+              "$value": "{font.size.16}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Size",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
+                    "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Size"
                   }
                 }
               }
             },
             "font-weight": {
               "$type": "fontWeight",
-              "$value": 700,
+              "$value": "{font.weight.bold}",
               "$extensions": {
                 "com.mng": {
                   "figma": {
-                    "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Style",
-                    "note": "Bound in Figma, but no single system token matches; literal value."
+                    "variable": "Typeography Tokens/Editorial/Titles/CardTertiaryCompact/Style"
                   }
                 }
               }

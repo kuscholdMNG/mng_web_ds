@@ -9,7 +9,7 @@ component_key: d527b9d45b9d427355fa4f71183d2232ca6eaf27
 variants: 2
 tokens: 1col-article-card.tokens.json
 skeleton: 1col-article-card.html
-exported: 2026-10-28
+exported: 2026-10-30
 ---
 
 # 1Col Article Card
@@ -39,8 +39,8 @@ exported: 2026-10-28
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `Standard` | 296×372 | [3352:24163](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3352-24163) | 230 | ![](previews/1col-article-card--standard.png) |
-| `Media Lead` | 296×413.5 | [3536:39050](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3536-39050) | 12 | ![](previews/1col-article-card--media-lead.png) |
+| `Standard` | 296×372 | [3352:24163](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3352-24163) | 26 | ![](previews/1col-article-card--standard.png) |
+| `Media Lead` | 296×413.5 | [3536:39050](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3536-39050) | 6 | ![](previews/1col-article-card--media-lead.png) |
 
 ## Anatomy
 
@@ -65,22 +65,22 @@ From `1col-article-card.tokens.json`. References point at system tokens (`tokens
 |---|---|
 | `1col-article-card.style-standard.article-graphic.height` | 222px |
 | `1col-article-card.style-standard.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-family` | `{font.theme.small-headline-family}` |
-| `1col-article-card.style-standard.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-size` | 15px |
-| `1col-article-card.style-standard.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-weight` | 400 |
+| `1col-article-card.style-standard.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-size` | `{font.size.15}` |
+| `1col-article-card.style-standard.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-weight` | `{font.weight.regular}` |
 | `1col-article-card.style-standard.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.line-height` | 19px |
-| `1col-article-card.style-standard.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-family` | Noto Sans |
-| `1col-article-card.style-standard.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-size` | 19px |
-| `1col-article-card.style-standard.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-weight` | 600 |
+| `1col-article-card.style-standard.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-family` | `{font.theme.small-headline-family}` |
+| `1col-article-card.style-standard.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-size` | `{font.size.19}` |
+| `1col-article-card.style-standard.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-weight` | `{font.weight.semibold}` |
 | `1col-article-card.style-standard.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.letter-spacing` | -0.665px |
 | `1col-article-card.style-standard.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.line-height` | 24px |
 | `1col-article-card.style-media-lead.article-graphic.height` | 166.5px |
-| `1col-article-card.style-media-lead.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-family` | Noto Sans |
-| `1col-article-card.style-media-lead.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-size` | 15px |
-| `1col-article-card.style-media-lead.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-weight` | 400 |
+| `1col-article-card.style-media-lead.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-family` | `{font.theme.body-family}` |
+| `1col-article-card.style-media-lead.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-size` | `{font.size.15}` |
+| `1col-article-card.style-media-lead.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.font-weight` | `{font.weight.regular}` |
 | `1col-article-card.style-media-lead.excerpt-container.vanroy-evan-smith-39-of-long-beach-is-being-held-on-1-million-bail.line-height` | 21px |
-| `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-family` | Noto Serif |
-| `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-size` | 29px |
-| `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-weight` | 700 |
+| `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-family` | `{font.theme.heading-family}` |
+| `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-size` | `{font.size.29}` |
+| `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.font-weight` | `{font.weight.bold}` |
 | `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.letter-spacing` | -1.16px |
 | `1col-article-card.style-media-lead.headline-container.article-headline-on-news-paper-homepage-in-first-position-on-1col-section-block.line-height` | 33px |
 | `1col-article-card.base.article-graphic.icon-color` | `{color.gray.min}` |
@@ -111,11 +111,9 @@ No Breakpoint property: one size at every width.
 
 ## Where it is used
 
-Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **242**.
+Scope: instances in the Figma file **WordPress Elements** only (other files that use the library are not counted). Total: **32**.
 
-Inside components: Section Rail Card ×32, Feature + List Content Block ×6, Photos Block ×6.
-Placed on pages: Homepage ×162.
-36 instances are nested inside other instances.
+Inside components: Section Rail Card ×20, Feature + List Content Block ×6, Photos Block ×6.
 
 **Built from:** Article Image Placeholder ×2
 
@@ -133,4 +131,4 @@ No production selector recorded yet. Production gaps go in `design-vs-production
 - `1col-article-card.html`: HTML/CSS skeleton of every variant, using the `dist/` CSS variables (open it in a browser).
 - `previews/`: PNG of every variant @2x and the documentation frame.
 
-*Generated 2026-10-28 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
+*Generated 2026-10-30 by `scripts/component-export/export.py` (EXPORT-STANDARD.md section 7). Edit the text in `scripts/component-export/registry.json`, not here.*
