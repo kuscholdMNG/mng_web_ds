@@ -1,0 +1,18 @@
+<!-- @dsCard group="WordPress Elements" height=620 subtitle="Figma: TopZone Article Card · 4 variants (Device)" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>TopZoneArticleCard</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var width = { Mobile: 340, Desktop: 336, '1024': 197, '1100': 507 };
+  var variants = h(I.SpecimenSection, { title: 'Device', note: 'The four Zone 1 story cards beside the Zone 1 lead. Desktop and 1024 stack the image over the headline; 1100 and Mobile are thumbnail rows, Mobile with a bottom rule. Built at the Figma widths; the card fills its column.' },
+    h(I.Specimen, { items: ['Mobile', 'Desktop', '1024', '1100'].map(function (d) {
+      return { label: 'Device=' + d + ' (' + width[d] + 'px)', width: width[d] + 32, node: h('div', { style: { width: width[d] } }, h(NS.TopZoneArticleCard, { device: d })) };
+    }) }));
+  ReactDOM.createRoot(document.getElementById('root')).render(variants);
+</script>
+</body>
+</html>

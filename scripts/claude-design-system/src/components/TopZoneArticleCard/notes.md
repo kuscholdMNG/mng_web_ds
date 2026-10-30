@@ -1,0 +1,5 @@
+- **Device values** come from Figma as is (Desktop, 1024, 1100, Mobile); they aren't the official breakpoint names, and Figma doesn't record which viewport each applies at. The consumer picks one.
+- **Headlines follow the theme** (`font/theme/heading-family`): Desktop `Editorial/Titles/CardTertiary` (20/23.6, −0.4px), 1024 `CardTertiaryCompact` (16/18.88), 1100 `CardTertiaryRow` (18/21.6); Mobile is Noto Sans/Serif Bold 18 with an auto line height (its family was bound to the theme in Figma 2026-10-30, like the other headlines). `color/gray/min` on `color/gray/max`, 18.4:1.
+- **The headline group's 15px gap is raw on purpose** (Karl, 2026-10-30: no token for it). It only shows once the Article Status Badge does.
+- **Article Status Badge** is hidden in every Figma variant and no property turns it on, so it isn't drawn here.
+- Stacked images keep 16:9 at the column width (336×189, 197×111 in Figma); row thumbnails are fixed (280×157, 100×67).

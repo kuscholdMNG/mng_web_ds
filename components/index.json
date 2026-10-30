@@ -370,6 +370,22 @@
       "exported": "2026-10-30"
     },
     {
+      "slug": "topzone-article-card",
+      "name": "TopZone Article Card",
+      "group": "cards",
+      "layer": "wordpress",
+      "path": "components/wordpress/topzone-article-card/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "3336:46079",
+        "set": "TopZone Article Card"
+      },
+      "variants": 4,
+      "instances": 36,
+      "knownIssues": 3,
+      "exported": "2026-10-30"
+    },
+    {
       "slug": "zone-1-lead-article-card",
       "name": "Zone 1 Lead Article Card",
       "group": "cards",

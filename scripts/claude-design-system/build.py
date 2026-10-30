@@ -66,6 +66,7 @@ COMPONENTS = [
     ("1col-article-card", "OneColArticleCard", "1Col Article Card", "WordPress Elements"),
     ("horizontal-thumbnail-card", "HorizontalThumbnailCard", "Horizontal Thumbnail Card", "WordPress Elements"),
     ("zone-1-lead-article-card", "Zone1LeadArticleCard", "Zone 1 Lead Article Card", "WordPress Elements"),
+    ("topzone-article-card", "TopZoneArticleCard", "TopZone Article Card", "WordPress Elements"),
     ("masthead", "Masthead", "Masthead", "WordPress Elements"),
     ("footer", "Footer", "Footer", "WordPress Elements"),
     ("ad-blocks", "AdBlocks", "Ad Blocks", "WordPress Elements"),

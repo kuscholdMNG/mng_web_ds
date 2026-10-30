@@ -340,6 +340,32 @@
       "production": "Production `.feature-primary .feature-large` (Zone 1 lead)."
     },
     {
+      "slug": "topzone-article-card",
+      "name": "TopZone Article Card",
+      "group": "cards",
+      "layer": "wordpress",
+      "order": 6,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "3336:46079",
+      "documentationFrame": "3484:67610",
+      "description": "The four homepage Zone 1 story cards beside the Zone 1 lead (Editor's Picks): stacked cards (image over headline) on Desktop and at 1024, thumbnail rows (image beside headline) on Mobile and at 1100.",
+      "rules": [
+        "**Desktop** (336 wide): Article Image 336×189; 8px (`spacing/100`) to the headline; headline `Editorial/Titles/CardTertiary` (20/23.6, −0.4px); 16px (`spacing/200`) bottom padding.",
+        "**1024** (197 wide): Article Image 197×111; 8px; headline `Editorial/Titles/CardTertiaryCompact` (16/18.88); 16px bottom padding.",
+        "**1100** (507 wide, thumbnail row): Article Image 280×157; 20px (`spacing/250`) to the headline column; headline `Editorial/Titles/CardTertiaryRow` (18/21.6); 16px bottom padding; the bottom rule is hidden.",
+        "**Mobile** (340 wide, thumbnail row): Article Image 100×67; 8px to the headline column; headline Noto Serif Bold 18 (`font/size/18`), auto line height; 16px to the 1px `color/gray/500` bottom rule.",
+        "**Headline font follows the theme** (`font/theme/heading-family`; Mobile bound to it 2026-10-30, like the other headlines). `color/gray/min` on `color/gray/max`, 18.4:1.",
+        "**Headline group gap 15px is raw on purpose** (Karl, 2026-10-30): no token is made for it. It only shows when the Article Status Badge is on."
+      ],
+      "breakpoints": "| Device | Card width | Layout |\n|---|---|---|\n| Desktop | 336px | Stacked: image over headline |\n| 1024 | 197px | Stacked, compact headline |\n| 1100 | 507px | Thumbnail row: 280px image beside the headline |\n| Mobile | 340px | Thumbnail row: 100px image beside the headline, bottom rule |",
+      "knownIssues": [
+        "The Device values (Desktop, 1024, 1100, Mobile) aren't the official breakpoint names, and the viewport each one applies at isn't recorded in Figma.",
+        "Article Status Badge: hidden in every variant and no component property turns it on; Desktop and 1024 hold it outside the headline group (Type = Sponsored), Mobile and 1100 inside it (Type = None).",
+        "The headline-group gap is 15px with no token (kept raw by decision, Karl 2026-10-30)."
+      ],
+      "production": "Production homepage Zone 1 (`.feature-primary`), the four secondary stories beside the lead. Not audited for this export."
+    },
+    {
       "slug": "zone-1-slideshow",
       "name": "Zone 1 Slideshow",
       "group": "cards",

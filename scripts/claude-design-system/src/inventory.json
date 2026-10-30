@@ -492,8 +492,11 @@
     },
     {
      "name": "TopZone Article Card",
-     "where": "Homepage, 3336:46079",
-     "status": "To add"
+     "where": "Homepage, 3336:46079 (4 variants)",
+     "status": "In system",
+     "note": "Device = Desktop, 1024, 1100, Mobile. Headlines follow the theme; the 15px headline-group gap stays raw (Karl). The Article Status Badge is hidden in Figma and not drawn.",
+     "updated": "2026-10-30",
+     "component": "TopZoneArticleCard"
     },
     {
      "name": "Latest Headlines, Latest Headlines List Item",

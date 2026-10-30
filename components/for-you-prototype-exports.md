@@ -2,7 +2,7 @@
 
 Oct 29, 2026 · @Karl
 
-> **Updated 2026-10-30 (latest)**: Masthead for the other page types built in the Claude DS; P1 done. **Earlier, 2026-10-30 (later):** Masthead for the other page types added to P1 (Karl). **Earlier, 2026-10-30,** for P1 (Masthead, Footer, Ad Blocks): cleaned up in Figma, exported to `components/wordpress/` and **In system** in the Claude DS (Masthead: Page = Home). Status column below. Tracked in `MNG-Web-Design-System-Status.md`, open item 19.
+> **Updated 2026-10-30 (latest)**: P2 started: TopZone Article Card done. **Earlier, 2026-10-30:** Masthead for the other page types built in the Claude DS; P1 done. **Earlier, 2026-10-30 (later):** Masthead for the other page types added to P1 (Karl). **Earlier, 2026-10-30,** for P1 (Masthead, Footer, Ad Blocks): cleaned up in Figma, exported to `components/wordpress/` and **In system** in the Claude DS (Masthead: Page = Home). Status column below. Tracked in `MNG-Web-Design-System-Status.md`, open item 19.
 
 ## Context
 
@@ -29,7 +29,7 @@ These fill the production homepage layout on the Editor's Picks tab. All are in 
 
 | Component | Figma | Notes | Where it shows | Status |
 | --- | --- | --- | --- | --- |
-| TopZone Article Card | `3336:46079` | 4 cards in a 2×2 grid beside the Zone 1 lead; switches to thumbnail rows below 800px | Zone 1 | Not started |
+| TopZone Article Card | `3336:46079` | 4 cards in a 2×2 grid beside the Zone 1 lead; switches to thumbnail rows below 800px | Zone 1 | **Done 2026-10-30** (`TopZoneArticleCard`; 15px headline gap kept raw, Karl) |
 | Latest Headlines + Latest Headlines List Item | `3476:62396`, `3336:46118` | 7 items with kicker, headline and time; the Section Title / Eyebrow above it is already in the DS | Zone 1, right column | Not started |
 | Newsletter Signup | `3336:44765` | Under Latest Headlines (anonymous view) | Zone 1 | Not started |
 | Most Popular List Item + Blueconic Block | `3352:24171`, `3352:20526` | 10 numbered items, 2 columns (1 below 640px) | Zone 2 | Not started |

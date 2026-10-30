@@ -61,7 +61,7 @@ Icon.categories = ICON_CATEGORIES;
 Icon.meta = ICON_META;
 
 /* Article image: the real image when `src` is given, else WordPress Elements' Article Image Placeholder
-   (3334:42380: #E1A1FF fill, 2px color/gray/min edge, two diagonals, "GRAPHIC / IMAGE" in Noto Serif Bold 16, 10% tracking). */
+   (3334:42380: #E1A1FF fill, 2px color/gray/min edge, two diagonals, "GRAPHIC / IMAGE" (or `label`, e.g. "IMAGE" on small thumbnails) in Noto Serif Bold 16, 10% tracking). */
 function ArticleImage(props) {
   var cls = cx('mngds-image', props.className);
   var hidden = props['aria-hidden'] === true || props['aria-hidden'] === 'true';
@@ -74,7 +74,7 @@ function ArticleImage(props) {
     h('svg', { className: 'mngds-image__x', viewBox: '0 0 100 100', preserveAspectRatio: 'none', 'aria-hidden': 'true' },
       h('line', { x1: 0, y1: 0, x2: 100, y2: 100, vectorEffect: 'non-scaling-stroke' }),
       h('line', { x1: 100, y1: 0, x2: 0, y2: 100, vectorEffect: 'non-scaling-stroke' })),
-    props.hideLabel ? null : h('span', { className: 'mngds-image__label', 'aria-hidden': 'true' }, 'GRAPHIC / IMAGE'));
+    props.hideLabel ? null : h('span', { className: 'mngds-image__label', 'aria-hidden': 'true' }, props.label || 'GRAPHIC / IMAGE'));
 }
 
 /* Placeholder newspaper logo: Fakeville Daily News, stacked, in currentColor (logos/placeholder/, the main file's
