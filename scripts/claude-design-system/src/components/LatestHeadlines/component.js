@@ -1,7 +1,7 @@
 /* Latest Headlines (WordPress Elements, Homepage, 3476:62396): the Zone 1 Latest Headlines rail, built to match production
    (`.busy .headline-list`, Karl 2026-10-30). Section Title / Eyebrow (Underline, no chevron), then a ul of Latest Headlines
    List Items (First, Standard..., Sponsored) and Newsletter Signup, 12px (spacing/150) apart. Title to the first item is
-   font/theme/eyebrow-size. One column at every width; Device only sets production's XS cap (540px, centered).
+   16px (spacing/200). One column at every width; Device only sets production's XS cap (540px, centered).
    Device values are production's breakpoints for this list: XS (639px and below), S (640-799px), (≥800px) (the side column
    beside the Zone 1 lead). Newsletter Signup is drawn by NewsletterSignup once it is in the system; until then a labeled
    placeholder holds its place. */

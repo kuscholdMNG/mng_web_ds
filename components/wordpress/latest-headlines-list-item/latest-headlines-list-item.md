@@ -89,7 +89,7 @@ From `latest-headlines-list-item.tokens.json`. References point at system tokens
 
 No Breakpoint property: one size at every width.
 
-- **Matches production** (Karl, 2026-10-30: components match production; where a value has a token, use the nearest existing token). Checked on all 6 review sites 2026-10-30.
+- **Matches production** (Karl, 2026-10-30: components match production, rounded to the nearest multiple of 4 / 8 and its token). Checked on all 6 review sites 2026-10-30.
 - **Rule:** First has none. Standard and Sponsored draw a 1px `color/gray/500` rule on top, then 16px (`spacing/200`) to the content. The 12px above the rule belongs to the list (Latest Headlines). Production: `border-top: 1px` with `padding-top: 16px` and `margin-top: 12px` on every item after the first.
 - **Headline:** `Editorial/Titles/AdditionalHeadline`: `font/theme/heading-family` Bold 15 (`font/size/15`), 19px line height (changed from auto 2026-10-30, to match production), `color/gray/black` (was `color/gray/min`) on `color/gray/max`, 21:1. The family follows the theme (style bound 2026-10-30; it was Noto Serif itself): Noto Serif in Bold Coastal and Measured Vibrant, Noto Sans in Modern Earthy, as production renders it. Production's CSS weight is 600, but the sites load only the 400 and 700 faces of Noto Sans and Noto Serif, so it renders Bold; Figma keeps Bold. The style is also used by the Section Front page template (39 text layers), which follows these changes.
 - **Time (First, Standard):** inline right after the headline, in the same text layer (since 2026-10-30, as production does): Noto Sans Regular 13 (`font/size/13`), 23px line height, `color/gray/200`, 6.6:1. It wraps under the headline when the headline's last line is full.

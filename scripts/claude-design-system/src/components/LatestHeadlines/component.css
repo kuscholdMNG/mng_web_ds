@@ -7,7 +7,7 @@
 .mngds-latest-headlines *, .mngds-latest-headlines *::before, .mngds-latest-headlines *::after { box-sizing: border-box; }
 /* XS (639px and below): production caps the list at 33.75em (540px) and centers it. No token for this width. */
 .mngds-latest-headlines--xs { max-width: 540px; margin-left: auto; margin-right: auto; }
-/* Title to the first item = the theme's eyebrow size (15 / 17 / 21 in production; the token gives Bold Coastal 20). */
+/* Title to the first item: 16px (spacing/200) on every theme (production 15 / 17 / 21 by theme; Karl, 2026-10-30). */
 .mngds-latest-headlines__header {
   background: var(--mng-latest-headlines-base-header-container-background);
   padding-bottom: var(--mng-latest-headlines-base-header-container-padding-bottom);

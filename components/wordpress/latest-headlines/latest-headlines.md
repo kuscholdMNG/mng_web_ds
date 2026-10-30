@@ -32,16 +32,16 @@ exported: 2026-10-30
 
 | Variant | Size | Node | Instances | Preview |
 |---|---|---|---|---|
-| `XS (≤639px)` | 340×833 | [3476:62139](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3476-62139) | 3 | ![](previews/latest-headlines--xs-639px.png) |
-| `S (640–799px)` | 748×669 | [3476:62152](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3476-62152) | 2 | ![](previews/latest-headlines--s-640-799px.png) |
-| `(≥800px)` | 226×1011 | [3476:62164](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3476-62164) | 6 | ![](previews/latest-headlines--800px.png) |
+| `XS (≤639px)` | 340×829 | [3476:62139](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3476-62139) | 3 | ![](previews/latest-headlines--xs-639px.png) |
+| `S (640–799px)` | 748×665 | [3476:62152](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3476-62152) | 2 | ![](previews/latest-headlines--s-640-799px.png) |
+| `(≥800px)` | 226×1007 | [3476:62164](https://www.figma.com/design/b1iZxkFwtAYq9rElmnCAzd/?node-id=3476-62164) | 6 | ![](previews/latest-headlines--800px.png) |
 
 ## Anatomy
 
 Default variant `XS (≤639px)` (hidden layers marked):
 
-- **Device=XS (≤639px)** `COMPONENT`: 340×833, vertical, gap 0, padding 0/0/0/0, fixed×hug
-  - **Header Container** `FRAME`: 340×52, vertical, gap 8, padding 0/0/20/0, fill×hug
+- **Device=XS (≤639px)** `COMPONENT`: 340×829, vertical, gap 0, padding 0/0/0/0, fixed×hug
+  - **Header Container** `FRAME`: 340×48, vertical, gap 8, padding 0/0/16/0, fill×hug
     - **Section Title / Eyebrow** `INSTANCE`: 340×32, vertical, gap 8, padding 0/0/0/0, fill×hug, instance of Section Title / Eyebrow (Style=Underline)
   - **List** `FRAME`: 340×781, vertical, gap 12, padding 0/0/0/0, fill×hug
     - **Latest Headlines List Item** `INSTANCE`: 340×44, vertical, gap 4, padding 0/0/0/0, fill×hug, instance of Latest Headlines List Item (Type=First)
@@ -61,7 +61,7 @@ From `latest-headlines.tokens.json`. References point at system tokens (`tokens/
 | Token | Value |
 |---|---|
 | `latest-headlines.base.header-container.background` | `{color.gray.max}` |
-| `latest-headlines.base.header-container.padding-bottom` | `{font.theme.eyebrow-size}` |
+| `latest-headlines.base.header-container.padding-bottom` | `{spacing.200}` |
 | `latest-headlines.base.header-container.section-title-eyebrow.height` | 32px |
 | `latest-headlines.base.header-container.section-title-eyebrow.icon-color` | `{color.gray.100}` |
 | `latest-headlines.base.list.gap` | `{spacing.150}` |
@@ -95,12 +95,12 @@ From `latest-headlines.tokens.json`. References point at system tokens (`tokens/
 | (≥800px), L (1040–1279px) | `wordpress-grid.l` | Side column, 30.77% − 13.92px | 226px (TOP ZONE Block 219) | Tablet landscape (1024–1279) |
 | (≥800px), XL (≥1280px) | `wordpress-grid.xl` | Side column, 25% − 15px (224px) | 226px | Desktop (1280 and up) |
 
-- **Matches production** (Karl, 2026-10-30: components match production; where a value has a token, use the nearest existing token). CSS and live measurements on all 6 review sites 2026-10-30.
+- **Matches production** (Karl, 2026-10-30: components match production, rounded to the nearest multiple of 4 / 8 and its token). CSS and live measurements on all 6 review sites 2026-10-30.
 - **Breakpoints are production's, for this component** (Karl, 2026-10-30): each Device value is named by the range it covers (`XS (≤639px)`, `S (640–799px)`, `(≥800px)`); the width a variant is drawn at is a note, not a breakpoint. The list is one column at every width. Production CSS `.busy .headline-list` at 640 / 800 / 1040 / 1280px, the same on all 6 review sites (scan 2026-10-30, `components/breakpoint-audit.md`).
 - **XS** (639px and below, built 340): full width of the page. Production caps it at 540px (33.75em) and centers it.
 - **S** (640–799px, built 748): full width of the column. The items and Newsletter Signup fill the variant (fixed 2026-10-30, Karl: they were stuck at 340), as production does (680px wide on ocregister.com at a 700px window).
 - **(≥800px)** (built 226): the side column beside the Zone 1 lead. Production width `calc(40% - 0.75rem)` at 800–1039, `calc(30.7692% - 0.87rem)` at 1040–1279 and `calc(25% - 0.94rem)` at 1280 and up (224px). TOP ZONE Block draws it at 252 (1024) and 219 (1100). Everything inside fills the width.
-- **Title:** Section Title / Eyebrow, Style = Underline. Title to the first item is `font/theme/eyebrow-size`, the Header Container's bottom padding (Karl, 2026-10-30: nearest existing token). Production uses `margin-bottom` on the title: 17px on Measured Vibrant and 21px on Modern Earthy (1em, which the token matches) but 15px on Bold Coastal, where the token gives 20 (design-vs-production 16.5). Figma draws Bold Coastal's 20. Before 2026-10-30 Figma had 16px (XS, S) and 12px (≥800).
+- **Title:** Section Title / Eyebrow, Style = Underline. Title to the first item is 16px (`spacing/200`), the Header Container's bottom padding (Karl, 2026-10-30): production uses the title's `margin-bottom`, measured 15px on Bold Coastal, 17px on Measured Vibrant and 21px on Modern Earthy; 16 is the nearest multiple of 4 / 8 with a token (design-vs-production 16.5). Before 2026-10-30 Figma had 16px (XS, S) and 12px (≥800).
 - **List:** 12px (`spacing/150`) between the items and before Newsletter Signup (the `List` frame); Standard and Sponsored items draw their own top rule. Production: `margin-top: 12px` on every `li` after the first.
 - **Contrast** is in the parts: headline 21:1 and time 6.6:1 (Latest Headlines List Item), eyebrow `color/gray/100` 11.6:1 (Section Title / Eyebrow).
 
@@ -127,7 +127,7 @@ Production homepage Zone 1 `.feature-primary.busy .headline-list` (`div.headline
 
 1. One variant, `(≥800px)`, covers three production ranges whose only difference is the column width (the list is the same).
 2. Below 640px production caps the list at 540px; the XS variant is drawn at 340.
-3. Bold Coastal: production's title-to-list gap is 15px; `font/theme/eyebrow-size` gives 20 (design-vs-production 16.5).
+3. Production's title-to-list gap is 15 / 17 / 21px by theme; the design is 16px (`spacing/200`) on every theme (design-vs-production 16.5).
 4. Newsletter Signup instances keep their component's fixed 135px height (next in the P2 list).
 5. The eyebrow's production color and underline differ (design-vs-production 14).
 6. **Values not bound to a token** (literal in the component tokens): `base` list.latest-headlines-list-item icon-color = #7d161e.

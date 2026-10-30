@@ -30,11 +30,11 @@
         },
         "padding-bottom": {
           "$type": "dimension",
-          "$value": "{font.theme.eyebrow-size}",
+          "$value": "{spacing.200}",
           "$extensions": {
             "com.mng": {
               "figma": {
-                "variable": "Typography Theme/font/theme/eyebrow-size"
+                "variable": "Spacing & Radius/spacing/200"
               }
             }
           }
