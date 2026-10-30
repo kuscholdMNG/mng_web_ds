@@ -194,6 +194,22 @@
       "exported": "2026-10-28"
     },
     {
+      "slug": "ad-blocks",
+      "name": "Ad Blocks",
+      "group": "ads",
+      "layer": "wordpress",
+      "path": "components/wordpress/ad-blocks/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "517:4304",
+        "set": "Ad Blocks"
+      },
+      "variants": 37,
+      "instances": 241,
+      "knownIssues": 6,
+      "exported": "2026-10-30"
+    },
+    {
       "slug": "article-author",
       "name": "Article Author",
       "group": "article-parts",
@@ -402,6 +418,38 @@
       "exported": "2026-10-28"
     },
     {
+      "slug": "account-menu",
+      "name": "AccountMenu",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/account-menu/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "910:16425",
+        "set": "AccountMenu"
+      },
+      "variants": 21,
+      "instances": 246,
+      "knownIssues": 3,
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "footer",
+      "name": "Footer",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/footer/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "354:1282",
+        "set": "Footer"
+      },
+      "variants": 5,
+      "instances": 43,
+      "knownIssues": 4,
+      "exported": "2026-10-30"
+    },
+    {
       "slug": "homepage-tab",
       "name": "Homepage Tab",
       "group": "navigation",
@@ -432,6 +480,150 @@
       "instances": 0,
       "knownIssues": 0,
       "exported": "2026-10-28"
+    },
+    {
+      "slug": "masthead",
+      "name": "Masthead",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/masthead/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "456:2572",
+        "set": "Masthead"
+      },
+      "variants": 90,
+      "instances": 70,
+      "knownIssues": 7,
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "search-bar",
+      "name": "SearchBar",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/search-bar/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "456:5910",
+        "set": "SearchBar"
+      },
+      "variants": 2,
+      "instances": 373,
+      "knownIssues": 2,
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "section-menu",
+      "name": "SectionMenu",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/section-menu/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "456:5837",
+        "set": "SectionMenu"
+      },
+      "variants": 15,
+      "instances": 237,
+      "knownIssues": 1,
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "section-menu-header",
+      "name": "SectionMenuHeader",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/section-menu-header/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "456:5745",
+        "set": "SectionMenuHeader"
+      },
+      "variants": 6,
+      "instances": 254,
+      "knownIssues": 1,
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "section-menu-item",
+      "name": "SectionMenuItem",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/section-menu-item/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "456:5781",
+        "set": "SectionMenuItem"
+      },
+      "variants": 9,
+      "instances": 159,
+      "knownIssues": 2,
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "user-image",
+      "name": "UserImage",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/user-image/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "456:5708",
+        "set": "UserImage"
+      },
+      "variants": 12,
+      "instances": 259,
+      "knownIssues": 2,
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "user-pic",
+      "name": "UserPic",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/user-pic/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "456:5674",
+        "set": "UserPic"
+      },
+      "variants": 6,
+      "instances": 253,
+      "knownIssues": 0,
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "user-status",
+      "name": "UserStatus",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/user-status/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "456:5728",
+        "set": "UserStatus"
+      },
+      "variants": 4,
+      "instances": 274,
+      "knownIssues": 2,
+      "exported": "2026-10-30"
+    },
+    {
+      "slug": "weather-bug",
+      "name": "Weather Bug",
+      "group": "navigation",
+      "layer": "wordpress",
+      "path": "components/wordpress/weather-bug/",
+      "figma": {
+        "fileKey": "b1iZxkFwtAYq9rElmnCAzd",
+        "node": "654:10020",
+        "set": "Weather Bug"
+      },
+      "variants": 2,
+      "instances": 46,
+      "knownIssues": 4,
+      "exported": "2026-10-30"
     }
   ]
 }

@@ -1,0 +1,31 @@
+/* Ad Blocks: --mng-ad-blocks-* component tokens (components/wordpress/ad-blocks). */
+.mngds-ad-blocks {
+  position: relative; box-sizing: border-box; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  max-width: 100%; overflow: hidden;
+  background: var(--mng-ad-blocks-base-root-background);
+  box-shadow: inset 0 0 0 var(--mng-ad-blocks-base-root-border-width) var(--mng-ad-blocks-base-root-border-color);
+}
+.mngds-ad-blocks--filled { background: none; box-shadow: none; }
+.mngds-ad-blocks__x { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mngds-ad-blocks__x line { stroke: var(--mng-ad-blocks-base-union-vector-1-border-color); stroke-width: var(--mng-ad-blocks-base-union-vector-1-border-width); }
+.mngds-ad-blocks__label {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: var(--mng-spacing-100); padding: 0 var(--mng-spacing-050);
+  font-family: var(--mng-font-family-noto-serif); font-size: var(--mng-font-size-16); font-weight: var(--mng-font-weight-bold); line-height: normal;
+  color: var(--mng-color-gray-min); text-align: center;
+  -webkit-text-stroke: 3px var(--mng-color-gray-600); paint-order: stroke fill;
+}
+.mngds-ad-blocks__line { display: block; }
+/* Mobile Adhesion close: the Figma 20px color/gray/min circle with a 2px color/gray/max x, 4px in from the top right,
+   inside a 24px button (WCAG 2.5.8 minimum target; Figma's is 20px). */
+.mngds-ad-blocks__close {
+  position: absolute; top: 2px; right: 2px; width: 24px; height: 24px; margin: 0; padding: 0; border: 0; background: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; z-index: 1;
+}
+.mngds-ad-blocks__close-dot { position: relative; width: 20px; height: 20px; border-radius: 50%; background: var(--mng-ad-blocks-base-close-button-bg-background); }
+.mngds-ad-blocks__close-dot::before, .mngds-ad-blocks__close-dot::after {
+  content: ""; position: absolute; left: 3px; right: 3px; top: 50%; height: var(--mng-ad-blocks-base-x-line-1-border-width); margin-top: -1px;
+  background: var(--mng-ad-blocks-base-x-line-1-border-color); transform: rotate(45deg);
+}
+.mngds-ad-blocks__close-dot::after { transform: rotate(-45deg); }
+.mngds-ad-blocks__close:focus-visible { outline: 2px solid var(--mng-color-gray-black); outline-offset: 1px; }
+.mngds-ad-blocks--fixed { position: fixed; left: 50%; bottom: 0; transform: translateX(-50%); z-index: 90; overflow: visible; }

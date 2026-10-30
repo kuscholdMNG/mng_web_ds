@@ -77,6 +77,36 @@ function ArticleImage(props) {
     props.hideLabel ? null : h('span', { className: 'mngds-image__label', 'aria-hidden': 'true' }, 'GRAPHIC / IMAGE'));
 }
 
+/* Placeholder newspaper logo: Fakeville Daily News, stacked, in currentColor (logos/placeholder/, the main file's
+   FAKE NEWSPAPER LOGOS 3051:2728; the artwork the Masthead and Footer use). Inlined by build.py. */
+var PLACEHOLDER_LOGO = /*PLACEHOLDER_LOGO*/'';
+function PlaceholderLogo(props) {
+  return h('span', { className: cx('mngds-placeholder-logo', props.className), style: props.style,
+    role: props.decorative ? undefined : 'img', 'aria-label': props.decorative ? undefined : (props.label || 'Fakeville Daily News'),
+    'aria-hidden': props.decorative ? 'true' : undefined, dangerouslySetInnerHTML: { __html: PLACEHOLDER_LOGO } });
+}
+
+/* WordPress grid devices (Masthead, Footer): the Figma Device value for a width.
+   XL-Desktop >= 1040, LG-TabletH 800-1039, MD-TabletV 640-799, SM-Mobile 360-639, XS-Fold below 360. */
+var DEVICES = [['XL-Desktop', 1040], ['LG-TabletH', 800], ['MD-TabletV', 640], ['SM-Mobile', 360], ['XS-Fold', 0]];
+function deviceFor(w) { for (var i = 0; i < DEVICES.length; i++) if (w >= DEVICES[i][1]) return DEVICES[i][0]; return 'XS-Fold'; }
+/* [device, ref]: the forced device, or the one that fits the width of the element the ref is on (ResizeObserver). */
+function useDevice(forced) {
+  var ref = React.useRef(null);
+  var st = React.useState(forced || 'XL-Desktop');
+  var useIso = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
+  useIso(function () {
+    if (forced) return undefined;
+    var el = ref.current; if (!el) return undefined;
+    function measure() { var d = deviceFor(el.getBoundingClientRect().width); st[1](function (p) { return p === d ? p : d; }); }
+    measure();
+    var ro = window.ResizeObserver ? new ResizeObserver(measure) : null;
+    if (ro) ro.observe(el); else window.addEventListener('resize', measure);
+    return function () { if (ro) ro.disconnect(); else window.removeEventListener('resize', measure); };
+  }, [forced]);
+  return [forced || st[0], ref];
+}
+
 /* Documentation helper for previews: labeled samples on the color/gray/500 stage with 16px padding,
    the convention of the Figma documentation containers (CLAUDE.md). Not a component. */
 function Specimen(props) {
@@ -95,4 +125,4 @@ function SpecimenSection(props) {
     props.children);
 }
 
-var internal = { h: h, cx: cx, slug: slug, stateClass: stateClass, rest: rest, ArticleImage: ArticleImage, Specimen: Specimen, SpecimenSection: SpecimenSection };
+var internal = { h: h, cx: cx, slug: slug, stateClass: stateClass, rest: rest, ArticleImage: ArticleImage, PlaceholderLogo: PlaceholderLogo, deviceFor: deviceFor, useDevice: useDevice, Specimen: Specimen, SpecimenSection: SpecimenSection };

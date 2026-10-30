@@ -1,0 +1,97 @@
+/* Masthead: values from components/wordpress/masthead (system variables the token file references). */
+.mngds-masthead {
+  position: relative; box-sizing: border-box; width: 100%; background: var(--mng-color-gray-max);
+  font-family: var(--mng-font-family-noto-sans); color: var(--mng-color-gray-min);
+}
+.mngds-masthead *, .mngds-masthead *::before, .mngds-masthead *::after { box-sizing: border-box; }
+.mngds-masthead__sentinel { position: absolute; left: 0; width: 1px; height: 1px; pointer-events: none; }
+
+/* 64px row (below 1040px at the top; the condensed bar at every width) */
+.mngds-masthead__bar, .mngds-masthead__menus {
+  display: flex; align-items: center; justify-content: space-between; height: 64px; background: var(--mng-color-gray-max);
+}
+.mngds-masthead__bar-start, .mngds-masthead__bar-end { display: flex; align-items: center; height: 100%; min-width: 0; }
+.mngds-masthead--xl-desktop .mngds-masthead__bar-start, .mngds-masthead--xl-desktop .mngds-masthead__bar-end,
+.mngds-masthead--lg-tableth .mngds-masthead__bar-start, .mngds-masthead--lg-tableth .mngds-masthead__bar-end { flex: 1 1 0; }
+.mngds-masthead--lg-tableth .mngds-masthead__bar-end { justify-content: flex-end; }
+.mngds-masthead--xl-desktop .mngds-masthead__bar-end { justify-content: flex-end; padding-right: var(--mng-spacing-500); }
+.mngds-masthead__menus-middle { flex: 0 0 440px; height: 100%; }
+
+/* SectionMenu, Closed (SectionMenuHeader): 40px icon box with the 16px hamburger; "All Sections" Noto Sans Bold 16 at 1040px+ */
+.mngds-masthead__menu-toggle {
+  display: inline-flex; align-items: center; gap: var(--mng-spacing-100); height: 64px; margin: 0; padding: 0 var(--mng-spacing-100);
+  border: 0; background: none; color: var(--mng-color-gray-min); font: inherit; cursor: pointer;
+}
+.mngds-masthead:not(.mngds-masthead--xl-desktop) .mngds-masthead__menu-toggle { width: 64px; justify-content: center; padding: 0; }
+.mngds-masthead--md-tabletv .mngds-masthead__menu-toggle { width: 88px; }
+.mngds-masthead__menu-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; }
+.mngds-masthead__menu-title { font-size: var(--mng-font-size-16); font-weight: var(--mng-font-weight-bold); line-height: normal; white-space: nowrap; }
+
+/* Logo: Fakeville Daily News placeholder, 235x48 at 800px and up, 147x30 below */
+.mngds-masthead__logo-link { display: inline-flex; align-items: center; justify-content: center; color: var(--mng-color-gray-min); text-decoration: none; flex-shrink: 0; }
+.mngds-masthead__logo-link .mngds-masthead__logo { width: 147px; height: 30px; }
+.mngds-masthead__logo-link--large .mngds-masthead__logo { width: 235px; height: 48px; }
+
+/* AccountMenu, Closed: 8px padding and gap; UserStatus; SearchBar (20px icon) */
+.mngds-masthead__account-menu { display: flex; align-items: center; gap: var(--mng-spacing-100); height: 64px; padding: 0 var(--mng-spacing-100); }
+.mngds-masthead__buttons { display: flex; align-items: center; gap: 15px; }
+.mngds-masthead__buttons .mngds-button-primary { padding: 0; }
+.mngds-masthead__account, .mngds-masthead__search {
+  display: inline-flex; align-items: center; gap: var(--mng-spacing-050); margin: 0; padding: 0; border: 0; background: none;
+  color: var(--mng-color-gray-min); font: inherit; cursor: pointer; height: 44px;
+}
+.mngds-masthead__search { width: 30px; justify-content: center; }
+.mngds-masthead__chevron { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; }
+.mngds-masthead__avatar {
+  display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; overflow: hidden;
+  background: var(--mng-color-gray-max); color: var(--mng-color-gray-min); flex-shrink: 0;
+}
+.mngds-masthead__avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mngds-masthead__avatar--monogram { background: #ff702c; font-size: var(--mng-font-size-12); font-weight: var(--mng-font-weight-regular); line-height: 1; }
+.mngds-masthead__menu-toggle:focus-visible, .mngds-masthead__account:focus-visible, .mngds-masthead__search:focus-visible,
+.mngds-masthead__logo-link:focus-visible, .mngds-masthead a:focus-visible { outline: 2px solid var(--mng-color-gray-black); outline-offset: 2px; }
+
+/* 1040px and up, top of the page */
+.mngds-masthead__weather-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 64px;
+  padding: var(--mng-spacing-100) var(--mng-spacing-500);
+}
+.mngds-masthead__weather, .mngds-masthead__sponsorship { flex: 1 1 0; display: flex; min-width: 0; }
+.mngds-masthead__sponsorship { justify-content: flex-end; }
+.mngds-masthead__weather { gap: var(--mng-spacing-150); align-items: flex-start; }
+.mngds-masthead__temp { display: flex; align-items: flex-start; }
+.mngds-masthead__temp-value, .mngds-masthead__date-text { font-size: var(--mng-font-size-16); font-weight: var(--mng-font-weight-bold); line-height: normal; white-space: nowrap; }
+.mngds-masthead__weather-icon { width: 26px; height: 26px; color: var(--mng-color-gray-min); }
+.mngds-masthead__date { display: flex; flex-direction: column; gap: var(--mng-spacing-050); }
+.mngds-masthead__e-edition { font-size: var(--mng-font-size-12); font-weight: var(--mng-font-weight-regular); line-height: normal; color: var(--mng-color-gray-min); text-decoration: none; }
+.mngds-masthead__e-edition:hover { text-decoration: underline; }
+
+/* Top Nav: natural width, centered, clipped at both edges when it overflows (production; design-vs-production 9.1) */
+.mngds-masthead__nav { display: flex; justify-content: center; overflow: hidden; }
+.mngds-masthead__nav-list {
+  display: flex; flex-shrink: 0; gap: var(--mng-spacing-400); margin: 0; padding: var(--mng-spacing-200) 0; list-style: none; white-space: nowrap;
+}
+.mngds-masthead__nav-item, .mngds-masthead__trending-item { margin: 0; padding: 0; }
+.mngds-masthead__nav-link { font-size: var(--mng-font-size-16); font-weight: var(--mng-font-weight-bold); line-height: normal; color: var(--mng-color-gray-min); text-decoration: none; }
+.mngds-masthead__nav-link:hover, .mngds-masthead__trending-link:hover { text-decoration: underline; }
+.mngds-masthead__rule { height: 1px; background: var(--mng-color-gray-400); }
+.mngds-masthead__trending {
+  display: flex; align-items: center; gap: var(--mng-spacing-400); padding: var(--mng-spacing-100) var(--mng-spacing-500); overflow: hidden; white-space: nowrap;
+}
+.mngds-masthead__trending-label { font-size: var(--mng-font-size-14); font-weight: var(--mng-font-weight-bold); line-height: normal; text-transform: uppercase; color: var(--mng-color-theme-primary); flex-shrink: 0; }
+.mngds-masthead__trending-list { display: flex; gap: var(--mng-spacing-400); margin: 0; padding: 0; list-style: none; }
+.mngds-masthead__trending-link { font-size: var(--mng-font-size-15); font-weight: var(--mng-font-weight-regular); line-height: normal; color: var(--mng-color-gray-min); text-decoration: none; }
+
+/* Top Leaderboard under the rule: 16px around it at 640px and up, 8px below */
+.mngds-masthead__ad { display: flex; justify-content: center; padding: var(--mng-spacing-200); background: var(--mng-color-gray-max); }
+.mngds-masthead--xl-desktop .mngds-masthead__ad, .mngds-masthead--lg-tableth .mngds-masthead__ad { padding: var(--mng-spacing-200) 0; }
+.mngds-masthead--sm-mobile .mngds-masthead__ad, .mngds-masthead--xs-fold .mngds-masthead__ad { padding: var(--mng-spacing-100); }
+
+/* Scrolled / AdFree-Scrolled: the 64px bar, its 1px color/gray/400 rule and shadow/masthead (0 3px 3px, black 25%) */
+.mngds-masthead--scrolled { box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25); border-bottom: 1px solid var(--mng-color-gray-400); }
+.mngds-masthead__sticky {
+  position: sticky; top: 0; z-index: 100; margin-bottom: -65px; visibility: hidden; opacity: 0; pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.mngds-masthead__sticky.is-stuck { visibility: visible; opacity: 1; pointer-events: auto; }
+@media (prefers-reduced-motion: reduce) { .mngds-masthead__sticky { transition: none; } }

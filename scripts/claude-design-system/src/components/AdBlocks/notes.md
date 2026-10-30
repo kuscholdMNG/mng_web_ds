@@ -1,0 +1,4 @@
+- **Placeholder art** from the token file: `ad-blocks.base.root.background` (#85FF9B) and the 2px `color/gray/min` border; diagonals `ad-blocks.base.union.vector-1.border-color` (#111111, 2px). Not design tokens on purpose (it's not production UI).
+- **Label:** Noto Serif Bold 16, `color/gray/min`, with a 3px `color/gray/600` halo (Figma text stroke; drawn with `-webkit-text-stroke` and `paint-order: stroke fill`), letter spacing from each variant's token (10% = 1.6px; the exporter wrote it as 10px before 2026-10-30).
+- **Close button:** Figma draws a 20px circle 4px in from the top right. Here the circle sits in a 24px button (the WCAG 2.5.8 minimum target), so it looks the same and is easier to hit. Mobile Adhesion 300x50 has no close button in Figma.
+- `fixed` is the production behavior of `mobile_adhesion` (sticky, dismissible); production shows an empty sticky bar at 1024px and up (design-vs-production 28.5), so don't use it there.

@@ -1,0 +1,18 @@
+<!-- @dsCard group="WordPress Elements" height=4500 subtitle="Figma: Footer · 5 variants" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Footer</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var devices = [['XL-Desktop', 1280, '1040px and up: 5 columns'], ['LG-TabletH', 1024, '800–1039px: 3 columns'], ['MD-TabletV', 768, '640–799px: 2 columns'], ['SM-Mobile', 360, 'below 640px: accordion groups, built 360'], ['XS-Fold', 340, 'below 640px, built 340']];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+    h(I.SpecimenSection, { title: 'Device', note: 'The production footer. The device follows the footer’s width. Below 640px the group headings open and close (click one). Legal links: color/gray/300 on color/gray/600 is 3.3:1, below WCAG AA (flagged).' },
+      h(I.Specimen, { items: devices.map(function (d) {
+        return { label: 'Device=' + d[0] + ' (' + d[2] + ')', width: d[1] + 32, node: h('div', { style: { width: d[1] } }, h(NS.Footer, { device: d[0] })) };
+      }) }))));
+</script>
+</body>
+</html>

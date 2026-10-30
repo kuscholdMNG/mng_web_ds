@@ -1,0 +1,30 @@
+<!-- @dsCard group="WordPress Elements" height=3900 subtitle="Figma: Ad Blocks · 37 variants" -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>AdBlocks</title>
+<style>body{margin:0;padding:16px;background:var(--mng-color-gray-max);}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var NS = window.mng_web_design_system, h = React.createElement, I = NS._internal;
+  var rows = [
+    ['Sponsorship 1 · sponsorship_1 (in the masthead)', ['Sponsorship 1 320x50', 'Sponsorship 1 300x50']],
+    ['Top Leaderboard · top_leaderboard (under the masthead)', ['Top Leaderboard 970x250', 'Top Leaderboard 970x90', 'Top Leaderboard 728x90', 'Top Leaderboard 320x100', 'Top Leaderboard 320x50', 'Top Leaderboard 300x50']],
+    ['Sponsorship 2 · sponsorship_2 / _3 / _4 (between homepage blocks)', ['Sponsorship 2 970x250', 'Sponsorship 2 970x90', 'Sponsorship 2 728x90', 'Sponsorship 2 320x50', 'Sponsorship 2 300x50']],
+    ['Cube 1 RRail ATF · cube1_rrail_atf', ['Cube 1 RRail ATF 300x1050', 'Cube 1 RRail ATF 300x600', 'Cube 1 RRail ATF 300x250', 'Cube 1 RRail ATF 160x600']],
+    ['Cube 2 RRail Mid · cube2_rrail_mid, Cube 3 RRail Lower · cube3_rrail_lower', ['Cube 2 RRail Mid 300x600', 'Cube 2 RRail Mid 300x250', 'Cube 3 RRail Lower 300x600', 'Cube 3 RRail Lower 300x250']],
+    ['Article units · cube_article, outstream_video; Mid-Article Banner (no production slot)', ['Cube Article 300x250', 'Outstream Video 480x360', 'Outstream Video 300x250', 'Mid-Article Banner 728x90', 'Mid-Article Banner 300x250']],
+    ['Sidebar Rectangle (generic 300x250) · PLACE HOLDER (not an ad unit)', ['Sidebar Rectangle 300x250', 'PLACE HOLDER']],
+    ['Bottom Leaderboard · bottom_leaderboard (end of the page)', ['Bottom Leaderboard 970x250', 'Bottom Leaderboard 970x90', 'Bottom Leaderboard 728x90', 'Bottom Leaderboard 320x100', 'Bottom Leaderboard 320x50', 'Bottom Leaderboard 300x50']],
+    ['Mobile Adhesion · mobile_adhesion (sticky at the bottom of the screen; click × to close)', ['Mobile Adhesion 728x90', 'Mobile Adhesion 320x50', 'Mobile Adhesion 300x50']]
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', null, rows.map(function (r) {
+    return h(I.SpecimenSection, { key: r[0], title: r[0] },
+      h(I.Specimen, { items: r[1].map(function (n) {
+        var w = n === 'PLACE HOLDER' ? 300 : +n.match(/(\d+)x\d+$/)[1];
+        return { label: 'Name=' + n, width: w + 32, node: h(NS.AdBlocks, { name: n }) };
+      }) }));
+  })));
+</script>
+</body>
+</html>

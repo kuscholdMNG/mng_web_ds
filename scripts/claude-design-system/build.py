@@ -66,6 +66,9 @@ COMPONENTS = [
     ("1col-article-card", "OneColArticleCard", "1Col Article Card", "WordPress Elements"),
     ("horizontal-thumbnail-card", "HorizontalThumbnailCard", "Horizontal Thumbnail Card", "WordPress Elements"),
     ("zone-1-lead-article-card", "Zone1LeadArticleCard", "Zone 1 Lead Article Card", "WordPress Elements"),
+    ("masthead", "Masthead", "Masthead", "WordPress Elements"),
+    ("footer", "Footer", "Footer", "WordPress Elements"),
+    ("ad-blocks", "AdBlocks", "Ad Blocks", "WordPress Elements"),
 ]
 # ModalsOffset is left out on purpose (Karl, 2026-10-29: not part of the design system).
 # Not an exported component set: the icon font as a component (icons.json names).
@@ -569,6 +572,17 @@ def inventory_md(comps):
 
 
 # ---------------------------------------------------------------- main
+def placeholder_logo_svg():
+    """Fakeville Daily News, stacked, for the Masthead and Footer (2026-10-30). Numbers rounded to 2 decimals,
+    title and accessible name removed (the wrapper span carries them), sized by CSS."""
+    svg = (REPO / "logos/placeholder/fakeville-daily-news/fakeville-daily-news--stacked--black.svg").read_text()
+    svg = re.sub(r"<title>.*?</title>\s*", "", svg, flags=re.S)
+    svg = re.sub(r'\s(role|aria-label|width|height|color)="[^"]*"', "", svg, count=5)
+    svg = svg.replace("<svg ", '<svg aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" ', 1)
+    svg = re.sub(r"(\d+\.\d{2})\d+", r"\1", svg)
+    return re.sub(r">\s+<", "><", svg).strip()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True, help="folder to write project/ into (outside the repo)")
@@ -598,7 +612,8 @@ def main():
     js = [(SRC / "runtime.js").read_text()
           .replace("/*ICONS*/{}", json.dumps(icons, separators=(",", ":")))
           .replace("/*ICON_CATEGORIES*/{}", json.dumps(cats, separators=(",", ":")))
-          .replace("/*ICON_META*/{}", json.dumps(imeta, separators=(",", ":"), ensure_ascii=False))]
+          .replace("/*ICON_META*/{}", json.dumps(imeta, separators=(",", ":"), ensure_ascii=False))
+          .replace("/*PLACEHOLDER_LOGO*/''", json.dumps(placeholder_logo_svg()))]
     css = [(SRC / "base.css").read_text(), theme_css(role_map, type_theme)]
     ctcss, ntok = component_tokens_css()
     css.append(ctcss)

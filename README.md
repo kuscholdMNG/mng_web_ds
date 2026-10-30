@@ -32,7 +32,7 @@ mng_web_ds/
 ├── components/                             ← component audits and checklists (.md), plus the exports:
 │   ├── core/<slug>/                        ← <slug>.md spec, <slug>.tokens.json, <slug>.html skeleton, previews/
 │   │                                         (buttons: 8 families, 2026-10-14)
-│   ├── wordpress/<slug>/                   ← same layout, for WordPress Elements components (to come)
+│   ├── wordpress/<slug>/                   ← same layout, for WordPress Elements components
 │   └── index.json                          ← every exported component (generated)
 ├── package.json                            ← makes dist/ installable (package mng_web_design_system)
 ├── tokens/

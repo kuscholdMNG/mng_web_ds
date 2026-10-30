@@ -123,6 +123,8 @@ def props_of(n):
         if st['lineHeight'] != 'auto':
             out.append(('line-height', 'dimension', float(st['lineHeight'].rstrip('px%')), sv.get('lineHeight')))
         ls = float(st['letterSpacing'].rstrip('px%'))
+        if st['letterSpacing'].endswith('%'):  # Figma percent of the font size -> px (2026-10-30; was written as px)
+            ls = round(st['size'] * ls / 100, 3)
         if ls:
             out.append(('letter-spacing', 'dimension', ls, sv.get('letterSpacing')))
         return out

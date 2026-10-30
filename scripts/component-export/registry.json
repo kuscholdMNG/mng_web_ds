@@ -655,6 +655,273 @@
         "Tablet: the image (391px) is wider than its 358px column (as in Zone 1 Lead Article Card)."
       ],
       "production": "New: the For You tab (prototype `.fy-lead`), based on production's Zone 1 lead (`.feature-primary .feature-large`)."
+    },
+    {
+      "slug": "masthead",
+      "name": "Masthead",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 3,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "456:2572",
+      "documentationFrame": "3676:41569",
+      "description": "The site header on every WordPress page. Page = Home, SectionFront, Article, Obituaries, Dashboard; State = Default (top of the page, with ads), AdFree (top of the page, subscriber), Scrolled (sticky condensed bar, logged out), AdFree-Scrolled (sticky condensed bar, subscriber); Device = the 5 WordPress grid widths. Built from SectionMenu, AccountMenu (UserStatus inside), Weather Bug, SocialButtons and Ad Blocks.",
+      "rules": [
+        "**Bar:** `color/gray/max`; every variant ends in a 1px `color/gray/400` rule (production #9D9A98, design-vs-production 9.3).",
+        "**Below 1040px:** one 64px row: hamburger (SectionMenu) left, logo centered, account icon or avatar (AccountMenu) and search right. The Top Leaderboard sits under the rule: 970x250 at 800–1039px and 728x90 at 640–799px with 16px (`spacing/200`) around it; 320x50 at 360px and 320x100 at 340px with 8px (`spacing/100`) around it.",
+        "**1040px and up, top of the page:** a 64px menus row (All Sections left; Subscribe / Log In or the avatar, then search, 40px `spacing/500` right padding); the weather, date and logo row with Sponsorship 1 320x50 (8px `spacing/100` top and bottom, 40px `spacing/500` sides); the Top Nav (16px `spacing/200` top and bottom, items 32px `spacing/400` apart, centered); the rule; the Trending row (8px top and bottom, 40px sides, 32px apart); then the Top Leaderboard 970x250 with 16px above and below.",
+        "**Type:** Top Nav items Noto Sans Bold 16 `color/gray/min` (18.4:1). Trending label Noto Sans Bold 14 uppercase `color/theme/primary` (4.75:1 or more on every site; 5.5:1 Bold Coastal); Trending items Noto Sans Regular 15 `color/gray/min`. Section front: the section name under the logo.",
+        "**Top Nav overflow:** the row keeps its natural width and is clipped at both edges when a site has more items than fit (11 on Chicago Tribune and Orlando Sentinel), as production does (design-vs-production 9.1).",
+        "**Scroll (Scrolled / AdFree-Scrolled):** after about 450px of scrolling (production adds `.headroom--not-top`) the masthead becomes a 64px bar fixed to the top of the viewport, with the rule and `shadow/masthead` (0 3px 3px, black 25%, production's value). The ads under it scroll away. No shadow at the top of the page. On articles at 1040px and up the bar shows the section name, headline and share buttons instead of All Sections / Subscribe / Log In.",
+        "**Subscribers (AdFree, AdFree-Scrolled):** no ads; the avatar (AccountMenu, loggedIn) replaces Subscribe / Log In. Below 1040px the subscriber bar is the same at the top and when scrolled. AdFree-Scrolled for Home, Section Front and Article added 2026-10-30 (Karl).",
+        "**Accessibility:** a `header` landmark with the section links in a `nav` (aria-label \"Main\"); the hamburger is a button with aria-expanded; search is a labelled button. Keep focused elements clear of the sticky bar (scroll-padding-top 65px)."
+      ],
+      "breakpoints": "| Device | Viewport | Built at |\n|---|---|---|\n| XS-Fold | below 640px | 340px |\n| SM-Mobile | below 640px | 360px |\n| MD-TabletV | 640–799px | 768px |\n| LG-TabletH | 800–1039px | 1024px |\n| XL-Desktop | 1040px and up | 1040px (Masthead) / 1280px |",
+      "knownIssues": [
+        "The Top Nav overflow at 1040–1322px is built in on purpose to match production (design-vs-production 9.1).",
+        "Article, Scrolled, XL-Desktop: in Figma the logo touches the section name (the row's content is wider than 1040px with space-between); production's headline overlap is design-vs-production 9.2. Found 2026-10-30.",
+        "Obituaries and Dashboard variants aren't audited for the design system yet (open item 17): they keep raw 14px and 2px gaps and 3px / 5px radii.",
+        "The 7px top and bottom padding of the weather row (Home, Section Front, Article, Dashboard) was rounded to 8px (`spacing/100`) on 2026-10-30; the row height didn't change. Production not measured.",
+        "The logo is the Fakeville Daily News placeholder drawn as vectors, not an instance of the Logo component (status open item 10(d)).",
+        "The search bar's own shadow (production 0 3px 3px, 25%) hasn't been checked."
+      ],
+      "production": "WordPress themes header (`.nav-wrapper-primary`, headroom.js `.headroom--top` / `--not-top`), audited on the 6 review sites 2026-09-15 (`components/breakpoint-audit.md`), logged out and as an ad-free subscriber. Gaps: design-vs-production 9, 10, 11, 24 and 33."
+    },
+    {
+      "slug": "section-menu",
+      "name": "SectionMenu",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 4,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "456:5837",
+      "documentationFrame": "3349:66621",
+      "description": "The hamburger / All Sections toggle (View=Closed) and the section menu drawer it opens (View=Open). Device = the 5 Masthead widths; UserType (all, subscriber, nonSub) changes the drawer's call to action.",
+      "rules": [
+        "**Closed:** the hamburger icon (and \"All Sections\" at 1040px and up) in the masthead's 64px row.",
+        "**Open:** a drawer under the masthead with SectionMenuHeader, the Weather Bug (SectionMenu location) and SectionMenuItem rows; non-subscribers get a Subscribe call to action.",
+        "**Accessibility:** the toggle is a button with aria-expanded and aria-controls pointing at the drawer; Esc closes it and returns focus to the toggle."
+      ],
+      "breakpoints": "| Device | Viewport | Built at |\n|---|---|---|\n| XS-Fold | below 640px | 340px |\n| SM-Mobile | below 640px | 360px |\n| MD-TabletV | 640–799px | 768px |\n| LG-TabletH | 800–1039px | 1024px |\n| XL-Desktop | 1040px and up | 1040px (Masthead) / 1280px |",
+      "knownIssues": [
+        "Variant descriptions are empty; the set description documents the grid."
+      ],
+      "production": "Production section menu (`.sections-menu`), checked with the Masthead audit 2026-09-15."
+    },
+    {
+      "slug": "section-menu-header",
+      "name": "SectionMenuHeader",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 5,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "456:5745",
+      "documentationFrame": null,
+      "description": "The top of the section menu drawer and its closed trigger. View = Closed / Open; Device = Desktop, TabletV, Mobile.",
+      "rules": [
+        "Used inside SectionMenu only."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "No documentation container yet."
+      ],
+      "production": "Production section menu header."
+    },
+    {
+      "slug": "section-menu-item",
+      "name": "SectionMenuItem",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 6,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "456:5781",
+      "documentationFrame": null,
+      "description": "One row of the section menu drawer: kind = main, subItem, Weather, CTAButton, CTAMessage; withSubItems adds a chevron and View sets its open state; leftIcon adds an icon.",
+      "rules": [
+        "Used inside SectionMenu only.",
+        "Rows with sub-items are disclosure buttons (aria-expanded)."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "No documentation container yet. Raw values with no token: 2px and 10px spacing."
+      ],
+      "production": "Production section menu items."
+    },
+    {
+      "slug": "account-menu",
+      "name": "AccountMenu",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 7,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "910:16425",
+      "documentationFrame": "910:15618",
+      "description": "The account control in the masthead and the dropdown it opens. Status = loggedIn, loggedOut, alert; View = Closed / Open; Device; UserType = loggedIn, loggedOut, nonSub, BasicSub, PremSub, groupSub, GroupAnon. Search is a slot property.",
+      "rules": [
+        "**Closed:** UserStatus decides what shows: Subscribe and Log In (logged out, 1040px and up), the account icon (logged out, below 1040px) or the avatar (logged in).",
+        "**Open:** a dropdown panel with `shadow/lg` (production's differs: design-vs-production 11).",
+        "**Accessibility:** the trigger is a button with aria-expanded and aria-haspopup; the panel is a list of links."
+      ],
+      "breakpoints": "| Device | Viewport | Built at |\n|---|---|---|\n| XS-Fold | below 640px | 340px |\n| SM-Mobile | below 640px | 360px |\n| MD-TabletV | 640–799px | 768px |\n| LG-TabletH | 800–1039px | 1024px |\n| XL-Desktop | 1040px and up | 1040px (Masthead) / 1280px |",
+      "knownIssues": [
+        "Several Open, XL-Desktop variants (nonSub / BasicSub / GroupAnon / PremSub) render empty or broken (set description).",
+        "Raw values with no token: 15px and 296px spacing, 80px avatar radius; the alert dot is #FFCC00, not a token."
+      ],
+      "production": "Production account dropdown (Bootstrap-style dropdown, open item 1); shadow gap: design-vs-production 11."
+    },
+    {
+      "slug": "search-bar",
+      "name": "SearchBar",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 8,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "456:5910",
+      "documentationFrame": "456:5908",
+      "description": "The masthead search. Status = Default (search icon) or Open (text field with a submit button).",
+      "rules": [
+        "Opens from the search icon in the Masthead; the field gets focus when it opens.",
+        "**Accessibility:** a `form role=search` with a labelled input and a submit button."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Raw values with no token: 5px and 6px spacing, 5px radius."
+      ],
+      "production": "Production masthead search."
+    },
+    {
+      "slug": "user-image",
+      "name": "UserImage",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 9,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "456:5708",
+      "documentationFrame": null,
+      "description": "The reader's avatar art. Size = small / medium / large; Graphic = unknown, monogram, monogramPP, social, socialPhillip.",
+      "rules": [
+        "Used inside UserPic.",
+        "Monogram text sizes (22, 27px) are avatar art, not type tokens (Karl, 2026-10-08)."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Raw values: 80px circle radius, #FF702C monogram background."
+      ],
+      "production": "Production avatar service image (120×120 shown at 30×30)."
+    },
+    {
+      "slug": "user-pic",
+      "name": "UserPic",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 10,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "456:5674",
+      "documentationFrame": null,
+      "description": "The circular avatar button in the masthead. Size = Small / Medium / Large; Status = Default / Active (menu open).",
+      "rules": [
+        "UserImage inside.",
+        "Use the reader's name in the button's accessible label."
+      ],
+      "breakpoints": null,
+      "knownIssues": [],
+      "production": "Production logged-in avatar."
+    },
+    {
+      "slug": "user-status",
+      "name": "UserStatus",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 11,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "456:5728",
+      "documentationFrame": "456:5671",
+      "description": "The account area of the masthead. status = none (logged out), nonSub, subscriber; Device = Desktop / mobile. Nested in AccountMenu; it decides buttons vs avatar in every Masthead variant.",
+      "rules": [
+        "Logged out on Desktop: Subscribe (Button Primary) and Log In; on mobile: the account icon.",
+        "Logged in: the avatar (UserPic)."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "Raw value: 15px gap."
+      ],
+      "production": "Production masthead account area."
+    },
+    {
+      "slug": "weather-bug",
+      "name": "Weather Bug",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 12,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "654:10020",
+      "documentationFrame": null,
+      "description": "Current temperature and weather icon with the date and the Today's E Edition link. Location = Masthead or SectionMenu.",
+      "rules": [
+        "Masthead: top of the page at 1040px and up, left of the logo.",
+        "SectionMenu: inside the open drawer."
+      ],
+      "breakpoints": null,
+      "knownIssues": [
+        "No documentation container yet.",
+        "The temperature (87°F) is Helvetica Bold, kept for Karl's review; everything else is Noto Sans."
+      ],
+      "production": "Production masthead weather widget."
+    },
+    {
+      "slug": "footer",
+      "name": "Footer",
+      "group": "navigation",
+      "layer": "wordpress",
+      "order": 13,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "354:1282",
+      "documentationFrame": "803:1835",
+      "description": "The site footer on every WordPress page (production, current). Device = the 5 WordPress grid widths: 2 accordion widths below 640px, then 2, 3 and 5 columns.",
+      "rules": [
+        "**Band:** `color/gray/600` throughout, with a 1px `color/gray/black` rule at the top. The newspaper logo (235×48) starts the content.",
+        "**1040px and up:** 40px (`spacing/500`) sides, 16px (`spacing/200`) top and bottom; 5 columns 32px (`spacing/400`) apart, groups 32px apart in a column (masonry fill, like production); Subscribe Now (Button Primary) alone in the last column. 800–1039px: 3 columns; 640–799px: 2 columns.",
+        "**Link group:** a 2px `color/gray/min` rule, the heading in Noto Sans Bold 16 uppercase and the links in Noto Sans Regular 16, all `color/gray/min` (16.0:1 on `color/gray/600`), 15px apart.",
+        "**Below 640px:** each group collapses to an accordion row (heading and a chevron); 10px page gutter; Subscribe Now full width.",
+        "**Legal bar:** a 1px `color/gray/min` rule above; copyright and legal links in Noto Sans Regular 16 `color/gray/300`, 15px apart, wrapping.",
+        "**Production values on purpose (Karl, 2026-10-29):** the 10px gutter and 15px link spacing have no token and stay as they are (design-vs-production 6).",
+        "**Accessibility:** a `footer` landmark; each link group is a list under its heading; below 640px the headings are buttons with aria-expanded."
+      ],
+      "breakpoints": "| Device | Viewport | Layout |\n|---|---|---|\n| XS-Fold | below 640px (built 340) | Accordion groups, 10px gutter |\n| SM-Mobile | below 640px (built 360) | Accordion groups, 10px gutter |\n| MD-TabletV | 640–799px | 2 columns |\n| LG-TabletH | 800–1039px | 3 columns |\n| XL-Desktop | 1040px and up | 5 columns |",
+      "knownIssues": [
+        "Legal bar text `color/gray/300` on `color/gray/600` is 3.3:1, below the 4.5:1 WCAG AA minimum; `color/gray/200` (5.7:1) is the closest gray that passes. Flagged for Karl (2026-10-30).",
+        "Raw production values: 10px gutter and 15px link spacing (design-vs-production 6).",
+        "Footer_w_signup (`801:1755`, the future footer with the email signup) isn't exported yet: Karl is revising it first."
+      ],
+      "production": "Production footer (`ul.footer-menus`, `div.colophon`), breakpoints audited on ocregister.com 2026-09-18."
+    },
+    {
+      "slug": "ad-blocks",
+      "name": "Ad Blocks",
+      "group": "ads",
+      "layer": "wordpress",
+      "order": 1,
+      "file": "b1iZxkFwtAYq9rElmnCAzd",
+      "node": "517:4304",
+      "documentationFrame": "517:10347",
+      "description": "Ad slot placeholders: one variant per production ad unit and size (Name), with Device = Desktop, Mobile or All. Units: Sponsorship 1, Top Leaderboard, Sponsorship 2, Cube 1 RRail ATF, Cube 2 RRail Mid, Cube 3 RRail Lower, Cube Article, Sidebar Rectangle, Outstream Video, Mid-Article Banner, Bottom Leaderboard, Mobile Adhesion, plus PLACE HOLDER (not an ad unit).",
+      "rules": [
+        "**Box:** the unit's exact size, never scaled. #85FF9B fill (placeholder art, not a token), 2px `color/gray/min` border, X diagonals in 2px #111111 (placeholder art). Label: Noto Serif Bold 16 with 10% letter spacing, \"<unit> <size>\" over \"ADVERTISEMENT\", `color/gray/min` with a 3px `color/gray/600` halo, centered, 8px (`spacing/100`) apart.",
+        "**Production:** an empty Google Publisher Tag container (div) the size of the unit, centered in its slot. The slot keeps the unit's height so the page doesn't jump when the creative loads.",
+        "**Production slots:** Sponsorship 1 `sponsorship_1`; Top Leaderboard `top_leaderboard`; Sponsorship 2 `sponsorship_2` / `_3` / `_4`; Cube 1 / 2 / 3 `cube1_rrail_atf` / `cube2_rrail_mid` / `cube3_rrail_lower`; Cube Article `cube_article`; Outstream Video `outstream_video`; Bottom Leaderboard `bottom_leaderboard`; Mobile Adhesion `mobile_adhesion`. Sidebar Rectangle is a generic 300x250 (also in Upcoming Events); Mid-Article Banner has no production slot (open item 8b).",
+        "**Responsive:** each width gets its own unit. Full-width slots step down 970x250 (800px and up) → 728x90 (640–799px) → 320x50 or 320x100 (below 640px); right-rail cubes are 300x600 or 300x1050 at 800px and up and 300x250 below. The 970x90, 300x50 and 160x600 sizes are in the Ad Team's map but not placed yet.",
+        "**Mobile Adhesion:** fixed to the bottom of the viewport on phones and tablets; the close button is a 20px `color/gray/min` circle with a 2px white × set 4px in from the top right.",
+        "**Who sees ads:** readers without an ad-free subscription. The Masthead's AdFree states have none."
+      ],
+      "breakpoints": "| Width | Full-width slots | Right rail / in-feed cubes | Adhesion |\n|---|---|---|---|\n| 1040px and up | 970x250 | 300x600, 300x1050 (TOP ZONE) | none |\n| 800–1039px | 970x250 | 300x600, 300x1050 | none |\n| 640–799px | 728x90 | 300x250 | 728x90 |\n| below 640px | 320x50 (360) or 320x100 (340) | 300x250 | 320x50 |",
+      "knownIssues": [
+        "The Mobile Adhesion close button is 20px, below the 24px minimum target size (WCAG 2.5.8): give it a 24px or larger hit area in code.",
+        "Mobile Adhesion 300x50 has no close button.",
+        "Placeholder art colors (#85FF9B fill, #111111 diagonals) aren't tokens on purpose.",
+        "PLACE HOLDER isn't an ad unit (0 instances).",
+        "Production: no visible ad disclosure label (design-vs-production 28.4); slot sizes and lazy loading 28.1–28.3; empty adhesion bar at 1024px and up 28.5."
+      ],
+      "production": "Production GPT slots from the Ad Team's WordPress Ad Map, matched 2026-10-02; legacy export `figma-exports/mng-ads-export/` (2026-10-09, frozen)."
     }
   ]
 }

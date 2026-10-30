@@ -1,0 +1,6 @@
+- **Production values on purpose** (Karl, 2026-10-29): the 10px gutter below 640px (`footer.device-sm-mobile.footer-content.padding-left`) and the 15px link spacing (`footer.base…group-subscribe.gap`) have no token (design-vs-production 6). Figma's Advertising and Contact groups use 16px; every group uses 15px here.
+- **Contrast:** the legal links are `color/gray/300` on `color/gray/600`, 3.3:1, below WCAG AA (4.5:1) for 16px text. Kept as designed and flagged for Karl; `color/gray/200` (5.7:1) is the closest gray that passes. Group text `color/gray/min` is 16.0:1.
+- **Accordion open state** isn't in Figma (only closed rows): an open group shows its links under the heading with the same 15px spacing, and the chevron turns to `arrow-up`.
+- **Subscribe Now** is `ButtonPrimary` without its 8px side margin. Figma shows the label in capitals; `ButtonPrimary` capitalizes words ("Subscribe Now").
+- The legal links keep the 1040px order (copyright first) at every width; the Figma mobile variant lists copyright last.
+- Footer_w_signup (`801:1755`) isn't built: Karl is revising it.

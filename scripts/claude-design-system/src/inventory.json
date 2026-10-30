@@ -529,8 +529,11 @@
     },
     {
      "name": "Masthead",
-     "where": "Menus and Parts, 456:2572 (75 variants)",
-     "status": "To add"
+     "where": "Menus and Parts, 456:2572 (90 variants)",
+     "status": "Partial",
+     "note": "Page=Home built (Default, AdFree, Scrolled, AdFree-Scrolled at all 5 devices, sticky bar on scroll); Section Front, Article, Obituaries and Dashboard are exported, not built yet. AdFree-Scrolled added for Home, Section Front and Article 2026-10-30.",
+     "updated": "2026-10-30",
+     "component": "Masthead"
     },
     {
      "name": "Breaking News Banner",
@@ -541,18 +544,20 @@
     {
      "name": "Section menu: SectionMenu, SectionMenuHeader, SectionMenuItem",
      "where": "Menus and Parts, 456:5837, 456:5745, 456:5781",
-     "status": "To add"
+     "status": "To add",
+     "note": "Exported 2026-10-30 (components/wordpress/). The closed toggle is drawn inside Masthead; the open drawer isn’t built."
     },
     {
      "name": "AccountMenu",
      "where": "Menus and Parts, 910:16425",
-     "status": "To add"
+     "status": "To add",
+     "note": "Exported 2026-10-30. The closed control is drawn inside Masthead; the dropdown isn’t built."
     },
     {
      "name": "User: UserImage, UserPic, UserStatus",
      "where": "Menus and Parts, 456:5708, 456:5674, 456:5728",
      "status": "To add",
-     "note": "UserImage monogram sizes are avatar art (open item 9)."
+     "note": "Exported 2026-10-30; drawn inside Masthead (30px avatar, Subscribe / Log In). UserImage monogram sizes are avatar art (open item 9)."
     },
     {
      "name": "AlertLevel",
@@ -562,18 +567,22 @@
     {
      "name": "SearchBar",
      "where": "Menus and Parts, 456:5910",
-     "status": "To add"
+     "status": "To add",
+     "note": "Exported 2026-10-30. The search button is drawn inside Masthead; the open field isn’t built."
     },
     {
      "name": "Weather Bug",
      "where": "Menus and Parts, 654:10020",
      "status": "To add",
-     "note": "Its temperature is still Helvetica, kept for Karl's review."
+     "note": "Exported 2026-10-30; drawn inside Masthead. Its temperature is still Helvetica in Figma, kept for Karl’s review (Noto Sans in the Claude system)."
     },
     {
      "name": "Footer, Footer_w_signup",
      "where": "Menus and Parts, 354:1282, 801:1755",
-     "status": "To add"
+     "status": "Partial",
+     "note": "Footer built (all 5 devices; production values on purpose). Footer_w_signup waits for Karl’s revision.",
+     "updated": "2026-10-30",
+     "component": "Footer"
     },
     {
      "name": "Logo / Wordmark (placeholder draft)",
@@ -607,7 +616,10 @@
     {
      "name": "Ad Blocks",
      "where": "Ads and Sponsored, 517:4304 (37 variants)",
-     "status": "To add"
+     "status": "In system",
+     "note": "All 37 units; Mobile Adhesion close button and fixed position.",
+     "updated": "2026-10-30",
+     "component": "AdBlocks"
     },
     {
      "name": "RevContent",

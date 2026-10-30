@@ -26,6 +26,10 @@
   letter-spacing: 0.1em; color: var(--mng-color-gray-min); background: #e1a1ff; padding: 0 4px; white-space: nowrap;
 }
 
+/* ---- Placeholder newspaper logo (logos/placeholder/, Fakeville Daily News stacked; ink = currentColor) */
+.mngds-placeholder-logo { display: inline-block; line-height: 0; color: var(--mng-color-gray-min); flex-shrink: 0; }
+.mngds-placeholder-logo svg { display: block; width: 100%; height: 100%; }
+
 /* ---- Preview documentation layout (only used by the preview cards) */
 .mngds-specimen { display: flex; flex-wrap: wrap; gap: var(--mng-spacing-300) var(--mng-spacing-300); align-items: flex-start; }
 .mngds-specimen__item { margin: 0; display: flex; flex-direction: column; gap: var(--mng-spacing-100); min-width: 0; max-width: 100%; }
