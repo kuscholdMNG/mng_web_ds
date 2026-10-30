@@ -1,6 +1,6 @@
 # Breakpoint Audit
 
-> **Updated 2026-10-02** for current Figma file names and retired handoff notes. Audit content dates from 2026-09-14 to 2026-09-15.
+> **Updated 2026-10-30** for the Zone 1 secondary-story (TopZone Article Card) breakpoints in the site-wide catalog. **2026-10-02** for current Figma file names and retired handoff notes. Audit content dates from 2026-09-14 to 2026-09-15.
 *(Renamed 2026-09-15 from "Masthead Breakpoint Audit" — broadened in scope to catalog every element breakpoint found during the audit, not just the masthead nav.)*
 
 **Date started:** September 14, 2026
@@ -90,6 +90,7 @@ Also updated the two on-canvas column-header label frames above/below the whole 
 | `.obit-leaderboard.bottom` | 1000px (`62.5rem`) | Obituaries | Bottom leaderboard ad placement | No — ad unit |
 | `#content.obits-content .obit-bottom .landing-item .mng-obit-listing .obit-article-search-result` | 1300px (`81.25em`/`81.25rem`) | Obituaries | Obituary search-results listing layout | No — page content, not masthead |
 | `.gallery-container`, `.gallery-title`, `.gallery-content`, `.gallery-element` | ~625–734px (`39.0625rem`–`45.875rem`) and ~735–1299px (`45.9375rem`–`81.1875rem`) | Obituaries (likely site-wide — appears to be a shared photo-gallery widget) | Gallery widget responsive steps | No — unrelated widget, happened to be on the same page |
+| `.busy .feature-small` (Zone 1 secondary stories, the TopZone Article Card), `figure`, `.article-info`, `.entry-title` | 640px (`40em`), 800px (`50em`), 1040px (`65em`), 1280px (`80em`) | Homepage, all 6 review sites (identical rules, CSS scan 2026-10-30) | Below 640: one per row, image beside the headline (figure 1/3, text 2/3). 640–799: two per row, image beside the headline, headline 16/1.18. 800–1039: two per row, stacked (image full width), 16/1.18. 1040–1279: one per row, image beside the headline (figure 25%; an older 15em rule also exists, not measured), 18/1.2. 1280 and up: two per row, stacked, 20/1.18, −0.02em (345px wide at 1728). Figma variants: Mobile, (none for 640–799), 1024, 1100, Desktop. | No — homepage Zone 1 |
 
 **Not yet catalogued:** Home / Section Front / Article were only scanned for masthead-specific selectors (`.site-header`, `.nav-primary`, `.nav-wrapper-primary`, `.logo`, `.search-form`, `.header-placeholder`) during the original pass — a full unfiltered scan like the one run on Obituaries hasn't been done on those pages yet, so their non-masthead element breakpoints aren't in this table. Worth doing if/when this catalog needs to be comprehensive across all page types, not just Obituaries.
 
