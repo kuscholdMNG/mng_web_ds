@@ -2047,7 +2047,7 @@ The Reader Dashboard treats 1024×768 and 1280×960 as "menu always visible," a 
 
 **Design (Figma, before the fix):** the legal bar (copyright, Privacy Policy, Terms Of Use, Accessibility, Cookie Policy, Arbitration, Powered By WordPress.com VIP, Do Not Sell My Info) is Noto Sans Regular 16 `color/gray/300` (#838280) on the footer band `color/gray/600` (#F1EFEB): **3.3:1**, below the 4.5:1 WCAG AA minimum for normal text. Every Footer variant (5 devices) and Footer_w_signup (now Blocks Footer).
 
-**Production:** `.colophon` links `#5D5B5A` on `#F5F5F5`, 13.44px (copyright 12.48px): **6.2:1**, passes. Same on ocregister, denverpost, orlandosentinel and canoncitydailyrecord (2026-10-30); chicagotribune and mcall not checked yet (the browser extension isn't allowed on those sites). Production is the accessible one here: don't move it to the current design color.
+**Production:** `.colophon` links `#5D5B5A` on `#F5F5F5`, 13.44px (copyright 12.48px): **6.2:1**, passes. Same on ocregister, denverpost, orlandosentinel, canoncitydailyrecord and mcall (2026-10-30); chicagotribune not checked yet (the browser extension doesn't open it). Production is the accessible one here: don't move it to the current design color.
 
 | | Text | Background | Contrast | Size |
 |---|---|---|---|---|
